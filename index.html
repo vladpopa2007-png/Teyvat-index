@@ -1099,6 +1099,26 @@
       border-color: var(--gold);
       color: var(--gold-bright);
     }
+    .modal-item-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      width: 100%;
+      text-align: left;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font: inherit;
+    }
+    .modal-item-btn:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
 
     .modal-body {
       padding: 20px 0;
@@ -9736,8 +9756,10 @@
                 ch.bestWeapons.map(function (w, idx) {
                   return (
                     '<li class="modal-item-row">' +
-                      '<span class="icon-frame xs" style="--icon-accent: var(--gold);">' + getWeaponIconSvg(w, ch.weapon) + '</span>' +
-                      '<span>' + (idx + 1) + '. ' + escapeHtml(w) + '</span>' +
+                      '<button type="button" class="modal-item-btn" data-modal-weapon-name="' + escapeHtml(w) + '" aria-label="Inspect weapon ' + escapeHtml(w) + '">' +
+                        '<span class="icon-frame xs" style="--icon-accent: var(--gold);">' + getWeaponIconSvg(w, ch.weapon) + '</span>' +
+                        '<span>' + (idx + 1) + '. ' + escapeHtml(w) + '</span>' +
+                      '</button>' +
                     '</li>'
                   );
                 }).join('') +
@@ -9823,8 +9845,10 @@
                   var icon = matchedChar ? getCharacterIconSvg(matchedChar) : getWeaponIconSvg(wp);
                   return (
                     '<li class="modal-item-row">' +
-                      '<span class="icon-frame xs" style="--icon-accent:' + (matchedChar ? 'var(--el-' + matchedChar.element.toLowerCase() + ')' : 'var(--gold)') + ';">' + icon + '</span>' +
-                      '<span>' + escapeHtml(cName) + '</span>' +
+                      (matchedChar ? '<button type="button" class="modal-item-btn" data-open-char="' + escapeHtml(matchedChar.id) + '" aria-label="Open character ' + escapeHtml(matchedChar.name) + ' build guide">' : '<div class="modal-item-btn" style="cursor:default;">') +
+                        '<span class="icon-frame xs" style="--icon-accent:' + (matchedChar ? 'var(--el-' + matchedChar.element.toLowerCase() + ')' : 'var(--gold)') + ';">' + icon + '</span>' +
+                        '<span>' + escapeHtml(cName) + '</span>' +
+                      (matchedChar ? '</button>' : '</div>') +
                     '</li>'
                   );
                 }).join('') +
@@ -10014,6 +10038,25 @@
         var openWeaponBtn = target.closest('[data-open-weapon]');
         if (openWeaponBtn) {
           openWeaponModal(openWeaponBtn.getAttribute('data-open-weapon'));
+          return;
+        }
+
+        var modalWeaponBtn = target.closest('[data-modal-weapon-name]');
+        if (modalWeaponBtn) {
+          var wName = modalWeaponBtn.getAttribute('data-modal-weapon-name');
+          var foundWp = WEAPONS.find(function (we) {
+            var n = we.name.toLowerCase();
+            var searchW = wName.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+            return n === searchW || n.indexOf(searchW) !== -1 || searchW.indexOf(n) !== -1;
+          });
+          if (foundWp) {
+            openWeaponModal(foundWp.id);
+          } else {
+            closeModal();
+            window.location.hash = '#weapons';
+            elWeaponSearch.value = wName;
+            filterWeaponsState();
+          }
           return;
         }
 

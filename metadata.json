@@ -2,5 +2,7 @@
   "name": "Teyvat Index",
   "description": "A Genshin Impact resource guide featuring daily domain rotations, character build index, weapon compendium, and personal roster tracker.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
