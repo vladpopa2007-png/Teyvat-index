@@ -2637,7 +2637,7 @@
           <h3>Owned Characters <span id="roster-char-count" class="tabular">(0)</span></h3>
         </div>
         <div id="roster-char-grid" class="card-grid"></div>
-        <div id="roster-char-empty" class="empty-state">
+        <div id="roster-char-empty" class="empty-state" hidden>
           <p>No owned characters added yet — open any character in the Character Index to add them to My Roster.</p>
           <a href="#characters" class="btn-ghost" data-route="characters">Browse Character Index</a>
         </div>
@@ -2650,7 +2650,7 @@
           <h3>Saved Weapons <span id="roster-weapon-count" class="tabular">(0)</span></h3>
         </div>
         <div id="roster-weapon-grid" class="card-grid"></div>
-        <div id="roster-weapon-empty" class="empty-state">
+        <div id="roster-weapon-empty" class="empty-state" hidden>
           <p>No weapons saved yet — browse the Weapon Index to add some.</p>
           <a href="#weapons" class="btn-ghost" data-route="weapons">Browse Weapon Index</a>
         </div>
@@ -2913,7 +2913,7 @@
               <label class="filter-label" for="dmg-cd">CRIT DMG (%)</label>
               <input id="dmg-cd" class="filter-input tabular" type="number" min="0" step="1" value="165" />
             </div>
-            <div class="filter-field">
+            <div class="filter-field" id="dmg-em-field">
               <label class="filter-label" for="dmg-em">Elemental Mastery</label>
               <input id="dmg-em" class="filter-input tabular" type="number" min="0" step="10" value="120" />
             </div>
@@ -3614,11 +3614,39 @@
         { from: 80, to: 90, mora: 305265, ore: 255, mat: [0,0,0,4], elite: [0,0,18], common: [0,0,12] }
       ];
 
+      var WEAPON_STEPS_3STAR = [
+        { from: 1,  to: 20, mora: 5000,   ore: 6,   mat: [0,0,0,0], elite: [0,0,0],  common: [0,0,0] },
+        { from: 20, to: 40, mora: 32000,  ore: 28,  mat: [2,0,0,0], elite: [2,0,0],  common: [1,0,0] },
+        { from: 40, to: 50, mora: 38000,  ore: 29,  mat: [0,2,0,0], elite: [8,0,0],  common: [5,0,0] },
+        { from: 50, to: 60, mora: 53000,  ore: 41,  mat: [0,4,0,0], elite: [0,4,0],  common: [0,4,0] },
+        { from: 60, to: 70, mora: 72000,  ore: 55,  mat: [0,0,2,0], elite: [0,8,0],  common: [0,6,0] },
+        { from: 70, to: 80, mora: 99000,  ore: 76,  mat: [0,0,4,0], elite: [0,0,6],  common: [0,0,4] },
+        { from: 80, to: 90, mora: 204000, ore: 170, mat: [0,0,0,3], elite: [0,0,12], common: [0,0,8] }
+      ];
+
+      var LEVEL_STOPS = [1, 20, 40, 50, 60, 70, 80, 90];
+
+      function snapLevelToMilestone(level, mode) {
+        var n = Math.max(1, Math.min(90, Number(level) || 1));
+        if (LEVEL_STOPS.indexOf(n) !== -1) return n;
+        if (mode === 'ceil') {
+          for (var i = 0; i < LEVEL_STOPS.length; i++) {
+            if (LEVEL_STOPS[i] >= n) return LEVEL_STOPS[i];
+          }
+          return 90;
+        }
+        var floored = 1;
+        for (var j = 0; j < LEVEL_STOPS.length; j++) {
+          if (LEVEL_STOPS[j] <= n) floored = LEVEL_STOPS[j];
+        }
+        return floored;
+      }
+
       function calculateAscensionPlan(selectedChars, options, selectedWeapons) {
         var opts = options || {};
         var charConfigs = opts.charConfigs || {};
         var weaponConfigs = opts.weaponConfigs || {};
-        var defaultTargetLv = Number(opts.levelGoal) || 90;
+        var defaultTargetLv = snapLevelToMilestone(opts.levelGoal || 90, 'ceil');
         var defaultTargetTalent = Number(opts.talentGoal) || 8;
         var chars = Array.isArray(selectedChars) ? selectedChars : [];
         var weapons = Array.isArray(selectedWeapons) ? selectedWeapons : (Array.isArray(opts.weapons) ? opts.weapons : []);
@@ -3638,8 +3666,9 @@
 
         chars.forEach(function (ch) {
           var cfg = charConfigs[ch.id] || {};
-          var curLv = Math.max(1, Math.min(90, Number(cfg.currentLevel) || 1));
-          var tgtLv = Math.max(curLv, Math.min(90, Number(cfg.targetLevel) || defaultTargetLv));
+          var curLv = snapLevelToMilestone(cfg.currentLevel || 1, 'floor');
+          var rawTgt = cfg.targetLevel !== undefined ? cfg.targetLevel : defaultTargetLv;
+          var tgtLv = Math.max(curLv, snapLevelToMilestone(rawTgt, 'ceil'));
 
           CHAR_LEVEL_STEPS.forEach(function (st) {
             if (st.from >= curLv && st.to <= tgtLv) {
@@ -3724,9 +3753,10 @@
 
         weapons.forEach(function (wp) {
           var wCfg = weaponConfigs[wp.id] || {};
-          var wCur = Math.max(1, Math.min(90, Number(wCfg.currentLevel) || 1));
-          var wTgt = Math.max(wCur, Math.min(90, Number(wCfg.targetLevel) || 90));
-          var steps = wp.rarity >= 5 ? WEAPON_STEPS_5STAR : WEAPON_STEPS_4STAR;
+          var wCur = snapLevelToMilestone(wCfg.currentLevel || 1, 'floor');
+          var rawWTgt = wCfg.targetLevel !== undefined ? wCfg.targetLevel : 90;
+          var wTgt = Math.max(wCur, snapLevelToMilestone(rawWTgt, 'ceil'));
+          var steps = wp.rarity >= 5 ? WEAPON_STEPS_5STAR : (wp.rarity <= 3 ? WEAPON_STEPS_3STAR : WEAPON_STEPS_4STAR);
           var brk = wp.ascensionBreakdown || {};
           var matName = brk.materialType || wp.ascensionMaterial;
           var domInfo = WEAPON_DOMAINS.find(function (d) { return d.material === matName; });
@@ -3932,14 +3962,16 @@
         var reactionMult = 1;
         var rawSkillPart = statVal * mult;
 
+        var effectiveEm = scalingType === 'EM' ? statVal : em;
+
         if (reaction === 'amp-1.5' || reaction === 'amp-2.0') {
           var ampBase = reaction === 'amp-2.0' ? 2.0 : 1.5;
-          reactionMult = ampBase * (1 + (2.78 * em) / (em + 1400));
+          reactionMult = ampBase * (1 + (2.78 * effectiveEm) / (effectiveEm + 1400));
         } else if (reaction === 'aggravate' || reaction === 'spread') {
           var quickenCoeff = reaction === 'spread' ? 1.25 : 1.15;
-          flatQuicken = levelMult * quickenCoeff * (1 + (5 * em) / (em + 1200));
+          flatQuicken = levelMult * quickenCoeff * (1 + (5 * effectiveEm) / (effectiveEm + 1200));
         } else if (reaction === 'lunar') {
-          reactionMult = 1 + (6 * em) / (em + 2000);
+          reactionMult = 1 + (6 * effectiveEm) / (effectiveEm + 2000);
         }
 
         var baseHit = (rawSkillPart + flatQuicken) * (1 + bonusPct / 100) * reactionMult * enemyMod;
@@ -5067,6 +5099,7 @@
       var elDmgMult = document.getElementById('dmg-mult');
       var elDmgCr = document.getElementById('dmg-cr');
       var elDmgCd = document.getElementById('dmg-cd');
+      var elDmgEmField = document.getElementById('dmg-em-field');
       var elDmgEm = document.getElementById('dmg-em');
       var elDmgBonus = document.getElementById('dmg-bonus');
       var elDmgReaction = document.getElementById('dmg-reaction');
@@ -5521,14 +5554,14 @@
       }
 
       // 6. ASCENSION PLANNER RENDER
-      var LEVEL_STOPS = [1, 20, 40, 50, 60, 70, 80, 90];
-
       function getCharPlannerConfig(charId) {
         var existing = state.planner.charConfigs[charId];
         if (!existing || typeof existing !== 'object') {
           existing = { currentLevel: 1, targetLevel: 90, talents: [[1, 8], [1, 8], [1, 8]] };
           state.planner.charConfigs[charId] = existing;
         }
+        existing.currentLevel = snapLevelToMilestone(existing.currentLevel || 1, 'floor');
+        existing.targetLevel = Math.max(existing.currentLevel, snapLevelToMilestone(existing.targetLevel || 90, 'ceil'));
         return existing;
       }
 
@@ -5538,6 +5571,8 @@
           existing = { currentLevel: 1, targetLevel: 90 };
           state.planner.weaponConfigs[weaponId] = existing;
         }
+        existing.currentLevel = snapLevelToMilestone(existing.currentLevel || 1, 'floor');
+        existing.targetLevel = Math.max(existing.currentLevel, snapLevelToMilestone(existing.targetLevel || 90, 'ceil'));
         return existing;
       }
 
@@ -5884,6 +5919,9 @@
         var statNameMap = { ATK: 'Total ATK', HP: 'Max HP', DEF: 'Total DEF', EM: 'Elemental Mastery' };
         if (elDmgStatLabel) {
           elDmgStatLabel.textContent = statNameMap[res.scalingType] || 'Total ATK';
+        }
+        if (elDmgEmField) {
+          elDmgEmField.hidden = (res.scalingType === 'EM');
         }
 
         var extraSub = res.flatQuickenBonus > 0
@@ -7273,12 +7311,12 @@
       } else if (typeof window.fetch === 'function') {
         handleHashChange();
         Promise.all([
-          fetch('/data/characters.json').then(function (r) { if (!r.ok) throw new Error('characters.json'); return r.json(); }),
-          fetch('/data/weapons.json').then(function (r) { if (!r.ok) throw new Error('weapons.json'); return r.json(); }),
-          fetch('/data/domains.json').then(function (r) { if (!r.ok) throw new Error('domains.json'); return r.json(); }),
-          fetch('/data/tier-list.json').then(function (r) { if (!r.ok) throw new Error('tier-list.json'); return r.json(); }),
-          fetch('/data/abyss.json').then(function (r) { if (!r.ok) throw new Error('abyss.json'); return r.json(); }),
-          fetch('/data/specialties.json').then(function (r) { if (!r.ok) throw new Error('specialties.json'); return r.json(); })
+          fetch('./data/characters.json').then(function (r) { if (!r.ok) throw new Error('characters.json'); return r.json(); }),
+          fetch('./data/weapons.json').then(function (r) { if (!r.ok) throw new Error('weapons.json'); return r.json(); }),
+          fetch('./data/domains.json').then(function (r) { if (!r.ok) throw new Error('domains.json'); return r.json(); }),
+          fetch('./data/tier-list.json').then(function (r) { if (!r.ok) throw new Error('tier-list.json'); return r.json(); }),
+          fetch('./data/abyss.json').then(function (r) { if (!r.ok) throw new Error('abyss.json'); return r.json(); }),
+          fetch('./data/specialties.json').then(function (r) { if (!r.ok) throw new Error('specialties.json'); return r.json(); })
         ]).then(function (results) {
           bootstrapWithData({
             characters: results[0],
@@ -7290,7 +7328,7 @@
           });
         }).catch(function () {
           if (elDailyTitle) elDailyTitle.textContent = 'Unable to load game data files.';
-          if (elDailySubtitle) elDailySubtitle.textContent = 'Please verify /data/*.json files are served and reload.';
+          if (elDailySubtitle) elDailySubtitle.textContent = 'Please verify ./data/*.json files are served and reload.';
           if (elCharCount) elCharCount.textContent = 'Failed to load characters dataset.';
           if (elWeaponCount) elWeaponCount.textContent = 'Failed to load weapons dataset.';
         });

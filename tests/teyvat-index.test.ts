@@ -255,6 +255,13 @@ test('HTML structure uses single h1, externalizes data, and removes static place
   assert.equal(html.includes('Showing 0 weapons'), false);
   assert.equal(html.includes('var CHARACTERS = [];'), true);
   assert.equal(/var CHARACTERS\s*=\s*\[\s*\{/.test(html), false);
+  assert.equal(html.includes("fetch('./data/characters.json')"), true);
+  assert.equal(html.includes("fetch('/data/"), false);
+  assert.equal(/id="roster-char-empty"[^>]*hidden/.test(html), true);
+  assert.equal(/id="roster-weapon-empty"[^>]*hidden/.test(html), true);
+  assert.equal(/id="character-empty"[^>]*hidden/.test(html), true);
+  assert.equal(/id="weapon-empty"[^>]*hidden/.test(html), true);
+  assert.equal(/id="sunday-note"[^>]*hidden/.test(html), true);
 });
 
 test('dataset meets size, Skirk Outworld placement, v7.2 additions, and field completeness requirements', () => {
@@ -262,8 +269,12 @@ test('dataset meets size, Skirk Outworld placement, v7.2 additions, and field co
   assert.equal(api.WEAPONS.length, 56);
 
   const skirk = api.CHARACTERS.find((c) => c.id === 'skirk');
-  assert.ok(skirk);
+  const aloy = api.CHARACTERS.find((c) => c.id === 'aloy');
+  const traveler = api.CHARACTERS.find((c) => c.id === 'traveler');
+  assert.ok(skirk && aloy && traveler);
   assert.equal(skirk.region, 'Outworld');
+  assert.equal(aloy.region, 'Outworld');
+  assert.equal(traveler.region, 'Outworld');
 
   const varesa = api.CHARACTERS.find((c) => c.id === 'varesa');
   const zibai = api.CHARACTERS.find((c) => c.id === 'zibai');
@@ -483,6 +494,44 @@ test('granular ascension planner supports per-character deltas, individual talen
   assert.equal(deltaPlan.totalOre, 907);
   assert.equal(deltaPlan.weaponDomainRuns.length, 1);
   assert.equal(deltaPlan.weaponDomainRuns[0].domain, 'Court of Flowing Sand');
+
+  // 3-star weapon table uses lower 3-star Mora & Ore totals (405 Ore, 503k Mora) rather than 4-star (605 Ore)
+  const ttdsMock: Weapon = {
+    id: 'ttds-test',
+    name: 'Thrilling Tales of Dragon Slayers',
+    rarity: 3,
+    type: 'Catalyst',
+    baseAtk: 401,
+    secondaryStat: 'HP 35.2%',
+    passive: 'Swapping grants the next character +48% ATK for 10s.',
+    bestCharacters: ['Barbara', 'Mona', 'Charlotte'],
+    ascensionMaterial: "Boreal Wolf's Milk Tooth",
+    domain: 'Cecilia Garden',
+    domainDays: 'Tue / Fri',
+    ascensionBreakdown: {
+      materialType: "Boreal Wolf's Milk Tooth",
+      domainName: 'Cecilia Garden',
+      region: 'Mondstadt',
+      daysAvailable: ['Tue', 'Fri', 'Sun'],
+      eliteDrop: 'Chaos Device',
+      commonDrop: 'Divining Scroll',
+    },
+  };
+  const threeStarPlan = api.calculateAscensionPlan([], { weaponConfigs: { 'ttds-test': { currentLevel: 1, targetLevel: 90 } } }, [ttdsMock]);
+  assert.equal(threeStarPlan.totalOre, 405);
+  assert.equal(threeStarPlan.totalMora, 503000);
+
+  // Non-milestone levels (e.g. 45 -> 75) snap cleanly to 40 -> 80 without skipping intermediate steps
+  const snappedPlan = api.calculateAscensionPlan(
+    [huTao],
+    {
+      charConfigs: {
+        'hu-tao': { currentLevel: 45, targetLevel: 75, talents: [[1, 1], [1, 1], [1, 1]] },
+      },
+    }
+  );
+  // Steps 40->50 (29) + 50->60 (43) + 60->70 (60) + 70->80 (81) = 213 Heros Wit
+  assert.equal(snappedPlan.totalHerosWit, 213);
 });
 
 test('damage calculator supports HP/DEF/EM scalers and Amplifying, Quicken, and Lunar reactions', () => {
@@ -522,11 +571,12 @@ test('damage calculator supports HP/DEF/EM scalers and Amplifying, Quicken, and 
     critRatePct: 0,
     critDmgPct: 50,
     dmgBonusPct: 0,
-    em: 800,
+    em: 120,
     reaction: 'spread',
     level: '90',
     enemyMult: 1,
   });
+  // EM Scaling uses statValue (800) for both skill scaling & reaction math when secondary EM field is hidden
   assert.ok(spreadHit.flatQuickenBonus > 5000);
   assert.equal(spreadHit.nonCritDamage, 1200 + spreadHit.flatQuickenBonus);
 });
