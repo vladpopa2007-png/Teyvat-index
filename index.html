@@ -141,7 +141,7 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 100;
       background: var(--bg-topbar);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
@@ -503,7 +503,74 @@
     .domain-char-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .domain-char-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      background: var(--bg-inset);
+      border: 1px solid color-mix(in srgb, var(--el-color, var(--border-hairline)) 32%, transparent);
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      min-height: 32px;
+      transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    .domain-char-chip:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--el-color, var(--gold));
+      transform: translateY(-1px);
+    }
+
+    .domain-char-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--bg-surface);
+      border: 1px solid color-mix(in srgb, var(--el-color, var(--gold)) 60%, transparent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .domain-char-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .domain-char-avatar .enka-fallback-svg {
+      padding: 2px;
+    }
+
+    .domain-more-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(200, 155, 60, 0.12);
+      border: 1px solid rgba(200, 155, 60, 0.35);
+      color: var(--gold-bright);
+      font-size: 0.78rem;
+      font-weight: 600;
+      min-height: 30px;
+      cursor: pointer;
+      transition: background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .domain-more-pill:hover {
+      background: rgba(200, 155, 60, 0.22);
+      border-color: var(--gold);
     }
 
     .domain-item-btn {
@@ -694,6 +761,31 @@
       transform: translateY(-1px);
     }
 
+    .btn-saved {
+      background: rgba(52, 211, 153, 0.14);
+      border: 1px solid rgba(52, 211, 153, 0.48);
+      color: #6EE7B7;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-height: 42px;
+      white-space: nowrap;
+      transition: background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .btn-saved:hover {
+      background: rgba(52, 211, 153, 0.22);
+      border-color: rgba(52, 211, 153, 0.72);
+    }
+
+    html.theme-light .btn-saved {
+      background: rgba(16, 128, 92, 0.12);
+      border-color: rgba(16, 128, 92, 0.45);
+      color: #0F6A4C;
+    }
+
     .btn-danger {
       background: rgba(239, 108, 87, 0.12);
       border: 1px solid rgba(239, 108, 87, 0.45);
@@ -765,6 +857,70 @@
       gap: 12px;
     }
 
+    .char-portrait-wrap {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--el-color, var(--gold)) 28%, var(--bg-inset)), var(--bg-inset) 82%);
+      border: 2px solid color-mix(in srgb, var(--el-color, var(--gold)) 68%, transparent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--el-color, var(--gold)) 22%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--el-color, var(--gold));
+      flex-shrink: 0;
+    }
+
+    .char-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .weapon-portrait-wrap {
+      width: 68px;
+      height: 68px;
+      padding: 5px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--el-color, var(--gold)) 24%, var(--bg-inset)), var(--bg-inset) 82%);
+      border: 1.5px solid color-mix(in srgb, var(--el-color, var(--gold)) 52%, transparent);
+      box-shadow: 0 0 14px color-mix(in srgb, var(--el-color, var(--gold)) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--el-color, var(--gold));
+      flex-shrink: 0;
+    }
+
+    .weapon-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .enka-fallback-svg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .enka-fallback-svg svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .char-portrait-wrap .enka-fallback-svg {
+      padding: 10px;
+    }
+
     .crest-box {
       width: 52px;
       height: 52px;
@@ -778,6 +934,30 @@
       justify-content: center;
       color: var(--el-color, var(--gold));
       flex-shrink: 0;
+    }
+
+    .crest-box.modal-char-portrait {
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--modal-accent, var(--el-color, var(--gold)));
+      box-shadow: 0 0 20px color-mix(in srgb, var(--modal-accent, var(--gold)) 34%, transparent);
+    }
+
+    .crest-box.modal-char-portrait .enka-fallback-svg {
+      padding: 8px;
+    }
+
+    .crest-box.modal-weapon-portrait {
+      width: 64px;
+      height: 64px;
+      padding: 5px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 2px solid var(--modal-accent, var(--gold));
+      box-shadow: 0 0 18px color-mix(in srgb, var(--modal-accent, var(--gold)) 28%, transparent);
     }
 
     .crest-box svg {
@@ -1021,10 +1201,13 @@
     /* Detail Modal */
     .modal-backdrop {
       position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(7, 9, 16, 0.8);
-      backdrop-filter: blur(6px);
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 200;
+      background: rgba(7, 9, 16, 0.82);
+      backdrop-filter: none;
       display: none;
       align-items: center;
       justify-content: center;
@@ -1037,51 +1220,54 @@
 
     .modal-dialog {
       position: relative;
+      z-index: 300;
       width: 100%;
       max-width: 720px;
-      max-height: 90vh;
+      max-height: calc(100vh - 96px);
       overflow-y: auto;
       background: var(--bg-surface);
       border: 1px solid color-mix(in srgb, var(--modal-accent, var(--gold)) 55%, transparent);
       border-radius: var(--radius-lg);
-      padding: 28px;
+      padding: 0;
       box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65),
                   0 0 36px color-mix(in srgb, var(--modal-accent, var(--gold)) 18%, transparent);
     }
 
     .modal-header {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid rgba(200, 155, 60, 0.25);
+      padding: 18px 24px 16px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--modal-accent, var(--gold)) 22%, transparent), transparent 72%);
+      border-bottom: 1px solid color-mix(in srgb, var(--modal-accent, var(--gold)) 28%, rgba(200, 155, 60, 0.2));
     }
 
     .modal-title-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+      min-width: 0;
     }
 
     .modal-title-wrap h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       line-height: 1.2;
     }
 
     .modal-subline {
-      margin-top: 6px;
+      margin-top: 5px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
+      gap: 8px;
+      font-size: 0.86rem;
       color: var(--text-secondary);
     }
 
     .modal-close-btn {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-muted);
       background: var(--bg-inset);
@@ -1106,7 +1292,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      padding: 6px 10px;
+      padding: 7px 10px;
       width: 100%;
       text-align: left;
       color: var(--text-primary);
@@ -1115,32 +1301,88 @@
       font: inherit;
     }
     .modal-item-btn:hover {
-      background: var(--bg-surface-elevated);
+      background: var(--bg-surface-hover);
       border-color: var(--gold);
       transform: translateY(-1px);
     }
 
-    .modal-body {
-      padding: 20px 0;
+    .modal-weapon-icon-box {
+      width: 36px;
+      height: 36px;
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-inset);
+      border: 1px solid color-mix(in srgb, var(--weapon-accent, var(--gold)) 42%, transparent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .modal-weapon-icon-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .modal-weapon-meta {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 2px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .modal-weapon-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .modal-weapon-name {
+      font-weight: 600;
+      font-size: 0.84rem;
+      color: var(--text-primary);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .modal-weapon-substat {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .modal-body {
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
     .detail-block {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-muted);
       border-radius: var(--radius-md);
-      padding: 14px 16px;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
     }
 
     .detail-label {
@@ -1155,7 +1397,7 @@
       margin: 0;
       padding-left: 18px;
       color: var(--text-primary);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -1163,17 +1405,17 @@
 
     .detail-prose {
       color: var(--text-secondary);
-      font-size: 0.94rem;
-      line-height: 1.65;
+      font-size: 0.9rem;
+      line-height: 1.55;
     }
 
     .modal-footer {
-      padding-top: 18px;
+      padding: 14px 24px 18px;
       border-top: 1px solid var(--border-hairline);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 12px;
     }
 
@@ -1181,7 +1423,21 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .modal-actions-row .btn-primary,
+    .modal-actions-row .btn-ghost,
+    .modal-actions-row .btn-saved {
+      flex: 1 1 190px;
+      max-width: 240px;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
     }
 
     /* Workspace Sub-Navigation (non-sticky inside main) */
@@ -1809,8 +2065,20 @@
         font-size: 1.35rem;
       }
 
+      .modal-backdrop {
+        top: 92px;
+        padding: 12px;
+      }
+
       .modal-dialog {
-        padding: 20px 16px;
+        max-height: calc(100vh - 116px);
+      }
+
+      .modal-header,
+      .modal-body,
+      .modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
       }
     }
 
@@ -2686,7 +2954,6 @@
       </div>
       <div id="modal-body" class="modal-body"></div>
       <div class="modal-footer">
-        <span id="modal-footer-note" class="domain-subsection-hint"></span>
         <div class="modal-actions-row">
           <button type="button" id="modal-owned-btn" class="btn-ghost" hidden>Mark as Owned</button>
           <button type="button" id="modal-save-btn" class="btn-primary"></button>
@@ -5206,9 +5473,46 @@
         arlecchino: ['Fontaine', '4.6'], navia: ['Fontaine', '4.3'], 'kuki-shinobu': ['Inazuma', '2.7'],
         sucrose: ['Mondstadt', '1.0']
       };
+      var CHARACTER_ENKA_KEYS = {
+        'hu-tao': 'Hutao', 'raiden-shogun': 'Shougun', kazuha: 'Kazuha', bennett: 'Bennett',
+        zhongli: 'Zhongli', ayaka: 'Ayaka', yelan: 'Yelan', neuvillette: 'Neuvillette',
+        furina: 'Furina', nahida: 'Nahida', xiao: 'Xiao', ganyu: 'Ganyu',
+        eula: 'Eula', cyno: 'Cyno', wanderer: 'Wanderer', itto: 'Itto',
+        tighnari: 'Tighnari', yoimiya: 'Yoimiya', fischl: 'Fischl', xingqiu: 'Xingqiu',
+        kokomi: 'Kokomi', xiangling: 'Xiangling', alhaitham: 'Alhatham', jean: 'Qin',
+        arlecchino: 'Arlecchino', navia: 'Navia', 'kuki-shinobu': 'Shinobu', sucrose: 'Sucrose',
+        mualani: 'Mualani', kinich: 'Kinich', xilonen: 'Xilonen', chasca: 'Chasca',
+        ororon: 'Olorun', mavuika: 'Mavuika', citlali: 'Citlali', varesa: 'Varesa',
+        escoffier: 'Escoffier', skirk: 'SkirkNew', lauma: 'Lauma', flins: 'Flins',
+        aino: 'Aino', nefer: 'Nefer', durin: 'Durin', columbina: 'Columbina',
+        zibai: 'Zibai', varka: 'Varka', linnea: 'Linnea', odette: 'Odette',
+        alyosha: 'Alyosha', vesna: 'Vesna', vodyanitsa: 'Vodyanitsa', mitya: 'Mitya',
+        valeriy: 'Valeriy', amber: 'Ambor', kaeya: 'Kaeya', lisa: 'Lisa',
+        barbara: 'Barbara', razor: 'Razor', diluc: 'Diluc', venti: 'Venti',
+        klee: 'Klee', mona: 'Mona', noelle: 'Noel', diona: 'Diona',
+        albedo: 'Albedo', rosaria: 'Rosaria', mika: 'Mika', dahlia: 'Dahlia',
+        aloy: 'Aloy', beidou: 'Beidou', ningguang: 'Ningguang', chongyun: 'Chongyun',
+        qiqi: 'Qiqi', keqing: 'Keqing', xinyan: 'Xinyan', yanfei: 'Feiyan',
+        shenhe: 'Shenhe', 'yun-jin': 'Yunjin', yaoyao: 'Yaoyao', baizhu: 'Baizhuer',
+        xianyun: 'Liuyun', gaming: 'Gaming', 'lan-yan': 'Lanyan', sayu: 'Sayu',
+        'kujou-sara': 'Sara', thoma: 'Tohma', gorou: 'Gorou', 'yae-miko': 'Yae',
+        ayato: 'Ayato', heizou: 'Heizo', kirara: 'Momoka', chiori: 'Chiori',
+        mizuki: 'Mizuki', collei: 'Collei', dori: 'Dori', candace: 'Candace',
+        nilou: 'Nilou', layla: 'Layla', faruzan: 'Faruzan', dehya: 'Dehya',
+        kaveh: 'Kaveh', sethos: 'Sethos', lyney: 'Liney', lynette: 'Linette',
+        freminet: 'Freminet', wriothesley: 'Wriothesley', charlotte: 'Charlotte', chevreuse: 'Chevreuse',
+        clorinde: 'Clorinde', sigewinne: 'Sigewinne', emilie: 'Emilie', kachina: 'Kachina',
+        iansan: 'Iansan', ifa: 'Ifa', ineffa: 'Ineffa', illuga: 'Illuga',
+        tartaglia: 'Tartaglia', pulcinella: 'Pulcinella', pantalone: 'Pantalone',
+        sandrone: 'MarionetteNew', traveler: 'PlayerBoy'
+      };
       CHARACTERS.forEach(function (c) {
         if (!c.region && LEGACY_CHAR_META[c.id]) c.region = LEGACY_CHAR_META[c.id][0];
         if (!c.version && LEGACY_CHAR_META[c.id]) c.version = LEGACY_CHAR_META[c.id][1];
+        if (!c.icon) {
+          var key = CHARACTER_ENKA_KEYS[c.id] || c.name.replace(/[^a-zA-Z0-9]/g, '');
+          c.icon = 'https://enka.network/ui/UI_AvatarIcon_' + key + '.png';
+        }
       });
 
       // =========================================================================
@@ -6400,9 +6704,138 @@
         'tulaytullahs-remembrance': '3.3', 'cashflow-supervision': '4.1', 'the-widsith': '1.0',
         'prototype-amber': '1.0'
       };
+      var WEAPON_ENKA_KEYS = {
+        'mistsplitter-reforged': 'Sword_Narukami',
+        'primordial-jade-cutter': 'Sword_Morax',
+        'splendor-of-tranquil-waters': 'Sword_Regalis',
+        'light-of-foliar-incision': 'Sword_Ayus',
+        'favonius-sword': 'Sword_Zephyrus',
+        'sacrificial-sword': 'Sword_Fossil',
+        'redhorn-stonethresher': 'Claymore_Itadorimaru',
+        'wolfs-gravestone': 'Claymore_Wolfmound',
+        verdict: 'Claymore_GoldenVerdict',
+        'beacon-of-the-reed-sea': 'Claymore_Deshret',
+        'serpent-spine': 'Claymore_Kione',
+        'favonius-greatsword': 'Claymore_Zephyrus',
+        'staff-of-homa': 'Pole_Homa',
+        'engulfing-lightning': 'Pole_Narukami',
+        'primordial-jade-winged-spear': 'Pole_Morax',
+        'the-catch': 'Pole_Mori',
+        'dragons-bane': 'Pole_Stardust',
+        'aqua-simulacra': 'Bow_Kirin',
+        'amos-bow': 'Bow_Amos',
+        'thundering-pulse': 'Bow_Narukami',
+        'hunters-path': 'Bow_Ayus',
+        'the-stringless': 'Bow_Troupe',
+        'tome-of-the-eternal-flow': 'Catalyst_Iudex',
+        'a-thousand-floating-dreams': 'Catalyst_Ayus',
+        'tulaytullahs-remembrance': 'Catalyst_Alaya',
+        'cashflow-supervision': 'Catalyst_Wheatley',
+        'the-widsith': 'Catalyst_Troupe',
+        'prototype-amber': 'Catalyst_Proto',
+        'peak-patrol-song': 'Sword_XochitlsTube',
+        azurelight: 'Sword_OuterSword',
+        'athame-artis': 'Sword_Motsognir',
+        'whitelake-winterfeather': 'Sword_WhitelakeWinterfeather',
+        'beyond-the-chrysalis': 'Sword_Samosvist',
+        'frostsnow-oath': 'Sword_FrostsnowOath',
+        'fang-of-the-mountain-king': 'Claymore_EmeraldSword',
+        'a-thousand-blazing-suns': 'Claymore_RadianceSword',
+        'earth-shaker': 'Claymore_Isikhulu',
+        'gest-of-the-mighty-wolf': 'Claymore_EnsisAquilonis',
+        'winters-heavy-heart': 'Claymore_WintersHeavyHeart',
+        'crimson-moons-semblance': 'Pole_BloodMoon',
+        'symphonist-of-scents': 'Pole_Trident',
+        'bloodsoaked-ruins': 'Pole_TummaLyhty',
+        'ballad-of-the-sentinel': 'Pole_SentinelBallad',
+        'astral-vultures-crimson-plumage': 'Bow_Qoyllorsnova',
+        'snare-hook': 'Bow_Ilmarinen',
+        'golden-dawn-harp': 'Bow_GoldenDawnHarp',
+        'silver-light': 'Bow_SilverLight',
+        'surfs-up': 'Catalyst_MechaPufferfish',
+        'starcallers-watch': 'Catalyst_Figurines',
+        'nightweavers-looking-glass': 'Catalyst_MenulisRing',
+        'reliquary-of-truth': 'Catalyst_Sistrum',
+        'nocturnes-curtain-call': 'Catalyst_Brisingamen',
+        'hymn-of-the-maelstrom': 'Catalyst_Bludnye',
+        'starsealed-edict': 'Catalyst_Chernaya'
+      };
+      var EXTRA_WEAPON_META = {
+        'staff of the scarlet sands': { key: 'Pole_Deshret', rarity: 5, substat: 'CRIT Rate 44.1%' },
+        'freedom-sworn': { key: 'Sword_Widsith', rarity: 5, substat: 'Elemental Mastery 198' },
+        "xiphos' moonlight": { key: 'Sword_Pleroma', rarity: 4, substat: 'Elemental Mastery 165' },
+        'aquila favonia': { key: 'Sword_Falcon', rarity: 5, substat: 'Physical DMG 41.3%' },
+        'sapwood blade': { key: 'Sword_Arakalari', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'black tassel': { key: 'Pole_Noire', rarity: 3, substat: 'HP 46.9%' },
+        'favonius lance': { key: 'Pole_Zephyrus', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'haran geppaku futsu': { key: 'Sword_Amenoma', rarity: 5, substat: 'CRIT Rate 33.1%' },
+        'amenoma kageuchi': { key: 'Sword_Bakufu', rarity: 4, substat: 'ATK 55.1%' },
+        'favonius warbow': { key: 'Bow_Zephyrus', rarity: 4, substat: 'Energy Recharge 61.3%' },
+        'elegy for the end': { key: 'Bow_Widsith', rarity: 5, substat: 'Energy Recharge 55.1%' },
+        'sacrificial jade': { key: 'Catalyst_Yue', rarity: 4, substat: 'CRIT Rate 36.8%' },
+        'festering desire': { key: 'Sword_Magnum', rarity: 4, substat: 'Energy Recharge 45.9%' },
+        "kagura's verity": { key: 'Catalyst_Narukami', rarity: 5, substat: 'CRIT DMG 66.2%' },
+        'sacrificial fragments': { key: 'Catalyst_Fossil', rarity: 4, substat: 'Elemental Mastery 221' },
+        deathmatch: { key: 'Pole_Gladiator', rarity: 4, substat: 'CRIT Rate 36.8%' },
+        'the first great magic': { key: 'Bow_Pledge', rarity: 5, substat: 'CRIT DMG 66.2%' },
+        'song of broken pines': { key: 'Claymore_Widsith', rarity: 5, substat: 'Physical DMG 20.7%' },
+        'white tassel': { key: 'Pole_Ruby', rarity: 3, substat: 'CRIT Rate 23.4%' },
+        'lost prayer to the sacred winds': { key: 'Catalyst_Fourwinds', rarity: 5, substat: 'CRIT Rate 33.1%' },
+        whiteblind: { key: 'Claymore_Exotic', rarity: 4, substat: 'DEF 51.7%' },
+        slingshot: { key: 'Bow_Sling', rarity: 3, substat: 'CRIT Rate 31.2%' },
+        rust: { key: 'Bow_Recluse', rarity: 4, substat: 'ATK 41.3%' },
+        'polar star': { key: 'Bow_Worldbane', rarity: 5, substat: 'CRIT Rate 33.1%' },
+        'everlasting moonglow': { key: 'Catalyst_Kaleido', rarity: 5, substat: 'HP 49.6%' },
+        'thrilling tales of dragon slayers': { key: 'Catalyst_Pulpfic', rarity: 3, substat: 'HP 35.2%' },
+        'harbinger of dawn': { key: 'Sword_Dawn', rarity: 3, substat: 'CRIT DMG 46.9%' },
+        'skyward blade': { key: 'Sword_Dvalin', rarity: 5, substat: 'Energy Recharge 55.1%' },
+        "ultimate overlord's mega magic sword": { key: 'Claymore_Champion', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'key of khaj-nisut': { key: 'Sword_Deshret', rarity: 5, substat: 'HP 66.2%' },
+        'iron sting': { key: 'Sword_Exotic', rarity: 4, substat: 'Elemental Mastery 165' },
+        'toukabou shigure': { key: 'Sword_Kasabouzu', rarity: 4, substat: 'Elemental Mastery 165' },
+        'wandering evenstar': { key: 'Catalyst_Pleroma', rarity: 4, substat: 'Elemental Mastery 165' },
+        'flute of ezpitzal': { key: 'Sword_Isikhulu', rarity: 4, substat: 'DEF 69.0%' },
+        'flame-forged insight': { key: 'Claymore_Polilith', rarity: 4, substat: 'Elemental Mastery 165' },
+        'uraku misugiri': { key: 'Sword_Needle', rarity: 5, substat: 'CRIT DMG 88.2%' },
+        'rightful reward': { key: 'Pole_Vorpal', rarity: 4, substat: 'HP 27.6%' },
+        'wolf-fang': { key: 'Sword_Boreas', rarity: 4, substat: 'CRIT Rate 27.6%' },
+        'favonius codex': { key: 'Catalyst_Zephyrus', rarity: 4, substat: 'Energy Recharge 45.9%' },
+        'mailed flower': { key: 'Claymore_Fleurfair', rarity: 4, substat: 'Elemental Mastery 110' },
+        'sacrificial bow': { key: 'Bow_Fossil', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'cinnabar spindle': { key: 'Sword_Opus', rarity: 4, substat: 'DEF 69.0%' },
+        'fleuve cendre ferryman': { key: 'Sword_Machination', rarity: 4, substat: 'Energy Recharge 45.9%' },
+        akuoumaru: { key: 'Claymore_Maria', rarity: 4, substat: 'ATK 41.3%' },
+        "lion's roar": { key: 'Sword_Rockkiller', rarity: 4, substat: 'ATK 41.3%' },
+        'calamity queller': { key: 'Pole_Santika', rarity: 5, substat: 'ATK 16.5%' },
+        'footprint of the rainbow': { key: 'Pole_Isikhulu', rarity: 4, substat: 'DEF 51.7%' },
+        moonpiercer: { key: 'Pole_Arakalari', rarity: 4, substat: 'Elemental Mastery 110' },
+        "jadefall's splendor": { key: 'Catalyst_Morax', rarity: 5, substat: 'HP 49.6%' },
+        "crane's echoing call": { key: 'Catalyst_MountainGale', rarity: 5, substat: 'ATK 16.5%' },
+        'oathsworn eye': { key: 'Catalyst_Jyanome', rarity: 4, substat: 'ATK 27.6%' },
+        'fruitful hook': { key: 'Claymore_Umpakati', rarity: 4, substat: 'ATK 27.6%' },
+        'makhaira aquamarine': { key: 'Claymore_Pleroma', rarity: 4, substat: 'Elemental Mastery 165' },
+        'forest regalia': { key: 'Claymore_Arakalari', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'skyward harp': { key: 'Bow_Dvalin', rarity: 5, substat: 'CRIT Rate 22.1%' },
+        'kitain cross spear': { key: 'Pole_Bakufu', rarity: 4, substat: 'Elemental Mastery 110' },
+        'sunny morning sleep-in': { key: 'Catalyst_SakuraFan', rarity: 5, substat: 'Elemental Mastery 265' },
+        "dockhand's assistant": { key: 'Sword_Mechanic', rarity: 4, substat: 'HP 41.3%' },
+        'skyward pride': { key: 'Claymore_Dvalin', rarity: 5, substat: 'Energy Recharge 36.8%' },
+        absolution: { key: 'Sword_Estoc', rarity: 5, substat: 'CRIT DMG 44.1%' },
+        'silvershower heartstrings': { key: 'Bow_Arcdange', rarity: 5, substat: 'HP 66.2%' },
+        'recurve bow': { key: 'Bow_Curve', rarity: 3, substat: 'HP 46.9%' },
+        'lumidouce elegy': { key: 'Pole_Muguet', rarity: 5, substat: 'CRIT Rate 33.1%' },
+        'tamayuratei no ohanashi': { key: 'Pole_Aoandon', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'hakushin ring': { key: 'Catalyst_Bakufu', rarity: 4, substat: 'Energy Recharge 30.6%' },
+        'fractured halo': { key: 'Pole_Perdix', rarity: 5, substat: 'CRIT DMG 66.2%' },
+        'sacrificial greatsword': { key: 'Claymore_Fossil', rarity: 4, substat: 'Energy Recharge 30.6%' }
+      };
       WEAPONS.forEach(function (w) {
         if (!w.region && w.ascensionBreakdown) w.region = w.ascensionBreakdown.region;
         if (!w.version && LEGACY_WEAPON_VERSIONS[w.id]) w.version = LEGACY_WEAPON_VERSIONS[w.id];
+        if (!w.icon) {
+          var wKey = WEAPON_ENKA_KEYS[w.id] || (w.type + '_' + w.name.replace(/[^a-zA-Z0-9]/g, ''));
+          w.icon = 'https://enka.network/ui/UI_EquipIcon_' + wKey + '_Awaken.png';
+        }
       });
 
       // =========================================================================
@@ -8772,7 +9205,7 @@
         savedWeapons: readStoredIds(STORAGE_KEYS.WEAPONS),
         ownedCharacters: readStoredIds(STORAGE_KEYS.OWNED),
         settings: initialSettings,
-        charFilters: { search: '', region: 'All', element: 'All', weapon: 'All', role: 'All', rarity: 'All', ownedMode: initialSettings.ownedMode },
+        charFilters: { search: '', region: 'All', element: 'All', weapon: 'All', role: 'All', rarity: 'All', ownedMode: 'all' },
         weaponFilters: { search: '', region: 'All', type: 'All', rarity: 'All' },
         resin: {
           currentResin: typeof savedResin.currentResin === 'number' ? Math.max(0, Math.min(160, savedResin.currentResin)) : 40,
@@ -8840,7 +9273,6 @@
       var elModalTitle = document.getElementById('modal-title');
       var elModalSubline = document.getElementById('modal-subline');
       var elModalBody = document.getElementById('modal-body');
-      var elModalFooterNote = document.getElementById('modal-footer-note');
       var elModalSaveBtn = document.getElementById('modal-save-btn');
       var elModalOwnedBtn = document.getElementById('modal-owned-btn');
       var elModalCloseBtn = document.getElementById('modal-close-btn');
@@ -8954,6 +9386,27 @@
         }).join('');
       }
 
+      function renderEnkaImgHtml(src, alt, fallbackSvg, wrapClass, imgClass, styleAttr) {
+        var style = styleAttr ? ' style="' + styleAttr + '"' : '';
+        return (
+          '<div class="' + wrapClass + '"' + style + '>' +
+            (src
+              ? '<img class="' + imgClass + '" src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt) + '" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+                '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
+              : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + fallbackSvg + '</span>') +
+          '</div>'
+        );
+      }
+
+      function findWeaponByName(wName) {
+        var searchW = String(wName || '').replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+        if (!searchW) return null;
+        return WEAPONS.find(function (we) {
+          var n = we.name.toLowerCase();
+          return n === searchW || n.indexOf(searchW) !== -1 || searchW.indexOf(n) !== -1;
+        }) || null;
+      }
+
       function renderDailyGuide() {
         var info = getDomainsForDay(state.selectedDay);
         var isActualToday = state.selectedDay === actualToday;
@@ -8979,26 +9432,35 @@
         });
 
         elDailyTalentGrid.innerHTML = info.talentDomains.map(function (dom) {
-          var charsHtml = dom.characters.map(function (ch) {
+          var matchingChars = CHARACTERS.filter(function (c) { return c.talentBook === dom.book; });
+          if (matchingChars.length === 0 && Array.isArray(dom.characters)) {
+            matchingChars = dom.characters.map(function (dc) {
+              return CHARACTERS.find(function (c) { return c.id === dc.id || c.name === dc.name; }) || dc;
+            });
+          }
+          var visibleChars = matchingChars.slice(0, 6);
+          var overflowCount = Math.max(0, matchingChars.length - 6);
+
+          var charsHtml = visibleChars.map(function (ch) {
             var elClass = 'el-' + ch.element;
-            var avatar = '<span class="mini-icon" aria-hidden="true">' + getCharacterIconSvg(ch.id || ch) + '</span>';
+            var avatarHtml = renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch.id || ch), 'domain-char-avatar', '', '');
             if (ch.id) {
               return (
-                '<button type="button" class="domain-item-btn ' + elClass + '" data-open-char="' + escapeHtml(ch.id) + '" style="--item-accent: var(--el-' + ch.element.toLowerCase() + ');">' +
-                  avatar +
+                '<button type="button" class="domain-char-chip ' + elClass + '" data-open-char="' + escapeHtml(ch.id) + '" title="' + escapeHtml(ch.name + ' (' + ch.element + ')') + '">' +
+                  avatarHtml +
                   '<span>' + escapeHtml(ch.name) + '</span>' +
-                  '<span class="el-badge">(' + escapeHtml(ch.element) + ')</span>' +
                 '</button>'
               );
             }
             return (
               '<span class="domain-item-static ' + elClass + '">' +
-                avatar +
+                avatarHtml +
                 '<span>' + escapeHtml(ch.name) + '</span>' +
-                '<span class="el-badge">(' + escapeHtml(ch.element) + ')</span>' +
               '</span>'
             );
-          }).join('');
+          }).join('') + (overflowCount > 0
+            ? '<button type="button" class="domain-more-pill" data-filter-book="' + escapeHtml(dom.book) + '" title="View all ' + matchingChars.length + ' ' + escapeHtml(dom.book) + ' characters">+' + overflowCount + ' more</button>'
+            : '');
 
           return (
             '<article class="domain-card">' +
@@ -9074,13 +9536,13 @@
           return (
             '<button type="button" class="entity-card rarity-' + ch.rarity + ' el-' + escapeHtml(ch.element) + '" data-open-char="' + escapeHtml(ch.id) + '" aria-label="View ' + escapeHtml(ch.name) + ' details">' +
               '<div class="card-top-row">' +
-                '<div class="crest-box">' + getCharacterIconSvg(ch) + '</div>' +
+                renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'char-portrait-wrap', 'char-portrait-img', '') +
                 renderStars(ch.rarity) +
               '</div>' +
               '<div class="card-title-block">' +
                 '<div class="card-name">' + escapeHtml(ch.name) + '</div>' +
                 '<div class="card-meta-line">' +
-                  '<span class="el-pill-badge"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
+                  '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
                   '<span>' + escapeHtml(ch.weapon) + '</span>' +
                 '</div>' +
               '</div>' +
@@ -9105,7 +9567,7 @@
           return (
             '<button type="button" class="entity-card rarity-' + wp.rarity + '" style="--el-color:' + accentColor + ';" data-open-weapon="' + escapeHtml(wp.id) + '" aria-label="View ' + escapeHtml(wp.name) + ' details">' +
               '<div class="card-top-row">' +
-                '<div class="crest-box">' + getWeaponIconSvg(wp) + '</div>' +
+                renderEnkaImgHtml(wp.icon, wp.name, getWeaponIconSvg(wp), 'weapon-portrait-wrap', 'weapon-portrait-img', '') +
                 renderStars(wp.rarity) +
               '</div>' +
               '<div class="card-title-block">' +
@@ -9156,13 +9618,13 @@
             '<div class="roster-card-shell el-' + escapeHtml(ch.element) + '">' +
               '<button type="button" class="roster-card-open" data-open-char="' + escapeHtml(ch.id) + '" aria-label="Open ' + escapeHtml(ch.name) + ' build guide">' +
                 '<div class="card-top-row">' +
-                  '<div class="crest-box">' + getCharacterIconSvg(ch) + '</div>' +
+                  renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'char-portrait-wrap', 'char-portrait-img', '') +
                   renderStars(ch.rarity) +
                 '</div>' +
                 '<div class="card-title-block">' +
                   '<div class="card-name">' + escapeHtml(ch.name) + '</div>' +
                   '<div class="card-meta-line">' +
-                    '<span class="el-pill-badge"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
+                    '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
                     '<span>' + escapeHtml(ch.weapon) + ' · ' + escapeHtml(ch.role) + '</span>' +
                   '</div>' +
                 '</div>' +
@@ -9185,7 +9647,7 @@
             '<div class="roster-card-shell" style="--el-color:' + accentColor + ';">' +
               '<button type="button" class="roster-card-open" data-open-weapon="' + escapeHtml(wp.id) + '" aria-label="Open ' + escapeHtml(wp.name) + ' details">' +
                 '<div class="card-top-row">' +
-                  '<div class="crest-box">' + getWeaponIconSvg(wp) + '</div>' +
+                  renderEnkaImgHtml(wp.icon, wp.name, getWeaponIconSvg(wp), 'weapon-portrait-wrap', 'weapon-portrait-img', '') +
                   renderStars(wp.rarity) +
                 '</div>' +
                 '<div class="card-title-block">' +
@@ -9712,7 +10174,7 @@
         elSettingsArBadge.textContent = 'AR ' + state.settings.ar;
         elSettingsServerSelect.value = state.settings.serverRegion;
         elSettingsOwnedMode.value = state.settings.ownedMode;
-        elCharOwnedFilter.value = state.settings.ownedMode;
+        elCharOwnedFilter.value = state.charFilters.ownedMode;
         elSettingsOwnedSummary.textContent = state.ownedCharacters.length + ' Owned';
         elSettingsResetSummary.innerHTML =
           '<strong>Active Server Clock:</strong> ' + escapeHtml(cfg.label) + ' resets daily at <strong>' + escapeHtml(cfg.display) + '</strong>. ' +
@@ -9736,8 +10198,13 @@
           : 'Weekly Domain Rotation';
 
         elModalDialog.style.setProperty('--modal-accent', 'var(--el-' + ch.element.toLowerCase() + ')');
-        elModalCrest.className = 'crest-box el-' + ch.element;
-        elModalCrest.innerHTML = getCharacterIconSvg(ch);
+        elModalCrest.className = 'crest-box modal-char-portrait el-' + ch.element;
+        elModalCrest.style.color = '';
+        elModalCrest.innerHTML =
+          (ch.icon
+            ? '<img class="char-portrait-img" src="' + escapeHtml(ch.icon) + '" alt="' + escapeHtml(ch.name) + '" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+              '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>'
+            : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>');
         elModalTitle.textContent = ch.name;
         elModalSubline.innerHTML =
           '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
@@ -9754,11 +10221,35 @@
               '<div class="detail-label">Best Weapons (Top 3)</div>' +
               '<ol class="detail-list has-icons">' +
                 ch.bestWeapons.map(function (w, idx) {
+                  var matchedWp = findWeaponByName(w);
+                  var cleanKey = w.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+                  var extraMeta = EXTRA_WEAPON_META[cleanKey] || null;
+                  var wIconUrl = matchedWp
+                    ? matchedWp.icon
+                    : (extraMeta ? 'https://enka.network/ui/UI_EquipIcon_' + extraMeta.key + '_Awaken.png' : '');
+                  var wRarity = matchedWp ? matchedWp.rarity : (extraMeta ? extraMeta.rarity : 4);
+                  var wSubstat = matchedWp ? matchedWp.secondaryStat : (extraMeta ? extraMeta.substat : '');
+                  var wAccent = wRarity === 5 ? 'var(--rarity-5)' : (wRarity === 4 ? 'var(--rarity-4)' : 'var(--rarity-3)');
+                  var fallbackSvg = getWeaponIconSvg(matchedWp || w, ch.weapon);
+                  var iconBox =
+                    '<span class="modal-weapon-icon-box" style="--weapon-accent:' + wAccent + ';">' +
+                      (wIconUrl
+                        ? '<img src="' + escapeHtml(wIconUrl) + '" alt="" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+                          '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
+                        : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + fallbackSvg + '</span>') +
+                    '</span>';
+
                   return (
                     '<li class="modal-item-row">' +
                       '<button type="button" class="modal-item-btn" data-modal-weapon-name="' + escapeHtml(w) + '" aria-label="Inspect weapon ' + escapeHtml(w) + '">' +
-                        '<span class="icon-frame xs" style="--icon-accent: var(--gold);">' + getWeaponIconSvg(w, ch.weapon) + '</span>' +
-                        '<span>' + (idx + 1) + '. ' + escapeHtml(w) + '</span>' +
+                        iconBox +
+                        '<div class="modal-weapon-meta">' +
+                          '<div class="modal-weapon-top">' +
+                            '<span class="modal-weapon-name">' + (idx + 1) + '. ' + escapeHtml(w) + '</span>' +
+                            (wSubstat ? '<span class="modal-weapon-substat">' + escapeHtml(wSubstat) + '</span>' : '') +
+                          '</div>' +
+                          renderStars(wRarity) +
+                        '</div>' +
                       '</button>' +
                     '</li>'
                   );
@@ -9813,9 +10304,13 @@
         var accent = wp.rarity === 5 ? 'var(--rarity-5)' : (wp.rarity === 4 ? 'var(--rarity-4)' : 'var(--rarity-3)');
         var brk = wp.ascensionBreakdown;
         elModalDialog.style.setProperty('--modal-accent', accent);
-        elModalCrest.className = 'crest-box';
+        elModalCrest.className = 'crest-box modal-weapon-portrait';
         elModalCrest.style.color = accent;
-        elModalCrest.innerHTML = getWeaponIconSvg(wp);
+        elModalCrest.innerHTML =
+          (wp.icon
+            ? '<img class="weapon-portrait-img" src="' + escapeHtml(wp.icon) + '" alt="' + escapeHtml(wp.name) + '" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+              '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + getWeaponIconSvg(wp) + '</span>'
+            : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + getWeaponIconSvg(wp) + '</span>');
         elModalTitle.textContent = wp.name;
         elModalSubline.innerHTML =
           '<span>' + escapeHtml(wp.type) + '</span>' +
@@ -9875,17 +10370,21 @@
       function updateModalSaveButton() {
         if (!state.modal) return;
         if (state.modal.kind === 'character') {
-          var isSavedChar = state.savedCharacters.indexOf(state.modal.id) !== -1;
+          var storedChars = readStoredIds(STORAGE_KEYS.CHARACTERS);
+          var isSavedChar = storedChars.indexOf(state.modal.id) !== -1 || state.savedCharacters.indexOf(state.modal.id) !== -1;
           var isOwnedChar = state.ownedCharacters.indexOf(state.modal.id) !== -1;
-          elModalSaveBtn.textContent = isSavedChar ? 'Saved in My Roster (Remove)' : 'Save to My Roster';
+          elModalSaveBtn.textContent = isSavedChar ? '✓ Saved to Roster' : 'Save to My Roster';
+          elModalSaveBtn.className = isSavedChar ? 'btn-saved' : 'btn-primary';
+          elModalSaveBtn.setAttribute('aria-label', isSavedChar ? 'View saved character in My Roster' : 'Save character to My Roster');
           elModalOwnedBtn.hidden = false;
           elModalOwnedBtn.textContent = isOwnedChar ? 'Owned ✓ (Unmark)' : 'Mark as Owned';
-          elModalFooterNote.textContent = (isSavedChar ? 'Tracked in My Roster. ' : 'Save for build tracking. ') + (isOwnedChar ? 'Marked as Owned.' : '');
         } else {
-          var isSavedWep = state.savedWeapons.indexOf(state.modal.id) !== -1;
-          elModalSaveBtn.textContent = isSavedWep ? 'Saved in Collection (Remove)' : 'Save to My Collection';
+          var storedWeps = readStoredIds(STORAGE_KEYS.WEAPONS);
+          var isSavedWep = storedWeps.indexOf(state.modal.id) !== -1 || state.savedWeapons.indexOf(state.modal.id) !== -1;
+          elModalSaveBtn.textContent = isSavedWep ? '✓ Saved to Collection' : 'Save to My Collection';
+          elModalSaveBtn.className = isSavedWep ? 'btn-saved' : 'btn-primary';
+          elModalSaveBtn.setAttribute('aria-label', isSavedWep ? 'View saved weapon in My Roster' : 'Save weapon to My Collection');
           elModalOwnedBtn.hidden = true;
-          elModalFooterNote.textContent = isSavedWep ? 'Tracked in My Roster.' : 'Save this weapon to your collection.';
         }
       }
 
@@ -9939,6 +10438,7 @@
       }
 
       function handleHashChange() {
+        if (state.modal) closeModal();
         var next = normalizeRoute(window.location.hash);
         if (!window.location.hash) {
           history.replaceState(null, '', '#home');
@@ -10041,21 +10541,27 @@
           return;
         }
 
+        var filterBookBtn = target.closest('[data-filter-book]');
+        if (filterBookBtn) {
+          var bookName = filterBookBtn.getAttribute('data-filter-book');
+          resetCharFilters();
+          elCharSearch.value = bookName;
+          syncCharFilters();
+          window.location.hash = '#characters';
+          return;
+        }
+
         var modalWeaponBtn = target.closest('[data-modal-weapon-name]');
         if (modalWeaponBtn) {
           var wName = modalWeaponBtn.getAttribute('data-modal-weapon-name');
-          var foundWp = WEAPONS.find(function (we) {
-            var n = we.name.toLowerCase();
-            var searchW = wName.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
-            return n === searchW || n.indexOf(searchW) !== -1 || searchW.indexOf(n) !== -1;
-          });
+          var foundWp = findWeaponByName(wName);
           if (foundWp) {
             openWeaponModal(foundWp.id);
           } else {
             closeModal();
             window.location.hash = '#weapons';
-            elWeaponSearch.value = wName;
-            filterWeaponsState();
+            elWeaponSearch.value = wName.replace(/\s*\(.*?\)\s*/g, '').trim();
+            syncWeaponFilters();
           }
           return;
         }
@@ -10514,9 +11020,21 @@
       elModalSaveBtn.addEventListener('click', function () {
         if (!state.modal) return;
         if (state.modal.kind === 'character') {
-          toggleCharacterSaved(state.modal.id);
+          var isAlreadySavedChar = state.savedCharacters.indexOf(state.modal.id) !== -1;
+          if (isAlreadySavedChar) {
+            closeModal();
+            window.location.hash = '#roster';
+          } else {
+            toggleCharacterSaved(state.modal.id);
+          }
         } else {
-          toggleWeaponSaved(state.modal.id);
+          var isAlreadySavedWep = state.savedWeapons.indexOf(state.modal.id) !== -1;
+          if (isAlreadySavedWep) {
+            closeModal();
+            window.location.hash = '#roster';
+          } else {
+            toggleWeaponSaved(state.modal.id);
+          }
         }
       });
 
@@ -10590,8 +11108,25 @@
         getItemIconSvg: getItemIconSvg
       };
 
+      function ensureDefaultFilterControls() {
+        state.charFilters = { search: '', region: 'All', element: 'All', weapon: 'All', role: 'All', rarity: 'All', ownedMode: 'all' };
+        state.weaponFilters = { search: '', region: 'All', type: 'All', rarity: 'All' };
+        if (elCharSearch) elCharSearch.value = '';
+        if (elCharRegion) elCharRegion.value = 'All';
+        if (elCharElement) elCharElement.value = 'All';
+        if (elCharWeapon) elCharWeapon.value = 'All';
+        if (elCharRole) elCharRole.value = 'All';
+        if (elCharRarity) elCharRarity.value = 'All';
+        if (elCharOwnedFilter) elCharOwnedFilter.value = 'all';
+        if (elWeaponSearch) elWeaponSearch.value = '';
+        if (elWeaponRegion) elWeaponRegion.value = 'All';
+        if (elWeaponType) elWeaponType.value = 'All';
+        if (elWeaponRarity) elWeaponRarity.value = 'All';
+      }
+
       // Initial Boot
       applyTheme();
+      ensureDefaultFilterControls();
       updateRosterCounts();
       renderDailyGuide();
       renderCharacters();

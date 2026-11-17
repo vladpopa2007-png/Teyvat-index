@@ -505,3 +505,38 @@ test('svg icon engine renders unique valid icons for all characters, weapons, co
   const tartagliaSvg = api.getCharacterIconSvg({ name: 'Tartaglia', element: 'Hydro' } as unknown as Character);
   assert.equal(new Set([kleeSvg, amberSvg, tartagliaSvg]).size, 3);
 });
+
+test('all characters and weapons include Enka Network portrait icon URLs and default filters return full collections', () => {
+  for (const ch of api.CHARACTERS as Array<Character & { icon?: string }>) {
+    assert.ok(
+      typeof ch.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_AvatarIcon_.+\.png$/.test(ch.icon),
+      `${ch.name} (${ch.id}) missing valid Enka avatar icon URL: ${ch.icon}`
+    );
+  }
+  for (const wp of api.WEAPONS as Array<Weapon & { icon?: string }>) {
+    assert.ok(
+      typeof wp.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(wp.icon),
+      `${wp.name} (${wp.id}) missing valid Enka weapon icon URL: ${wp.icon}`
+    );
+  }
+
+  const allChars = api.filterCharacters(api.CHARACTERS, {
+    search: '',
+    region: 'All',
+    element: 'All',
+    weapon: 'All',
+    role: 'All',
+    rarity: 'All',
+    ownedMode: 'all',
+  }, ['hu-tao']);
+  assert.equal(allChars.length, api.CHARACTERS.length);
+
+  const allWeps = api.filterWeapons(api.WEAPONS, {
+    search: '',
+    region: 'All',
+    type: 'All',
+    rarity: 'All',
+  });
+  assert.equal(allWeps.length, api.WEAPONS.length);
+});
+
