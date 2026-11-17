@@ -1028,7 +1028,7 @@
       "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
     },
     "region": "Snezhnaya",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_WhitelakeWinterfeather_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Swanlake_Awaken.png"
   },
   {
     "id": "beyond-the-chrysalis",
@@ -1093,7 +1093,7 @@
       "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
     },
     "region": "Snezhnaya",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_FrostsnowOath_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_GlintstoneSword_Awaken.png"
   },
   {
     "id": "fang-of-the-mountain-king",
@@ -1257,7 +1257,7 @@
       "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
     },
     "region": "Snezhnaya",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_WintersHeavyHeart_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_CrystallineSword_Awaken.png"
   },
   {
     "id": "crimson-moons-semblance",
@@ -1387,7 +1387,7 @@
       "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
     },
     "region": "Snezhnaya",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_SentinelBallad_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_GlintstonePolearm_Awaken.png"
   },
   {
     "id": "astral-vultures-crimson-plumage",
@@ -1484,7 +1484,7 @@
       "commonDrop": "Broken Drive Shaft / Reinforced Drive Shaft / Precision Axle"
     },
     "region": "Nod-Krai",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_GoldenDawnHarp_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Alkonost_Awaken.png"
   },
   {
     "id": "silver-light",
@@ -1517,7 +1517,7 @@
       "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
     },
     "region": "Snezhnaya",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_SilverLight_Awaken.png"
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_GlintstoneBow_Awaken.png"
   },
   {
     "id": "surfs-up",
@@ -1755,7 +1755,7 @@
     "secondaryStat": "CRIT DMG 44.1%",
     "region": "Natlan",
     "version": "5.5",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Varesa_Awaken.png",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_VaresaTransformer_Awaken.png",
     "passive": "Falling Rainbow's Wish: Increases ATK by 28%. After using a Plunging Attack, Elemental Skill, or Elemental Burst, Plunging Attack CRIT DMG increases by 28% (up to +40% additional after Skill/Burst).",
     "bestCharacters": [
       "Varesa",
@@ -1787,7 +1787,7 @@
     "secondaryStat": "CRIT DMG 88.2%",
     "region": "Nod-Krai",
     "version": "6.3",
-    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Zibai_Awaken.png",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_SilverwareSaw_Awaken.png",
     "passive": "Legacy of Lang-Gan: Increases DEF by 20%. For 5s after the wielding character uses an Elemental Skill, Lunar-Crystallize Reaction DMG dealt is increased by 64%.",
     "bestCharacters": [
       "Zibai",

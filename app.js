@@ -38,6 +38,8 @@
       var TIER_LIST = [];
       var ABYSS_FLOORS = [];
       var LOCAL_SPECIALTIES = [];
+      var ITEM_ICONS = {};
+      var ARTIFACT_ICONS = {};
       var dataLoaded = false;
 
       function replaceArrayInPlace(target, source) {
@@ -65,6 +67,8 @@
         replaceObjectInPlace(ELEMENT_GEMS, dom.ELEMENT_GEMS || {});
         replaceArrayInPlace(REACTIONS_META, dom.REACTIONS_META || []);
         replaceObjectInPlace(EXTRA_WEAPON_META, dom.EXTRA_WEAPON_META || {});
+        replaceObjectInPlace(ITEM_ICONS, dom.ITEM_ICONS || {});
+        replaceObjectInPlace(ARTIFACT_ICONS, dom.ARTIFACT_ICONS || {});
         replaceArrayInPlace(TIER_LIST, payload.tierList || []);
         replaceArrayInPlace(ABYSS_FLOORS, payload.abyss || []);
         replaceArrayInPlace(LOCAL_SPECIALTIES, payload.specialties || []);
@@ -1905,14 +1909,22 @@
         }).join('');
       }
 
+      function renderImgWithFallbackHtml(src, alt, fallbackSvg, imgClass) {
+        var clsAttr = imgClass ? ' class="' + escapeHtml(imgClass) + '"' : '';
+        if (src) {
+          return (
+            '<img' + clsAttr + ' src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt || '') + '" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+            '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
+          );
+        }
+        return '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + fallbackSvg + '</span>';
+      }
+
       function renderEnkaImgHtml(src, alt, fallbackSvg, wrapClass, imgClass, styleAttr) {
         var style = styleAttr ? ' style="' + styleAttr + '"' : '';
         return (
           '<div class="' + wrapClass + '"' + style + '>' +
-            (src
-              ? '<img class="' + imgClass + '" src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt) + '" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
-                '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
-              : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + fallbackSvg + '</span>') +
+            renderImgWithFallbackHtml(src, alt, fallbackSvg, imgClass) +
           '</div>'
         );
       }
@@ -1924,6 +1936,143 @@
           var n = we.name.toLowerCase();
           return n === searchW || n.indexOf(searchW) !== -1 || searchW.indexOf(n) !== -1;
         }) || null;
+      }
+
+      function getWeaponIconUrl(weaponOrIdOrName) {
+        if (weaponOrIdOrName && typeof weaponOrIdOrName === 'object') {
+          if (weaponOrIdOrName.icon) return weaponOrIdOrName.icon;
+          weaponOrIdOrName = weaponOrIdOrName.id || weaponOrIdOrName.name || '';
+        }
+        var raw = String(weaponOrIdOrName || '').trim();
+        if (!raw) return '';
+        var lower = raw.toLowerCase();
+        var cleanKey = raw.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+        var wp = WEAPONS.find(function (w) {
+          return w.id === lower || w.name.toLowerCase() === lower || w.name.toLowerCase() === cleanKey;
+        });
+        if (!wp) {
+          wp = findWeaponByName(raw);
+        }
+        if (wp && wp.icon) return wp.icon;
+        var extra = EXTRA_WEAPON_META[cleanKey] || EXTRA_WEAPON_META[lower] || null;
+        if (extra && extra.key) {
+          return 'https://enka.network/ui/UI_EquipIcon_' + extra.key + '_Awaken.png';
+        }
+        return '';
+      }
+
+      function getSpecialtyIconUrl(specialtyOrName) {
+        if (specialtyOrName && typeof specialtyOrName === 'object') {
+          if (specialtyOrName.icon) return specialtyOrName.icon;
+          specialtyOrName = specialtyOrName.name || '';
+        }
+        var n = String(specialtyOrName || '').trim();
+        if (!n) return '';
+        var nl = n.toLowerCase();
+        var sp = LOCAL_SPECIALTIES.find(function (s) {
+          return s.name === n || (s.name && s.name.toLowerCase() === nl);
+        });
+        if (sp && sp.icon) return sp.icon;
+        return ITEM_ICONS[n] || '';
+      }
+
+      function getItemIconUrl(name, category) {
+        var n = String(name || '').trim();
+        if (!n) return '';
+        var cat = String(category || '').toLowerCase();
+        if (cat === 'specialty') return getSpecialtyIconUrl(n);
+
+        if (ITEM_ICONS[n]) return ITEM_ICONS[n];
+
+        var stripped = n.replace(/\s*\([^)]*\)\s*/g, '').trim();
+        if (stripped && ITEM_ICONS[stripped]) return ITEM_ICONS[stripped];
+
+        if (cat === 'book' && ITEM_ICONS['Teachings of ' + n]) {
+          return ITEM_ICONS['Teachings of ' + n];
+        }
+
+        if (cat === 'weekly-boss') {
+          var boss = WEEKLY_BOSSES.find(function (b) {
+            return b.id === n || b.name === n || b.id.toLowerCase() === n.toLowerCase() || b.name.toLowerCase() === n.toLowerCase();
+          });
+          if (boss) {
+            if (ITEM_ICONS[boss.id]) return ITEM_ICONS[boss.id];
+            if (ITEM_ICONS[boss.name]) return ITEM_ICONS[boss.name];
+          }
+        }
+
+        var nl = n.toLowerCase();
+        var sl = stripped.toLowerCase();
+        var keys = Object.keys(ITEM_ICONS);
+        for (var i = 0; i < keys.length; i++) {
+          var kl = keys[i].toLowerCase();
+          if (kl === nl || (sl && kl === sl)) {
+            return ITEM_ICONS[keys[i]];
+          }
+        }
+
+        return '';
+      }
+
+      function getArtifactIconUrl(artifactStr) {
+        var s = String(artifactStr || '').trim();
+        if (!s) return '';
+        if (ARTIFACT_ICONS[s]) return ARTIFACT_ICONS[s];
+
+        var keys = Object.keys(ARTIFACT_ICONS);
+        var clean = s.replace(/\b(4pc|2pc)\b/gi, ' ').trim();
+        var parts = clean.split(/[+—()\/]/);
+        for (var i = 0; i < parts.length; i++) {
+          var p = parts[i].trim();
+          if (!p) continue;
+          if (ARTIFACT_ICONS[p]) return ARTIFACT_ICONS[p];
+          var pl = p.toLowerCase();
+          for (var j = 0; j < keys.length; j++) {
+            if (keys[j].toLowerCase() === pl) return ARTIFACT_ICONS[keys[j]];
+          }
+        }
+
+        var sortedKeys = keys.slice().sort(function (a, b) { return b.length - a.length; });
+        var sl = s.toLowerCase();
+        for (var k = 0; k < sortedKeys.length; k++) {
+          if (sl.indexOf(sortedKeys[k].toLowerCase()) !== -1) {
+            return ARTIFACT_ICONS[sortedKeys[k]];
+          }
+        }
+
+        if (/2pc\s+hydro\s+dmg/i.test(s) && ARTIFACT_ICONS['Heart of Depth']) {
+          return ARTIFACT_ICONS['Heart of Depth'];
+        }
+        if (/2pc\s+atk%/i.test(s) && ARTIFACT_ICONS["Gladiator's Finale"]) {
+          return ARTIFACT_ICONS["Gladiator's Finale"];
+        }
+        if (/2pc\s+em\b/i.test(s) && ARTIFACT_ICONS["Wanderer's Troupe"]) {
+          return ARTIFACT_ICONS["Wanderer's Troupe"];
+        }
+        return '';
+      }
+
+      function renderCharMiniIconHtml(ch) {
+        var src = ch && ch.icon ? ch.icon : '';
+        var alt = ch && ch.name ? ch.name : '';
+        return '<span class="mini-icon is-round" aria-hidden="true">' + renderImgWithFallbackHtml(src, alt, getCharacterIconSvg(ch), 'mini-char-img') + '</span>';
+      }
+
+      function renderWeaponMiniIconHtml(weaponOrIdOrName, fallbackType) {
+        var src = getWeaponIconUrl(weaponOrIdOrName);
+        return '<span class="mini-icon" aria-hidden="true">' + renderImgWithFallbackHtml(src, '', getWeaponIconSvg(weaponOrIdOrName, fallbackType), 'mini-item-img') + '</span>';
+      }
+
+      function renderItemFrameHtml(name, category, sizeClass, accentVar) {
+        var cls = 'icon-frame' + (sizeClass ? ' ' + sizeClass : '');
+        var src = getItemIconUrl(name, category);
+        return '<span class="' + cls + '" style="--icon-accent: ' + accentVar + ';">' + renderImgWithFallbackHtml(src, '', getItemIconSvg(name, category), 'frame-item-img') + '</span>';
+      }
+
+      function renderSpecialtyFrameHtml(name, sizeClass, accentVar) {
+        var cls = 'icon-frame' + (sizeClass ? ' ' + sizeClass : '');
+        var src = getSpecialtyIconUrl(name);
+        return '<span class="' + cls + '" style="--icon-accent: ' + accentVar + ';">' + renderImgWithFallbackHtml(src, '', getSpecialtyIconSvg(name), 'frame-item-img') + '</span>';
       }
 
       function renderDailyGuide() {
@@ -1985,7 +2134,7 @@
             '<article class="domain-card">' +
               '<div class="domain-card-head">' +
                 '<div class="item-row-flex">' +
-                  '<span class="icon-frame" style="--icon-accent: var(--gold);">' + getItemIconSvg(dom.book, 'book') + '</span>' +
+                  renderItemFrameHtml(dom.book, 'book', '', 'var(--gold)') +
                   '<div>' +
                     '<div class="domain-book-name">Teachings of ' + escapeHtml(dom.book) + '</div>' +
                     '<div class="domain-region-line">' + escapeHtml(dom.region) + ' · ' + escapeHtml(dom.domain) + '</div>' +
@@ -2000,7 +2149,7 @@
 
         elDailyWeaponGrid.innerHTML = info.weaponDomains.map(function (dom) {
           var weaponsHtml = dom.weapons.map(function (wp) {
-            var icon = '<span class="mini-icon" aria-hidden="true">' + getWeaponIconSvg(wp.id || wp.name || wp.type, wp.type) + '</span>';
+            var icon = renderWeaponMiniIconHtml(wp.id || wp.name || wp.type, wp.type);
             if (wp.id) {
               return (
                 '<button type="button" class="domain-item-btn" data-open-weapon="' + escapeHtml(wp.id) + '">' +
@@ -2021,7 +2170,7 @@
             '<article class="domain-card">' +
               '<div class="domain-card-head">' +
                 '<div class="item-row-flex">' +
-                  '<span class="icon-frame" style="--icon-accent: var(--teal);">' + getItemIconSvg(dom.material, 'weapon-material') + '</span>' +
+                  renderItemFrameHtml(dom.material, 'weapon-material', '', 'var(--teal)') +
                   '<div>' +
                     '<div class="domain-book-name">' + escapeHtml(dom.material) + '</div>' +
                     '<div class="domain-region-line">' + escapeHtml(dom.region) + ' · ' + escapeHtml(dom.domain) + '</div>' +
@@ -2216,7 +2365,7 @@
         elResinMetricsGrid.innerHTML =
           '<div class="metric-box">' +
             '<div class="item-row-flex">' +
-              '<span class="icon-frame sm" style="--icon-accent: var(--teal);">' + getItemIconSvg('Original Resin', 'currency') + '</span>' +
+              renderItemFrameHtml('Original Resin', 'currency', 'sm', 'var(--teal)') +
               '<span class="metric-label">Time to 200 Cap</span>' +
             '</div>' +
             '<span class="metric-value accent-gold">' + escapeHtml(cap.remainingLabel) + '</span>' +
@@ -2229,7 +2378,7 @@
           '</div>' +
           '<div class="metric-box">' +
             '<div class="item-row-flex">' +
-              '<span class="icon-frame sm" style="--icon-accent: var(--gold);">' + getItemIconSvg('Condensed Resin', 'currency') + '</span>' +
+              renderItemFrameHtml('Condensed Resin', 'currency', 'sm', 'var(--gold)') +
               '<span class="metric-label">Total Stored Resin</span>' +
             '</div>' +
             '<span class="metric-value">' + totalEffective + '</span>' +
@@ -2260,7 +2409,7 @@
             '<label class="checklist-item' + (done ? ' is-checked' : '') + '">' +
               '<span class="checklist-left">' +
                 '<input type="checkbox" data-weekly-boss="' + escapeHtml(boss.id) + '"' + (done ? ' checked' : '') + ' />' +
-                '<span class="icon-frame sm" style="--icon-accent: var(--gold);">' + getItemIconSvg(boss.id, 'weekly-boss') + '</span>' +
+                renderItemFrameHtml(boss.id, 'weekly-boss', 'sm', 'var(--gold)') +
                 '<span>' +
                   '<div class="checklist-title">' + escapeHtml(boss.name) + '</div>' +
                   '<div class="domain-subsection-hint">' + escapeHtml(boss.region) + ' · ' + escapeHtml(boss.domain) + '</div>' +
@@ -2340,7 +2489,7 @@
           var selected = state.farmingQueue.indexOf(ch.id) !== -1;
           return (
             '<button type="button" class="planner-chip el-' + escapeHtml(ch.element) + (selected ? ' is-selected' : '') + '" data-planner-toggle="' + escapeHtml(ch.id) + '" aria-pressed="' + (selected ? 'true' : 'false') + '">' +
-              '<span class="mini-icon" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>' +
+              renderCharMiniIconHtml(ch) +
               '<span>' + escapeHtml(ch.name) + '</span>' +
               '<span class="domain-subsection-hint" style="margin-left:2px;">' + (selected ? '✓ Queued' : '+ Add') + '</span>' +
             '</button>'
@@ -2351,7 +2500,7 @@
           var selected = state.planner.weaponIds.indexOf(wp.id) !== -1;
           return (
             '<button type="button" class="planner-chip' + (selected ? ' is-selected' : '') + '" data-planner-weapon-toggle="' + escapeHtml(wp.id) + '" aria-pressed="' + (selected ? 'true' : 'false') + '">' +
-              '<span class="mini-icon" aria-hidden="true">' + getWeaponIconSvg(wp) + '</span>' +
+              renderWeaponMiniIconHtml(wp) +
               '<span>' + escapeHtml(wp.name) + '</span>' +
               '<span class="domain-subsection-hint" style="margin-left:2px;">' + (selected ? '✓ Queued' : '+ Add') + '</span>' +
             '</button>'
@@ -2369,7 +2518,7 @@
             '<div class="planner-config-card el-' + escapeHtml(ch.element) + '">' +
               '<div class="planner-config-head">' +
                 '<div class="planner-config-title">' +
-                  '<span class="icon-frame sm" style="--icon-accent: var(--el-' + ch.element.toLowerCase() + ');">' + getCharacterIconSvg(ch) + '</span>' +
+                  renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'icon-frame sm is-round', 'char-portrait-img', '--icon-accent: var(--el-' + ch.element.toLowerCase() + ');') +
                   '<div><strong>' + escapeHtml(ch.name) + '</strong><div class="domain-subsection-hint">' + escapeHtml(ch.talentBook) + ' · ' + escapeHtml(ch.ascensionMaterials.specialty) + '</div></div>' +
                 '</div>' +
                 '<button type="button" class="btn-ghost" data-planner-toggle="' + escapeHtml(ch.id) + '" style="padding:4px 10px;min-height:30px;">Remove</button>' +
@@ -2408,7 +2557,7 @@
             '<div class="planner-config-card">' +
               '<div class="planner-config-head">' +
                 '<div class="planner-config-title">' +
-                  '<span class="icon-frame sm" style="--icon-accent: var(--rarity-' + (wp.rarity >= 5 ? '5' : '4') + ');">' + getWeaponIconSvg(wp) + '</span>' +
+                  renderEnkaImgHtml(wp.icon, wp.name, getWeaponIconSvg(wp), 'icon-frame sm', 'frame-item-img', '--icon-accent: var(--rarity-' + (wp.rarity >= 5 ? '5' : '4') + ');') +
                   '<div><strong>' + escapeHtml(wp.name) + '</strong><div class="domain-subsection-hint">' + wp.rarity + '★ ' + escapeHtml(wp.type) + ' · ' + escapeHtml(wp.ascensionMaterial) + '</div></div>' +
                 '</div>' +
                 '<button type="button" class="btn-ghost" data-planner-weapon-toggle="' + escapeHtml(wp.id) + '" style="padding:4px 10px;min-height:30px;">Remove</button>' +
@@ -2442,39 +2591,39 @@
         elPlannerSummary.innerHTML = '<strong>Farming Summary:</strong> ' + escapeHtml(plan.headlineSummary);
 
         var rows = [
-          { title: 'Mora Needed', val: plan.totalMora.toLocaleString('en-US') + ' Mora', icon: getItemIconSvg('Mora', 'currency'), accent: 'var(--gold)' }
+          { title: 'Mora Needed', val: plan.totalMora.toLocaleString('en-US') + ' Mora', icon: renderImgWithFallbackHtml(getItemIconUrl('Mora', 'currency'), '', getItemIconSvg('Mora', 'currency'), 'frame-item-img'), accent: 'var(--gold)' }
         ];
         if (plan.totalHerosWit > 0) {
-          rows.push({ title: "Hero's Wit (EXP Books)", val: plan.totalHerosWit.toLocaleString('en-US') + ' books', icon: getItemIconSvg("Hero's Wit", 'currency'), accent: '#B47AED' });
+          rows.push({ title: "Hero's Wit (EXP Books)", val: plan.totalHerosWit.toLocaleString('en-US') + ' books', icon: renderImgWithFallbackHtml(getItemIconUrl("Hero's Wit", 'currency'), '', getItemIconSvg("Hero's Wit", 'currency'), 'frame-item-img'), accent: '#B47AED' });
         }
         if (plan.totalOre > 0) {
-          rows.push({ title: 'Mystic Enhancement Ore', val: plan.totalOre.toLocaleString('en-US') + ' ore', icon: getItemIconSvg('Enhancement Ore', 'currency'), accent: '#FBBF24' });
+          rows.push({ title: 'Mystic Enhancement Ore', val: plan.totalOre.toLocaleString('en-US') + ' ore', icon: renderImgWithFallbackHtml(getItemIconUrl('Enhancement Ore', 'currency'), '', getItemIconSvg('Enhancement Ore', 'currency'), 'frame-item-img'), accent: '#FBBF24' });
         }
         if (plan.totalWeeklyDrops > 0) {
-          rows.push({ title: 'Weekly Trounce Boss Drops', val: plan.totalWeeklyDrops + ' total', icon: getItemIconSvg('boreas', 'weekly-boss'), accent: 'var(--gold)' });
+          rows.push({ title: 'Weekly Trounce Boss Drops', val: plan.totalWeeklyDrops + ' total', icon: renderImgWithFallbackHtml(getItemIconUrl('Weekly Trounce Boss Drops', 'currency'), '', getItemIconSvg('boreas', 'weekly-boss'), 'frame-item-img'), accent: 'var(--gold)' });
         }
         if (plan.totalCrowns > 0) {
-          rows.push({ title: 'Crown of Insight', val: plan.totalCrowns + ' crown' + (plan.totalCrowns === 1 ? '' : 's'), icon: getItemIconSvg('Crown of Insight', 'currency'), accent: '#FBBF24' });
+          rows.push({ title: 'Crown of Insight', val: plan.totalCrowns + ' crown' + (plan.totalCrowns === 1 ? '' : 's'), icon: renderImgWithFallbackHtml(getItemIconUrl('Crown of Insight', 'currency'), '', getItemIconSvg('Crown of Insight', 'currency'), 'frame-item-img'), accent: '#FBBF24' });
         }
         plan.gems.forEach(function (g) {
           rows.push({
             title: g.name + ' Gems',
             val: g.sliver + ' Sliver · ' + g.fragment + ' Frag · ' + g.chunk + ' Chunk · ' + g.gemstone + ' Gemstone',
-            icon: getItemIconSvg(g.name, 'gem'),
+            icon: renderImgWithFallbackHtml(getItemIconUrl(g.name, 'gem'), '', getItemIconSvg(g.name, 'gem'), 'frame-item-img'),
             accent: 'var(--teal)'
           });
         });
         plan.specialties.forEach(function (sp) {
-          rows.push({ title: sp.name + ' (Local Specialty)', val: sp.count + ' total', icon: getSpecialtyIconSvg(sp.name), accent: '#6CC76B' });
+          rows.push({ title: sp.name + ' (Local Specialty)', val: sp.count + ' total', icon: renderImgWithFallbackHtml(getSpecialtyIconUrl(sp.name), '', getSpecialtyIconSvg(sp.name), 'frame-item-img'), accent: '#6CC76B' });
         });
         plan.bossDrops.forEach(function (b) {
-          rows.push({ title: b.name, val: b.count + ' drops', icon: getItemIconSvg(b.name, 'boss-drop'), accent: 'var(--gold)' });
+          rows.push({ title: b.name, val: b.count + ' drops', icon: renderImgWithFallbackHtml(getItemIconUrl(b.name, 'boss-drop'), '', getItemIconSvg(b.name, 'boss-drop'), 'frame-item-img'), accent: 'var(--gold)' });
         });
         plan.eliteDrops.forEach(function (ed) {
           rows.push({
             title: ed.name + ' (Elite Drop)',
             val: ed.t1 + ' T1 · ' + ed.t2 + ' T2 · ' + ed.t3 + ' T3',
-            icon: getItemIconSvg(ed.name, 'elite-drop'),
+            icon: renderImgWithFallbackHtml(getItemIconUrl(ed.name, 'elite-drop'), '', getItemIconSvg(ed.name, 'elite-drop'), 'frame-item-img'),
             accent: '#E2B649'
           });
         });
@@ -2482,7 +2631,7 @@
           rows.push({
             title: cd.name + ' (Common Material)',
             val: cd.t1 + ' T1 · ' + cd.t2 + ' T2 · ' + cd.t3 + ' T3',
-            icon: getItemIconSvg(cd.name, 'common-drop'),
+            icon: renderImgWithFallbackHtml(getItemIconUrl(cd.name, 'common-drop'), '', getItemIconSvg(cd.name, 'common-drop'), 'frame-item-img'),
             accent: 'var(--teal)'
           });
         });
@@ -2511,7 +2660,7 @@
                 '<div class="checklist-item" style="cursor:default;flex-direction:column;align-items:stretch;gap:6px;">' +
                   '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">' +
                     '<span class="item-row-flex">' +
-                      '<span class="icon-frame sm" style="--icon-accent:' + (isWeapon ? 'var(--teal)' : 'var(--gold)') + ';">' + getItemIconSvg(isWeapon ? d.material : d.book, isWeapon ? 'weapon-material' : 'book') + '</span>' +
+                      renderItemFrameHtml(isWeapon ? d.material : d.book, isWeapon ? 'weapon-material' : 'book', 'sm', isWeapon ? 'var(--teal)' : 'var(--gold)') +
                       '<strong style="color:var(--gold-bright);">' + escapeHtml(title) + ' ~' + d.estimatedRuns + ' runs (' + d.resinCost + ' Resin)</strong>' +
                     '</span>' +
                     '<span class="domain-days-text">' + escapeHtml(d.dayLabel) + ' / Sun</span>' +
@@ -2549,7 +2698,7 @@
                 '<button type="button" class="team-slot-clear" data-clear-slot="' + idx + '" aria-label="Remove ' + escapeHtml(ch.name) + ' from slot ' + (idx + 1) + '">&times;</button>' +
               '</div>' +
               '<div style="display:flex;align-items:center;gap:10px;">' +
-                '<span class="icon-frame" style="--icon-accent: var(--el-' + ch.element.toLowerCase() + ');">' + getCharacterIconSvg(ch) + '</span>' +
+                renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'icon-frame is-round', 'char-portrait-img', '--icon-accent: var(--el-' + ch.element.toLowerCase() + ');') +
                 '<div style="min-width:0;">' +
                   '<div class="card-name" style="font-size:1rem;">' + escapeHtml(ch.name) + '</div>' +
                   '<div class="card-meta-line" style="margin-top:4px;">' +
@@ -2601,7 +2750,7 @@
           var inTeam = state.teamSlots.indexOf(ch.id) !== -1;
           return (
             '<div role="button" tabindex="0" aria-label="Add ' + escapeHtml(ch.name) + ' to party" class="team-pick-item el-' + escapeHtml(ch.element) + (inTeam ? ' is-in-team' : '') + '" draggable="true" data-drag-char="' + escapeHtml(ch.id) + '" data-pick-char="' + escapeHtml(ch.id) + '">' +
-              '<span class="mini-icon" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>' +
+              renderCharMiniIconHtml(ch) +
               '<span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escapeHtml(ch.name) + '</span>' +
               '<span class="domain-subsection-hint" style="margin-left:auto;">' + escapeHtml(ch.element) + '</span>' +
             '</div>'
@@ -2696,7 +2845,7 @@
                     '<button type="button" class="tier-char-btn el-' + escapeHtml(ch.element) + '" data-open-char="' + escapeHtml(ch.id) + '">' +
                       '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">' +
                         '<span class="item-row-flex">' +
-                          '<span class="icon-frame sm" style="--icon-accent: var(--el-' + ch.element.toLowerCase() + ');">' + getCharacterIconSvg(ch) + '</span>' +
+                          renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'icon-frame sm is-round', 'char-portrait-img', '--icon-accent: var(--el-' + ch.element.toLowerCase() + ');') +
                           '<strong style="font-family:var(--font-display);font-size:0.98rem;">' + escapeHtml(ch.name) + '</strong>' +
                         '</span>' +
                         '<span class="el-pill-badge"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
@@ -2812,7 +2961,7 @@
             ? users.map(function (u) {
               return (
                 '<button type="button" class="domain-item-btn el-' + escapeHtml(u.element) + '" data-open-char="' + escapeHtml(u.id) + '" style="margin:2px 4px 2px 0;">' +
-                  '<span class="mini-icon" aria-hidden="true">' + getCharacterIconSvg(u) + '</span><span>' + escapeHtml(u.name) + '</span>' +
+                  renderCharMiniIconHtml(u) + '<span>' + escapeHtml(u.name) + '</span>' +
                 '</button>'
               );
             }).join('')
@@ -2822,7 +2971,7 @@
             '<tr>' +
               '<td>' +
                 '<div class="item-row-flex">' +
-                  '<span class="icon-frame sm" style="--icon-accent: var(--teal);">' + getSpecialtyIconSvg(sp.name) + '</span>' +
+                  renderSpecialtyFrameHtml(sp.name, 'sm', 'var(--teal)') +
                   '<strong>' + escapeHtml(sp.name) + '</strong>' +
                 '</div>' +
               '</td>' +
@@ -2927,11 +3076,18 @@
               '<div class="detail-label">Best Artifacts (Top 2 Sets)</div>' +
               '<ul class="detail-list has-icons">' +
                 ch.bestArtifacts.map(function (a) {
+                  var artUrl = getArtifactIconUrl(a);
+                  var artFallback = '<span class="artifact-fallback-star" aria-hidden="true">✦</span>';
+                  var artIconBox =
+                    '<span class="modal-weapon-icon-box" style="--weapon-accent: var(--gold);">' +
+                      renderImgWithFallbackHtml(artUrl, '', artFallback, 'frame-item-img') +
+                    '</span>';
                   return (
                     '<li class="modal-item-row">' +
                       '<button type="button" class="modal-item-btn" data-modal-artifact-name="' + escapeHtml(a) + '" aria-label="Filter characters by artifact set ' + escapeHtml(a) + '">' +
+                        artIconBox +
                         '<span class="modal-weapon-meta">' +
-                          '<span class="modal-weapon-top"><span class="modal-weapon-name">✦ ' + escapeHtml(a) + '</span></span>' +
+                          '<span class="modal-weapon-top"><span class="modal-weapon-name">' + escapeHtml(a) + '</span></span>' +
                         '</span>' +
                       '</button>' +
                     '</li>'
@@ -2945,7 +3101,7 @@
               '<div class="detail-label">Talent Priority</div>' +
               '<p class="detail-prose" style="color:var(--gold-bright);font-weight:600;">' + escapeHtml(ch.talentPriority) + '</p>' +
               '<div class="item-row-flex" style="margin-top:4px;">' +
-                '<span class="icon-frame sm" style="--icon-accent: var(--gold);">' + getItemIconSvg(ch.talentBook, 'book') + '</span>' +
+                renderItemFrameHtml(ch.talentBook, 'book', 'sm', 'var(--gold)') +
                 '<div>' +
                   '<p class="detail-prose"><strong>Talent Book:</strong> Teachings of ' + escapeHtml(ch.talentBook) + '</p>' +
                   '<p class="detail-prose" style="font-size:0.84rem;color:var(--text-muted);">' + escapeHtml(bookDomainText) + '</p>' +
@@ -2955,9 +3111,9 @@
             '<div class="detail-block">' +
               '<div class="detail-label">Ascension Materials</div>' +
               '<ul class="detail-list has-icons">' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--gold);">' + getItemIconSvg(ch.ascensionMaterials.boss, 'boss-drop') + '</span><span><strong>Boss Drop:</strong> ' + escapeHtml(ch.ascensionMaterials.boss) + '</span></li>' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--teal);">' + getSpecialtyIconSvg(ch.ascensionMaterials.specialty) + '</span><span><strong>Local Specialty:</strong> ' + escapeHtml(ch.ascensionMaterials.specialty) + '</span></li>' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--teal);">' + getItemIconSvg(ch.ascensionMaterials.common, 'common-drop') + '</span><span><strong>Common Drop:</strong> ' + escapeHtml(ch.ascensionMaterials.common) + '</span></li>' +
+                '<li class="modal-item-row">' + renderItemFrameHtml(ch.ascensionMaterials.boss, 'boss-drop', 'xs', 'var(--gold)') + '<span><strong>Boss Drop:</strong> ' + escapeHtml(ch.ascensionMaterials.boss) + '</span></li>' +
+                '<li class="modal-item-row">' + renderSpecialtyFrameHtml(ch.ascensionMaterials.specialty, 'xs', 'var(--teal)') + '<span><strong>Local Specialty:</strong> ' + escapeHtml(ch.ascensionMaterials.specialty) + '</span></li>' +
+                '<li class="modal-item-row">' + renderItemFrameHtml(ch.ascensionMaterials.common, 'common-drop', 'xs', 'var(--teal)') + '<span><strong>Common Drop:</strong> ' + escapeHtml(ch.ascensionMaterials.common) + '</span></li>' +
               '</ul>' +
             '</div>' +
           '</div>' +
@@ -3014,11 +3170,13 @@
                     var cn = ch.name.toLowerCase();
                     return cn === baseName || cn.indexOf(baseName) !== -1 || baseName.indexOf(cn) !== -1;
                   });
-                  var icon = matchedChar ? getCharacterIconSvg(matchedChar) : getWeaponIconSvg(wp);
+                  var charFrameHtml = matchedChar
+                    ? renderEnkaImgHtml(matchedChar.icon, matchedChar.name, getCharacterIconSvg(matchedChar), 'icon-frame xs is-round', 'char-portrait-img', '--icon-accent: var(--el-' + matchedChar.element.toLowerCase() + ');')
+                    : renderEnkaImgHtml(wp.icon, wp.name, getWeaponIconSvg(wp), 'icon-frame xs', 'frame-item-img', '--icon-accent: var(--gold);');
                   return (
                     '<li class="modal-item-row">' +
                       (matchedChar ? '<button type="button" class="modal-item-btn" data-open-char="' + escapeHtml(matchedChar.id) + '" aria-label="Open character ' + escapeHtml(matchedChar.name) + ' build guide">' : '<div class="modal-item-btn" style="cursor:default;">') +
-                        '<span class="icon-frame xs" style="--icon-accent:' + (matchedChar ? 'var(--el-' + matchedChar.element.toLowerCase() + ')' : 'var(--gold)') + ';">' + icon + '</span>' +
+                        charFrameHtml +
                         '<span>' + escapeHtml(cName) + '</span>' +
                       (matchedChar ? '</button>' : '</div>') +
                     '</li>'
@@ -3030,10 +3188,10 @@
               '<div class="detail-label">Ascension Materials Breakdown</div>' +
               '<ul class="detail-list has-icons">' +
                 '<li><strong>Domain:</strong> ' + escapeHtml(brk.domainName) + ' (' + escapeHtml(brk.region) + ')</li>' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--gold);">' + getItemIconSvg(brk.materialType, 'weapon-material') + '</span><span><strong>Domain Material:</strong> ' + escapeHtml(brk.materialType) + '</span></li>' +
+                '<li class="modal-item-row">' + renderItemFrameHtml(brk.materialType, 'weapon-material', 'xs', 'var(--gold)') + '<span><strong>Domain Material:</strong> ' + escapeHtml(brk.materialType) + '</span></li>' +
                 '<li><strong>Days Available:</strong> ' + escapeHtml(brk.daysAvailable.join(', ')) + '</li>' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--teal);">' + getItemIconSvg(brk.eliteDrop, 'elite-drop') + '</span><span><strong>Elite Drop:</strong> ' + escapeHtml(brk.eliteDrop) + '</span></li>' +
-                '<li class="modal-item-row"><span class="icon-frame xs" style="--icon-accent: var(--teal);">' + getItemIconSvg(brk.commonDrop, 'common-drop') + '</span><span><strong>Common Drop:</strong> ' + escapeHtml(brk.commonDrop) + '</span></li>' +
+                '<li class="modal-item-row">' + renderItemFrameHtml(brk.eliteDrop, 'elite-drop', 'xs', 'var(--teal)') + '<span><strong>Elite Drop:</strong> ' + escapeHtml(brk.eliteDrop) + '</span></li>' +
+                '<li class="modal-item-row">' + renderItemFrameHtml(brk.commonDrop, 'common-drop', 'xs', 'var(--teal)') + '<span><strong>Common Drop:</strong> ' + escapeHtml(brk.commonDrop) + '</span></li>' +
               '</ul>' +
             '</div>' +
           '</div>';
@@ -3997,7 +4155,13 @@
         getCharacterIconSvg: getCharacterIconSvg,
         getWeaponIconSvg: getWeaponIconSvg,
         getSpecialtyIconSvg: getSpecialtyIconSvg,
-        getItemIconSvg: getItemIconSvg
+        getItemIconSvg: getItemIconSvg,
+        getItemIconUrl: getItemIconUrl,
+        getSpecialtyIconUrl: getSpecialtyIconUrl,
+        getWeaponIconUrl: getWeaponIconUrl,
+        getArtifactIconUrl: getArtifactIconUrl,
+        ITEM_ICONS: ITEM_ICONS,
+        ARTIFACT_ICONS: ARTIFACT_ICONS
       };
 
       function ensureDefaultFilterControls() {

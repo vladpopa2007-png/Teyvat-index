@@ -55,7 +55,9 @@ interface TeyvatApi {
   WEEKLY_BOSSES: Array<{ id: string; name: string; region: string; domain: string }>;
   TIER_LIST: Array<{ charId: string; tier: string; note: string }>;
   ABYSS_FLOORS: Array<{ floor: number; title: string; chambers: Array<{ chamber: string; firstHalf: string; secondHalf: string }> }>;
-  LOCAL_SPECIALTIES: Array<{ name: string; region: string; respawn: string; route: string }>;
+  LOCAL_SPECIALTIES: Array<{ name: string; region: string; respawn: string; route: string; icon?: string }>;
+  ITEM_ICONS: Record<string, string>;
+  ARTIFACT_ICONS: Record<string, string>;
   SERVER_REGIONS: Record<string, { id: string; label: string; resetUtcHour: number; display: string }>;
   STORAGE_KEYS: Record<string, string>;
   getServerRegionConfig: (regionId: string) => { id: string; label: string; resetUtcHour: number; display: string };
@@ -162,6 +164,10 @@ interface TeyvatApi {
   getWeaponIconSvg: (weaponOrName: Weapon | string, fallbackType?: string) => string;
   getSpecialtyIconSvg: (specialtyOrName: { name: string } | string) => string;
   getItemIconSvg: (name: string, category?: string) => string;
+  getItemIconUrl: (name: string, category?: string) => string;
+  getSpecialtyIconUrl: (specialtyOrName: { name: string; icon?: string } | string) => string;
+  getWeaponIconUrl: (weaponOrIdOrName: Weapon | string) => string;
+  getArtifactIconUrl: (artifactStr: string) => string;
 }
 
 interface StorageLike {
@@ -638,10 +644,52 @@ test('team builder, tier list, specialties filters, and SVG icons operate accura
   const swordFallbackSvg = api.getWeaponIconSvg('Generic Unknown Sword');
   assert.notEqual(scarletSandsSvg, swordFallbackSvg);
 
+  const unreleasedNoPortrait = new Set(['pulcinella', 'pantalone']);
   for (const ch of api.CHARACTERS) {
-    assert.ok(typeof ch.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_AvatarIcon_.+\.png$/.test(ch.icon));
+    if (unreleasedNoPortrait.has(ch.id)) {
+      assert.equal(ch.icon, '');
+    } else {
+      assert.ok(typeof ch.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_AvatarIcon_.+\.png$/.test(ch.icon), `Missing avatar icon for ${ch.id}`);
+    }
   }
   for (const wp of api.WEAPONS) {
-    assert.ok(typeof wp.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(wp.icon));
+    assert.ok(typeof wp.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(wp.icon), `Missing weapon icon for ${wp.id}`);
+    assert.equal(api.getWeaponIconUrl(wp), wp.icon);
+  }
+  for (const sp of api.LOCAL_SPECIALTIES) {
+    assert.ok(typeof sp.icon === 'string' && /^https:\/\/gi\.yatta\.moe\/assets\/UI\/UI_ItemIcon_\d+\.png$/.test(sp.icon), `Missing specialty icon for ${sp.name}`);
+    assert.equal(api.getSpecialtyIconUrl(sp.name), sp.icon);
+  }
+
+  for (const d of api.TALENT_DOMAINS) {
+    assert.ok(/^https:\/\/gi\.yatta\.moe\/assets\/UI\/UI_ItemIcon_\d+\.png$/.test(api.getItemIconUrl(d.book, 'book')), `Missing talent book icon for ${d.book}`);
+  }
+  for (const d of api.WEAPON_DOMAINS) {
+    assert.ok(/^https:\/\/gi\.yatta\.moe\/assets\/UI\/UI_ItemIcon_\d+\.png$/.test(api.getItemIconUrl(d.material, 'weapon-material')), `Missing weapon domain material icon for ${d.material}`);
+    for (const w of d.weapons) {
+      assert.ok(/^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(api.getWeaponIconUrl(w.id || w.name)), `Missing domain weapon icon for ${w.name}`);
+    }
+  }
+  for (const b of api.WEEKLY_BOSSES) {
+    assert.ok(/^https:\/\/gi\.yatta\.moe\/assets\/UI\/monster\/UI_MonsterIcon_.+\.png$/.test(api.getItemIconUrl(b.id, 'weekly-boss')), `Missing weekly boss icon for ${b.id}`);
+  }
+  for (const curr of ['Mora', "Hero's Wit", 'Enhancement Ore', 'Original Resin', 'Condensed Resin', 'Crown of Insight', 'Weekly Trounce Boss Drops']) {
+    assert.ok(/^https:\/\/gi\.yatta\.moe\/assets\/UI\/UI_ItemIcon_\d+\.png$/.test(api.getItemIconUrl(curr, 'currency')), `Missing currency icon for ${curr}`);
+  }
+  for (const ch of api.CHARACTERS) {
+    assert.ok(api.getItemIconUrl(ch.ascensionMaterials.boss, 'boss-drop').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing boss drop icon for ${ch.id}`);
+    assert.ok(api.getItemIconUrl(ch.ascensionMaterials.common, 'common-drop').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing common drop icon for ${ch.id}`);
+    assert.ok(api.getSpecialtyIconUrl(ch.ascensionMaterials.specialty).startsWith('https://gi.yatta.moe/assets/UI/'), `Missing specialty icon for ${ch.id}`);
+    for (const bw of ch.bestWeapons) {
+      assert.ok(/^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(api.getWeaponIconUrl(bw)), `Missing bestWeapon icon for ${ch.id}: ${bw}`);
+    }
+    for (const ba of ch.bestArtifacts) {
+      assert.ok(/^https:\/\/gi\.yatta\.moe\/assets\/UI\/reliquary\/UI_RelicIcon_.+\.png$/.test(api.getArtifactIconUrl(ba)), `Missing bestArtifact icon for ${ch.id}: ${ba}`);
+    }
+  }
+  for (const wp of api.WEAPONS) {
+    assert.ok(api.getItemIconUrl(wp.ascensionBreakdown.materialType, 'weapon-material').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing weapon material icon for ${wp.id}`);
+    assert.ok(api.getItemIconUrl(wp.ascensionBreakdown.eliteDrop, 'elite-drop').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing weapon elite drop icon for ${wp.id}`);
+    assert.ok(api.getItemIconUrl(wp.ascensionBreakdown.commonDrop, 'common-drop').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing weapon common drop icon for ${wp.id}`);
   }
 });

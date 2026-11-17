@@ -1030,10 +1030,30 @@
       padding: 2px;
     }
 
-    .icon-frame svg {
+    .icon-frame svg,
+    .icon-frame img {
       width: 100%;
       height: 100%;
       display: block;
+      object-fit: contain;
+    }
+
+    .icon-frame.is-round {
+      padding: 0;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .icon-frame.is-round img,
+    .icon-frame.is-round .char-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .icon-frame.is-round .enka-fallback-svg {
+      padding: 3px;
     }
 
     .mini-icon {
@@ -1043,12 +1063,31 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      overflow: hidden;
     }
 
-    .mini-icon svg {
+    .mini-icon.is-round {
+      border-radius: 50%;
+    }
+
+    .mini-icon svg,
+    .mini-icon img {
       width: 100%;
       height: 100%;
       display: block;
+      object-fit: contain;
+    }
+
+    .mini-icon.is-round img,
+    .mini-icon .mini-char-img {
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .artifact-fallback-star {
+      color: var(--gold);
+      font-size: 1rem;
+      line-height: 1;
     }
 
     .item-row-flex {

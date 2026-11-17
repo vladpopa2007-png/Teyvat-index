@@ -1,4 +1,4 @@
-const CACHE_NAME = 'teyvat-index-v2';
+const CACHE_NAME = 'teyvat-index-v3';
 const ASSETS = [
   './',
   './index.html',

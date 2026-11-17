@@ -3,348 +3,406 @@
     "name": "Windwheel Aster",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Circle Windrise Statue of The Seven and Stormterror’s Lair outer ring (40+ nodes)."
+    "route": "Circle Windrise Statue of The Seven and Stormterror’s Lair outer ring (40+ nodes).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100024.png"
   },
   {
     "name": "Dandelion Seed",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Front gates of Mondstadt City and ridge east of Stone Gate; bring Anemo to harvest."
+    "route": "Front gates of Mondstadt City and ridge east of Stone Gate; bring Anemo to harvest.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100057.png"
   },
   {
     "name": "Small Lamp Grass",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Wolvendom woods and Whispering Woods at night for high visual contrast."
+    "route": "Wolvendom woods and Whispering Woods at night for high visual contrast.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100055.png"
   },
   {
     "name": "Silk Flower",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Yujing Terrace in Liyue Harbor and Wangshu Inn courtyard (14 bushes = 28 flowers)."
+    "route": "Yujing Terrace in Liyue Harbor and Wangshu Inn courtyard (14 bushes = 28 flowers).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100029.png"
   },
   {
     "name": "Cor Lapis",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Mt. Hulao cliffsides and The Chasm surface ore veins; bring Claymore or Zhongli."
+    "route": "Mt. Hulao cliffsides and The Chasm surface ore veins; bring Claymore or Zhongli.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100058.png"
   },
   {
     "name": "Starconch",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Yaoguang Shoal and Guyun Stone Forest coastlines at low tide."
+    "route": "Yaoguang Shoal and Guyun Stone Forest coastlines at low tide.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100033.png"
   },
   {
     "name": "Qingxin",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Karst mountain peaks around Jueyun Karst, Huaguang Stone Forest, and Liyue Herbalist Bubu Pharmacy."
+    "route": "Karst mountain peaks around Jueyun Karst, Huaguang Stone Forest, and Liyue Herbalist Bubu Pharmacy.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100031.png"
   },
   {
     "name": "Jueyun Chili",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Qingce Village terraces and Stone Gate trail (3 chilies per bush)."
+    "route": "Qingce Village terraces and Stone Gate trail (3 chilies per bush).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100027.png"
   },
   {
     "name": "Tenkumo Fruit",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Seirai Island perimeter around Amakumo Peak (95+ fruits on one loop)."
+    "route": "Seirai Island perimeter around Amakumo Peak (95+ fruits on one loop).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101208.png"
   },
   {
     "name": "Sea Ganoderma",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Kannazuka coastlines, Watatsumi shallow reefs, and Golden Apple shorelines."
+    "route": "Kannazuka coastlines, Watatsumi shallow reefs, and Golden Apple shorelines.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101206.png"
   },
   {
     "name": "Sakura Bloom",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Grand Narukami Shrine ridge and Chinju Forest; apply Electro to collect."
+    "route": "Grand Narukami Shrine ridge and Chinju Forest; apply Electro to collect.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101202.png"
   },
   {
     "name": "Onikabuto",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Underneath Tenshukaku cavern, Mikage Furnace rim, and Tatarasuna tree trunks."
+    "route": "Underneath Tenshukaku cavern, Mikage Furnace rim, and Tatarasuna tree trunks.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101201.png"
   },
   {
     "name": "Naku Weed",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Tatarasuna central forge and Seirai Island plains near Electro zones."
+    "route": "Tatarasuna central forge and Seirai Island plains near Electro zones.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101205.png"
   },
   {
     "name": "Sango Pearl",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Sangonomiya Shrine waterfall pools and Suigetsu Pool rim on Watatsumi Island."
+    "route": "Sangonomiya Shrine waterfall pools and Suigetsu Pool rim on Watatsumi Island.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101207.png"
   },
   {
     "name": "Kalpalata Lotus",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Cliff ledges around Devantaka Mountain, Apam Woods, and Gandharva Ville; Nahida E speeds harvest."
+    "route": "Cliff ledges around Devantaka Mountain, Apam Woods, and Gandharva Ville; Nahida E speeds harvest.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101217.png"
   },
   {
     "name": "Scarab",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Dune of Elusion and Mausoleum of King Deshret surface dunes + underground ruins."
+    "route": "Dune of Elusion and Mausoleum of King Deshret surface dunes + underground ruins.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101225.png"
   },
   {
     "name": "Rukkhashava Mushrooms",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Mawtiyima Forest giant mushroom caps and Apam Woods tree canopies."
+    "route": "Mawtiyima Forest giant mushroom caps and Apam Woods tree canopies.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101213.png"
   },
   {
     "name": "Nilotpala Lotus",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Rivers around Sumeru City, Yazadaha Pool, and Vanarana waterways."
+    "route": "Rivers around Sumeru City, Yazadaha Pool, and Vanarana waterways.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101215.png"
   },
   {
     "name": "Sand Grease Pupa",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Setekh Wenut underground tunnels in the Desert of Hadramaveth."
+    "route": "Setekh Wenut underground tunnels in the Desert of Hadramaveth.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101222.png"
   },
   {
     "name": "Lumitoile",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Liffey Region beaches and Fortress of Meropide underwater pipes."
+    "route": "Liffey Region beaches and Fortress of Meropide underwater pipes.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101237.png"
   },
   {
     "name": "Lakelight Lily",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Erinnyes Forest ponds around Weeping Willow of the Lake & Loch Urania."
+    "route": "Erinnyes Forest ponds around Weeping Willow of the Lake & Loch Urania.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101238.png"
   },
   {
     "name": "Rainbow Rose",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "West of Court of Fontaine, Fountain of Lucine flowerbeds, and Beryl Region gardens."
+    "route": "West of Court of Fontaine, Fountain of Lucine flowerbeds, and Beryl Region gardens.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101236.png"
   },
   {
     "name": "Spring of the First Dewdrop",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Underwater conches across Morte Region and Tower of Ipsissimus outer ruins."
+    "route": "Underwater conches across Morte Region and Tower of Ipsissimus outer ruins.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101240.png"
   },
   {
     "name": "Beryl Conch",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Salacia Plain seabeds, Chemin de L'Espoir reefs, and Elton Trench underwater shelves."
+    "route": "Salacia Plain seabeds, Chemin de L'Espoir reefs, and Elton Trench underwater shelves.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101232.png"
   },
   {
     "name": "Sprayfeather Gill",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Toyac Springs shorelines and People of the Springs thermal islets."
+    "route": "Toyac Springs shorelines and People of the Springs thermal islets.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101247.png"
   },
   {
     "name": "Saurian Claw Succulent",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Sulfurous Veins canyon floor and Coatepec Mountain rocky outcrops."
+    "route": "Sulfurous Veins canyon floor and Coatepec Mountain rocky outcrops.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101250.png"
   },
   {
     "name": "Brilliant Chrysanthemum",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Huitztli Hill flowerfields and Stadium of the Sacred Flame outer terraces."
+    "route": "Huitztli Hill flowerfields and Stadium of the Sacred Flame outer terraces.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101248.png"
   },
   {
     "name": "Withering Purpurbloom",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Ochkanatlan ruins perimeter and ash-strewn highland ridges."
+    "route": "Ochkanatlan ruins perimeter and ash-strewn highland ridges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101253.png"
   },
   {
     "name": "Glowing Hornshroom",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Tezcatepetonco Range cliff caves and Masters of the Night-Wind misty hollows."
+    "route": "Tezcatepetonco Range cliff caves and Masters of the Night-Wind misty hollows.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101252.png"
   },
   {
     "name": "Quenepa Berry",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Scions of the Canopy ledges and Ancestral Temple overgrown ruins."
+    "route": "Scions of the Canopy ledges and Ancestral Temple overgrown ruins.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101249.png"
   },
   {
     "name": "Skysplit Gembloom",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Atocpan volcanic terraces and Great Volcano of Tollan rim ledges."
+    "route": "Atocpan volcanic terraces and Great Volcano of Tollan rim ledges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101254.png"
   },
   {
     "name": "Frostlamp Flower",
     "region": "Nod-Krai",
     "respawn": "48 hours (2 days)",
-    "route": "Frostmoon Enclave watersides and Hiisi Island northern shorelines."
+    "route": "Frostmoon Enclave watersides and Hiisi Island northern shorelines.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101261.png"
   },
   {
     "name": "Portable Bearing",
     "region": "Nod-Krai",
     "respawn": "48 hours (2 days)",
-    "route": "Clink-Clank Krumkake Craftshop scrapyards and Blue Amber Lake ruins."
+    "route": "Clink-Clank Krumkake Craftshop scrapyards and Blue Amber Lake ruins.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101257.png"
   },
   {
     "name": "Moonfall Silver",
     "region": "Nod-Krai",
     "respawn": "48 hours (2 days)",
-    "route": "Hiisi Island cavern veins and Silvermoon Hall outer cliffside ridges."
+    "route": "Hiisi Island cavern veins and Silvermoon Hall outer cliffside ridges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101263.png"
   },
   {
     "name": "Winter Icelea",
     "region": "Nod-Krai",
     "respawn": "48 hours (2 days)",
-    "route": "Dreadnought cliffs around Amsvartnir and Wavechaser Plain frost ridges."
+    "route": "Dreadnought cliffs around Amsvartnir and Wavechaser Plain frost ridges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101266.png"
   },
   {
     "name": "Frostfairy Flower",
     "region": "Snezhnaya",
     "respawn": "48 hours (2 days)",
-    "route": "Whitelake shore thickets and Snezhnograd outer conservatory terraces."
+    "route": "Whitelake shore thickets and Snezhnograd outer conservatory terraces.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101275.png"
   },
   {
     "name": "Flockingweed",
     "region": "Snezhnaya",
     "respawn": "48 hours (2 days)",
-    "route": "Kuznetsk Steppe windbreaks and Zapolyarny road watchtower perimeters."
+    "route": "Kuznetsk Steppe windbreaks and Zapolyarny road watchtower perimeters.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101276.png"
   },
   {
     "name": "Golden Fern",
     "region": "Snezhnaya",
     "respawn": "48 hours (2 days)",
-    "route": "Boreal Hollow thermal springs and Sunken Bastion frost-free glades."
+    "route": "Boreal Hollow thermal springs and Sunken Bastion frost-free glades.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101277.png"
   },
   {
     "name": "Calla Lily",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Springvale lake shorelines, Dawn Winery ponds, and Starfell Lake perimeter."
+    "route": "Springvale lake shorelines, Dawn Winery ponds, and Starfell Lake perimeter.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100056.png"
   },
   {
     "name": "Valberry",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Stormbearer Mountains & Stormbearer Point bushes (4 berries per bush)."
+    "route": "Stormbearer Mountains & Stormbearer Point bushes (4 berries per bush).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100022.png"
   },
   {
     "name": "Philanemo Mushroom",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Rooftops and eaves across Mondstadt City, Springvale cottages, and Dawn Winery."
+    "route": "Rooftops and eaves across Mondstadt City, Springvale cottages, and Dawn Winery.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100025.png"
   },
   {
     "name": "Wolfhook",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Wolvendom forest undergrowth leading up to Boreas’s arena."
+    "route": "Wolvendom forest undergrowth leading up to Boreas’s arena.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100021.png"
   },
   {
     "name": "Cecilia",
     "region": "Mondstadt",
     "respawn": "48 hours (2 days)",
-    "route": "Starsnatch Cliff plateau (37 nodes) and Mondstadt flora shop Flora."
+    "route": "Starsnatch Cliff plateau (37 nodes) and Mondstadt flora shop Flora.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100023.png"
   },
   {
     "name": "Noctilucous Jade",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Mingyun Village mine shafts, Sal Terrae caves, and The Chasm tunnels."
+    "route": "Mingyun Village mine shafts, Sal Terrae caves, and The Chasm tunnels.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100028.png"
   },
   {
     "name": "Glaze Lily",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Yujing Terrace gardens in Liyue Harbor and Qingce Village terraces."
+    "route": "Yujing Terrace gardens in Liyue Harbor and Qingce Village terraces.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100030.png"
   },
   {
     "name": "Violetgrass",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Cliff faces around Mingyun Village, Wuwang Hill, and The Chasm surface."
+    "route": "Cliff faces around Mingyun Village, Wuwang Hill, and The Chasm surface.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_100034.png"
   },
   {
     "name": "Clearwater Jade",
     "region": "Liyue",
     "respawn": "48 hours (2 days)",
-    "route": "Chenyu Vale Jade Mouth banks, Chizhang Wall, and Mt. Xuanlian watersides."
+    "route": "Chenyu Vale Jade Mouth banks, Chizhang Wall, and Mt. Xuanlian watersides.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101241.png"
   },
   {
     "name": "Crystal Marrow",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Yashiori Island Serpent’s Head spine and Tatarasuna gorge ridges."
+    "route": "Yashiori Island Serpent’s Head spine and Tatarasuna gorge ridges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101203.png"
   },
   {
     "name": "Dendrobium",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Nazuchi Beach battleground shorelines and Kujou Encampment ruins."
+    "route": "Nazuchi Beach battleground shorelines and Kujou Encampment ruins.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101204.png"
   },
   {
     "name": "Fluorescent Fungus",
     "region": "Inazuma",
     "respawn": "48 hours (2 days)",
-    "route": "Tsurumi Island foggy trails around Chirai Shrine and Shirikoro Peak."
+    "route": "Tsurumi Island foggy trails around Chirai Shrine and Shirikoro Peak.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101209.png"
   },
   {
     "name": "Henna Berry",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Aaru Village dunes, Sobek Oasis canyons, and Khaj-Nisut desert ridges."
+    "route": "Aaru Village dunes, Sobek Oasis canyons, and Khaj-Nisut desert ridges.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101220.png"
   },
   {
     "name": "Padisarah",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Pardis Dhyai greenhouse terraces, Sumeru City outskirts, and Vanarana."
+    "route": "Pardis Dhyai greenhouse terraces, Sumeru City outskirts, and Vanarana.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101214.png"
   },
   {
     "name": "Mourning Flower",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Tunigi Hollow marshes and Asipattravana Swamp water edges in Gavireh Lajavard."
+    "route": "Tunigi Hollow marshes and Asipattravana Swamp water edges in Gavireh Lajavard.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101223.png"
   },
   {
     "name": "Trishiraite",
     "region": "Sumeru",
     "respawn": "48 hours (2 days)",
-    "route": "Temir Mountains mines and Asipattravana cavern crystal clusters."
+    "route": "Temir Mountains mines and Asipattravana cavern crystal clusters.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101224.png"
   },
   {
     "name": "Lumidouce Bell",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Hills north of Court of Fontaine and Elynas southern ridges (3 bells per plant)."
+    "route": "Hills north of Court of Fontaine and Elynas southern ridges (3 bells per plant).",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101235.png"
   },
   {
     "name": "Romaritime Flower",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Salacia Plain underwater plains and Court of Fontaine western coastlines."
+    "route": "Salacia Plain underwater plains and Court of Fontaine western coastlines.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101233.png"
   },
   {
     "name": "Subdetection Unit",
     "region": "Fontaine",
     "respawn": "48 hours (2 days)",
-    "route": "Fontaine Research Institute ruins and Mont Esus East cliff platforms."
+    "route": "Fontaine Research Institute ruins and Mont Esus East cliff platforms.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101239.png"
   },
   {
     "name": "Dracolite",
     "region": "Natlan",
     "respawn": "48 hours (2 days)",
-    "route": "Atocpan magma fissures and Great Volcano of Tollan underground tunnels."
+    "route": "Atocpan magma fissures and Great Volcano of Tollan underground tunnels.",
+    "icon": "https://gi.yatta.moe/assets/UI/UI_ItemIcon_101255.png"
   }
 ]
