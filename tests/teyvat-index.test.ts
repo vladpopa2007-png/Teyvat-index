@@ -170,15 +170,12 @@ interface StorageLike {
 }
 
 function readJsonAsset<T>(relPath: string): T {
-  const fullPath = path.resolve(process.cwd(), 'public', relPath);
+  const fullPath = path.resolve(process.cwd(), relPath);
   return JSON.parse(fs.readFileSync(fullPath, 'utf8')) as T;
 }
 
 function loadIndexApi(): TeyvatApi {
-  const html = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf8');
-  const scriptMatches = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
-  assert.ok(scriptMatches.length >= 1, 'Expected inline <script> in index.html');
-  const scriptCode = scriptMatches[scriptMatches.length - 1][1];
+  const scriptCode = fs.readFileSync(path.resolve(process.cwd(), 'app.js'), 'utf8');
 
   const noop = () => {};
   const fakeEl = () => ({
@@ -245,18 +242,27 @@ function loadIndexApi(): TeyvatApi {
 
 const api = loadIndexApi();
 
-test('HTML structure uses single h1, externalizes data, and removes static placeholders and banner list', () => {
+test('HTML structure uses single h1, externalizes CSS/JS/data, and removes static placeholders and Quick Jump bar', () => {
   const html = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf8');
+  const appJs = fs.readFileSync(path.resolve(process.cwd(), 'app.js'), 'utf8');
   const h1Matches = [...html.matchAll(/<h1\b/gi)];
   assert.equal(h1Matches.length, 1, 'Expected exactly one <h1> landmark in index.html');
   assert.equal(html.includes('Static dates · Manually updatable'), false);
   assert.equal(html.includes('Active &amp; Upcoming Banners'), false);
   assert.equal(html.includes('Showing 0 characters'), false);
   assert.equal(html.includes('Showing 0 weapons'), false);
-  assert.equal(html.includes('var CHARACTERS = [];'), true);
-  assert.equal(/var CHARACTERS\s*=\s*\[\s*\{/.test(html), false);
-  assert.equal(html.includes("fetch('./data/characters.json')"), true);
-  assert.equal(html.includes("fetch('/data/"), false);
+  assert.equal(html.includes('home-quick-directory'), false);
+  assert.equal(html.includes('Quick Jump'), false);
+  assert.equal(html.includes('<style>'), false);
+  assert.equal(html.includes('<script>'), false);
+  assert.equal(html.includes('href="./styles.css"'), true);
+  assert.equal(html.includes('src="./app.js"'), true);
+  assert.equal(html.includes('href="./manifest.json"'), true);
+  assert.equal(appJs.includes('var CHARACTERS = [];'), true);
+  assert.equal(/var CHARACTERS\s*=\s*\[\s*\{/.test(appJs), false);
+  assert.equal(appJs.includes("fetchJsonAsset('./data/characters.json')"), true);
+  assert.equal(appJs.includes("'/data/"), false);
+  assert.equal(appJs.includes('"/data/'), false);
   assert.equal(/id="roster-char-empty"[^>]*hidden/.test(html), true);
   assert.equal(/id="roster-weapon-empty"[^>]*hidden/.test(html), true);
   assert.equal(/id="character-empty"[^>]*hidden/.test(html), true);

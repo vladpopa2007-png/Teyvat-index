@@ -296,52 +296,6 @@
       max-width: 68ch;
     }
 
-    /* Quick Jump Directory Bar */
-    .quick-directory-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      padding: 12px 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-muted);
-      border-radius: var(--radius-md);
-    }
-
-    .quick-directory-label {
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-right: 4px;
-      white-space: nowrap;
-    }
-
-    .quick-dir-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 11px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-muted);
-      background: var(--bg-surface-elevated);
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 500;
-      min-height: 34px;
-      white-space: nowrap;
-      transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
-    }
-
-    .quick-dir-link:hover {
-      color: var(--text-primary);
-      border-color: var(--gold);
-      background: var(--bg-surface-hover);
-    }
-
     /* Ornamental Gold Divider */
     .gold-divider {
       display: flex;

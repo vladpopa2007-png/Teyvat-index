@@ -102,7 +102,8 @@
               c.name + ' ' + c.element + ' ' + c.weapon + ' ' + c.role + ' ' + c.talentBook + ' ' +
               (c.region || '') + ' ' + (c.version || '') + ' ' +
               (c.ascensionMaterials ? c.ascensionMaterials.specialty + ' ' + c.ascensionMaterials.boss : '') + ' ' +
-              c.bestWeapons.join(' ')
+              c.bestWeapons.join(' ') + ' ' +
+              (Array.isArray(c.bestArtifacts) ? c.bestArtifacts.join(' ') : '')
             ).toLowerCase();
             if (hay.indexOf(q) === -1) return false;
           }
@@ -3265,10 +3266,15 @@
         var modalWeaponBtn = target.closest('[data-modal-weapon-name]');
         if (modalWeaponBtn) {
           var wName = modalWeaponBtn.getAttribute('data-modal-weapon-name');
-          closeModal();
-          window.location.hash = '#weapons';
-          elWeaponSearch.value = wName.replace(/\s*\(.*?\)\s*/g, '').trim();
-          syncWeaponFilters();
+          var foundWp = findWeaponByName(wName);
+          if (foundWp) {
+            openWeaponModal(foundWp.id);
+          } else {
+            closeModal();
+            window.location.hash = '#weapons';
+            elWeaponSearch.value = wName.replace(/\s*\(.*?\)\s*/g, '').trim();
+            syncWeaponFilters();
+          }
           return;
         }
 
@@ -4035,6 +4041,39 @@
         handleHashChange();
       }
 
+      function fetchJsonAsset(assetPath) {
+        return fetch(assetPath).then(function (res) {
+          if (!res.ok) {
+            throw new Error('Failed to load ' + assetPath + ' (HTTP ' + res.status + (res.statusText ? ' ' + res.statusText : '') + ')');
+          }
+          return res.text().then(function (rawText) {
+            try {
+              return JSON.parse(rawText);
+            } catch (parseErr) {
+              var parseMsg = parseErr && parseErr.message ? parseErr.message : String(parseErr);
+              throw new Error('Invalid JSON in ' + assetPath + ': ' + parseMsg);
+            }
+          });
+        }, function (networkErr) {
+          var netMsg = networkErr && networkErr.message ? networkErr.message : String(networkErr);
+          throw new Error('Network error loading ' + assetPath + ': ' + netMsg);
+        });
+      }
+
+      // Register Service Worker using relative path when served over HTTP(S)
+      if (
+        typeof navigator !== 'undefined' &&
+        'serviceWorker' in navigator &&
+        window.location &&
+        (window.location.protocol === 'https:' || window.location.protocol === 'http:')
+      ) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js').catch(function () {
+            // Ignore service worker registration failures (e.g. restricted contexts)
+          });
+        });
+      }
+
       // Initial Boot: synchronous in Node VM tests if preloaded, async fetch in browser
       applyTheme();
       ensureDefaultFilterControls();
@@ -4043,12 +4082,12 @@
       } else if (typeof window.fetch === 'function') {
         handleHashChange();
         Promise.all([
-          fetch('./data/characters.json').then(function (r) { if (!r.ok) throw new Error('characters.json'); return r.json(); }),
-          fetch('./data/weapons.json').then(function (r) { if (!r.ok) throw new Error('weapons.json'); return r.json(); }),
-          fetch('./data/domains.json').then(function (r) { if (!r.ok) throw new Error('domains.json'); return r.json(); }),
-          fetch('./data/tier-list.json').then(function (r) { if (!r.ok) throw new Error('tier-list.json'); return r.json(); }),
-          fetch('./data/abyss.json').then(function (r) { if (!r.ok) throw new Error('abyss.json'); return r.json(); }),
-          fetch('./data/specialties.json').then(function (r) { if (!r.ok) throw new Error('specialties.json'); return r.json(); })
+          fetchJsonAsset('./data/characters.json'),
+          fetchJsonAsset('./data/weapons.json'),
+          fetchJsonAsset('./data/domains.json'),
+          fetchJsonAsset('./data/tier-list.json'),
+          fetchJsonAsset('./data/abyss.json'),
+          fetchJsonAsset('./data/specialties.json')
         ]).then(function (results) {
           bootstrapWithData({
             characters: results[0],
@@ -4058,11 +4097,15 @@
             abyss: results[4],
             specialties: results[5]
           });
-        }).catch(function () {
+        }).catch(function (err) {
+          var detail = err && err.message ? err.message : String(err || 'Unknown data loading error');
+          if (typeof console !== 'undefined' && typeof console.error === 'function') {
+            console.error('[Teyvat Index] Unable to load game data files:', detail, err);
+          }
           if (elDailyTitle) elDailyTitle.textContent = 'Unable to load game data files.';
-          if (elDailySubtitle) elDailySubtitle.textContent = 'Please verify ./data/*.json files are served and reload.';
-          if (elCharCount) elCharCount.textContent = 'Failed to load characters dataset.';
-          if (elWeaponCount) elWeaponCount.textContent = 'Failed to load weapons dataset.';
+          if (elDailySubtitle) elDailySubtitle.textContent = detail;
+          if (elCharCount) elCharCount.textContent = 'Failed to load characters dataset — ' + detail;
+          if (elWeaponCount) elWeaponCount.textContent = 'Failed to load weapons dataset — ' + detail;
         });
       }
     })();

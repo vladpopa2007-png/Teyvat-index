@@ -25,6 +25,18 @@ export default defineConfig(() => {
           if (fs.existsSync(distDir) && fs.existsSync(srcAssets)) {
             fs.cpSync(srcAssets, distAssets, {recursive: true, force: true});
           }
+          const dataSrc = path.resolve(__dirname, 'data');
+          const dataDist = path.resolve(distDir, 'data');
+          if (fs.existsSync(distDir) && fs.existsSync(dataSrc)) {
+            fs.cpSync(dataSrc, dataDist, {recursive: true, force: true});
+          }
+          for (const staticFile of ['app.js', 'manifest.json', 'sw.js']) {
+            const fileSrc = path.resolve(__dirname, staticFile);
+            const fileDist = path.resolve(distDir, staticFile);
+            if (fs.existsSync(distDir) && fs.existsSync(fileSrc)) {
+              fs.copyFileSync(fileSrc, fileDist);
+            }
+          }
         },
       },
     ],
@@ -34,6 +46,9 @@ export default defineConfig(() => {
       },
     },
     server: {
+      host: '0.0.0.0',
+      port: 3000,
+      allowedHosts: true as const,
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',

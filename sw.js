@@ -1,4 +1,4 @@
-const CACHE_NAME = 'teyvat-index-v1';
+const CACHE_NAME = 'teyvat-index-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -15,7 +15,17 @@ const ASSETS = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE_NAME).then(cache => {
+      return Promise.all(
+        ASSETS.map(asset => {
+          return fetch(new Request(asset, { cache: 'reload' })).then(response => {
+            if (response && response.ok) {
+              return cache.put(asset, response);
+            }
+          }).catch(() => {});
+        })
+      );
+    }).then(() => self.skipWaiting())
   );
 });
 
@@ -28,25 +38,25 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) return;
+
+  // Network-first for HTML, JS, CSS, and ./data/*.json so updates never serve stale files,
+  // falling back to cache only when offline or the network request fails.
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) {
-        fetch(event.request).then(response => {
-          if (response && response.status === 200) {
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, response));
-          }
-        }).catch(() => {});
-        return cached;
-      }
-      return fetch(event.request).then(response => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
+    fetch(event.request).then(response => {
+      if (response && response.ok && response.type === 'basic') {
         const responseToCache = response.clone();
         caches.open(CACHE_NAME).then(cache => {
           cache.put(event.request, responseToCache);
-        });
-        return response;
+        }).catch(() => {});
+      }
+      return response;
+    }).catch(() => {
+      return caches.match(event.request).then(cached => {
+        return cached || Response.error();
       });
     })
   );
