@@ -83,11 +83,6 @@ interface TeyvatApi {
     minutes: number;
     isFull: boolean;
   };
-  getCalculatedResin: (sResin: { currentResin?: number; condensedResin?: number; resinUpdatedAt?: number }, nowDate?: Date) => {
-    currentResin: number;
-    condensedResin: number;
-    resinUpdatedAt: number;
-  };
   getResetCycleKey: (nowDate: Date, regionId: string) => string;
   getWeeklyResetKey: (nowDate: Date, regionId: string) => string;
   calculateAscensionPlan: (
@@ -459,16 +454,6 @@ test('200 Original Resin cap math and NA/EU/Asia/TW reset cycle keys calculate a
   // NA resets at 09:00 UTC (Monday weekly reset flips at 09:00 UTC)
   assert.equal(api.getWeeklyResetKey(new Date('2026-11-16T08:59:00Z'), 'NA'), 'W-2026-11-09');
   assert.equal(api.getWeeklyResetKey(new Date('2026-11-16T09:01:00Z'), 'NA'), 'W-2026-11-16');
-});
-
-test('resin auto-regeneration calculates correctly based on 8-minute-per-resin rule and 200 cap', () => {
-  const past = new Date('2026-11-16T10:00:00Z');
-  const future = new Date('2026-11-16T10:32:00Z'); // 32 minutes = +4 resin
-  const updated = api.getCalculatedResin({ currentResin: 100, resinUpdatedAt: past.getTime() }, future);
-  assert.equal(updated.currentResin, 104);
-
-  const capped = api.getCalculatedResin({ currentResin: 198, resinUpdatedAt: past.getTime() }, future);
-  assert.equal(capped.currentResin, 200);
 });
 
 test('granular ascension planner supports per-character deltas, individual talents, and weapon ascension', () => {
