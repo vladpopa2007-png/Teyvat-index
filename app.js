@@ -89,6 +89,59 @@
         };
       }
 
+      function computeUnitProgressPct(currentLv, targetLv, talents) {
+        var cur = Math.max(1, Math.min(90, Number(currentLv) || 1));
+        var tgt = Math.max(cur, Math.min(90, Number(targetLv) || 90));
+        var levelRatio = tgt <= 1 ? 1 : Math.min(1, cur / tgt);
+        if (!Array.isArray(talents) || talents.length === 0) {
+          return Math.round(levelRatio * 100);
+        }
+        var tRatios = talents.map(function (pair) {
+          var tc = Math.max(1, Math.min(10, Number(pair && pair[0]) || 1));
+          var tt = Math.max(tc, Math.min(10, Number(pair && pair[1]) || tc));
+          return tt <= 1 ? 1 : Math.min(1, tc / tt);
+        });
+        var avgTalent = tRatios.reduce(function (sum, v) { return sum + v; }, 0) / tRatios.length;
+        return Math.round((levelRatio * 0.55 + avgTalent * 0.45) * 100);
+      }
+
+      function getDailyDomainMatches(dayIndex, ownedCharIds, queuedCharIds, savedWeaponIds, queuedWeaponIds) {
+        var dayInfo = getDomainsForDay(dayIndex);
+        var activeCharIds = (queuedCharIds && queuedCharIds.length > 0 ? queuedCharIds : ownedCharIds) || [];
+        var activeWeaponIds = (queuedWeaponIds && queuedWeaponIds.length > 0 ? queuedWeaponIds : savedWeaponIds) || [];
+        var trackedChars = activeCharIds
+          .map(function (id) { return CHARACTERS.find(function (c) { return c.id === id; }); })
+          .filter(Boolean);
+        var trackedWeapons = activeWeaponIds
+          .map(function (id) { return WEAPONS.find(function (w) { return w.id === id; }); })
+          .filter(Boolean);
+
+        var matchedBooks = {};
+        dayInfo.talentDomains.forEach(function (dom) {
+          var users = trackedChars.filter(function (c) { return c.talentBook === dom.book; });
+          if (users.length > 0) {
+            matchedBooks[dom.book] = users.map(function (u) { return u.name; });
+          }
+        });
+
+        var matchedWeaponMats = {};
+        dayInfo.weaponDomains.forEach(function (dom) {
+          var users = trackedWeapons.filter(function (w) {
+            return w.ascensionMaterial === dom.material ||
+              (w.ascensionBreakdown && w.ascensionBreakdown.materialType === dom.material);
+          });
+          if (users.length > 0) {
+            matchedWeaponMats[dom.material] = users.map(function (u) { return u.name; });
+          }
+        });
+
+        return {
+          matchedBooks: matchedBooks,
+          matchedWeaponMats: matchedWeaponMats,
+          totalMatchedDomains: Object.keys(matchedBooks).length + Object.keys(matchedWeaponMats).length
+        };
+      }
+
       function filterCharacters(list, filters, ownedIds) {
         var q = (filters.search || '').trim().toLowerCase();
         var ownedList = ownedIds || [];
@@ -1569,42 +1622,58 @@
       // =========================================================================
       var ROUTES = ['home', 'resin', 'characters', 'weapons', 'specialties', 'planner', 'teams', 'damage', 'tiers', 'abyss', 'banners', 'roster', 'settings'];
       var ROUTE_GROUPS = {
-        home: 'domains',
-        resin: 'domains',
-        characters: 'compendium',
-        weapons: 'compendium',
-        specialties: 'compendium',
-        planner: 'tools',
-        teams: 'tools',
-        damage: 'tools',
-        tiers: 'meta',
-        abyss: 'meta',
-        banners: 'meta',
-        roster: 'roster',
-        settings: 'settings'
+        home: 'overview',
+        characters: 'archives',
+        weapons: 'archives',
+        specialties: 'archives',
+        resin: 'research',
+        planner: 'research',
+        teams: 'research',
+        damage: 'research',
+        tiers: 'research',
+        abyss: 'research',
+        banners: 'research',
+        roster: 'records',
+        settings: 'records'
       };
       var GROUP_TABS = {
-        domains: [
-          { route: 'home', label: 'Daily Domains' },
-          { route: 'resin', label: 'Resin & Daily Tracker' }
+        overview: [
+          { route: 'home', label: 'Daily Research' },
+          { route: 'resin', label: 'Resin & Daily Log' }
         ],
-        compendium: [
-          { route: 'characters', label: 'Character Index' },
-          { route: 'weapons', label: 'Weapon Index' },
-          { route: 'specialties', label: 'Local Specialties' }
+        archives: [
+          { route: 'characters', label: 'Characters' },
+          { route: 'weapons', label: 'Weapons' },
+          { route: 'specialties', label: 'Specialties' }
         ],
-        tools: [
+        research: [
+          { route: 'resin', label: 'Resin Log' },
           { route: 'planner', label: 'Ascension Planner' },
-          { route: 'teams', label: 'Team Builder' },
-          { route: 'damage', label: 'Damage Checker' }
+          { route: 'teams', label: 'Team Lab' },
+          { route: 'damage', label: 'Damage & CRIT' },
+          { route: 'tiers', label: 'Tier Index' },
+          { route: 'abyss', label: 'Spiral Abyss' },
+          { route: 'banners', label: 'Wish Pity' }
         ],
-        meta: [
-          { route: 'tiers', label: 'Tier List' },
-          { route: 'abyss', label: 'Spiral Abyss Guide' },
-          { route: 'banners', label: '5★ Pity Calculator' }
-        ],
-        roster: [{ route: 'roster', label: 'My Roster' }],
-        settings: [{ route: 'settings', label: 'Settings & Profile' }]
+        records: [
+          { route: 'roster', label: 'My Roster' },
+          { route: 'settings', label: 'Preferences' }
+        ]
+      };
+      var ROUTE_TITLES = {
+        home: 'Overview · Daily Research',
+        characters: 'Archives · Character Index',
+        weapons: 'Archives · Weapon Index',
+        specialties: 'Archives · Local Specialties',
+        resin: 'Research · Resin & Daily Log',
+        planner: 'Research · Ascension Planner',
+        teams: 'Research · Team Synergy Lab',
+        damage: 'Research · Damage & CRIT',
+        tiers: 'Research · Abyss Tier Index',
+        abyss: 'Research · Spiral Abyss',
+        banners: 'Research · Wish Probability',
+        roster: 'Personal Records · My Roster',
+        settings: 'Personal Records · Preferences'
       };
 
       var DAILY_TASKS = [
@@ -1745,6 +1814,20 @@
 
       var elWorkspaceSubnav = document.getElementById('workspace-subnav');
       var elTopbarCount = document.getElementById('topbar-roster-count');
+      var elTopbarRouteLabel = document.getElementById('topbar-route-label');
+      var elSidebarServerMeta = document.getElementById('sidebar-server-meta');
+      var elSidebar = document.getElementById('akademiya-sidebar');
+      var elSidebarBackdrop = document.getElementById('sidebar-backdrop');
+      var elMobileMenuBtn = document.getElementById('mobile-menu-btn');
+      var elSidebarCloseBtn = document.getElementById('sidebar-close-btn');
+      var elTopbarThemeBtn = document.getElementById('topbar-theme-btn');
+
+      var elHomeWeekdayTag = document.getElementById('home-weekday-tag');
+      var elHomeServerTag = document.getElementById('home-server-tag');
+      var elHomeBriefingGrid = document.getElementById('home-briefing-grid');
+      var elHomePrioritiesList = document.getElementById('home-priorities-list');
+      var elHomeArchiveLinks = document.getElementById('home-archive-links');
+
       var elDailyTitle = document.getElementById('daily-panel-title');
       var elDailySubtitle = document.getElementById('daily-panel-subtitle');
       var elSundayNote = document.getElementById('sunday-note');
@@ -1775,6 +1858,7 @@
       var elModalBackdrop = document.getElementById('detail-modal-backdrop');
       var elModalDialog = document.getElementById('detail-modal-dialog');
       var elModalCrest = document.getElementById('modal-crest');
+      var elModalFolioTag = document.getElementById('modal-folio-tag');
       var elModalTitle = document.getElementById('modal-title');
       var elModalSubline = document.getElementById('modal-subline');
       var elModalBody = document.getElementById('modal-body');
@@ -1856,6 +1940,7 @@
       var elSpecRegion = document.getElementById('spec-region');
       var elSpecCountLabel = document.getElementById('spec-count-label');
       var elSpecTbody = document.getElementById('specialties-tbody');
+      var elSpecMobileList = document.getElementById('specialties-mobile-list');
 
       var elSettingsArInput = document.getElementById('settings-ar-input');
       var elSettingsArBadge = document.getElementById('settings-ar-badge');
@@ -1878,7 +1963,10 @@
           document.documentElement.classList.toggle('theme-light', isLight);
         }
         if (elSettingsThemeBtn) {
-          elSettingsThemeBtn.textContent = isLight ? 'Theme: Light Mode (Archival)' : 'Theme: Dark Mode';
+          elSettingsThemeBtn.textContent = isLight ? 'Theme: Warm Parchment (Light)' : 'Theme: Dark Academic';
+        }
+        if (elSidebarServerMeta) {
+          elSidebarServerMeta.textContent = 'AR ' + state.settings.ar + ' · ' + state.settings.serverRegion + ' Server';
         }
       }
 
@@ -1891,11 +1979,15 @@
       // =========================================================================
       function updateRosterCounts() {
         var total = state.ownedCharacters.length + state.savedWeapons.length;
-        elTopbarCount.textContent = '(' + total + ')';
+        if (elTopbarCount) elTopbarCount.textContent = '(' + total + ')';
+        if (elSidebarServerMeta) {
+          elSidebarServerMeta.textContent = 'AR ' + state.settings.ar + ' · ' + state.settings.serverRegion + ' Server';
+        }
       }
 
       function renderSubnav(route) {
-        var group = ROUTE_GROUPS[route] || 'domains';
+        if (!elWorkspaceSubnav) return;
+        var group = ROUTE_GROUPS[route] || 'overview';
         var tabs = GROUP_TABS[group] || [];
         if (tabs.length <= 1) {
           elWorkspaceSubnav.hidden = true;
@@ -1913,7 +2005,7 @@
         var clsAttr = imgClass ? ' class="' + escapeHtml(imgClass) + '"' : '';
         if (src) {
           return (
-            '<img' + clsAttr + ' src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt || '') + '" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+            '<img' + clsAttr + ' src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt || '') + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
             '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
           );
         }
@@ -2075,9 +2167,151 @@
         return '<span class="' + cls + '" style="--icon-accent: ' + accentVar + ';">' + renderImgWithFallbackHtml(src, '', getSpecialtyIconSvg(name), 'frame-item-img') + '</span>';
       }
 
+      function renderHomeDashboard() {
+        if (!elHomeBriefingGrid || !elHomePrioritiesList || !elHomeArchiveLinks) return;
+
+        var now = new Date();
+        var cfg = getServerRegionConfig(state.settings.serverRegion);
+        var info = getDomainsForDay(state.selectedDay);
+        var matches = getDailyDomainMatches(
+          state.selectedDay,
+          state.ownedCharacters,
+          state.farmingQueue,
+          state.savedWeapons,
+          state.planner.weaponIds
+        );
+
+        if (elHomeWeekdayTag) {
+          elHomeWeekdayTag.textContent = DAY_NAMES[actualToday] + ' · Daily Reset in ' + formatResetCountdown(now, state.settings.serverRegion);
+        }
+        if (elHomeServerTag) {
+          elHomeServerTag.textContent = 'AR ' + state.settings.ar + ' · ' + cfg.label;
+        }
+
+        var resinCap = calculateResinCap(state.resin.currentResin, now);
+        var queuedChars = state.farmingQueue
+          .map(function (id) { return CHARACTERS.find(function (c) { return c.id === id; }); })
+          .filter(Boolean);
+        var queuedWeapons = state.planner.weaponIds
+          .map(function (id) { return WEAPONS.find(function (w) { return w.id === id; }); })
+          .filter(Boolean);
+        var plan = calculateAscensionPlan(queuedChars, {
+          charConfigs: state.planner.charConfigs,
+          weaponConfigs: state.planner.weaponConfigs
+        }, queuedWeapons);
+        var totalPlanResin = plan.domainRuns.reduce(function (sum, d) { return sum + d.resinCost; }, 0);
+        var weeklyUsed = Math.min(3, (state.weekly && Array.isArray(state.weekly.bosses)) ? state.weekly.bosses.length : 0);
+
+        elHomeBriefingGrid.innerHTML =
+          '<a href="#resin" class="briefing-tile" data-route="resin">' +
+            '<span class="briefing-label">Original Resin</span>' +
+            '<span class="briefing-value is-gold tabular">' + resinCap.currentResin + ' / 200</span>' +
+            '<span class="briefing-sub">' + escapeHtml(resinCap.remainingLabel) + ' · ' + state.resin.condensedResin + ' Condensed</span>' +
+          '</a>' +
+          '<div class="briefing-tile">' +
+            '<span class="briefing-label">Open Domains (' + escapeHtml(info.dayName.slice(0, 3)) + ')</span>' +
+            '<span class="briefing-value is-teal tabular">' + (info.talentDomains.length + info.weaponDomains.length) + '</span>' +
+            '<span class="briefing-sub">' + (matches.totalMatchedDomains > 0 ? (matches.totalMatchedDomains + ' match your roster/queue') : (info.talentDomains.length + ' Talent · ' + info.weaponDomains.length + ' Weapon')) + '</span>' +
+          '</div>' +
+          '<a href="#resin" class="briefing-tile" data-route="resin">' +
+            '<span class="briefing-label">Weekly Trounce</span>' +
+            '<span class="briefing-value tabular">' + weeklyUsed + ' / 3</span>' +
+            '<span class="briefing-sub">Half-cost (30 Resin) discounts</span>' +
+          '</a>' +
+          '<a href="#planner" class="briefing-tile" data-route="planner">' +
+            '<span class="briefing-label">Active Research</span>' +
+            '<span class="briefing-value tabular">' + (queuedChars.length + queuedWeapons.length) + ((queuedChars.length + queuedWeapons.length) === 1 ? ' unit' : ' units') + '</span>' +
+            '<span class="briefing-sub">' + (totalPlanResin > 0 ? ('~' + totalPlanResin.toLocaleString('en-US') + ' Domain Resin queued') : 'Queue builds in Planner') + '</span>' +
+          '</a>';
+
+        var priorityItemsHtml = [];
+        queuedChars.slice(0, 4).forEach(function (ch) {
+          var pCfg = getCharPlannerConfig(ch.id);
+          var pct = computeUnitProgressPct(pCfg.currentLevel, pCfg.targetLevel, pCfg.talents);
+          priorityItemsHtml.push(
+            '<div class="priority-item">' +
+              '<div class="priority-top">' +
+                '<button type="button" class="priority-title-btn" data-open-char="' + escapeHtml(ch.id) + '">' +
+                  renderCharMiniIconHtml(ch) +
+                  '<span class="priority-name">' + escapeHtml(ch.name) + '</span>' +
+                '</button>' +
+                '<span class="priority-pct tabular">Lv.' + pCfg.currentLevel + '→' + pCfg.targetLevel + ' · ' + pct + '%</span>' +
+              '</div>' +
+              '<div class="priority-progress-track"><div class="priority-progress-fill" style="width:' + pct + '%;"></div></div>' +
+              '<div class="priority-meta-row">' +
+                '<span>Book: ' + escapeHtml(ch.talentBook) + ' · Boss: ' + escapeHtml(ch.ascensionMaterials.boss) + '</span>' +
+                '<span>' + escapeHtml(ch.ascensionMaterials.specialty) + '</span>' +
+              '</div>' +
+            '</div>'
+          );
+        });
+        queuedWeapons.slice(0, Math.max(0, 4 - priorityItemsHtml.length)).forEach(function (wp) {
+          var wCfg = getWeaponPlannerConfig(wp.id);
+          var pct = computeUnitProgressPct(wCfg.currentLevel, wCfg.targetLevel);
+          priorityItemsHtml.push(
+            '<div class="priority-item">' +
+              '<div class="priority-top">' +
+                '<button type="button" class="priority-title-btn" data-open-weapon="' + escapeHtml(wp.id) + '">' +
+                  renderWeaponMiniIconHtml(wp) +
+                  '<span class="priority-name">' + escapeHtml(wp.name) + '</span>' +
+                '</button>' +
+                '<span class="priority-pct tabular">Lv.' + wCfg.currentLevel + '→' + wCfg.targetLevel + ' · ' + pct + '%</span>' +
+              '</div>' +
+              '<div class="priority-progress-track"><div class="priority-progress-fill" style="width:' + pct + '%;"></div></div>' +
+              '<div class="priority-meta-row">' +
+                '<span>Domain: ' + escapeHtml(wp.domain) + '</span>' +
+                '<span>' + escapeHtml(wp.ascensionMaterial) + '</span>' +
+              '</div>' +
+            '</div>'
+          );
+        });
+
+        elHomePrioritiesList.innerHTML = priorityItemsHtml.length > 0
+          ? priorityItemsHtml.join('')
+          : '<div class="empty-state" style="padding:20px 16px;">' +
+              '<p>No characters or weapons queued for ascension research yet. Mark units in the archives and add them to your Farming Queue to track progress here.</p>' +
+              '<div class="quick-btn-row">' +
+                '<a href="#characters" class="btn-ghost btn-compact" data-route="characters">Browse Characters</a>' +
+                '<a href="#planner" class="btn-primary btn-compact" data-route="planner">Open Planner</a>' +
+              '</div>' +
+            '</div>';
+
+        elHomeArchiveLinks.innerHTML =
+          '<a href="#characters" class="archive-index-link" data-route="characters">' +
+            '<span class="archive-index-code">ARC-01 · Heroes</span>' +
+            '<span class="archive-index-title">Character Index</span>' +
+            '<span class="archive-index-count tabular">' + CHARACTERS.length + ' indexed dossiers</span>' +
+          '</a>' +
+          '<a href="#weapons" class="archive-index-link" data-route="weapons">' +
+            '<span class="archive-index-code">ARC-02 · Arsenal</span>' +
+            '<span class="archive-index-title">Weapon Index</span>' +
+            '<span class="archive-index-count tabular">' + WEAPONS.length + ' cataloged weapons</span>' +
+          '</a>' +
+          '<a href="#specialties" class="archive-index-link" data-route="specialties">' +
+            '<span class="archive-index-code">ARC-03 · Flora &amp; Ore</span>' +
+            '<span class="archive-index-title">Local Specialties</span>' +
+            '<span class="archive-index-count tabular">' + LOCAL_SPECIALTIES.length + ' field routes</span>' +
+          '</a>' +
+          '<a href="#roster" class="archive-index-link" data-route="roster">' +
+            '<span class="archive-index-code">REC-01 · Ledger</span>' +
+            '<span class="archive-index-title">My Roster</span>' +
+            '<span class="archive-index-count tabular">' + state.ownedCharacters.length + ' owned · ' + state.savedWeapons.length + ' weapons</span>' +
+          '</a>';
+      }
+
       function renderDailyGuide() {
+        renderHomeDashboard();
+
         var info = getDomainsForDay(state.selectedDay);
         var isActualToday = state.selectedDay === actualToday;
+        var matches = getDailyDomainMatches(
+          state.selectedDay,
+          state.ownedCharacters,
+          state.farmingQueue,
+          state.savedWeapons,
+          state.planner.weaponIds
+        );
+
         elDailyTitle.textContent = isActualToday
           ? "Today's Farmable Materials (" + info.dayName + ')'
           : info.dayName + ' Domain Schedule';
@@ -2108,6 +2342,8 @@
           }
           var visibleChars = matchingChars.slice(0, 6);
           var overflowCount = Math.max(0, matchingChars.length - 6);
+          var rosterMatches = matches.matchedBooks[dom.book] || [];
+          var isMatch = rosterMatches.length > 0;
 
           var charsHtml = visibleChars.map(function (ch) {
             var elClass = 'el-' + ch.element;
@@ -2131,7 +2367,7 @@
             : '');
 
           return (
-            '<article class="domain-card">' +
+            '<article class="domain-card' + (isMatch ? ' is-roster-match' : '') + '">' +
               '<div class="domain-card-head">' +
                 '<div class="item-row-flex">' +
                   renderItemFrameHtml(dom.book, 'book', '', 'var(--gold)') +
@@ -2142,12 +2378,15 @@
                 '</div>' +
                 '<span class="domain-days-text">' + escapeHtml(dom.dayLabel) + '</span>' +
               '</div>' +
+              (isMatch ? '<div class="domain-match-note">Roster Match · ' + escapeHtml(rosterMatches.slice(0, 3).join(', ')) + (rosterMatches.length > 3 ? ' +' + (rosterMatches.length - 3) : '') + '</div>' : '') +
               '<div class="domain-char-list">' + charsHtml + '</div>' +
             '</article>'
           );
         }).join('');
 
         elDailyWeaponGrid.innerHTML = info.weaponDomains.map(function (dom) {
+          var rosterMatches = matches.matchedWeaponMats[dom.material] || [];
+          var isMatch = rosterMatches.length > 0;
           var weaponsHtml = dom.weapons.map(function (wp) {
             var icon = renderWeaponMiniIconHtml(wp.id || wp.name || wp.type, wp.type);
             if (wp.id) {
@@ -2167,7 +2406,7 @@
           }).join('');
 
           return (
-            '<article class="domain-card">' +
+            '<article class="domain-card' + (isMatch ? ' is-roster-match' : '') + '">' +
               '<div class="domain-card-head">' +
                 '<div class="item-row-flex">' +
                   renderItemFrameHtml(dom.material, 'weapon-material', '', 'var(--teal)') +
@@ -2178,6 +2417,7 @@
                 '</div>' +
                 '<span class="domain-days-text">' + escapeHtml(dom.dayLabel) + '</span>' +
               '</div>' +
+              (isMatch ? '<div class="domain-match-note">Roster Match · ' + escapeHtml(rosterMatches.slice(0, 2).join(', ')) + (rosterMatches.length > 2 ? ' +' + (rosterMatches.length - 2) : '') + '</div>' : '') +
               '<div class="domain-char-list">' + weaponsHtml + '</div>' +
             '</article>'
           );
@@ -2190,26 +2430,32 @@
         elCharEmpty.hidden = filtered.length > 0;
         elCharGrid.hidden = filtered.length === 0;
 
-        elCharGrid.innerHTML = filtered.map(function (ch) {
+        elCharGrid.innerHTML = filtered.map(function (ch, idx) {
           var isOwned = state.ownedCharacters.indexOf(ch.id) !== -1;
           var isQueued = state.farmingQueue.indexOf(ch.id) !== -1;
           var statusText = isOwned && isQueued
-            ? '<span class="owned-indicator">Owned</span> · <span class="saved-indicator">In Queue</span>'
+            ? '<span class="owned-indicator">Owned</span> · <span class="saved-indicator">Queued</span>'
             : isOwned
               ? '<span class="owned-indicator">Owned</span>'
-              : '<span>Inspect</span>';
+              : '<span>Inspect Dossier</span>';
+          var catalogCode = 'CH-' + String(idx + 1).padStart(3, '0') + (ch.version ? ' · v' + ch.version : '');
 
           return (
             '<button type="button" class="entity-card rarity-' + ch.rarity + ' el-' + escapeHtml(ch.element) + '" data-open-char="' + escapeHtml(ch.id) + '" aria-label="View ' + escapeHtml(ch.name) + ' details">' +
               '<div class="card-top-row">' +
                 renderEnkaImgHtml(ch.icon, ch.name, getCharacterIconSvg(ch), 'char-portrait-wrap', 'char-portrait-img', '') +
-                renderStars(ch.rarity) +
+                '<div class="card-top-right">' +
+                  renderStars(ch.rarity) +
+                  '<span class="catalog-code">' + escapeHtml(catalogCode) + '</span>' +
+                '</div>' +
               '</div>' +
               '<div class="card-title-block">' +
                 '<div class="card-name">' + escapeHtml(ch.name) + '</div>' +
                 '<div class="card-meta-line">' +
                   '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
+                  '<span aria-hidden="true">·</span>' +
                   '<span>' + escapeHtml(ch.weapon) + '</span>' +
+                  (ch.region ? '<span aria-hidden="true">·</span><span>' + escapeHtml(ch.region) + '</span>' : '') +
                 '</div>' +
               '</div>' +
               '<div class="card-footer-line">' +
@@ -2227,21 +2473,25 @@
         elWeaponEmpty.hidden = filtered.length > 0;
         elWeaponGrid.hidden = filtered.length === 0;
 
-        elWeaponGrid.innerHTML = filtered.map(function (wp) {
+        elWeaponGrid.innerHTML = filtered.map(function (wp, idx) {
           var isSaved = state.savedWeapons.indexOf(wp.id) !== -1;
           var accentColor = wp.rarity === 5 ? 'var(--rarity-5)' : (wp.rarity === 4 ? 'var(--rarity-4)' : 'var(--rarity-3)');
+          var catalogCode = 'WP-' + String(idx + 1).padStart(3, '0') + (wp.version ? ' · v' + wp.version : '');
           return (
             '<button type="button" class="entity-card rarity-' + wp.rarity + '" style="--el-color:' + accentColor + ';" data-open-weapon="' + escapeHtml(wp.id) + '" aria-label="View ' + escapeHtml(wp.name) + ' details">' +
               '<div class="card-top-row">' +
                 renderEnkaImgHtml(wp.icon, wp.name, getWeaponIconSvg(wp), 'weapon-portrait-wrap', 'weapon-portrait-img', '') +
-                renderStars(wp.rarity) +
+                '<div class="card-top-right">' +
+                  renderStars(wp.rarity) +
+                  '<span class="catalog-code">' + escapeHtml(catalogCode) + '</span>' +
+                '</div>' +
               '</div>' +
               '<div class="card-title-block">' +
                 '<div class="card-name">' + escapeHtml(wp.name) + '</div>' +
                 '<div class="card-meta-line">' +
                   '<span>' + escapeHtml(wp.type) + '</span>' +
                   '<span aria-hidden="true">·</span>' +
-                  '<span>' + (isSaved ? '<span class="saved-indicator">Saved</span>' : escapeHtml(wp.domainDays)) + '</span>' +
+                  '<span>' + (isSaved ? '<span class="saved-indicator">Archived</span>' : escapeHtml(wp.domainDays)) + '</span>' +
                 '</div>' +
               '</div>' +
               '<div class="weapon-stat-grid">' +
@@ -2292,6 +2542,7 @@
                   '<div class="card-name">' + escapeHtml(ch.name) + '</div>' +
                   '<div class="card-meta-line">' +
                     '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
+                    '<span aria-hidden="true">·</span>' +
                     '<span>' + escapeHtml(ch.weapon) + ' · ' + escapeHtml(ch.role) + '</span>' +
                   '</div>' +
                 '</div>' +
@@ -2513,7 +2764,8 @@
         elPlannerCharConfigs.hidden = selectedChars.length === 0;
         elPlannerCharConfigs.innerHTML = selectedChars.map(function (ch) {
           var cfg = getCharPlannerConfig(ch.id);
-          var talentLabels = ['Normal Attack', 'Elemental Skill', 'Elemental Burst'];
+          var pct = computeUnitProgressPct(cfg.currentLevel, cfg.targetLevel, cfg.talents);
+          var talentLabels = ['Normal Atk', 'Elem. Skill', 'Elem. Burst'];
           return (
             '<div class="planner-config-card el-' + escapeHtml(ch.element) + '">' +
               '<div class="planner-config-head">' +
@@ -2523,8 +2775,9 @@
                 '</div>' +
                 '<button type="button" class="btn-ghost" data-planner-toggle="' + escapeHtml(ch.id) + '" style="padding:4px 10px;min-height:30px;">Remove</button>' +
               '</div>' +
+              '<div class="priority-progress-track" title="Progression: ' + pct + '%"><div class="priority-progress-fill" style="width:' + pct + '%;"></div></div>' +
               '<div class="planner-level-row">' +
-                '<label class="domain-subsection-hint">Level</label>' +
+                '<label class="domain-subsection-hint">Level · ' + pct + '%</label>' +
                 '<div class="planner-select-pair">' +
                   '<select class="planner-mini-select" data-char-lv-cur="' + escapeHtml(ch.id) + '" aria-label="' + escapeHtml(ch.name) + ' current level">' + renderLevelOptions(cfg.currentLevel, 1) + '</select>' +
                   '<span>→</span>' +
@@ -2553,6 +2806,7 @@
         elPlannerWeaponConfigs.hidden = selectedWeapons.length === 0;
         elPlannerWeaponConfigs.innerHTML = selectedWeapons.map(function (wp) {
           var cfg = getWeaponPlannerConfig(wp.id);
+          var pct = computeUnitProgressPct(cfg.currentLevel, cfg.targetLevel);
           return (
             '<div class="planner-config-card">' +
               '<div class="planner-config-head">' +
@@ -2562,8 +2816,9 @@
                 '</div>' +
                 '<button type="button" class="btn-ghost" data-planner-weapon-toggle="' + escapeHtml(wp.id) + '" style="padding:4px 10px;min-height:30px;">Remove</button>' +
               '</div>' +
+              '<div class="priority-progress-track" title="Progression: ' + pct + '%"><div class="priority-progress-fill" style="width:' + pct + '%;"></div></div>' +
               '<div class="planner-level-row">' +
-                '<label class="domain-subsection-hint">Weapon Lv</label>' +
+                '<label class="domain-subsection-hint">Weapon Lv (' + pct + '% complete)</label>' +
                 '<div class="planner-select-pair">' +
                   '<select class="planner-mini-select" data-wep-lv-cur="' + escapeHtml(wp.id) + '" aria-label="' + escapeHtml(wp.name) + ' current level">' + renderLevelOptions(cfg.currentLevel, 1) + '</select>' +
                   '<span>→</span>' +
@@ -2982,6 +3237,34 @@
             '</tr>'
           );
         }).join('');
+
+        if (elSpecMobileList) {
+          elSpecMobileList.innerHTML = filtered.map(function (sp) {
+            var users = CHARACTERS.filter(function (c) { return c.ascensionMaterials.specialty === sp.name; });
+            var usersHtml = users.length
+              ? users.map(function (u) {
+                return (
+                  '<button type="button" class="domain-item-btn el-' + escapeHtml(u.element) + '" data-open-char="' + escapeHtml(u.id) + '">' +
+                    renderCharMiniIconHtml(u) + '<span>' + escapeHtml(u.name) + '</span>' +
+                  '</button>'
+                );
+              }).join('')
+              : '<span class="domain-subsection-hint">Regional Characters</span>';
+            return (
+              '<article class="specialty-mobile-card">' +
+                '<div class="specialty-mobile-head">' +
+                  '<div class="item-row-flex">' +
+                    renderSpecialtyFrameHtml(sp.name, 'sm', 'var(--teal)') +
+                    '<div><strong>' + escapeHtml(sp.name) + '</strong><div class="domain-region-line">' + escapeHtml(sp.region) + '</div></div>' +
+                  '</div>' +
+                  '<span class="domain-days-text tabular">' + escapeHtml(sp.respawn) + '</span>' +
+                '</div>' +
+                '<div class="domain-char-list">' + usersHtml + '</div>' +
+                '<div class="detail-prose" style="font-size:0.84rem;">' + escapeHtml(sp.route) + '</div>' +
+              '</article>'
+            );
+          }).join('');
+        }
       }
 
       // 13. SETTINGS RENDER
@@ -3003,7 +3286,8 @@
       var lastFocusedEl = null;
 
       function openCharacterModal(charId) {
-        var ch = CHARACTERS.find(function (c) { return c.id === charId; });
+        var charIndex = CHARACTERS.findIndex(function (c) { return c.id === charId; });
+        var ch = charIndex !== -1 ? CHARACTERS[charIndex] : null;
         if (!ch) return;
         lastFocusedEl = document.activeElement;
         state.modal = { kind: 'character', id: charId };
@@ -3014,16 +3298,20 @@
           : 'Weekly Domain Rotation';
 
         elModalDialog.style.setProperty('--modal-accent', 'var(--el-' + ch.element.toLowerCase() + ')');
+        if (elModalFolioTag) {
+          elModalFolioTag.textContent = 'Archival Dossier · CH-' + String(charIndex + 1).padStart(3, '0') + (ch.version ? ' · v' + ch.version : '');
+        }
         elModalCrest.className = 'crest-box modal-char-portrait el-' + ch.element;
         elModalCrest.style.color = '';
         elModalCrest.innerHTML =
           (ch.icon
-            ? '<img class="char-portrait-img" src="' + escapeHtml(ch.icon) + '" alt="' + escapeHtml(ch.name) + '" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+            ? '<img class="char-portrait-img" src="' + escapeHtml(ch.icon) + '" alt="' + escapeHtml(ch.name) + '" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
               '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>'
             : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + getCharacterIconSvg(ch) + '</span>');
         elModalTitle.textContent = ch.name;
         elModalSubline.innerHTML =
           '<span class="el-pill-badge el-' + escapeHtml(ch.element) + '"><span class="el-dot" aria-hidden="true"></span>' + escapeHtml(ch.element) + '</span>' +
+          '<span aria-hidden="true">·</span>' +
           '<span>' + escapeHtml(ch.weapon) + '</span>' +
           '<span aria-hidden="true">·</span>' +
           '<span>Role: <strong>' + escapeHtml(ch.role) + '</strong></span>' +
@@ -3050,7 +3338,7 @@
                   var iconBox =
                     '<span class="modal-weapon-icon-box" style="--weapon-accent:' + wAccent + ';">' +
                       (wIconUrl
-                        ? '<img src="' + escapeHtml(wIconUrl) + '" alt="" loading="lazy" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+                        ? '<img src="' + escapeHtml(wIconUrl) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
                           '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + fallbackSvg + '</span>'
                         : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + fallbackSvg + '</span>') +
                     '</span>';
@@ -3118,7 +3406,7 @@
             '</div>' +
           '</div>' +
           '<div class="detail-block">' +
-            '<div class="detail-label">Who is this for?</div>' +
+            '<div class="detail-label">Scholarly Notes — Who Is This For?</div>' +
             '<p class="detail-prose">' + escapeHtml(ch.whoIsThisFor) + '</p>' +
           '</div>';
 
@@ -3129,7 +3417,8 @@
       }
 
       function openWeaponModal(weaponId) {
-        var wp = WEAPONS.find(function (w) { return w.id === weaponId; });
+        var wpIndex = WEAPONS.findIndex(function (w) { return w.id === weaponId; });
+        var wp = wpIndex !== -1 ? WEAPONS[wpIndex] : null;
         if (!wp) return;
         lastFocusedEl = document.activeElement;
         state.modal = { kind: 'weapon', id: weaponId };
@@ -3137,11 +3426,14 @@
         var accent = wp.rarity === 5 ? 'var(--rarity-5)' : (wp.rarity === 4 ? 'var(--rarity-4)' : 'var(--rarity-3)');
         var brk = wp.ascensionBreakdown;
         elModalDialog.style.setProperty('--modal-accent', accent);
+        if (elModalFolioTag) {
+          elModalFolioTag.textContent = 'Armament Record · WP-' + String(wpIndex + 1).padStart(3, '0') + (wp.version ? ' · v' + wp.version : '');
+        }
         elModalCrest.className = 'crest-box modal-weapon-portrait';
         elModalCrest.style.color = accent;
         elModalCrest.innerHTML =
           (wp.icon
-            ? '<img class="weapon-portrait-img" src="' + escapeHtml(wp.icon) + '" alt="' + escapeHtml(wp.name) + '" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
+            ? '<img class="weapon-portrait-img" src="' + escapeHtml(wp.icon) + '" alt="' + escapeHtml(wp.name) + '" referrerpolicy="no-referrer" onerror="this.style.display=\'none\';if(this.nextElementSibling)this.nextElementSibling.style.display=\'flex\';" />' +
               '<span class="enka-fallback-svg" style="display:none;" aria-hidden="true">' + getWeaponIconSvg(wp) + '</span>'
             : '<span class="enka-fallback-svg" style="display:flex;" aria-hidden="true">' + getWeaponIconSvg(wp) + '</span>');
         elModalTitle.textContent = wp.name;
@@ -3247,20 +3539,38 @@
         return 'home';
       }
 
+      function openMobileDrawer() {
+        if (!elSidebar) return;
+        elSidebar.classList.add('is-open');
+        if (elSidebarBackdrop) elSidebarBackdrop.hidden = false;
+        if (elMobileMenuBtn) elMobileMenuBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMobileDrawer() {
+        if (!elSidebar) return;
+        elSidebar.classList.remove('is-open');
+        if (elSidebarBackdrop) elSidebarBackdrop.hidden = true;
+        if (elMobileMenuBtn) elMobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+
       function setActiveRoute(route) {
         state.route = route;
-        var activeGroup = ROUTE_GROUPS[route] || 'domains';
+        closeMobileDrawer();
         Object.keys(elSections).forEach(function (key) {
           if (elSections[key]) {
             elSections[key].classList.toggle('is-visible', key === route);
           }
         });
         document.querySelectorAll('.nav-link').forEach(function (link) {
-          var grp = link.getAttribute('data-group');
-          link.classList.toggle('is-active', grp === activeGroup);
+          var linkRoute = link.getAttribute('data-route');
+          link.classList.toggle('is-active', linkRoute === route);
         });
+        if (elTopbarRouteLabel) {
+          elTopbarRouteLabel.textContent = ROUTE_TITLES[route] || 'Daily Research';
+        }
         renderSubnav(route);
 
+        if (route === 'home') renderDailyGuide();
         if (route === 'roster') renderRoster();
         if (route === 'resin') renderResinTracker();
         if (route === 'planner') renderPlanner();
@@ -3299,6 +3609,7 @@
         writeStoredIds(STORAGE_KEYS.CHARACTERS, state.ownedCharacters);
         savePlannerState();
         updateRosterCounts();
+        renderDailyGuide();
         renderCharacters();
         renderRoster();
         renderPlanner();
@@ -3320,6 +3631,7 @@
         }
         savePlannerState();
         updateRosterCounts();
+        renderDailyGuide();
         renderCharacters();
         renderRoster();
         renderPlanner();
@@ -3338,6 +3650,7 @@
         writeStoredIds(STORAGE_KEYS.WEAPONS, state.savedWeapons);
         savePlannerState();
         updateRosterCounts();
+        renderDailyGuide();
         renderWeapons();
         renderRoster();
         renderPlanner();
@@ -3358,6 +3671,7 @@
         }
         savePlannerState();
         updateRosterCounts();
+        renderDailyGuide();
         renderWeapons();
         renderRoster();
         renderPlanner();
@@ -4004,6 +4318,24 @@
         applyTheme();
       });
 
+      if (elTopbarThemeBtn) {
+        elTopbarThemeBtn.addEventListener('click', function () {
+          state.settings.theme = state.settings.theme === 'light' ? 'dark' : 'light';
+          saveSettings();
+          applyTheme();
+        });
+      }
+
+      if (elMobileMenuBtn) {
+        elMobileMenuBtn.addEventListener('click', openMobileDrawer);
+      }
+      if (elSidebarCloseBtn) {
+        elSidebarCloseBtn.addEventListener('click', closeMobileDrawer);
+      }
+      if (elSidebarBackdrop) {
+        elSidebarBackdrop.addEventListener('click', closeMobileDrawer);
+      }
+
       if (elSettingsExportBtn) {
         elSettingsExportBtn.addEventListener('click', function () {
           var payload = buildBackupPayload();
@@ -4070,6 +4402,7 @@
         writeStoredIds(STORAGE_KEYS.WEAPONS, []);
         savePlannerState();
         updateRosterCounts();
+        renderDailyGuide();
         renderCharacters();
         renderWeapons();
         renderRoster();
@@ -4104,8 +4437,9 @@
       });
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && state.modal) {
-          closeModal();
+        if (e.key === 'Escape') {
+          if (state.modal) closeModal();
+          if (elSidebar && elSidebar.classList.contains('is-open')) closeMobileDrawer();
         }
       });
 
@@ -4135,6 +4469,8 @@
         importBackupPayload: importBackupPayload,
         getServerRegionConfig: getServerRegionConfig,
         getDomainsForDay: getDomainsForDay,
+        computeUnitProgressPct: computeUnitProgressPct,
+        getDailyDomainMatches: getDailyDomainMatches,
         filterCharacters: filterCharacters,
         filterWeapons: filterWeapons,
         readStoredIds: readStoredIds,

@@ -68,6 +68,18 @@ interface TeyvatApi {
     talentDomains: Array<{ book: string; region: string; characters: Array<{ name: string; element: string }> }>;
     weaponDomains: Array<{ material: string; region: string; weapons: Array<{ name: string }> }>;
   };
+  computeUnitProgressPct: (currentLv: number, targetLv: number, talents?: number[][]) => number;
+  getDailyDomainMatches: (
+    dayIndex: number,
+    ownedCharIds: string[],
+    queuedCharIds: string[],
+    savedWeaponIds: string[],
+    queuedWeaponIds: string[]
+  ) => {
+    matchedBooks: Record<string, string[]>;
+    matchedWeaponMats: Record<string, string[]>;
+    totalMatchedDomains: number;
+  };
   filterCharacters: (list: Character[], filters: { search?: string; region?: string; element?: string; weapon?: string; role?: string; rarity?: string; ownedMode?: string }, ownedIds?: string[]) => Character[];
   filterWeapons: (list: Weapon[], filters: { search?: string; region?: string; type?: string; rarity?: string }) => Weapon[];
   readStoredIds: (key: string, storageObj?: StorageLike) => string[];
@@ -693,3 +705,20 @@ test('team builder, tier list, specialties filters, and SVG icons operate accura
     assert.ok(api.getItemIconUrl(wp.ascensionBreakdown.commonDrop, 'common-drop').startsWith('https://gi.yatta.moe/assets/UI/'), `Missing weapon common drop icon for ${wp.id}`);
   }
 });
+
+test('Akademiya progression percentage and daily domain roster matching helpers calculate accurately', () => {
+  assert.equal(api.computeUnitProgressPct(90, 90, [[10, 10], [10, 10], [10, 10]]), 100);
+  const partialPct = api.computeUnitProgressPct(45, 90, [[4, 8], [4, 8], [4, 8]]);
+  assert.equal(partialPct, 50);
+
+  // Hu Tao uses Diligence (Tue/Fri/Sun), Mistsplitter uses Coral Branch (Mon/Thu/Sun)
+  const monMatches = api.getDailyDomainMatches(1, ['hu-tao'], [], ['mistsplitter-reforged'], []);
+  assert.equal(Object.keys(monMatches.matchedBooks).length, 0);
+  assert.ok(monMatches.matchedWeaponMats['Coral Branch of a Distant Sea']?.includes('Mistsplitter Reforged'));
+  assert.equal(monMatches.totalMatchedDomains, 1);
+
+  const tueMatches = api.getDailyDomainMatches(2, ['hu-tao'], ['hu-tao'], ['mistsplitter-reforged'], []);
+  assert.ok(tueMatches.matchedBooks['Diligence']?.includes('Hu Tao'));
+  assert.equal(tueMatches.totalMatchedDomains, 1);
+});
+

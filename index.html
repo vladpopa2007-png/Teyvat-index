@@ -3,939 +3,1090 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teyvat Index — Genshin Impact Resource &amp; Domain Guide</title>
-  <meta name="description" content="A Genshin Impact resource guide featuring daily domain rotations, character build index, weapon compendium, and personal roster tracker." />
-  <meta property="og:title" content="Teyvat Index — Genshin Impact Resource &amp; Domain Guide" />
-  <meta property="og:description" content="A Genshin Impact resource guide featuring daily domain rotations, character build index, weapon compendium, and personal roster tracker." />
+  <title>Teyvat Index — The Akademiya Knowledge Archive</title>
+  <meta name="description" content="Teyvat Index — An unofficial Sumeru Akademiya-inspired Genshin Impact research archive featuring daily domain rotations, character & weapon compendiums, ascension planner, and roster ledger." />
+  <meta property="og:title" content="Teyvat Index — The Akademiya Knowledge Archive" />
+  <meta property="og:description" content="Teyvat Index — An unofficial Sumeru Akademiya-inspired Genshin Impact research archive featuring daily domain rotations, character & weapon compendiums, ascension planner, and roster ledger." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0D0F1A" />
+  <meta name="theme-color" content="#111C1A" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="#home" class="brand-link" data-nav="home">
-        <svg class="brand-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 1.5l2.7 7.8L22.5 12l-7.8 2.7L12 22.5l-2.7-7.8L1.5 12l7.8-2.7L12 1.5z" />
-        </svg>
-        <h1 class="brand-heading">Teyvat Index</h1>
-      </a>
+  <div class="archive-shell">
+    <!-- Mobile Drawer Backdrop -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#home" class="nav-link" data-group="domains" data-route="home">Domains &amp; Daily</a>
-        <a href="#characters" class="nav-link" data-group="compendium" data-route="characters">Compendium</a>
-        <a href="#planner" class="nav-link" data-group="tools" data-route="planner">Build Tools</a>
-        <a href="#tiers" class="nav-link" data-group="meta" data-route="tiers">Meta &amp; Abyss</a>
-        <a href="#settings" class="nav-link" data-group="settings" data-route="settings">Settings</a>
+    <!-- AKADEMIYA SIDEBAR NAVIGATION -->
+    <aside id="akademiya-sidebar" class="akademiya-sidebar" aria-label="Archive navigation">
+      <div class="sidebar-brand">
+        <a href="#home" class="brand-link" data-nav="home">
+          <span class="brand-sigil" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3L29 10v16L18 33 7 26V10L18 3z" stroke="currentColor" stroke-width="1.35" opacity="0.85" />
+              <path d="M18 7.5C21.8 11.2 23.5 14.8 23.5 19c0 3.2-2.4 6-5.5 7.5-3.1-1.5-5.5-4.3-5.5-7.5 0-4.2 1.7-7.8 5.5-11.5z" stroke="currentColor" stroke-width="1.3" fill="currentColor" fill-opacity="0.14" />
+              <circle cx="18" cy="18.5" r="2.2" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="brand-text-stack">
+            <h1 class="brand-heading">Teyvat Index</h1>
+            <span class="brand-sub">Akademiya Archive · v7.2</span>
+          </span>
+        </a>
+        <button type="button" id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close navigation drawer">&times;</button>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Primary archive sections">
+        <div class="nav-group">
+          <div class="nav-group-label">Overview</div>
+          <a href="#home" class="nav-link" data-group="overview" data-route="home">
+            <span class="nav-code tabular">01</span>
+            <span>Daily Research</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Archives</div>
+          <a href="#characters" class="nav-link" data-group="archives" data-route="characters">
+            <span class="nav-code tabular">02</span>
+            <span>Character Index</span>
+          </a>
+          <a href="#weapons" class="nav-link" data-group="archives" data-route="weapons">
+            <span class="nav-code tabular">03</span>
+            <span>Weapon Index</span>
+          </a>
+          <a href="#specialties" class="nav-link" data-group="archives" data-route="specialties">
+            <span class="nav-code tabular">04</span>
+            <span>Local Specialties</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Research</div>
+          <a href="#resin" class="nav-link" data-group="research" data-route="resin">
+            <span class="nav-code tabular">05</span>
+            <span>Resin &amp; Daily Log</span>
+          </a>
+          <a href="#planner" class="nav-link" data-group="research" data-route="planner">
+            <span class="nav-code tabular">06</span>
+            <span>Ascension Planner</span>
+          </a>
+          <a href="#teams" class="nav-link" data-group="research" data-route="teams">
+            <span class="nav-code tabular">07</span>
+            <span>Team Synergy Lab</span>
+          </a>
+          <a href="#damage" class="nav-link" data-group="research" data-route="damage">
+            <span class="nav-code tabular">08</span>
+            <span>Damage &amp; CRIT</span>
+          </a>
+          <a href="#tiers" class="nav-link" data-group="research" data-route="tiers">
+            <span class="nav-code tabular">09</span>
+            <span>Abyss Tier Index</span>
+          </a>
+          <a href="#abyss" class="nav-link" data-group="research" data-route="abyss">
+            <span class="nav-code tabular">10</span>
+            <span>Spiral Abyss</span>
+          </a>
+          <a href="#banners" class="nav-link" data-group="research" data-route="banners">
+            <span class="nav-code tabular">11</span>
+            <span>Wish Probability</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-label">Personal Records</div>
+          <a href="#roster" class="nav-link" data-group="records" data-route="roster">
+            <span class="nav-code tabular">12</span>
+            <span>My Roster</span>
+          </a>
+          <a href="#settings" class="nav-link" data-group="records" data-route="settings">
+            <span class="nav-code tabular">13</span>
+            <span>Preferences &amp; Backup</span>
+          </a>
+        </div>
       </nav>
 
-      <a href="#roster" class="topbar-action" id="topbar-roster-link" data-route="roster">
-        <span>My Roster</span>
-        <span class="tabular" id="topbar-roster-count">(0)</span>
-      </a>
+      <div class="sidebar-footer">
+        <div class="sidebar-folio-note">
+          <span class="folio-label">Darshan Ledger</span>
+          <span class="folio-meta" id="sidebar-server-meta">AR 55 · NA Server</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN ARCHIVE WORKSPACE -->
+    <div class="archive-workspace">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <div class="topbar-left">
+            <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open archive menu" aria-expanded="false" aria-controls="akademiya-sidebar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="17" x2="15" y2="17" />
+              </svg>
+            </button>
+            <div class="topbar-breadcrumb" id="topbar-breadcrumb">
+              <span class="crumb-root">Akademiya Archive</span>
+              <span class="crumb-sep" aria-hidden="true">/</span>
+              <span class="crumb-current" id="topbar-route-label">Daily Research</span>
+            </div>
+          </div>
+
+          <div class="topbar-actions">
+            <button type="button" id="topbar-theme-btn" class="topbar-icon-btn" aria-label="Toggle Light/Dark archival theme" title="Toggle archival theme">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+            </button>
+            <a href="#roster" class="topbar-action" id="topbar-roster-link" data-route="roster">
+              <span>My Roster</span>
+              <span class="tabular" id="topbar-roster-count">(0)</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-wrap">
+        <nav id="workspace-subnav" class="workspace-subnav" aria-label="Section navigation"></nav>
+
+        <!-- 1. HOME — AKADEMIYA RESEARCH TERMINAL & DAILY DOMAINS -->
+        <section id="section-home" class="page-section" aria-labelledby="home-heading">
+          <div class="archive-hero">
+            <div class="archive-hero-top">
+              <div class="archive-hero-copy">
+                <p class="section-kicker">Akademiya Research Terminal · Folio I</p>
+                <h2 id="home-heading" class="section-title hero-title">Welcome to the Akademiya Archives</h2>
+                <p class="section-subtitle">
+                  Daily domain rotations, active resin ledgers, and character progression plans cataloged across Mondstadt through Snezhnaya (v1.0–v7.2).
+                </p>
+              </div>
+              <div class="archive-hero-meta" id="home-hero-meta">
+                <span class="mono-meta" id="home-weekday-tag">Loading clock...</span>
+                <span class="mono-meta" id="home-server-tag">NA Server</span>
+              </div>
+            </div>
+
+            <div id="home-briefing-grid" class="briefing-grid"></div>
+          </div>
+
+          <div class="terminal-split">
+            <article class="tool-card terminal-priorities-card">
+              <div class="tool-card-head">
+                <div>
+                  <span class="card-folio-tag">Active Progression</span>
+                  <h3>Research Priorities</h3>
+                </div>
+                <a href="#planner" class="btn-ghost btn-compact" data-route="planner">Open Planner</a>
+              </div>
+              <div id="home-priorities-list" class="priorities-list"></div>
+            </article>
+
+            <article class="tool-card terminal-overview-card">
+              <div class="tool-card-head">
+                <div>
+                  <span class="card-folio-tag">Catalog Registry</span>
+                  <h3>Archive Overview</h3>
+                </div>
+                <span class="domain-subsection-hint tabular">v1.0–v7.2</span>
+              </div>
+              <div id="home-archive-links" class="archive-overview-grid"></div>
+            </article>
+          </div>
+
+          <div class="akademiya-divider" aria-hidden="true">
+            <svg viewBox="0 0 120 18" fill="none">
+              <line x1="0" y1="9" x2="42" y2="9" stroke="currentColor" stroke-opacity="0.35" />
+              <path d="M46 9c4-4 8-4 11 0-3 4-7 4-11 0z" stroke="currentColor" stroke-width="1.1" fill="currentColor" fill-opacity="0.15" />
+              <polygon points="60,3 65,9 60,15 55,9" stroke="currentColor" stroke-width="1.2" fill="currentColor" fill-opacity="0.22" />
+              <path d="M74 9c-4-4-8-4-11 0 3 4 7 4 11 0z" stroke="currentColor" stroke-width="1.1" fill="currentColor" fill-opacity="0.15" />
+              <line x1="78" y1="9" x2="120" y2="9" stroke="currentColor" stroke-opacity="0.35" />
+            </svg>
+          </div>
+
+          <div class="game-frame">
+            <span class="frame-corner tl" aria-hidden="true"></span>
+            <span class="frame-corner tr" aria-hidden="true"></span>
+            <span class="frame-corner bl" aria-hidden="true"></span>
+            <span class="frame-corner br" aria-hidden="true"></span>
+
+            <div class="daily-header-bar">
+              <div class="daily-title-group">
+                <span class="card-folio-tag">Weekly Ley Line Rotation</span>
+                <h3 id="daily-panel-title">Loading today's domain schedule...</h3>
+                <p class="daily-meta" id="daily-panel-subtitle"></p>
+              </div>
+              <div class="day-switcher" role="group" aria-label="Preview day of week">
+                <button type="button" class="day-btn" data-day="1">Mon</button>
+                <button type="button" class="day-btn" data-day="2">Tue</button>
+                <button type="button" class="day-btn" data-day="3">Wed</button>
+                <button type="button" class="day-btn" data-day="4">Thu</button>
+                <button type="button" class="day-btn" data-day="5">Fri</button>
+                <button type="button" class="day-btn" data-day="6">Sat</button>
+                <button type="button" class="day-btn" data-day="0">Sun</button>
+              </div>
+            </div>
+
+            <div id="sunday-note" class="sunday-banner" hidden>
+              <strong>All Archive Domains Open Today</strong>
+              <span>Every Talent Level-Up Book and Weapon Ascension Material across all eight regions (Mondstadt through Snezhnaya) is accessible on Sunday.</span>
+            </div>
+
+            <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
+
+            <div>
+              <h4 class="domain-subsection-title">
+                <span>Talent Level-Up Material Domains</span>
+                <span class="domain-subsection-hint">Select an indexed character to inspect their dossier</span>
+              </h4>
+              <div id="daily-talent-grid" class="domain-grid"></div>
+            </div>
+
+            <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
+
+            <div>
+              <h4 class="domain-subsection-title">
+                <span>Weapon Ascension Material Domains</span>
+                <span class="domain-subsection-hint">Select an indexed weapon to inspect its passive record</span>
+              </h4>
+              <div id="daily-weapon-grid" class="domain-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. CHARACTER INDEX -->
+        <section id="section-characters" class="page-section" aria-labelledby="characters-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Archive Registry · Characters</p>
+              <h2 id="characters-heading" class="section-title">Character Index</h2>
+              <p class="section-subtitle">
+                Scholarly dossiers covering talent priorities, recommended armaments, artifact pairings, and ascension manifests from Version 1.0 through Version 7.2.
+              </p>
+            </div>
+          </div>
+
+          <div class="filter-panel">
+            <div class="filter-primary-row">
+              <div class="filter-field search-field">
+                <label class="filter-label" for="char-search">Search Character Archive</label>
+                <input id="char-search" class="filter-input" type="search" placeholder="Name, region, v7.2, artifact, or book..." />
+              </div>
+              <button type="button" id="char-more-filters-btn" class="filter-more-toggle" aria-expanded="false" aria-controls="char-secondary-filters">More Filters</button>
+            </div>
+            <div id="char-secondary-filters" class="filter-secondary-group is-collapsed">
+              <div class="filter-field">
+                <label class="filter-label" for="char-region">Region</label>
+                <select id="char-region" class="filter-select">
+                  <option value="All">All Regions</option>
+                  <option value="Mondstadt">Mondstadt</option>
+                  <option value="Liyue">Liyue</option>
+                  <option value="Inazuma">Inazuma</option>
+                  <option value="Sumeru">Sumeru</option>
+                  <option value="Fontaine">Fontaine</option>
+                  <option value="Natlan">Natlan</option>
+                  <option value="Nod-Krai">Nod-Krai</option>
+                  <option value="Snezhnaya">Snezhnaya</option>
+                  <option value="Outworld">Outworld</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="char-element">Element</label>
+                <select id="char-element" class="filter-select">
+                  <option value="All">All Elements</option>
+                  <option value="Pyro">Pyro</option>
+                  <option value="Hydro">Hydro</option>
+                  <option value="Electro">Electro</option>
+                  <option value="Anemo">Anemo</option>
+                  <option value="Geo">Geo</option>
+                  <option value="Cryo">Cryo</option>
+                  <option value="Dendro">Dendro</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="char-weapon">Weapon Type</label>
+                <select id="char-weapon" class="filter-select">
+                  <option value="All">All Weapons</option>
+                  <option value="Sword">Sword</option>
+                  <option value="Claymore">Claymore</option>
+                  <option value="Polearm">Polearm</option>
+                  <option value="Bow">Bow</option>
+                  <option value="Catalyst">Catalyst</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="char-role">Role</label>
+                <select id="char-role" class="filter-select">
+                  <option value="All">All Roles</option>
+                  <option value="Main DPS">Main DPS</option>
+                  <option value="Sub DPS">Sub DPS</option>
+                  <option value="Support">Support</option>
+                  <option value="Healer">Healer</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="char-rarity">Rarity</label>
+                <select id="char-rarity" class="filter-select">
+                  <option value="All">All Rarities</option>
+                  <option value="5">5★ Characters</option>
+                  <option value="4">4★ Characters</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="char-owned-filter">Roster Filter</label>
+                <select id="char-owned-filter" class="filter-select">
+                  <option value="all">Show All</option>
+                  <option value="hide-owned">Hide Owned</option>
+                  <option value="only-owned">Owned Only</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-meta-bar">
+              <span id="char-count-label" class="tabular">Loading characters...</span>
+              <button type="button" id="char-reset-btn" class="btn-ghost">Reset Filters</button>
+            </div>
+          </div>
+
+          <div id="character-grid" class="card-grid"></div>
+          <div id="character-empty" class="empty-state" hidden>
+            <p>No archival character records match your current filter criteria.</p>
+            <button type="button" id="char-empty-reset" class="btn-ghost">Clear Filters</button>
+          </div>
+        </section>
+
+        <!-- 3. WEAPON INDEX -->
+        <section id="section-weapons" class="page-section" aria-labelledby="weapons-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Archive Registry · Armaments</p>
+              <h2 id="weapons-heading" class="section-title">Weapon Index</h2>
+              <p class="section-subtitle">
+                Compare Level 90 Base ATK, secondary substats, passive inscriptions, and domain ascension schedules across Versions 1.0–7.2.
+              </p>
+            </div>
+          </div>
+
+          <div class="filter-panel">
+            <div class="filter-primary-row">
+              <div class="filter-field search-field">
+                <label class="filter-label" for="weapon-search">Search Weapon Archive</label>
+                <input id="weapon-search" class="filter-input" type="search" placeholder="Name, region, v7.2, or wielder..." />
+              </div>
+              <button type="button" id="weapon-more-filters-btn" class="filter-more-toggle" aria-expanded="false" aria-controls="weapon-secondary-filters">More Filters</button>
+            </div>
+            <div id="weapon-secondary-filters" class="filter-secondary-group is-collapsed">
+              <div class="filter-field">
+                <label class="filter-label" for="weapon-region">Region</label>
+                <select id="weapon-region" class="filter-select">
+                  <option value="All">All Regions</option>
+                  <option value="Mondstadt">Mondstadt</option>
+                  <option value="Liyue">Liyue</option>
+                  <option value="Inazuma">Inazuma</option>
+                  <option value="Sumeru">Sumeru</option>
+                  <option value="Fontaine">Fontaine</option>
+                  <option value="Natlan">Natlan</option>
+                  <option value="Nod-Krai">Nod-Krai</option>
+                  <option value="Snezhnaya">Snezhnaya</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="weapon-type">Weapon Type</label>
+                <select id="weapon-type" class="filter-select">
+                  <option value="All">All Types</option>
+                  <option value="Sword">Sword</option>
+                  <option value="Claymore">Claymore</option>
+                  <option value="Polearm">Polearm</option>
+                  <option value="Bow">Bow</option>
+                  <option value="Catalyst">Catalyst</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="weapon-rarity">Rarity</label>
+                <select id="weapon-rarity" class="filter-select">
+                  <option value="All">All Rarities</option>
+                  <option value="5">5★ Weapons</option>
+                  <option value="4">4★ Weapons</option>
+                  <option value="3">3★ Staples</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-meta-bar">
+              <span id="weapon-count-label" class="tabular">Loading weapons...</span>
+              <button type="button" id="weapon-reset-btn" class="btn-ghost">Reset Filters</button>
+            </div>
+          </div>
+
+          <div id="weapon-grid" class="card-grid"></div>
+          <div id="weapon-empty" class="empty-state" hidden>
+            <p>No armament records match your current filter selection.</p>
+            <button type="button" id="weapon-empty-reset" class="btn-ghost">Clear Filters</button>
+          </div>
+        </section>
+
+        <!-- 4. MY ROSTER -->
+        <section id="section-roster" class="page-section" aria-labelledby="roster-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Personal Records · Inventory</p>
+              <h2 id="roster-heading" class="section-title">My Roster</h2>
+              <p class="section-subtitle">
+                Manage Owned characters and Saved weapons in your personal ledger. Queue active research targets in the Ascension Planner anytime.
+              </p>
+            </div>
+            <div id="roster-clear-area" class="quick-btn-row">
+              <a href="#planner" class="btn-ghost" data-route="planner">Open Ascension Planner</a>
+              <button type="button" id="clear-all-btn" class="btn-danger" hidden>Clear All</button>
+              <div id="clear-confirm-box" class="confirm-inline" hidden>
+                <span>Remove all owned characters and saved weapons?</span>
+                <button type="button" id="confirm-clear-yes" class="btn-danger">Confirm Clear</button>
+                <button type="button" id="confirm-clear-no" class="btn-ghost">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="roster-section-header">
+              <h3>Owned Characters <span id="roster-char-count" class="tabular">(0)</span></h3>
+            </div>
+            <div id="roster-char-grid" class="card-grid"></div>
+            <div id="roster-char-empty" class="empty-state" hidden>
+              <p>No owned characters recorded yet — open any dossier in the Character Index to add them to My Roster.</p>
+              <a href="#characters" class="btn-ghost" data-route="characters">Browse Character Index</a>
+            </div>
+          </div>
+
+          <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
+
+          <div>
+            <div class="roster-section-header">
+              <h3>Saved Weapons <span id="roster-weapon-count" class="tabular">(0)</span></h3>
+            </div>
+            <div id="roster-weapon-grid" class="card-grid"></div>
+            <div id="roster-weapon-empty" class="empty-state" hidden>
+              <p>No weapons saved yet — browse the Weapon Index to archive armaments.</p>
+              <a href="#weapons" class="btn-ghost" data-route="weapons">Browse Weapon Index</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. RESIN & DAILY TRACKER -->
+        <section id="section-resin" class="page-section" aria-labelledby="resin-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Stamina Ledger</p>
+              <h2 id="resin-heading" class="section-title">Resin &amp; Daily Log</h2>
+              <p class="section-subtitle">
+                Calculate exact recovery time to the 200 Original Resin cap, record daily expeditions synced to your server clock, and track weekly half-cost Trounce bosses.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-grid-2">
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Original Resin Calculator</h3>
+                <span class="domain-days-text tabular" id="resin-reset-badge">Syncing server clock...</span>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="resin-current-input">Current Original Resin (0–200)</label>
+                  <input id="resin-current-input" class="filter-input tabular" type="number" min="0" max="200" value="40" />
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="resin-condensed-input">Condensed Resin (0–5)</label>
+                  <input id="resin-condensed-input" class="filter-input tabular" type="number" min="0" max="5" value="2" />
+                </div>
+              </div>
+              <div class="quick-btn-row" aria-label="Quick resin adjustments">
+                <button type="button" class="btn-ghost" data-resin-set="0">Set 0</button>
+                <button type="button" class="btn-ghost" data-resin-add="20">+20</button>
+                <button type="button" class="btn-ghost" data-resin-add="40">+40</button>
+                <button type="button" class="btn-ghost" data-resin-add="60">+60</button>
+                <button type="button" class="btn-ghost" data-resin-set="200">Full 200</button>
+              </div>
+              <div class="metric-grid" id="resin-metrics-grid"></div>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Daily Field Checklist</h3>
+                <span class="domain-subsection-hint tabular" id="daily-cycle-label"></span>
+              </div>
+              <p class="domain-subsection-hint" id="daily-reset-countdown">Syncing daily reset countdown...</p>
+              <div id="daily-checklist" class="checklist"></div>
+            </article>
+          </div>
+
+          <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
+
+          <article class="tool-card">
+            <div class="tool-card-head">
+              <h3>Weekly Trounce Boss Ledger</h3>
+              <span class="domain-days-text tabular" id="weekly-discount-badge">Half-Resin Discounts Used: 0 / 3</span>
+            </div>
+            <p class="domain-subsection-hint" id="weekly-reset-info">First 3 Weekly Boss claims cost 30 Resin each; resets every Monday at your selected server reset time.</p>
+            <div id="weekly-boss-grid" class="boss-grid"></div>
+          </article>
+        </section>
+
+        <!-- 6. ASCENSION PLANNER -->
+        <section id="section-planner" class="page-section" aria-labelledby="planner-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Progression Manifest</p>
+              <h2 id="planner-heading" class="section-title">Ascension Planner</h2>
+              <p class="section-subtitle">
+                Queue characters from My Roster and saved weapons with per-unit Current → Target level and talent milestones to compute exact Mora, Books, Drops, and Domain runs.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-card" style="margin-bottom: 20px;">
+            <div class="tool-card-head">
+              <h3>Character Research Queue (from My Roster)</h3>
+              <div class="quick-btn-row">
+                <button type="button" id="planner-select-all" class="btn-ghost">Queue All Roster</button>
+                <button type="button" id="planner-clear-sel" class="btn-ghost">Clear Queue</button>
+              </div>
+            </div>
+            <div id="planner-roster-picker" class="planner-char-grid"></div>
+            <div id="planner-no-roster" class="empty-state" hidden>
+              <p>Your roster has no owned characters yet. Mark characters as Owned in the Character Index to plan their ascension manifest here.</p>
+              <a href="#characters" class="btn-ghost" data-route="characters">Browse Character Index</a>
+            </div>
+            <div id="planner-char-configs" class="planner-config-grid"></div>
+          </div>
+
+          <div class="tool-card" style="margin-bottom: 20px;">
+            <div class="tool-card-head">
+              <h3>Weapon Research Queue (from Saved Weapons)</h3>
+              <div class="quick-btn-row">
+                <button type="button" id="planner-weapon-select-all" class="btn-ghost">Queue All Weapons</button>
+                <button type="button" id="planner-weapon-clear-sel" class="btn-ghost">Clear Weapons</button>
+              </div>
+            </div>
+            <div id="planner-weapon-picker" class="planner-char-grid"></div>
+            <div id="planner-no-weapons" class="empty-state" hidden>
+              <p>No saved weapons yet. Archive weapons in the Weapon Index to include their Domain materials and Mora here.</p>
+              <a href="#weapons" class="btn-ghost" data-route="weapons">Browse Weapon Index</a>
+            </div>
+            <div id="planner-weapon-configs" class="planner-config-grid"></div>
+          </div>
+
+          <div id="planner-no-selection" class="empty-state" hidden>
+            <p>Your Research Queue is empty. Select any character or weapon above (or click "+ Add to Farming Queue" inside a dossier) to aggregate ascension materials.</p>
+          </div>
+
+          <div id="planner-output-wrap" hidden>
+            <div id="planner-summary-callout" class="summary-callout" style="margin-bottom: 20px;"></div>
+
+            <div class="tool-grid-2">
+              <article class="tool-card">
+                <div class="tool-card-head">
+                  <h3>Consolidated Material Manifest</h3>
+                  <span class="domain-subsection-hint tabular" id="planner-selected-count">0 queued</span>
+                </div>
+                <div id="planner-totals-list" class="checklist"></div>
+              </article>
+
+              <article class="tool-card">
+                <div class="tool-card-head">
+                  <h3>Domain Run Breakdown</h3>
+                  <span class="domain-subsection-hint">Talent &amp; Weapon Domains (~20 Resin / run)</span>
+                </div>
+                <div id="planner-domains-list" class="checklist"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. TEAM BUILDER -->
+        <section id="section-teams" class="page-section" aria-labelledby="teams-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Elemental Synergy</p>
+              <h2 id="teams-heading" class="section-title">Team Synergy Lab</h2>
+              <p class="section-subtitle">
+                Assign characters into four party slots via click or drag-and-drop. Active elemental resonances and triggerable reactions update instantaneously.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-card" style="margin-bottom: 20px;">
+            <div class="tool-card-head">
+              <h3>Active Formation (4 Slots)</h3>
+              <div class="quick-btn-row">
+                <button type="button" id="team-clear-slots" class="btn-ghost">Clear Party</button>
+              </div>
+            </div>
+            <div id="team-slots-grid" class="team-slots-grid"></div>
+
+            <div class="filter-row team-preset-bar">
+              <div class="filter-field search-field">
+                <label class="filter-label" for="team-preset-name">Archive Formation Preset</label>
+                <input id="team-preset-name" class="filter-input" type="text" placeholder="e.g. Nahida Quickbloom" maxlength="48" />
+              </div>
+              <div class="filter-field" style="flex: 0 0 auto;">
+                <button type="button" id="team-save-preset-btn" class="btn-primary">Save Formation</button>
+              </div>
+            </div>
+            <div id="team-presets-list" class="planner-char-grid"></div>
+          </div>
+
+          <article class="tool-card" style="margin-bottom: 20px;">
+            <div class="tool-card-head">
+              <h3>Character Selector (Click or Drag into Slot)</h3>
+              <span class="domain-days-text" id="team-active-slot-label">Target: Slot 1</span>
+            </div>
+            <div class="filter-row">
+              <div class="filter-field search-field">
+                <label class="filter-label" for="team-picker-search">Filter Roster Archive</label>
+                <input id="team-picker-search" class="filter-input" type="search" placeholder="Search character..." />
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="team-picker-element">Element</label>
+                <select id="team-picker-element" class="filter-select">
+                  <option value="All">All Elements</option>
+                  <option value="Pyro">Pyro</option>
+                  <option value="Hydro">Hydro</option>
+                  <option value="Electro">Electro</option>
+                  <option value="Anemo">Anemo</option>
+                  <option value="Geo">Geo</option>
+                  <option value="Cryo">Cryo</option>
+                  <option value="Dendro">Dendro</option>
+                </select>
+              </div>
+            </div>
+            <div id="team-picker-grid" class="team-picker-grid"></div>
+          </article>
+
+          <div class="tool-grid-2">
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Active Elemental Resonances</h3>
+                <span class="domain-subsection-hint" id="team-resonance-hint">Fill slots to activate</span>
+              </div>
+              <div id="team-resonance-list" class="checklist"></div>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Elemental Reaction Matrix</h3>
+                <span class="domain-subsection-hint">Derived from active party elements</span>
+              </div>
+              <div id="team-reaction-grid" class="reaction-grid"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 8. DAMAGE / BUILD CHECKER -->
+        <section id="section-damage" class="page-section" aria-labelledby="damage-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Quantitative Analysis</p>
+              <h2 id="damage-heading" class="section-title">Damage &amp; CRIT Calculator</h2>
+              <p class="section-subtitle">
+                Evaluate ATK, HP, DEF, and EM-scaling skills with CRIT expectations and Vaporize, Melt, Aggravate, Spread, or Lunar reaction multipliers.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-grid-2">
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Attribute Parameters</h3>
+                <button type="button" id="dmg-reset-btn" class="btn-ghost">Reset Sample</button>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-stat-type">Scaling Stat</label>
+                  <select id="dmg-stat-type" class="filter-select">
+                    <option value="ATK">ATK Scaling</option>
+                    <option value="HP">HP Scaling (Neuvillette / Furina / Hu Tao)</option>
+                    <option value="DEF">DEF Scaling (Itto / Xilonen / Chiori)</option>
+                    <option value="EM">EM Scaling (Nahida / Kazuha / Lunar)</option>
+                  </select>
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" id="dmg-stat-label" for="dmg-atk">Total ATK</label>
+                  <input id="dmg-atk" class="filter-input tabular" type="number" min="0" step="10" value="2100" />
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-mult">Talent Multiplier (%)</label>
+                  <input id="dmg-mult" class="filter-input tabular" type="number" min="1" step="5" value="240" />
+                </div>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-cr">CRIT Rate (%)</label>
+                  <input id="dmg-cr" class="filter-input tabular" type="number" min="0" max="100" step="0.5" value="72" />
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-cd">CRIT DMG (%)</label>
+                  <input id="dmg-cd" class="filter-input tabular" type="number" min="0" step="1" value="165" />
+                </div>
+                <div class="filter-field" id="dmg-em-field">
+                  <label class="filter-label" for="dmg-em">Elemental Mastery</label>
+                  <input id="dmg-em" class="filter-input tabular" type="number" min="0" step="10" value="120" />
+                </div>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-bonus">Elemental / DMG Bonus (%)</label>
+                  <input id="dmg-bonus" class="filter-input tabular" type="number" min="0" step="0.1" value="46.6" />
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-reaction">Elemental Reaction</label>
+                  <select id="dmg-reaction" class="filter-select">
+                    <option value="none">No Reaction (Raw Talent Hit)</option>
+                    <option value="amp-1.5">1.5× Reverse Vaporize / Reverse Melt</option>
+                    <option value="amp-2.0">2.0× Forward Vaporize / Forward Melt</option>
+                    <option value="aggravate">Aggravate (+1.15× Quicken Bonus)</option>
+                    <option value="spread">Spread (+1.25× Quicken Bonus)</option>
+                    <option value="lunar">Lunar Reaction (EM Scaling)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-level">Character Level</label>
+                  <select id="dmg-level" class="filter-select">
+                    <option value="90">Lv. 90 (1446.85 Level Mult)</option>
+                    <option value="80">Lv. 80 (1077.44 Level Mult)</option>
+                    <option value="70">Lv. 70 (765.64 Level Mult)</option>
+                  </select>
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="dmg-enemy-mod">Enemy Mitigation Mode</label>
+                  <select id="dmg-enemy-mod" class="filter-select">
+                    <option value="0.45">Lv. 90 Enemy (0.50× DEF × 0.90 RES = 0.45×)</option>
+                    <option value="1">Raw Outgoing Skill Damage (1.0×)</option>
+                  </select>
+                </div>
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Calculated Projection</h3>
+                <span class="domain-days-text tabular" id="dmg-formula-badge">ATK × MV × (1+DMG%) × (1+CR×CD)</span>
+              </div>
+              <div id="dmg-results-grid" class="metric-grid"></div>
+              <div id="dmg-advice-box" class="summary-callout"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 9. TIER LIST -->
+        <section id="section-tiers" class="page-section" aria-labelledby="tiers-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Endgame Appraisal</p>
+              <h2 id="tiers-heading" class="section-title">Spiral Abyss Tier Index</h2>
+              <p class="section-subtitle">
+                Evaluated at C0 for 5★ and C4–C6 for 4★ characters against Version 7.2 ("Hour of Ruin") Floor 12 clears. Select any entry to inspect their full dossier.
+              </p>
+            </div>
+          </div>
+
+          <div class="sunday-banner" style="margin-top: 0; margin-bottom: 20px;">
+            <strong>Scholarly Appraisal Note</strong>
+            <span>Version 7.2 Spiral Abyss Reference · Last updated: Nov 2026. Rankings depend on Lunar &amp; Nightsoul synergies and enemy shield checks.</span>
+          </div>
+
+          <div class="filter-panel">
+            <div class="filter-row">
+              <div class="filter-field">
+                <label class="filter-label" for="tier-role">Filter by Role</label>
+                <select id="tier-role" class="filter-select">
+                  <option value="All">All Roles</option>
+                  <option value="DPS">All DPS (Main &amp; Sub)</option>
+                  <option value="Main DPS">Main DPS</option>
+                  <option value="Sub DPS">Sub DPS</option>
+                  <option value="Support">Support</option>
+                  <option value="Healer">Healer</option>
+                </select>
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="tier-element">Filter by Element</label>
+                <select id="tier-element" class="filter-select">
+                  <option value="All">All Elements</option>
+                  <option value="Pyro">Pyro</option>
+                  <option value="Hydro">Hydro</option>
+                  <option value="Electro">Electro</option>
+                  <option value="Anemo">Anemo</option>
+                  <option value="Geo">Geo</option>
+                  <option value="Cryo">Cryo</option>
+                  <option value="Dendro">Dendro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="tier-list-stack" class="tier-list-stack"></div>
+        </section>
+
+        <!-- 10. 5★ PITY & PRIMOGEM CALCULATOR -->
+        <section id="section-banners" class="page-section" aria-labelledby="banners-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Wish Probability</p>
+              <h2 id="banners-heading" class="section-title">5★ Pity &amp; Primogem Calculator</h2>
+              <p class="section-subtitle">
+                Calculate exact wishes and Primogems to soft pity, hard pity, Capturing Radiance protection, and Epitomized Path guarantees for Character and Weapon Wishes.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-grid-2" style="margin-bottom: 20px;">
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>5★ Pity &amp; Primogem Ledger</h3>
+                <span class="domain-days-text tabular" id="pity-cap-badge">Soft Pity: 74 · Hard Pity: 90</span>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="pity-banner-mode">Wish Banner Type</label>
+                  <select id="pity-banner-mode" class="filter-select">
+                    <option value="character">Character Event Wish (74 / 90)</option>
+                    <option value="weapon">Weapon Event Wish (63 / 80)</option>
+                  </select>
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="pity-count-input" id="pity-count-label">Current Wish Pity (0–89)</label>
+                  <input id="pity-count-input" class="filter-input tabular" type="number" min="0" max="89" value="42" />
+                </div>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="pity-guarantee-select" id="pity-guarantee-label">Next 5★ Status</label>
+                  <select id="pity-guarantee-select" class="filter-select">
+                    <option value="5050">50/50 (Standard Chance)</option>
+                    <option value="guaranteed">Guaranteed Featured 5★</option>
+                  </select>
+                </div>
+                <div class="filter-field" id="pity-radiance-wrap">
+                  <label class="filter-label" for="pity-radiance-losses">Capturing Radiance Streak Losses</label>
+                  <select id="pity-radiance-losses" class="filter-select">
+                    <option value="0">0 Consecutive 50/50 Losses (55/45 Base)</option>
+                    <option value="1">1 Consecutive Loss (Elevated Odds)</option>
+                    <option value="2">2 Consecutive Losses (75% Featured)</option>
+                    <option value="3">3 Consecutive Losses (100% Capturing Radiance)</option>
+                  </select>
+                </div>
+                <div class="filter-field" id="pity-fate-wrap" hidden>
+                  <label class="filter-label" for="pity-fate-points">Epitomized Path Fate Points</label>
+                  <select id="pity-fate-points" class="filter-select">
+                    <option value="0">0 / 1 Fate Points</option>
+                    <option value="1">1 / 1 Fate Point (Next 5★ Guaranteed)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="pity-bar-wrap">
+                <div class="filter-meta-bar" style="border-top: none; padding-top: 0;">
+                  <span class="tabular" id="pity-bar-label">42 / 90 pulls</span>
+                  <span class="tabular" id="pity-soft-status">32 pulls to Soft Pity (74)</span>
+                </div>
+                <div class="pity-bar-track">
+                  <div id="pity-bar-fill" class="pity-bar-fill" style="width: 46%;"></div>
+                </div>
+              </div>
+              <div id="pity-metrics-grid" class="metric-grid"></div>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Wish Rules &amp; Guarantee Mechanics</h3>
+                <span class="domain-days-text tabular">160 Primogems / Wish</span>
+              </div>
+              <div id="pity-mechanics-callout" class="checklist">
+                <div class="checklist-item" style="cursor:default;">
+                  <span>
+                    <strong style="color:var(--gold-bright);">Character Event Wish (90 Hard / 74 Soft)</strong>
+                    <div class="domain-subsection-hint">At pull 74+, 5★ rate ramps +6% per wish until 100% at pull 90. Losing a 50/50 guarantees your next 5★ is the featured character.</div>
+                  </span>
+                </div>
+                <div class="checklist-item" style="cursor:default;">
+                  <span>
+                    <strong style="color:var(--teal);">Capturing Radiance Streak Protection</strong>
+                    <div class="domain-subsection-hint">Tracks consecutive 50/50 losses across Character Event Wishes: after 3 consecutive losses, Capturing Radiance guarantees the next 50/50 wins the featured 5★.</div>
+                  </span>
+                </div>
+                <div class="checklist-item" style="cursor:default;">
+                  <span>
+                    <strong style="color:var(--gold-bright);">Weapon Event Wish (80 Hard / 63 Soft)</strong>
+                    <div class="domain-subsection-hint">75% chance for either rate-up 5★ (or 100% if guaranteed from a standard loss). Epitomized Path caps at 1 Fate Point, guaranteeing your chosen weapon on the next 5★.</div>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 11. SPIRAL ABYSS FLOOR GUIDE -->
+        <section id="section-abyss" class="page-section" aria-labelledby="abyss-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Research · Domain Recon</p>
+              <h2 id="abyss-heading" class="section-title">Spiral Abyss Floor Guide</h2>
+              <p class="section-subtitle">
+                Enemy lineups, recommended elemental matchups, and chamber mechanics for Floors 9 through 12.
+              </p>
+            </div>
+          </div>
+
+          <div id="abyss-floor-tabs" class="abyss-floor-tabs" role="tablist" aria-label="Spiral Abyss Floors"></div>
+          <div id="abyss-floor-detail"></div>
+        </section>
+
+        <!-- 12. LOCAL SPECIALTY MAP INDEX -->
+        <section id="section-specialties" class="page-section" aria-labelledby="specialties-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Archive Registry · Botanical &amp; Mineral Specimens</p>
+              <h2 id="specialties-heading" class="section-title">Local Specialty Index</h2>
+              <p class="section-subtitle">
+                Every regional ascension specialty, required characters, 48-hour respawn timer, and field collection route.
+              </p>
+            </div>
+          </div>
+
+          <div class="filter-panel">
+            <div class="filter-row">
+              <div class="filter-field search-field">
+                <label class="filter-label" for="spec-search">Search Specimen or Character</label>
+                <input id="spec-search" class="filter-input" type="search" placeholder="Search Padisarah, Nahida, Frostfairy Flower, Snezhnaya..." />
+              </div>
+              <div class="filter-field">
+                <label class="filter-label" for="spec-region">Region</label>
+                <select id="spec-region" class="filter-select">
+                  <option value="All">All Regions</option>
+                  <option value="Mondstadt">Mondstadt</option>
+                  <option value="Liyue">Liyue</option>
+                  <option value="Inazuma">Inazuma</option>
+                  <option value="Sumeru">Sumeru</option>
+                  <option value="Fontaine">Fontaine</option>
+                  <option value="Natlan">Natlan</option>
+                  <option value="Nod-Krai">Nod-Krai</option>
+                  <option value="Snezhnaya">Snezhnaya</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-meta-bar">
+              <span id="spec-count-label" class="tabular">Loading specialties...</span>
+              <span class="domain-subsection-hint">All Local Specialties respawn 48 hours (2 days) after harvest</span>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Specialty</th>
+                  <th>Region</th>
+                  <th>Characters Who Need It</th>
+                  <th>Respawn Timer</th>
+                  <th>Collection Route</th>
+                </tr>
+              </thead>
+              <tbody id="specialties-tbody"></tbody>
+            </table>
+          </div>
+          <div id="specialties-mobile-list" class="specialties-mobile-list" aria-label="Local specialties mobile list"></div>
+        </section>
+
+        <!-- 13. SETTINGS / PROFILE -->
+        <section id="section-settings" class="page-section" aria-labelledby="settings-heading">
+          <div class="section-header">
+            <div>
+              <p class="section-kicker">Personal Records · Configuration</p>
+              <h2 id="settings-heading" class="section-title">Preferences &amp; Data Backup</h2>
+              <p class="section-subtitle">
+                Configure your Adventure Rank, Server Region reset clock, archival color mode, and local JSON ledger backup.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-grid-2">
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Scholar Profile &amp; Server Clock</h3>
+                <span class="domain-days-text tabular" id="settings-ar-badge">AR 55</span>
+              </div>
+              <div class="filter-row">
+                <div class="filter-field">
+                  <label class="filter-label" for="settings-ar-input">Adventure Rank (1–60)</label>
+                  <input id="settings-ar-input" class="filter-input tabular" type="number" min="1" max="60" value="55" />
+                </div>
+                <div class="filter-field">
+                  <label class="filter-label" for="settings-server-select">Server Region</label>
+                  <select id="settings-server-select" class="filter-select">
+                    <option value="NA">America / NA (09:00 UTC)</option>
+                    <option value="EU">Europe / EU (03:00 UTC)</option>
+                    <option value="Asia">Asia (20:00 UTC)</option>
+                    <option value="TW">TW / HK / MO (20:00 UTC)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="summary-callout" id="settings-reset-summary"></div>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-card-head">
+                <h3>Appearance &amp; Ledger Backup</h3>
+                <span class="domain-subsection-hint tabular" id="settings-owned-summary">0 Owned</span>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <strong>Archival Theme</strong>
+                  <p class="domain-subsection-hint">Dark Academic mode is default; switch to Warm Parchment light mode anytime.</p>
+                </div>
+                <button type="button" id="settings-theme-btn" class="btn-ghost">Theme: Dark Academic</button>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <strong>Export Local Ledger (.json)</strong>
+                  <p class="domain-subsection-hint">Download your Owned Roster, Saved Weapons, Research Queue, Team Formations, Pity, and Daily/Weekly progress.</p>
+                </div>
+                <button type="button" id="settings-export-btn" class="btn-ghost">Export Backup</button>
+              </div>
+              <div class="settings-row">
+                <div>
+                  <strong>Import Local Ledger (.json)</strong>
+                  <p class="domain-subsection-hint">Restore a previously exported Teyvat Index archive backup.</p>
+                </div>
+                <div class="quick-btn-row">
+                  <input type="file" id="settings-import-input" accept="application/json,.json" hidden />
+                  <button type="button" id="settings-import-btn" class="btn-ghost">Import Backup</button>
+                </div>
+              </div>
+              <div id="settings-backup-status" class="settings-backup-status" role="status" aria-live="polite" hidden></div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Teyvat Index — Unofficial fan-made Genshin Impact research archive.</span>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <span>Game data, icons &amp; terminology belong to HoYoverse.</span>
+      </footer>
     </div>
+  </div>
 
-    <nav class="mobile-nav-strip" aria-label="Mobile navigation">
-      <a href="#home" class="nav-link" data-group="domains" data-route="home">Daily</a>
-      <a href="#characters" class="nav-link" data-group="compendium" data-route="characters">Index</a>
-      <a href="#planner" class="nav-link" data-group="tools" data-route="planner">Tools</a>
-      <a href="#tiers" class="nav-link" data-group="meta" data-route="tiers">Meta</a>
-      <a href="#roster" class="nav-link" data-group="roster" data-route="roster">Roster</a>
-      <a href="#settings" class="nav-link" data-group="settings" data-route="settings">Settings</a>
-    </nav>
-  </header>
-
-  <main class="main-wrap">
-    <nav id="workspace-subnav" class="workspace-subnav" aria-label="Section navigation"></nav>
-
-    <!-- 1. HOME — DAILY FARMING GUIDE -->
-    <section id="section-home" class="page-section" aria-labelledby="home-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Adventurer's Daily Rotation</p>
-          <h2 id="home-heading" class="section-title">Daily Domain Farming Guide</h2>
-          <p class="section-subtitle">
-            Plan your Original Resin around today's active Talent Book and Weapon Ascension domains across Mondstadt, Liyue, Inazuma, Sumeru, Fontaine, Natlan, Nod-Krai, and Snezhnaya (v1.0–v7.2).
-          </p>
-        </div>
-      </div>
-
-      <div class="game-frame">
-        <span class="frame-corner tl" aria-hidden="true"></span>
-        <span class="frame-corner tr" aria-hidden="true"></span>
-        <span class="frame-corner bl" aria-hidden="true"></span>
-        <span class="frame-corner br" aria-hidden="true"></span>
-
-        <div class="daily-header-bar">
-          <div class="daily-title-group">
-            <h3 id="daily-panel-title">Loading today's domain schedule...</h3>
-            <p class="daily-meta" id="daily-panel-subtitle"></p>
-          </div>
-          <div class="day-switcher" role="group" aria-label="Preview day of week">
-            <button type="button" class="day-btn" data-day="1">Mon</button>
-            <button type="button" class="day-btn" data-day="2">Tue</button>
-            <button type="button" class="day-btn" data-day="3">Wed</button>
-            <button type="button" class="day-btn" data-day="4">Thu</button>
-            <button type="button" class="day-btn" data-day="5">Fri</button>
-            <button type="button" class="day-btn" data-day="6">Sat</button>
-            <button type="button" class="day-btn" data-day="0">Sun</button>
-          </div>
-        </div>
-
-        <div id="sunday-note" class="sunday-banner" hidden>
-          <strong>All domains open today!</strong>
-          <span>Every Talent Level-Up Book and Weapon Ascension Material across all eight regions (Mondstadt through Snezhnaya) can be farmed freely on Sunday.</span>
-        </div>
-
-        <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
-
-        <div>
-          <h4 class="domain-subsection-title">
-            <span>Talent Level-Up Material Domains</span>
-            <span class="domain-subsection-hint">Click any indexed character to open build guide</span>
-          </h4>
-          <div id="daily-talent-grid" class="domain-grid"></div>
-        </div>
-
-        <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
-
-        <div>
-          <h4 class="domain-subsection-title">
-            <span>Weapon Ascension Material Domains</span>
-            <span class="domain-subsection-hint">Click any indexed weapon to inspect passives</span>
-          </h4>
-          <div id="daily-weapon-grid" class="domain-grid"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. CHARACTER INDEX -->
-    <section id="section-characters" class="page-section" aria-labelledby="characters-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Compendium of Heroes</p>
-          <h2 id="characters-heading" class="section-title">Character Index</h2>
-          <p class="section-subtitle">
-            Explore builds, talent priorities, artifact pairings, and ascension materials from Version 1.0 through Version 7.2. Click any character for the full dossier.
-          </p>
-        </div>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-primary-row">
-          <div class="filter-field search-field">
-            <label class="filter-label" for="char-search">Search Character</label>
-            <input id="char-search" class="filter-input" type="search" placeholder="Name, region, v7.2, or book..." />
-          </div>
-          <button type="button" id="char-more-filters-btn" class="filter-more-toggle" aria-expanded="false" aria-controls="char-secondary-filters">More Filters</button>
-        </div>
-        <div id="char-secondary-filters" class="filter-secondary-group is-collapsed">
-          <div class="filter-field">
-            <label class="filter-label" for="char-region">Region</label>
-            <select id="char-region" class="filter-select">
-              <option value="All">All Regions</option>
-              <option value="Mondstadt">Mondstadt</option>
-              <option value="Liyue">Liyue</option>
-              <option value="Inazuma">Inazuma</option>
-              <option value="Sumeru">Sumeru</option>
-              <option value="Fontaine">Fontaine</option>
-              <option value="Natlan">Natlan</option>
-              <option value="Nod-Krai">Nod-Krai</option>
-              <option value="Snezhnaya">Snezhnaya</option>
-              <option value="Outworld">Outworld</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="char-element">Element</label>
-            <select id="char-element" class="filter-select">
-              <option value="All">All Elements</option>
-              <option value="Pyro">Pyro</option>
-              <option value="Hydro">Hydro</option>
-              <option value="Electro">Electro</option>
-              <option value="Anemo">Anemo</option>
-              <option value="Geo">Geo</option>
-              <option value="Cryo">Cryo</option>
-              <option value="Dendro">Dendro</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="char-weapon">Weapon Type</label>
-            <select id="char-weapon" class="filter-select">
-              <option value="All">All Weapons</option>
-              <option value="Sword">Sword</option>
-              <option value="Claymore">Claymore</option>
-              <option value="Polearm">Polearm</option>
-              <option value="Bow">Bow</option>
-              <option value="Catalyst">Catalyst</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="char-role">Role</label>
-            <select id="char-role" class="filter-select">
-              <option value="All">All Roles</option>
-              <option value="Main DPS">Main DPS</option>
-              <option value="Sub DPS">Sub DPS</option>
-              <option value="Support">Support</option>
-              <option value="Healer">Healer</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="char-rarity">Rarity</label>
-            <select id="char-rarity" class="filter-select">
-              <option value="All">All Rarities</option>
-              <option value="5">5★ Characters</option>
-              <option value="4">4★ Characters</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="char-owned-filter">My Roster Filter</label>
-            <select id="char-owned-filter" class="filter-select">
-              <option value="all">Show All</option>
-              <option value="hide-owned">Hide Owned</option>
-              <option value="only-owned">Owned Only</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-meta-bar">
-          <span id="char-count-label" class="tabular">Loading characters...</span>
-          <button type="button" id="char-reset-btn" class="btn-ghost">Reset Filters</button>
-        </div>
-      </div>
-
-      <div id="character-grid" class="card-grid"></div>
-      <div id="character-empty" class="empty-state" hidden>
-        <p>No characters match your current filter selection.</p>
-        <button type="button" id="char-empty-reset" class="btn-ghost">Clear Filters</button>
-      </div>
-    </section>
-
-    <!-- 3. WEAPON INDEX -->
-    <section id="section-weapons" class="page-section" aria-labelledby="weapons-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Arsenal of Teyvat</p>
-          <h2 id="weapons-heading" class="section-title">Weapon Index</h2>
-          <p class="section-subtitle">
-            Compare Level 90 Base ATK, secondary substats, passive abilities, and domain ascension schedules across Versions 1.0–7.2.
-          </p>
-        </div>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-primary-row">
-          <div class="filter-field search-field">
-            <label class="filter-label" for="weapon-search">Search Weapon</label>
-            <input id="weapon-search" class="filter-input" type="search" placeholder="Name, region, v7.2, or user..." />
-          </div>
-          <button type="button" id="weapon-more-filters-btn" class="filter-more-toggle" aria-expanded="false" aria-controls="weapon-secondary-filters">More Filters</button>
-        </div>
-        <div id="weapon-secondary-filters" class="filter-secondary-group is-collapsed">
-          <div class="filter-field">
-            <label class="filter-label" for="weapon-region">Region</label>
-            <select id="weapon-region" class="filter-select">
-              <option value="All">All Regions</option>
-              <option value="Mondstadt">Mondstadt</option>
-              <option value="Liyue">Liyue</option>
-              <option value="Inazuma">Inazuma</option>
-              <option value="Sumeru">Sumeru</option>
-              <option value="Fontaine">Fontaine</option>
-              <option value="Natlan">Natlan</option>
-              <option value="Nod-Krai">Nod-Krai</option>
-              <option value="Snezhnaya">Snezhnaya</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="weapon-type">Weapon Type</label>
-            <select id="weapon-type" class="filter-select">
-              <option value="All">All Types</option>
-              <option value="Sword">Sword</option>
-              <option value="Claymore">Claymore</option>
-              <option value="Polearm">Polearm</option>
-              <option value="Bow">Bow</option>
-              <option value="Catalyst">Catalyst</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="weapon-rarity">Rarity</label>
-            <select id="weapon-rarity" class="filter-select">
-              <option value="All">All Rarities</option>
-              <option value="5">5★ Weapons</option>
-              <option value="4">4★ Weapons</option>
-              <option value="3">3★ Staples</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-meta-bar">
-          <span id="weapon-count-label" class="tabular">Loading weapons...</span>
-          <button type="button" id="weapon-reset-btn" class="btn-ghost">Reset Filters</button>
-        </div>
-      </div>
-
-      <div id="weapon-grid" class="card-grid"></div>
-      <div id="weapon-empty" class="empty-state" hidden>
-        <p>No weapons match your current filter selection.</p>
-        <button type="button" id="weapon-empty-reset" class="btn-ghost">Clear Filters</button>
-      </div>
-    </section>
-
-    <!-- 4. MY ROSTER -->
-    <section id="section-roster" class="page-section" aria-labelledby="roster-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Personal Account Collection</p>
-          <h2 id="roster-heading" class="section-title">My Roster</h2>
-          <p class="section-subtitle">
-            Manage all Owned characters and Saved weapons in your account. Queue active build targets in the Ascension Planner anytime.
-          </p>
-        </div>
-        <div id="roster-clear-area" class="quick-btn-row">
-          <a href="#planner" class="btn-ghost" data-route="planner">Open Ascension Planner</a>
-          <button type="button" id="clear-all-btn" class="btn-danger" hidden>Clear All</button>
-          <div id="clear-confirm-box" class="confirm-inline" hidden>
-            <span>Remove all owned characters and saved weapons?</span>
-            <button type="button" id="confirm-clear-yes" class="btn-danger">Confirm Clear</button>
-            <button type="button" id="confirm-clear-no" class="btn-ghost">Cancel</button>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="roster-section-header">
-          <h3>Owned Characters <span id="roster-char-count" class="tabular">(0)</span></h3>
-        </div>
-        <div id="roster-char-grid" class="card-grid"></div>
-        <div id="roster-char-empty" class="empty-state" hidden>
-          <p>No owned characters added yet — open any character in the Character Index to add them to My Roster.</p>
-          <a href="#characters" class="btn-ghost" data-route="characters">Browse Character Index</a>
-        </div>
-      </div>
-
-      <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
-
-      <div>
-        <div class="roster-section-header">
-          <h3>Saved Weapons <span id="roster-weapon-count" class="tabular">(0)</span></h3>
-        </div>
-        <div id="roster-weapon-grid" class="card-grid"></div>
-        <div id="roster-weapon-empty" class="empty-state" hidden>
-          <p>No weapons saved yet — browse the Weapon Index to add some.</p>
-          <a href="#weapons" class="btn-ghost" data-route="weapons">Browse Weapon Index</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. RESIN & DAILY TRACKER -->
-    <section id="section-resin" class="page-section" aria-labelledby="resin-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Stamina &amp; Commissions</p>
-          <h2 id="resin-heading" class="section-title">Resin &amp; Daily Tracker</h2>
-          <p class="section-subtitle">
-            Calculate exact time to the 200 Original Resin cap, check off daily tasks aligned to your server reset clock, and track weekly half-cost Trounce bosses.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-grid-2">
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Original Resin Calculator</h3>
-            <span class="domain-days-text tabular" id="resin-reset-badge">Syncing server clock...</span>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="resin-current-input">Current Original Resin (0–200)</label>
-              <input id="resin-current-input" class="filter-input tabular" type="number" min="0" max="200" value="40" />
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="resin-condensed-input">Condensed Resin (0–5)</label>
-              <input id="resin-condensed-input" class="filter-input tabular" type="number" min="0" max="5" value="2" />
-            </div>
-          </div>
-          <div class="quick-btn-row" aria-label="Quick resin adjustments">
-            <button type="button" class="btn-ghost" data-resin-set="0">Set 0</button>
-            <button type="button" class="btn-ghost" data-resin-add="20">+20</button>
-            <button type="button" class="btn-ghost" data-resin-add="40">+40</button>
-            <button type="button" class="btn-ghost" data-resin-add="60">+60</button>
-            <button type="button" class="btn-ghost" data-resin-set="200">Full 200</button>
-          </div>
-          <div class="metric-grid" id="resin-metrics-grid"></div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Daily Checklist</h3>
-            <span class="domain-subsection-hint tabular" id="daily-cycle-label"></span>
-          </div>
-          <p class="domain-subsection-hint" id="daily-reset-countdown">Syncing daily reset countdown...</p>
-          <div id="daily-checklist" class="checklist"></div>
-        </article>
-      </div>
-
-      <div class="gold-divider" aria-hidden="true"><span class="gold-divider-diamond"></span></div>
-
-      <article class="tool-card">
-        <div class="tool-card-head">
-          <h3>Weekly Trounce Boss Tracker</h3>
-          <span class="domain-days-text tabular" id="weekly-discount-badge">Half-Resin Discounts Used: 0 / 3</span>
-        </div>
-        <p class="domain-subsection-hint" id="weekly-reset-info">First 3 Weekly Boss claims cost 30 Resin each; resets every Monday at your selected server reset time.</p>
-        <div id="weekly-boss-grid" class="boss-grid"></div>
-      </article>
-    </section>
-
-    <!-- 6. ASCENSION PLANNER -->
-    <section id="section-planner" class="page-section" aria-labelledby="planner-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Build &amp; Farming Queue</p>
-          <h2 id="planner-heading" class="section-title">Ascension Planner</h2>
-          <p class="section-subtitle">
-            Toggle characters from My Roster and saved weapons into your Farming Queue with per-unit Current → Target level and talent goals to compute exact Mora, Books, Drops, and Domain runs.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-card" style="margin-bottom: 20px;">
-        <div class="tool-card-head">
-          <h3>Character Farming Queue (from My Roster)</h3>
-          <div class="quick-btn-row">
-            <button type="button" id="planner-select-all" class="btn-ghost">Queue All Roster</button>
-            <button type="button" id="planner-clear-sel" class="btn-ghost">Clear Queue</button>
-          </div>
-        </div>
-        <div id="planner-roster-picker" class="planner-char-grid"></div>
-        <div id="planner-no-roster" class="empty-state" hidden>
-          <p>Your roster has no owned characters yet. Mark characters as Owned in the Character Index to plan their materials here.</p>
-          <a href="#characters" class="btn-ghost" data-route="characters">Browse Character Index</a>
-        </div>
-        <div id="planner-char-configs" class="planner-config-grid"></div>
-      </div>
-
-      <div class="tool-card" style="margin-bottom: 20px;">
-        <div class="tool-card-head">
-          <h3>Weapon Ascension Queue (from Saved Weapons)</h3>
-          <div class="quick-btn-row">
-            <button type="button" id="planner-weapon-select-all" class="btn-ghost">Queue All Weapons</button>
-            <button type="button" id="planner-weapon-clear-sel" class="btn-ghost">Clear Weapons</button>
-          </div>
-        </div>
-        <div id="planner-weapon-picker" class="planner-char-grid"></div>
-        <div id="planner-no-weapons" class="empty-state" hidden>
-          <p>No saved weapons yet. Save weapons in the Weapon Index to include their Domain materials and Mora here.</p>
-          <a href="#weapons" class="btn-ghost" data-route="weapons">Browse Weapon Index</a>
-        </div>
-        <div id="planner-weapon-configs" class="planner-config-grid"></div>
-      </div>
-
-      <div id="planner-no-selection" class="empty-state" hidden>
-        <p>Your Farming Queue is empty. Select any character or weapon above (or click "+ Add to Farming Queue" inside a detail modal) to aggregate ascension materials.</p>
-      </div>
-
-      <div id="planner-output-wrap" hidden>
-        <div id="planner-summary-callout" class="summary-callout" style="margin-bottom: 20px;"></div>
-
-        <div class="tool-grid-2">
-          <article class="tool-card">
-            <div class="tool-card-head">
-              <h3>Consolidated Farming List</h3>
-              <span class="domain-subsection-hint tabular" id="planner-selected-count">0 queued</span>
-            </div>
-            <div id="planner-totals-list" class="checklist"></div>
-          </article>
-
-          <article class="tool-card">
-            <div class="tool-card-head">
-              <h3>Domain Run Breakdown</h3>
-              <span class="domain-subsection-hint">Talent &amp; Weapon Domains (~20 Resin / run)</span>
-            </div>
-            <div id="planner-domains-list" class="checklist"></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. TEAM BUILDER -->
-    <section id="section-teams" class="page-section" aria-labelledby="teams-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Party Composition</p>
-          <h2 id="teams-heading" class="section-title">Team Builder</h2>
-          <p class="section-subtitle">
-            Drag characters into the four party slots or click a slot and pick below. Active elemental resonances and triggerable reactions update live.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-card" style="margin-bottom: 20px;">
-        <div class="tool-card-head">
-          <h3>Active Party (4 Slots)</h3>
-          <div class="quick-btn-row">
-            <button type="button" id="team-clear-slots" class="btn-ghost">Clear Party</button>
-          </div>
-        </div>
-        <div id="team-slots-grid" class="team-slots-grid"></div>
-
-        <div class="filter-row" style="padding-top: 8px; border-top: 1px solid var(--border-hairline);">
-          <div class="filter-field search-field">
-            <label class="filter-label" for="team-preset-name">Save Current Team Preset</label>
-            <input id="team-preset-name" class="filter-input" type="text" placeholder="e.g. Hu Tao Double Hydro" maxlength="48" />
-          </div>
-          <div class="filter-field" style="flex: 0 0 auto;">
-            <button type="button" id="team-save-preset-btn" class="btn-primary">Save Team Preset</button>
-          </div>
-        </div>
-        <div id="team-presets-list" class="planner-char-grid"></div>
-      </div>
-
-      <article class="tool-card" style="margin-bottom: 20px;">
-        <div class="tool-card-head">
-          <h3>Character Picker (Click or Drag into Slot)</h3>
-          <span class="domain-days-text" id="team-active-slot-label">Target: Slot 1</span>
-        </div>
-        <div class="filter-row">
-          <div class="filter-field search-field">
-            <label class="filter-label" for="team-picker-search">Filter Picker</label>
-            <input id="team-picker-search" class="filter-input" type="search" placeholder="Search character..." />
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="team-picker-element">Element</label>
-            <select id="team-picker-element" class="filter-select">
-              <option value="All">All Elements</option>
-              <option value="Pyro">Pyro</option>
-              <option value="Hydro">Hydro</option>
-              <option value="Electro">Electro</option>
-              <option value="Anemo">Anemo</option>
-              <option value="Geo">Geo</option>
-              <option value="Cryo">Cryo</option>
-              <option value="Dendro">Dendro</option>
-            </select>
-          </div>
-        </div>
-        <div id="team-picker-grid" class="team-picker-grid"></div>
-      </article>
-
-      <div class="tool-grid-2">
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Active Elemental Resonances</h3>
-            <span class="domain-subsection-hint" id="team-resonance-hint">Fill slots to activate</span>
-          </div>
-          <div id="team-resonance-list" class="checklist"></div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Reaction Cheat-Sheet</h3>
-            <span class="domain-subsection-hint">Based on party elements</span>
-          </div>
-          <div id="team-reaction-grid" class="reaction-grid"></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 8. DAMAGE / BUILD CHECKER -->
-    <section id="section-damage" class="page-section" aria-labelledby="damage-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Build Sanity Check</p>
-          <h2 id="damage-heading" class="section-title">Damage &amp; CRIT Calculator</h2>
-          <p class="section-subtitle">
-            Evaluate ATK, HP, DEF, and EM-scaling skills with CRIT expectations and Vaporize, Melt, Aggravate, Spread, or Lunar reaction multipliers.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-grid-2">
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Character Build Stats</h3>
-            <button type="button" id="dmg-reset-btn" class="btn-ghost">Reset Sample</button>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-stat-type">Scaling Stat</label>
-              <select id="dmg-stat-type" class="filter-select">
-                <option value="ATK">ATK Scaling</option>
-                <option value="HP">HP Scaling (Neuvillette / Furina / Hu Tao)</option>
-                <option value="DEF">DEF Scaling (Itto / Xilonen / Chiori)</option>
-                <option value="EM">EM Scaling (Nahida / Kazuha / Lunar)</option>
-              </select>
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" id="dmg-stat-label" for="dmg-atk">Total ATK</label>
-              <input id="dmg-atk" class="filter-input tabular" type="number" min="0" step="10" value="2100" />
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-mult">Talent Multiplier (%)</label>
-              <input id="dmg-mult" class="filter-input tabular" type="number" min="1" step="5" value="240" />
-            </div>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-cr">CRIT Rate (%)</label>
-              <input id="dmg-cr" class="filter-input tabular" type="number" min="0" max="100" step="0.5" value="72" />
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-cd">CRIT DMG (%)</label>
-              <input id="dmg-cd" class="filter-input tabular" type="number" min="0" step="1" value="165" />
-            </div>
-            <div class="filter-field" id="dmg-em-field">
-              <label class="filter-label" for="dmg-em">Elemental Mastery</label>
-              <input id="dmg-em" class="filter-input tabular" type="number" min="0" step="10" value="120" />
-            </div>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-bonus">Elemental / DMG Bonus (%)</label>
-              <input id="dmg-bonus" class="filter-input tabular" type="number" min="0" step="0.1" value="46.6" />
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-reaction">Elemental Reaction</label>
-              <select id="dmg-reaction" class="filter-select">
-                <option value="none">No Reaction (Raw Talent Hit)</option>
-                <option value="amp-1.5">1.5× Reverse Vaporize / Reverse Melt</option>
-                <option value="amp-2.0">2.0× Forward Vaporize / Forward Melt</option>
-                <option value="aggravate">Aggravate (+1.15× Quicken Bonus)</option>
-                <option value="spread">Spread (+1.25× Quicken Bonus)</option>
-                <option value="lunar">Lunar Reaction (EM Scaling)</option>
-              </select>
-            </div>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-level">Character Level</label>
-              <select id="dmg-level" class="filter-select">
-                <option value="90">Lv. 90 (1446.85 Level Mult)</option>
-                <option value="80">Lv. 80 (1077.44 Level Mult)</option>
-                <option value="70">Lv. 70 (765.64 Level Mult)</option>
-              </select>
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="dmg-enemy-mod">Enemy Mitigation Mode</label>
-              <select id="dmg-enemy-mod" class="filter-select">
-                <option value="0.45">Lv. 90 Enemy (0.50× DEF × 0.90 RES = 0.45×)</option>
-                <option value="1">Raw Outgoing Skill Damage (1.0×)</option>
-              </select>
-            </div>
-          </div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Calculated Output</h3>
-            <span class="domain-days-text" id="dmg-formula-badge">ATK × MV × (1+DMG%) × (1+CR×CD)</span>
-          </div>
-          <div id="dmg-results-grid" class="metric-grid"></div>
-          <div id="dmg-advice-box" class="summary-callout"></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 9. TIER LIST -->
-    <section id="section-tiers" class="page-section" aria-labelledby="tiers-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Community Meta Snapshot · Version 7.2 Spiral Abyss</p>
-          <h2 id="tiers-heading" class="section-title">Spiral Abyss Tier List</h2>
-          <p class="section-subtitle">
-            Evaluated at C0 for 5★ and C4–C6 for 4★ characters against Version 7.2 ("Hour of Ruin") Floor 12 endgame clears. Click any hero for build details.
-          </p>
-        </div>
-      </div>
-
-      <div class="sunday-banner" style="margin-top: 0; margin-bottom: 20px;">
-        <strong>Community Meta Snapshot</strong>
-        <span>Version 7.2 Spiral Abyss Reference · Last updated: Nov 2026. Context-dependent on Lunar &amp; Nightsoul synergies and enemy shields.</span>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-row">
-          <div class="filter-field">
-            <label class="filter-label" for="tier-role">Filter by Role</label>
-            <select id="tier-role" class="filter-select">
-              <option value="All">All Roles</option>
-              <option value="DPS">All DPS (Main &amp; Sub)</option>
-              <option value="Main DPS">Main DPS</option>
-              <option value="Sub DPS">Sub DPS</option>
-              <option value="Support">Support</option>
-              <option value="Healer">Healer</option>
-            </select>
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="tier-element">Filter by Element</label>
-            <select id="tier-element" class="filter-select">
-              <option value="All">All Elements</option>
-              <option value="Pyro">Pyro</option>
-              <option value="Hydro">Hydro</option>
-              <option value="Electro">Electro</option>
-              <option value="Anemo">Anemo</option>
-              <option value="Geo">Geo</option>
-              <option value="Cryo">Cryo</option>
-              <option value="Dendro">Dendro</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div id="tier-list-stack" class="tier-list-stack"></div>
-    </section>
-
-    <!-- 10. 5★ PITY & PRIMOGEM CALCULATOR -->
-    <section id="section-banners" class="page-section" aria-labelledby="banners-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Wishes &amp; Pity Planning</p>
-          <h2 id="banners-heading" class="section-title">5★ Pity &amp; Primogem Calculator</h2>
-          <p class="section-subtitle">
-            Calculate exact pulls and Primogems to soft pity, hard pity, Capturing Radiance protection, and Epitomized Path guarantees for Character and Weapon Wishes.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-grid-2" style="margin-bottom: 20px;">
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>5★ Pity &amp; Primogem Tracker</h3>
-            <span class="domain-days-text" id="pity-cap-badge">Soft Pity: 74 · Hard Pity: 90</span>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="pity-banner-mode">Wish Banner Type</label>
-              <select id="pity-banner-mode" class="filter-select">
-                <option value="character">Character Event Wish (74 / 90)</option>
-                <option value="weapon">Weapon Event Wish (63 / 80)</option>
-              </select>
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="pity-count-input" id="pity-count-label">Current Wish Pity (0–89)</label>
-              <input id="pity-count-input" class="filter-input tabular" type="number" min="0" max="89" value="42" />
-            </div>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="pity-guarantee-select" id="pity-guarantee-label">Next 5★ Status</label>
-              <select id="pity-guarantee-select" class="filter-select">
-                <option value="5050">50/50 (Standard Chance)</option>
-                <option value="guaranteed">Guaranteed Featured 5★</option>
-              </select>
-            </div>
-            <div class="filter-field" id="pity-radiance-wrap">
-              <label class="filter-label" for="pity-radiance-losses">Capturing Radiance Streak Losses</label>
-              <select id="pity-radiance-losses" class="filter-select">
-                <option value="0">0 Consecutive 50/50 Losses (55/45 Base)</option>
-                <option value="1">1 Consecutive Loss (Elevated Odds)</option>
-                <option value="2">2 Consecutive Losses (75% Featured)</option>
-                <option value="3">3 Consecutive Losses (100% Capturing Radiance)</option>
-              </select>
-            </div>
-            <div class="filter-field" id="pity-fate-wrap" hidden>
-              <label class="filter-label" for="pity-fate-points">Epitomized Path Fate Points</label>
-              <select id="pity-fate-points" class="filter-select">
-                <option value="0">0 / 1 Fate Points</option>
-                <option value="1">1 / 1 Fate Point (Next 5★ Guaranteed)</option>
-              </select>
-            </div>
-          </div>
-          <div class="pity-bar-wrap">
-            <div class="filter-meta-bar" style="border-top: none; padding-top: 0;">
-              <span class="tabular" id="pity-bar-label">42 / 90 pulls</span>
-              <span class="tabular" id="pity-soft-status">32 pulls to Soft Pity (74)</span>
-            </div>
-            <div class="pity-bar-track">
-              <div id="pity-bar-fill" class="pity-bar-fill" style="width: 46%;"></div>
-            </div>
-          </div>
-          <div id="pity-metrics-grid" class="metric-grid"></div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Wish Rules &amp; Guarantee Mechanics</h3>
-            <span class="domain-days-text">160 Primogems / Wish</span>
-          </div>
-          <div id="pity-mechanics-callout" class="checklist">
-            <div class="checklist-item" style="cursor:default;">
-              <span>
-                <strong style="color:var(--gold-bright);">Character Event Wish (90 Hard / 74 Soft)</strong>
-                <div class="domain-subsection-hint">At pull 74+, 5★ rate ramps +6% per wish until 100% at pull 90. Losing a 50/50 guarantees your next 5★ is the featured character.</div>
-              </span>
-            </div>
-            <div class="checklist-item" style="cursor:default;">
-              <span>
-                <strong style="color:var(--teal);">Capturing Radiance Streak Protection</strong>
-                <div class="domain-subsection-hint">Tracks consecutive 50/50 losses across Character Event Wishes: after 3 consecutive losses, Capturing Radiance guarantees the next 50/50 wins the featured 5★.</div>
-              </span>
-            </div>
-            <div class="checklist-item" style="cursor:default;">
-              <span>
-                <strong style="color:var(--gold-bright);">Weapon Event Wish (80 Hard / 63 Soft)</strong>
-                <div class="domain-subsection-hint">75% chance for either rate-up 5★ (or 100% if guaranteed from a standard loss). Epitomized Path caps at 1 Fate Point, guaranteeing your chosen weapon on the next 5★.</div>
-              </span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 11. SPIRAL ABYSS FLOOR GUIDE -->
-    <section id="section-abyss" class="page-section" aria-labelledby="abyss-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Endgame Domain Strategy</p>
-          <h2 id="abyss-heading" class="section-title">Spiral Abyss Floor Guide</h2>
-          <p class="section-subtitle">
-            Enemy lineups, recommended elemental matchups, and chamber mechanics for Floors 9 through 12.
-          </p>
-        </div>
-      </div>
-
-      <div id="abyss-floor-tabs" class="abyss-floor-tabs" role="tablist" aria-label="Spiral Abyss Floors"></div>
-      <div id="abyss-floor-detail"></div>
-    </section>
-
-    <!-- 12. LOCAL SPECIALTY MAP INDEX -->
-    <section id="section-specialties" class="page-section" aria-labelledby="specialties-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Overworld Gathering Guide</p>
-          <h2 id="specialties-heading" class="section-title">Local Specialty Index</h2>
-          <p class="section-subtitle">
-            Every regional ascension specialty, required characters, 48-hour respawn timer, and efficient farming routes.
-          </p>
-        </div>
-      </div>
-
-      <div class="filter-panel">
-        <div class="filter-row">
-          <div class="filter-field search-field">
-            <label class="filter-label" for="spec-search">Search Specialty or Character</label>
-            <input id="spec-search" class="filter-input" type="search" placeholder="Search Frostfairy Flower, Mavuika, Snezhnaya..." />
-          </div>
-          <div class="filter-field">
-            <label class="filter-label" for="spec-region">Region</label>
-            <select id="spec-region" class="filter-select">
-              <option value="All">All Regions</option>
-              <option value="Mondstadt">Mondstadt</option>
-              <option value="Liyue">Liyue</option>
-              <option value="Inazuma">Inazuma</option>
-              <option value="Sumeru">Sumeru</option>
-              <option value="Fontaine">Fontaine</option>
-              <option value="Natlan">Natlan</option>
-              <option value="Nod-Krai">Nod-Krai</option>
-              <option value="Snezhnaya">Snezhnaya</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-meta-bar">
-          <span id="spec-count-label" class="tabular">Loading specialties...</span>
-          <span class="domain-subsection-hint">All Local Specialties respawn 48 hours (2 days) after harvest</span>
-        </div>
-      </div>
-
-      <div class="table-wrap">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Specialty</th>
-              <th>Region</th>
-              <th>Characters Who Need It</th>
-              <th>Respawn Timer</th>
-              <th>Efficient Farming Route</th>
-            </tr>
-          </thead>
-          <tbody id="specialties-tbody"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 13. SETTINGS / PROFILE -->
-    <section id="section-settings" class="page-section" aria-labelledby="settings-heading">
-      <div class="section-header">
-        <div>
-          <p class="section-kicker">Traveler Preferences</p>
-          <h2 id="settings-heading" class="section-title">Settings &amp; Profile</h2>
-          <p class="section-subtitle">
-            Configure your Adventure Rank, Server Region reset clock, color theme, and JSON data backup. All preferences persist locally.
-          </p>
-        </div>
-      </div>
-
-      <div class="tool-grid-2">
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Traveler Profile &amp; Server Clock</h3>
-            <span class="domain-days-text tabular" id="settings-ar-badge">AR 55</span>
-          </div>
-          <div class="filter-row">
-            <div class="filter-field">
-              <label class="filter-label" for="settings-ar-input">Adventure Rank (1–60)</label>
-              <input id="settings-ar-input" class="filter-input tabular" type="number" min="1" max="60" value="55" />
-            </div>
-            <div class="filter-field">
-              <label class="filter-label" for="settings-server-select">Server Region</label>
-              <select id="settings-server-select" class="filter-select">
-                <option value="NA">America / NA (09:00 UTC)</option>
-                <option value="EU">Europe / EU (03:00 UTC)</option>
-                <option value="Asia">Asia (20:00 UTC)</option>
-                <option value="TW">TW / HK / MO (20:00 UTC)</option>
-              </select>
-            </div>
-          </div>
-          <div class="summary-callout" id="settings-reset-summary"></div>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-head">
-            <h3>Appearance &amp; Data Backup</h3>
-            <span class="domain-subsection-hint" id="settings-owned-summary">0 Owned</span>
-          </div>
-          <div class="settings-row">
-            <div>
-              <strong>Color Theme</strong>
-              <p class="domain-subsection-hint">Dark mode is default; switch to Archival Ivory light mode anytime.</p>
-            </div>
-            <button type="button" id="settings-theme-btn" class="btn-ghost">Theme: Dark Mode</button>
-          </div>
-          <div class="settings-row">
-            <div>
-              <strong>Export Local Data (.json)</strong>
-              <p class="domain-subsection-hint">Download your Owned Roster, Saved Weapons, Farming Queue, Team Presets, Pity, and Daily/Weekly progress.</p>
-            </div>
-            <button type="button" id="settings-export-btn" class="btn-ghost">Export Backup</button>
-          </div>
-          <div class="settings-row">
-            <div>
-              <strong>Import Local Data (.json)</strong>
-              <p class="domain-subsection-hint">Restore a previously exported Teyvat Index backup file.</p>
-            </div>
-            <div class="quick-btn-row">
-              <input type="file" id="settings-import-input" accept="application/json,.json" hidden />
-              <button type="button" id="settings-import-btn" class="btn-ghost">Import Backup</button>
-            </div>
-          </div>
-          <div id="settings-backup-status" class="settings-backup-status" role="status" aria-live="polite" hidden></div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    Teyvat Index — Fan-made Genshin Impact resource reference. Game data &amp; terminology belong to HoYoverse.
-  </footer>
-
-  <!-- DETAIL MODAL -->
+  <!-- DETAIL DOSSIER MODAL -->
   <div id="detail-modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
     <div class="modal-dialog" id="detail-modal-dialog">
       <div class="modal-header">
         <div class="modal-title-wrap">
           <div id="modal-crest" class="crest-box"></div>
           <div>
+            <span class="card-folio-tag" id="modal-folio-tag">Archival Dossier</span>
             <h2 id="modal-title"></h2>
             <div id="modal-subline" class="modal-subline"></div>
           </div>
