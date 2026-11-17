@@ -289,6 +289,26 @@
         };
       }
 
+      function getCalculatedResin(sResin, nowDate) {
+        var baseResin = typeof sResin.currentResin === 'number' ? Math.max(0, Math.min(200, sResin.currentResin)) : 40;
+        var nowMs = nowDate instanceof Date ? nowDate.getTime() : Date.now();
+        var updatedAt = typeof sResin.resinUpdatedAt === 'number' ? sResin.resinUpdatedAt : nowMs;
+        var elapsedMs = Math.max(0, nowMs - updatedAt);
+        var regened = Math.floor(elapsedMs / (8 * 60 * 1000));
+        var currentResin = Math.min(200, baseResin + regened);
+        var effectiveUpdatedAt = currentResin >= 200 ? nowMs : (updatedAt + regened * 8 * 60 * 1000);
+        return {
+          currentResin: currentResin,
+          condensedResin: typeof sResin.condensedResin === 'number' ? Math.max(0, Math.min(5, sResin.condensedResin)) : 2,
+          resinUpdatedAt: effectiveUpdatedAt
+        };
+      }
+
+      function saveResinState() {
+        state.resin.resinUpdatedAt = Date.now();
+        writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
+      }
+
       var CHAR_LEVEL_STEPS = [
         { from: 1,  to: 20, expMora: 24200,  ascMora: 0,      wit: 6,   sliver: 0, frag: 0, chunk: 0, gem: 0, spec: 0,  boss: 0,  c1: 0,  c2: 0,  c3: 0 },
         { from: 20, to: 40, expMora: 115800, ascMora: 20000,  wit: 29,  sliver: 1, frag: 0, chunk: 0, gem: 0, spec: 3,  boss: 0,  c1: 3,  c2: 0,  c3: 0 },
@@ -2188,6 +2208,8 @@
       // 5. RESIN & DAILY TRACKER RENDER
       function renderResinTracker() {
         var now = new Date();
+        state.resin = getCalculatedResin(state.resin, now);
+        writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
         var regionId = state.settings.serverRegion;
         var regionCfg = getServerRegionConfig(regionId);
 
@@ -3297,7 +3319,7 @@
         var resinSetBtn = target.closest('[data-resin-set]');
         if (resinSetBtn) {
           state.resin.currentResin = Math.max(0, Math.min(200, Number(resinSetBtn.getAttribute('data-resin-set')) || 0));
-          writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
+          saveResinState();
           renderResinTracker();
           return;
         }
@@ -3305,7 +3327,7 @@
         var resinAddBtn = target.closest('[data-resin-add]');
         if (resinAddBtn) {
           state.resin.currentResin = Math.min(200, state.resin.currentResin + Number(resinAddBtn.getAttribute('data-resin-add')));
-          writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
+          saveResinState();
           renderResinTracker();
           return;
         }
@@ -3625,13 +3647,13 @@
       // Resin Inputs
       elResinCurrent.addEventListener('input', function () {
         state.resin.currentResin = Math.max(0, Math.min(200, Number(elResinCurrent.value) || 0));
-        writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
+        saveResinState();
         renderResinTracker();
       });
 
       elResinCondensed.addEventListener('input', function () {
         state.resin.condensedResin = Math.max(0, Math.min(5, Number(elResinCondensed.value) || 0));
-        writeStoredJson(STORAGE_KEYS.RESIN, state.resin);
+        saveResinState();
         renderResinTracker();
       });
 
@@ -3799,10 +3821,7 @@
           weaponConfigs: (pSaved && pSaved.weaponConfigs && typeof pSaved.weaponConfigs === 'object') ? pSaved.weaponConfigs : {}
         };
         var sResin = readStoredJson(STORAGE_KEYS.RESIN, {});
-        state.resin = {
-          currentResin: typeof sResin.currentResin === 'number' ? Math.max(0, Math.min(200, sResin.currentResin)) : 40,
-          condensedResin: typeof sResin.condensedResin === 'number' ? Math.max(0, Math.min(5, sResin.condensedResin)) : 2
-        };
+        state.resin = getCalculatedResin(sResin, new Date());
         state.daily = loadDailyState(state.settings.serverRegion);
         state.weekly = loadWeeklyState(state.settings.serverRegion);
         var sTeams = readStoredJson(STORAGE_KEYS.TEAMS, []);
@@ -3978,6 +3997,7 @@
         readStoredJson: readStoredJson,
         writeStoredJson: writeStoredJson,
         calculateResinCap: calculateResinCap,
+        getCalculatedResin: getCalculatedResin,
         getResetCycleKey: getResetCycleKey,
         getWeeklyResetKey: getWeeklyResetKey,
         formatResetCountdown: formatResetCountdown,
