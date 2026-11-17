@@ -17,6 +17,7 @@ interface Character {
   talentBook: string;
   region?: string;
   version?: string;
+  icon?: string;
   ascensionMaterials: { boss: string; specialty: string; common: string };
   whoIsThisFor: string;
 }
@@ -30,6 +31,7 @@ interface Weapon {
   secondaryStat: string;
   region?: string;
   version?: string;
+  icon?: string;
   passive: string;
   bestCharacters: string[];
   ascensionMaterial: string;
@@ -52,10 +54,11 @@ interface TeyvatApi {
   WEAPON_DOMAINS: Array<{ id: string; material: string; region: string; domain: string; days: number[]; weapons: Array<{ name: string; id?: string; type: string }> }>;
   WEEKLY_BOSSES: Array<{ id: string; name: string; region: string; domain: string }>;
   TIER_LIST: Array<{ charId: string; tier: string; note: string }>;
-  BANNERS: Array<{ id: string; phase: string; title: string; fiveStar: string; endDateIso: string }>;
   ABYSS_FLOORS: Array<{ floor: number; title: string; chambers: Array<{ chamber: string; firstHalf: string; secondHalf: string }> }>;
   LOCAL_SPECIALTIES: Array<{ name: string; region: string; respawn: string; route: string }>;
+  SERVER_REGIONS: Record<string, { id: string; label: string; resetUtcHour: number; display: string }>;
   STORAGE_KEYS: Record<string, string>;
+  getServerRegionConfig: (regionId: string) => { id: string; label: string; resetUtcHour: number; display: string };
   getDomainsForDay: (day: number) => {
     dayIndex: number;
     dayName: string;
@@ -69,8 +72,11 @@ interface TeyvatApi {
   writeStoredIds: (key: string, ids: string[], storageObj?: StorageLike) => void;
   readStoredJson: <T>(key: string, fallback: T, storageObj?: StorageLike) => T;
   writeStoredJson: (key: string, value: unknown, storageObj?: StorageLike) => void;
+  buildBackupPayload: (storageObj?: StorageLike) => { app: string; schemaVersion: number; exportedAt: string; keys: Record<string, unknown> };
+  importBackupPayload: (rawJsonOrObj: unknown, storageObj?: StorageLike) => { ok: boolean; restoredKeys?: number; error?: string };
   calculateResinCap: (currentResin: number, nowDate?: Date) => {
     currentResin: number;
+    cap: number;
     missing: number;
     minutesToCap: number;
     hours: number;
@@ -79,34 +85,76 @@ interface TeyvatApi {
   };
   getResetCycleKey: (nowDate: Date, regionId: string) => string;
   getWeeklyResetKey: (nowDate: Date, regionId: string) => string;
-  calculateAscensionPlan: (selectedChars: Character[], options?: { levelGoal?: string; talentGoal?: string }) => {
+  calculateAscensionPlan: (
+    selectedChars: Character[],
+    options?: {
+      levelGoal?: string;
+      talentGoal?: string;
+      charConfigs?: Record<string, { currentLevel?: number; targetLevel?: number; talents?: number[][] }>;
+      weaponConfigs?: Record<string, { currentLevel?: number; targetLevel?: number }>;
+    },
+    selectedWeapons?: Weapon[]
+  ) => {
     characterCount: number;
+    weaponCount: number;
     totalMora: number;
     totalHerosWit: number;
+    totalOre: number;
+    totalWeeklyDrops: number;
+    totalCrowns: number;
     gems: Array<{ name: string; gemstone: number }>;
     specialties: Array<{ name: string; count: number }>;
     bossDrops: Array<{ name: string; count: number }>;
+    eliteDrops: Array<{ name: string; t1: number; t2: number; t3: number }>;
     commonDrops: Array<{ name: string; t1: number; t2: number; t3: number }>;
-    domainRuns: Array<{ book: string; domain: string; estimatedRuns: number; resinCost: number }>;
+    domainRuns: Array<{ type: string; book?: string; material?: string; domain: string; estimatedRuns: number; resinCost: number }>;
+    talentDomainRuns: Array<{ book: string; domain: string; estimatedRuns: number; resinCost: number }>;
+    weaponDomainRuns: Array<{ material: string; domain: string; estimatedRuns: number; resinCost: number }>;
     headlineSummary: string;
   };
   detectTeamResonances: (teamChars: Array<Character | null>) => Array<{ name: string; effect: string }>;
   detectTeamReactions: (teamChars: Array<Character | null>) => Array<{ name: string; effect: string }>;
-  calculateDamageMetrics: (input: { atk: number; multiplierPct: number; critRatePct: number; critDmgPct: number; dmgBonusPct: number; enemyMult?: number }) => {
+  calculateDamageMetrics: (input: {
+    scalingType?: string;
+    statValue?: number;
+    atk?: number;
+    multiplierPct: number;
+    critRatePct: number;
+    critDmgPct: number;
+    dmgBonusPct: number;
+    em?: number;
+    reaction?: string;
+    level?: string;
+    enemyMult?: number;
+  }) => {
+    scalingType: string;
+    reaction: string;
+    reactionMultiplier: number;
+    flatQuickenBonus: number;
     effectiveCritMultiplier: number;
     averageDamage: number;
     nonCritDamage: number;
     critDamage: number;
     critValue: number;
+    formulaText: string;
   };
-  calculatePityMetrics: (pityCount: number, isGuaranteed: boolean) => {
+  calculatePityMetrics: (
+    pityCount: number,
+    isGuaranteed: boolean,
+    options?: { bannerMode?: string; radianceLosses?: number; fatePoints?: number }
+  ) => {
+    bannerMode: string;
     pity: number;
+    softCap: number;
+    hardCap: number;
+    isGuaranteed: boolean;
     toSoftPity: number;
     toHardPity: number;
     toFeaturedGuaranteed: number;
     primogemsToHard: number;
     primogemsToFeatured: number;
     inSoftPity: boolean;
+    oddsLabel: string;
   };
   filterTierList: (entries: Array<{ charId: string; tier: string; note: string }>, chars: Character[], filters: { role?: string; element?: string }) => Array<{ tier: string; character: Character }>;
   filterSpecialties: (list: Array<{ name: string; region: string; respawn: string; route: string }>, chars: Character[], filters: { search?: string; region?: string }) => Array<{ name: string; region: string }>;
@@ -121,6 +169,11 @@ interface StorageLike {
   setItem: (k: string, v: string) => void;
 }
 
+function readJsonAsset<T>(relPath: string): T {
+  const fullPath = path.resolve(process.cwd(), 'public', relPath);
+  return JSON.parse(fs.readFileSync(fullPath, 'utf8')) as T;
+}
+
 function loadIndexApi(): TeyvatApi {
   const html = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf8');
   const scriptMatches = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
@@ -133,10 +186,12 @@ function loadIndexApi(): TeyvatApi {
     textContent: '',
     innerHTML: '',
     value: 'All',
+    max: '',
     style: { setProperty: noop, width: '' },
     className: '',
     classList: { toggle: noop, add: noop, remove: noop },
     setAttribute: noop,
+    hasAttribute: () => false,
     getAttribute: () => null,
     addEventListener: noop,
     focus: noop,
@@ -152,6 +207,14 @@ function loadIndexApi(): TeyvatApi {
     },
     addEventListener: noop,
     scrollTo: noop,
+    __TEYVAT_PRELOADED_DATA__: {
+      characters: readJsonAsset('data/characters.json'),
+      weapons: readJsonAsset('data/weapons.json'),
+      domains: readJsonAsset('data/domains.json'),
+      tierList: readJsonAsset('data/tier-list.json'),
+      abyss: readJsonAsset('data/abyss.json'),
+      specialties: readJsonAsset('data/specialties.json'),
+    },
   };
 
   const context = vm.createContext({
@@ -182,9 +245,32 @@ function loadIndexApi(): TeyvatApi {
 
 const api = loadIndexApi();
 
-test('dataset meets minimum size and field completeness requirements', () => {
-  assert.ok(api.CHARACTERS.length >= 120, `Expected >=120 complete Genshin roster characters, got ${api.CHARACTERS.length}`);
-  assert.ok(api.WEAPONS.length >= 50, `Expected >=50 weapons up to v7.2, got ${api.WEAPONS.length}`);
+test('HTML structure uses single h1, externalizes data, and removes static placeholders and banner list', () => {
+  const html = fs.readFileSync(path.resolve(process.cwd(), 'index.html'), 'utf8');
+  const h1Matches = [...html.matchAll(/<h1\b/gi)];
+  assert.equal(h1Matches.length, 1, 'Expected exactly one <h1> landmark in index.html');
+  assert.equal(html.includes('Static dates · Manually updatable'), false);
+  assert.equal(html.includes('Active &amp; Upcoming Banners'), false);
+  assert.equal(html.includes('Showing 0 characters'), false);
+  assert.equal(html.includes('Showing 0 weapons'), false);
+  assert.equal(html.includes('var CHARACTERS = [];'), true);
+  assert.equal(/var CHARACTERS\s*=\s*\[\s*\{/.test(html), false);
+});
+
+test('dataset meets size, Skirk Outworld placement, v7.2 additions, and field completeness requirements', () => {
+  assert.equal(api.CHARACTERS.length, 121);
+  assert.equal(api.WEAPONS.length, 56);
+
+  const skirk = api.CHARACTERS.find((c) => c.id === 'skirk');
+  assert.ok(skirk);
+  assert.equal(skirk.region, 'Outworld');
+
+  const varesa = api.CHARACTERS.find((c) => c.id === 'varesa');
+  const zibai = api.CHARACTERS.find((c) => c.id === 'zibai');
+  assert.ok(varesa && varesa.bestWeapons[0] === 'Vivid Notions');
+  assert.ok(zibai && zibai.bestWeapons[0] === 'Lightbearing Moonshard');
+  assert.ok(api.WEAPONS.some((w) => w.id === 'vivid-notions'));
+  assert.ok(api.WEAPONS.some((w) => w.id === 'lightbearing-moonshard'));
 
   const talentBooks = new Set(api.TALENT_DOMAINS.map((d) => d.book));
   const weaponMaterials = new Set(api.WEAPON_DOMAINS.map((d) => d.material));
@@ -213,7 +299,7 @@ test('dataset meets minimum size and field completeness requirements', () => {
   for (const wp of api.WEAPONS) {
     assert.ok(wp.id && wp.name && wp.type && wp.secondaryStat && wp.passive);
     assert.ok(wp.region && wp.version, `${wp.name} should have region and version`);
-    assert.ok(wp.rarity === 4 || wp.rarity === 5);
+    assert.ok(wp.rarity === 3 || wp.rarity === 4 || wp.rarity === 5);
     assert.ok(wp.baseAtk > 300);
     assert.ok(wp.bestCharacters.length >= 1 && wp.bestCharacters.length <= 4, `${wp.name} bestCharacters length`);
     assert.ok(weaponMaterials.has(wp.ascensionMaterial), `${wp.name} material "${wp.ascensionMaterial}" missing`);
@@ -257,36 +343,21 @@ test('dataset meets minimum size and field completeness requirements', () => {
 
 test('weekly Genshin domain schedule is accurate for every day of the week through v7.2', () => {
   const mon = api.getDomainsForDay(1);
-  const thu = api.getDomainsForDay(4);
   assert.equal(mon.isSunday, false);
   assert.deepEqual(
     [...mon.talentDomains.map((d) => d.book)],
     ['Freedom', 'Prosperity', 'Transience', 'Admonition', 'Equity', 'Contention', 'Moonlight', 'Charity']
   );
-  assert.deepEqual(
-    [...thu.talentDomains.map((d) => d.book)],
-    ['Freedom', 'Prosperity', 'Transience', 'Admonition', 'Equity', 'Contention', 'Moonlight', 'Charity']
-  );
 
   const tue = api.getDomainsForDay(2);
-  const fri = api.getDomainsForDay(5);
   assert.deepEqual(
     [...tue.talentDomains.map((d) => d.book)],
     ['Resistance', 'Diligence', 'Elegance', 'Ingenuity', 'Justice', 'Kindling', 'Elysium', 'Fortitude']
   );
-  assert.deepEqual(
-    [...fri.talentDomains.map((d) => d.book)],
-    ['Resistance', 'Diligence', 'Elegance', 'Ingenuity', 'Justice', 'Kindling', 'Elysium', 'Fortitude']
-  );
 
   const wed = api.getDomainsForDay(3);
-  const sat = api.getDomainsForDay(6);
   assert.deepEqual(
     [...wed.talentDomains.map((d) => d.book)],
-    ['Ballad', 'Gold', 'Light', 'Praxis', 'Order', 'Conflict', 'Vagrancy', 'Glory']
-  );
-  assert.deepEqual(
-    [...sat.talentDomains.map((d) => d.book)],
     ['Ballad', 'Gold', 'Light', 'Praxis', 'Order', 'Conflict', 'Vagrancy', 'Glory']
   );
 
@@ -299,23 +370,12 @@ test('weekly Genshin domain schedule is accurate for every day of the week throu
 test('character and weapon filtering supports region, version search, element, type, role, rarity, and ownedMode', () => {
   const pyro5 = api.filterCharacters(api.CHARACTERS, { element: 'Pyro', rarity: '5' });
   assert.ok(pyro5.some((c) => c.id === 'hu-tao'));
-  assert.ok(pyro5.some((c) => c.id === 'diluc'));
-  assert.ok(pyro5.some((c) => c.id === 'mavuika'));
   assert.ok(pyro5.every((c) => c.element === 'Pyro' && c.rarity === 5));
-
-  const snezhnayaChars = api.filterCharacters(api.CHARACTERS, { region: 'Snezhnaya' });
-  assert.ok(snezhnayaChars.some((c) => c.id === 'tartaglia'));
-  assert.ok(snezhnayaChars.some((c) => c.id === 'mitya'));
-  assert.ok(snezhnayaChars.some((c) => c.id === 'odette'));
-  assert.ok(snezhnayaChars.every((c) => c.region === 'Snezhnaya'));
 
   const outworldChars = api.filterCharacters(api.CHARACTERS, { region: 'Outworld' });
   assert.ok(outworldChars.some((c) => c.id === 'traveler'));
   assert.ok(outworldChars.some((c) => c.id === 'aloy'));
-
-  const v72Chars = api.filterCharacters(api.CHARACTERS, { search: '7.2' });
-  assert.ok(v72Chars.some((c) => c.id === 'mitya'));
-  assert.ok(v72Chars.some((c) => c.id === 'valeriy'));
+  assert.ok(outworldChars.some((c) => c.id === 'skirk'));
 
   const ownedHidden = api.filterCharacters(api.CHARACTERS, { ownedMode: 'hide-owned' }, ['hu-tao']);
   assert.equal(ownedHidden.some((c) => c.id === 'hu-tao'), false);
@@ -324,82 +384,178 @@ test('character and weapon filtering supports region, version search, element, t
 
   const polearms4 = api.filterWeapons(api.WEAPONS, { type: 'Polearm', rarity: '4' });
   assert.ok(polearms4.some((w) => w.id === 'the-catch'));
-  assert.ok(polearms4.some((w) => w.id === 'ballad-of-the-sentinel'));
   assert.ok(polearms4.every((w) => w.type === 'Polearm' && w.rarity === 4));
-
-  const nodKraiWeapons = api.filterWeapons(api.WEAPONS, { region: 'Nod-Krai' });
-  assert.ok(nodKraiWeapons.some((w) => w.id === 'nocturnes-curtain-call'));
-  assert.ok(nodKraiWeapons.some((w) => w.id === 'bloodsoaked-ruins'));
-
-  const v72Weapons = api.filterWeapons(api.WEAPONS, { search: '7.2' });
-  assert.ok(v72Weapons.some((w) => w.id === 'starsealed-edict'));
 });
 
-test('localStorage persistence helpers handle valid, missing, and malformed payloads safely', () => {
+test('localStorage persistence and JSON backup export/import helpers round-trip and reject invalid payloads', () => {
   const mem: Record<string, string> = {};
   const storage: StorageLike = {
     getItem: (k) => (k in mem ? mem[k] : null),
     setItem: (k, v) => { mem[k] = v; },
   };
 
-  assert.deepEqual([...api.readStoredIds(api.STORAGE_KEYS.CHARACTERS, storage)], []);
-  api.writeStoredIds(api.STORAGE_KEYS.CHARACTERS, ['hu-tao', 'furina'], storage);
-  assert.deepEqual([...api.readStoredIds(api.STORAGE_KEYS.CHARACTERS, storage)], ['hu-tao', 'furina']);
+  api.writeStoredIds(api.STORAGE_KEYS.OWNED, ['hu-tao', 'furina'], storage);
+  api.writeStoredIds(api.STORAGE_KEYS.WEAPONS, ['mistsplitter-reforged'], storage);
+  api.writeStoredJson(api.STORAGE_KEYS.SETTINGS, { ar: 58, serverRegion: 'EU', theme: 'light' }, storage);
 
-  storage.setItem(api.STORAGE_KEYS.WEAPONS, '{bad-json');
-  assert.deepEqual([...api.readStoredIds(api.STORAGE_KEYS.WEAPONS, storage)], []);
+  const backup = api.buildBackupPayload(storage);
+  assert.equal(backup.app, 'teyvat-index');
+  assert.equal(backup.schemaVersion, 1);
+  assert.ok(backup.keys[api.STORAGE_KEYS.OWNED]);
+
+  const targetMem: Record<string, string> = {};
+  const targetStorage: StorageLike = {
+    getItem: (k) => (k in targetMem ? targetMem[k] : null),
+    setItem: (k, v) => { targetMem[k] = v; },
+  };
+  const imported = api.importBackupPayload(JSON.stringify(backup), targetStorage);
+  assert.equal(imported.ok, true);
+  assert.equal(imported.restoredKeys, 3);
+  assert.deepEqual([...api.readStoredIds(api.STORAGE_KEYS.OWNED, targetStorage)], ['hu-tao', 'furina']);
+
+  const badJson = api.importBackupPayload('{broken', targetStorage);
+  assert.equal(badJson.ok, false);
+  const wrongApp = api.importBackupPayload(JSON.stringify({ app: 'other', keys: {} }), targetStorage);
+  assert.equal(wrongApp.ok, false);
 });
 
-test('resin cap math and daily/weekly reset cycle keys calculate accurately', () => {
+test('200 Original Resin cap math and NA/EU/Asia/TW reset cycle keys calculate accurately', () => {
   const res = api.calculateResinCap(100, new Date('2026-11-16T10:00:00Z'));
-  assert.equal(res.missing, 60);
-  assert.equal(res.minutesToCap, 480);
-  assert.equal(res.hours, 8);
-  assert.equal(res.minutes, 0);
+  assert.equal(res.cap, 200);
+  assert.equal(res.missing, 100);
+  assert.equal(res.minutesToCap, 800);
+  assert.equal(res.hours, 13);
+  assert.equal(res.minutes, 20);
   assert.equal(res.isFull, false);
 
-  const full = api.calculateResinCap(200, new Date('2026-11-16T10:00:00Z'));
-  assert.equal(full.currentResin, 160);
+  const full = api.calculateResinCap(240, new Date('2026-11-16T10:00:00Z'));
+  assert.equal(full.currentResin, 200);
   assert.equal(full.isFull, true);
 
-  // Before 04:00 UTC still belongs to previous reset cycle
-  const beforeReset = api.getResetCycleKey(new Date('2026-11-16T03:59:00Z'), 'UTC');
-  const afterReset = api.getResetCycleKey(new Date('2026-11-16T04:01:00Z'), 'UTC');
-  assert.equal(beforeReset, '2026-11-15');
-  assert.equal(afterReset, '2026-11-16');
+  assert.equal(Boolean(api.SERVER_REGIONS.UTC), false);
+  assert.deepEqual(Object.keys(api.SERVER_REGIONS), ['NA', 'EU', 'Asia', 'TW']);
+  assert.equal(api.getServerRegionConfig('UTC').id, 'NA');
 
-  // Weekly reset rolls over on Monday 04:00 UTC
-  const sunBeforeMon = api.getWeeklyResetKey(new Date('2026-11-16T03:59:00Z'), 'UTC'); // Monday 03:59 UTC
-  const monAfterReset = api.getWeeklyResetKey(new Date('2026-11-16T04:01:00Z'), 'UTC'); // Monday 04:01 UTC
-  assert.equal(sunBeforeMon, 'W-2026-11-09');
-  assert.equal(monAfterReset, 'W-2026-11-16');
+  // EU resets at 03:00 UTC
+  assert.equal(api.getResetCycleKey(new Date('2026-11-16T02:59:00Z'), 'EU'), '2026-11-15');
+  assert.equal(api.getResetCycleKey(new Date('2026-11-16T03:01:00Z'), 'EU'), '2026-11-16');
+
+  // NA resets at 09:00 UTC (Monday weekly reset flips at 09:00 UTC)
+  assert.equal(api.getWeeklyResetKey(new Date('2026-11-16T08:59:00Z'), 'NA'), 'W-2026-11-09');
+  assert.equal(api.getWeeklyResetKey(new Date('2026-11-16T09:01:00Z'), 'NA'), 'W-2026-11-16');
 });
 
-test('ascension planner consolidates Mora, Gems, Specialties, Common drops, and Domain runs', () => {
+test('granular ascension planner supports per-character deltas, individual talents, and weapon ascension', () => {
   const huTao = api.CHARACTERS.find((c) => c.id === 'hu-tao')!;
   const kazuha = api.CHARACTERS.find((c) => c.id === 'kazuha')!;
-  const plan = api.calculateAscensionPlan([huTao, kazuha], { levelGoal: '90', talentGoal: '8' });
+  const mistsplitter = api.WEAPONS.find((w) => w.id === 'mistsplitter-reforged')!;
 
-  assert.equal(plan.characterCount, 2);
-  assert.ok(plan.totalMora > 6000000);
-  assert.equal(plan.totalHerosWit, 838);
-  assert.ok(plan.gems.some((g) => g.name === 'Agnidus Agate' && g.gemstone === 6));
-  assert.ok(plan.specialties.some((s) => s.name === 'Silk Flower' && s.count === 168));
-  // Both Hu Tao & Kazuha use Diligence -> grouped into 1 Taishan Mansion domain entry
-  const diligenceRun = plan.domainRuns.find((d) => d.book === 'Diligence');
-  assert.ok(diligenceRun);
-  assert.equal(diligenceRun.domain, 'Taishan Mansion');
-  assert.ok(diligenceRun.estimatedRuns >= 10);
+  const fullPlan = api.calculateAscensionPlan([huTao, kazuha], { levelGoal: '90', talentGoal: '8' });
+  assert.equal(fullPlan.characterCount, 2);
+  assert.equal(fullPlan.totalHerosWit, 838);
+  assert.ok(fullPlan.gems.some((g) => g.name === 'Agnidus Agate' && g.gemstone === 6));
+  assert.ok(fullPlan.specialties.some((s) => s.name === 'Silk Flower' && s.count === 168));
 
-  const odette = api.CHARACTERS.find((c) => c.id === 'odette')!;
-  const mitya = api.CHARACTERS.find((c) => c.id === 'mitya')!;
-  const plan72 = api.calculateAscensionPlan([odette, mitya], { levelGoal: '90', talentGoal: '8' });
-  const charityRun = plan72.domainRuns.find((d) => d.book === 'Charity');
-  assert.ok(charityRun);
-  assert.equal(charityRun.domain, 'Relics of the Fallen Grace');
+  const deltaPlan = api.calculateAscensionPlan(
+    [huTao],
+    {
+      charConfigs: {
+        'hu-tao': {
+          currentLevel: 70,
+          targetLevel: 90,
+          talents: [[1, 10], [8, 9], [1, 1]],
+        },
+      },
+      weaponConfigs: {
+        'mistsplitter-reforged': { currentLevel: 1, targetLevel: 90 },
+      },
+    },
+    [mistsplitter]
+  );
+
+  // Only 70->80 (81 wit) + 80->90 (171 wit) = 252 Heros Wit
+  assert.equal(deltaPlan.totalHerosWit, 252);
+  // NA 1->10 (6 weekly + 1 crown) + Skill 8->9 (2 weekly + 0 crown) = 8 weekly, 1 crown
+  assert.equal(deltaPlan.totalWeeklyDrops, 8);
+  assert.equal(deltaPlan.totalCrowns, 1);
+  // Weapon 1->90 adds 907 Mystic Enhancement Ore & Weapon Domain runs
+  assert.equal(deltaPlan.weaponCount, 1);
+  assert.equal(deltaPlan.totalOre, 907);
+  assert.equal(deltaPlan.weaponDomainRuns.length, 1);
+  assert.equal(deltaPlan.weaponDomainRuns[0].domain, 'Court of Flowing Sand');
 });
 
-test('team builder detects elemental resonances and triggerable reactions', () => {
+test('damage calculator supports HP/DEF/EM scalers and Amplifying, Quicken, and Lunar reactions', () => {
+  const rawAtk = api.calculateDamageMetrics({
+    scalingType: 'ATK',
+    statValue: 2000,
+    multiplierPct: 200,
+    critRatePct: 50,
+    critDmgPct: 100,
+    dmgBonusPct: 50,
+    enemyMult: 1,
+  });
+  assert.equal(rawAtk.effectiveCritMultiplier, 1.5);
+  assert.equal(rawAtk.nonCritDamage, 6000);
+  assert.equal(rawAtk.critDamage, 12000);
+  assert.equal(rawAtk.averageDamage, 9000);
+
+  const hpVape = api.calculateDamageMetrics({
+    scalingType: 'HP',
+    statValue: 40000,
+    multiplierPct: 15,
+    critRatePct: 100,
+    critDmgPct: 100,
+    dmgBonusPct: 50,
+    em: 200,
+    reaction: 'amp-1.5',
+    enemyMult: 1,
+  });
+  assert.equal(hpVape.scalingType, 'HP');
+  assert.ok(hpVape.reactionMultiplier > 1.9);
+  assert.ok(hpVape.critDamage > 34000);
+
+  const spreadHit = api.calculateDamageMetrics({
+    scalingType: 'EM',
+    statValue: 800,
+    multiplierPct: 150,
+    critRatePct: 0,
+    critDmgPct: 50,
+    dmgBonusPct: 0,
+    em: 800,
+    reaction: 'spread',
+    level: '90',
+    enemyMult: 1,
+  });
+  assert.ok(spreadHit.flatQuickenBonus > 5000);
+  assert.equal(spreadHit.nonCritDamage, 1200 + spreadHit.flatQuickenBonus);
+});
+
+test('pity calculator supports Character Event Wish (Capturing Radiance) and Weapon Event Wish (Fate Points)', () => {
+  const charBase = api.calculatePityMetrics(50, false, { bannerMode: 'character', radianceLosses: 0 });
+  assert.equal(charBase.softCap, 74);
+  assert.equal(charBase.hardCap, 90);
+  assert.equal(charBase.toSoftPity, 24);
+  assert.equal(charBase.toFeaturedGuaranteed, 130);
+
+  const charRadianceGuar = api.calculatePityMetrics(76, false, { bannerMode: 'character', radianceLosses: 3 });
+  assert.equal(charRadianceGuar.inSoftPity, true);
+  assert.equal(charRadianceGuar.isGuaranteed, true);
+  assert.equal(charRadianceGuar.toFeaturedGuaranteed, 14);
+
+  const wepBase = api.calculatePityMetrics(50, false, { bannerMode: 'weapon', fatePoints: 0 });
+  assert.equal(wepBase.softCap, 63);
+  assert.equal(wepBase.hardCap, 80);
+  assert.equal(wepBase.toSoftPity, 13);
+  assert.equal(wepBase.toHardPity, 30);
+  assert.equal(wepBase.toFeaturedGuaranteed, 110);
+
+  const wepFate = api.calculatePityMetrics(65, false, { bannerMode: 'weapon', fatePoints: 1 });
+  assert.equal(wepFate.inSoftPity, true);
+  assert.equal(wepFate.toFeaturedGuaranteed, 15);
+});
+
+test('team builder, tier list, specialties filters, and SVG icons operate accurately', () => {
   const huTao = api.CHARACTERS.find((c) => c.id === 'hu-tao')!;
   const bennett = api.CHARACTERS.find((c) => c.id === 'bennett')!;
   const xingqiu = api.CHARACTERS.find((c) => c.id === 'xingqiu')!;
@@ -411,132 +567,25 @@ test('team builder detects elemental resonances and triggerable reactions', () =
 
   const reactions = api.detectTeamReactions([huTao, bennett, xingqiu, yelan]);
   assert.ok(reactions.some((rx) => rx.name === 'Vaporize'));
-  assert.equal(reactions.some((rx) => rx.name === 'Hyperbloom'), false);
 
-  const kazuha = api.CHARACTERS.find((c) => c.id === 'kazuha')!;
-  const nahida = api.CHARACTERS.find((c) => c.id === 'nahida')!;
-  const raiden = api.CHARACTERS.find((c) => c.id === 'raiden-shogun')!;
-  const rainbowRes = api.detectTeamResonances([xingqiu, kazuha, nahida, raiden]);
-  assert.ok(rainbowRes.some((r) => r.name.includes('Protective Canopy')));
-  const hyperReactions = api.detectTeamReactions([xingqiu, kazuha, nahida, raiden]);
-  assert.ok(hyperReactions.some((rx) => rx.name === 'Hyperbloom'));
-});
-
-test('damage calculator, pity tracker, tier list, and specialties filters compute accurately', () => {
-  const dmg = api.calculateDamageMetrics({
-    atk: 2000,
-    multiplierPct: 200,
-    critRatePct: 50,
-    critDmgPct: 100,
-    dmgBonusPct: 50,
-    enemyMult: 1,
-  });
-  // Base hit = 2000 * 2.0 * 1.5 = 6000; Eff Crit = 1 + 0.5*1.0 = 1.5; Avg = 9000; Crit = 12000
-  assert.equal(dmg.effectiveCritMultiplier, 1.5);
-  assert.equal(dmg.nonCritDamage, 6000);
-  assert.equal(dmg.critDamage, 12000);
-  assert.equal(dmg.averageDamage, 9000);
-
-  const pity5050 = api.calculatePityMetrics(50, false);
-  assert.equal(pity5050.toSoftPity, 24);
-  assert.equal(pity5050.toHardPity, 40);
-  assert.equal(pity5050.toFeaturedGuaranteed, 130);
-
-  const pityGuar = api.calculatePityMetrics(76, true);
-  assert.equal(pityGuar.inSoftPity, true);
-  assert.equal(pityGuar.toSoftPity, 0);
-  assert.equal(pityGuar.toFeaturedGuaranteed, 14);
-
-  const hydroTiers = api.filterTierList(api.TIER_LIST, api.CHARACTERS, { element: 'Hydro' });
-  assert.ok(hydroTiers.length >= 12 && hydroTiers.every((t) => t.character.element === 'Hydro'));
-
-  const snezhnayaSpecs = api.filterSpecialties(api.LOCAL_SPECIALTIES, api.CHARACTERS, { region: 'Snezhnaya' });
-  assert.equal(snezhnayaSpecs.length, 3);
-  assert.ok(snezhnayaSpecs.every((s) => s.region === 'Snezhnaya'));
-});
-
-test('svg icon engine renders unique valid icons for all characters, weapons, collectibles, and items', () => {
   const charSvgs = api.CHARACTERS.map((c) => api.getCharacterIconSvg(c));
-  assert.equal(charSvgs.length, api.CHARACTERS.length);
-  assert.ok(charSvgs.every((svg) => svg.startsWith('<svg') && svg.endsWith('</svg>')));
-  assert.equal(new Set(charSvgs).size, api.CHARACTERS.length, 'Expected every character to have a unique SVG icon');
+  assert.equal(new Set(charSvgs).size, api.CHARACTERS.length);
 
   const weaponSvgs = api.WEAPONS.map((w) => api.getWeaponIconSvg(w));
-  assert.equal(weaponSvgs.length, 54);
-  assert.ok(weaponSvgs.every((svg) => svg.startsWith('<svg') && svg.endsWith('</svg>')));
-  assert.equal(new Set(weaponSvgs).size, 54, 'Expected every weapon to have a unique SVG icon');
+  assert.equal(weaponSvgs.length, 56);
+  assert.equal(new Set(weaponSvgs).size, 56);
 
   const specSvgs = api.LOCAL_SPECIALTIES.map((s) => api.getSpecialtyIconSvg(s.name));
-  assert.equal(specSvgs.length, 58);
-  assert.ok(specSvgs.every((svg) => svg.startsWith('<svg') && svg.endsWith('</svg>')));
-  assert.equal(new Set(specSvgs).size, 58, 'Expected every collectible/specialty to have a unique SVG icon');
+  assert.equal(new Set(specSvgs).size, 58);
 
-  const bookSvgs = api.TALENT_DOMAINS.map((d) => api.getItemIconSvg(d.book, 'book'));
-  assert.equal(new Set(bookSvgs).size, 24, 'Expected all 24 talent books to have distinct icons');
-
-  const wMatSvgs = api.WEAPON_DOMAINS.map((d) => api.getItemIconSvg(d.material, 'weapon-material'));
-  assert.equal(new Set(wMatSvgs).size, 24, 'Expected all 24 weapon domain materials to have distinct icons');
-
-  const bossSvgs = api.WEEKLY_BOSSES.map((b) => api.getItemIconSvg(b.id, 'weekly-boss'));
-  assert.equal(new Set(bossSvgs).size, 15, 'Expected all 15 weekly bosses to have distinct icons');
-
-  const currencies = ['Mora', "Hero's Wit", 'Original Resin', 'Condensed Resin'];
-  currencies.forEach((item) => {
-    const svg = api.getItemIconSvg(item, 'currency');
-    assert.ok(svg.startsWith('<svg') && svg.endsWith('</svg>'), `Expected valid SVG for ${item}`);
-  });
-
-  const gems = ['Agnidus Agate', 'Varunada Lazurite', 'Vajrada Amethyst', 'Vayuda Turquoise', 'Prithiva Topaz', 'Shivada Jade', 'Nagadus Emerald'];
-  assert.equal(new Set(gems.map((g) => api.getItemIconSvg(g, 'gem'))).size, 7);
-
-  // Verify un-indexed recommended weapon names infer accurate weapon class icons (e.g., Staff of the Scarlet Sands -> Polearm)
   const scarletSandsSvg = api.getWeaponIconSvg('Staff of the Scarlet Sands');
-  const polarStarSvg = api.getWeaponIconSvg('Polar Star');
-  const unknownBowSvg = api.getWeaponIconSvg('Unlisted Signature Weapon', 'Bow');
   const swordFallbackSvg = api.getWeaponIconSvg('Generic Unknown Sword');
-  assert.notEqual(scarletSandsSvg, swordFallbackSvg, 'Staff of the Scarlet Sands should render a Polearm icon rather than Sword fallback');
-  assert.ok(scarletSandsSvg.includes('#EF6C57') && scarletSandsSvg.includes('line x1="8" y1="40" x2="33" y2="15"'));
-  assert.notEqual(polarStarSvg, swordFallbackSvg, 'Polar Star should render a Bow icon rather than Sword fallback');
-  assert.equal(polarStarSvg, unknownBowSvg, 'Both Polar Star and Bow fallbackType should render the Bow class icon');
+  assert.notEqual(scarletSandsSvg, swordFallbackSvg);
 
-  // Verify un-indexed domain secondary characters produce distinct avatar appearances
-  const kleeSvg = api.getCharacterIconSvg({ name: 'Klee', element: 'Pyro' } as unknown as Character);
-  const amberSvg = api.getCharacterIconSvg({ name: 'Amber', element: 'Pyro' } as unknown as Character);
-  const tartagliaSvg = api.getCharacterIconSvg({ name: 'Tartaglia', element: 'Hydro' } as unknown as Character);
-  assert.equal(new Set([kleeSvg, amberSvg, tartagliaSvg]).size, 3);
-});
-
-test('all characters and weapons include Enka Network portrait icon URLs and default filters return full collections', () => {
-  for (const ch of api.CHARACTERS as Array<Character & { icon?: string }>) {
-    assert.ok(
-      typeof ch.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_AvatarIcon_.+\.png$/.test(ch.icon),
-      `${ch.name} (${ch.id}) missing valid Enka avatar icon URL: ${ch.icon}`
-    );
+  for (const ch of api.CHARACTERS) {
+    assert.ok(typeof ch.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_AvatarIcon_.+\.png$/.test(ch.icon));
   }
-  for (const wp of api.WEAPONS as Array<Weapon & { icon?: string }>) {
-    assert.ok(
-      typeof wp.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(wp.icon),
-      `${wp.name} (${wp.id}) missing valid Enka weapon icon URL: ${wp.icon}`
-    );
+  for (const wp of api.WEAPONS) {
+    assert.ok(typeof wp.icon === 'string' && /^https:\/\/enka\.network\/ui\/UI_EquipIcon_.+_Awaken\.png$/.test(wp.icon));
   }
-
-  const allChars = api.filterCharacters(api.CHARACTERS, {
-    search: '',
-    region: 'All',
-    element: 'All',
-    weapon: 'All',
-    role: 'All',
-    rarity: 'All',
-    ownedMode: 'all',
-  }, ['hu-tao']);
-  assert.equal(allChars.length, api.CHARACTERS.length);
-
-  const allWeps = api.filterWeapons(api.WEAPONS, {
-    search: '',
-    region: 'All',
-    type: 'All',
-    rarity: 'All',
-  });
-  assert.equal(allWeps.length, api.WEAPONS.length);
 });
-

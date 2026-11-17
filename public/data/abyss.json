@@ -1,0 +1,126 @@
+[
+  {
+    "floor": 9,
+    "title": "Floor 9 — Warm-Up & Reaction Boost",
+    "leyLine": "After triggering Pyro or Dendro reactions, character Elemental Mastery increases by 200 for 8s.",
+    "chambers": [
+      {
+        "chamber": "9-1",
+        "firstHalf": "Hilichurl Fighters, Pyro Hilichurl Grenadiers, Mitachurls",
+        "secondHalf": "Treasure Hoarders & Fatui Skirmishers (Cryo / Hydro)",
+        "recFirst": "Anemo grouping + Pyro/Electro AoE",
+        "recSecond": "Pyro + Cryo to break Fatui elemental shields",
+        "note": "Group Treasure Hoarders quickly with Kazuha or Sucrose before they scatter."
+      },
+      {
+        "chamber": "9-2",
+        "firstHalf": "Ruin Guards & Ruin Destroyers",
+        "secondHalf": "Eremite Stone Enchanter & Eremite Galehunter",
+        "recFirst": "Hyperbloom or Electro-Charged",
+        "recSecond": "Freeze or Aggravate burst",
+        "note": "Target Eremite summons when spawned to drop their enhanced RES."
+      },
+      {
+        "chamber": "9-3",
+        "firstHalf": "Abyss Mages (Pyro & Cryo)",
+        "secondHalf": "Consecrated Red Vulture & Scorched Horned Crocodile",
+        "recFirst": "Hydro + Pyro + Anemo Swirl",
+        "recSecond": "Shielded Vaporize or Hyperbloom",
+        "note": "Swirling two different Abyss Mage shields breaks both simultaneously."
+      }
+    ]
+  },
+  {
+    "floor": 10,
+    "title": "Floor 10 — Shield & Wave Check",
+    "leyLine": "Characters gain +50% Normal and Charged Attack DMG while protected by a shield or healing effect.",
+    "chambers": [
+      {
+        "chamber": "10-1",
+        "firstHalf": "Kairagi: Dancing Thunder & Nobushi Wave",
+        "secondHalf": "Fungi Swarm & Winged Dendroshroom",
+        "recFirst": "Freeze or AoE Vaporize",
+        "recSecond": "Aggravate or Spread",
+        "note": "Defeat both Kairagi together within 3 seconds so the survivor does not heal."
+      },
+      {
+        "chamber": "10-2",
+        "firstHalf": "Clockwork Meka (Ousia & Pneuma)",
+        "secondHalf": "Primal Constructs (Reshaper & Prospector)",
+        "recFirst": "Fontaine Arkhe or Neuvillette / Furina",
+        "recSecond": "Quicken / Electro + Dendro",
+        "note": "Apply Electro + Dendro when Primal Constructs turn invisible to stun them."
+      },
+      {
+        "chamber": "10-3",
+        "firstHalf": "Mirror Maiden & Cryo Cicin Mage",
+        "secondHalf": "Abyss Lector: Fathomless Flames",
+        "recFirst": "Crowd control + Pyro/Electro",
+        "recSecond": "Double Hydro (Xingqiu + Yelan / Kokomi)",
+        "note": "Fast Hydro application shreds the Abyss Lector Pyro shield cleanly."
+      }
+    ]
+  },
+  {
+    "floor": 11,
+    "title": "Floor 11 — Monolith Defense & Lunar Surge (v7.2)",
+    "leyLine": "All party members gain a +60% Electro DMG Bonus and +60% Cryo DMG Bonus.",
+    "chambers": [
+      {
+        "chamber": "11-1",
+        "firstHalf": "Wave of Fatui Skirmishers & Pyro Shooters (Monolith Defense)",
+        "secondHalf": "Automated Kuuvahki Drones & Spectral Enemies (Monolith Defense)",
+        "recFirst": "Anemo Crowd Control (Kazuha, Varka, Sucrose)",
+        "recSecond": "Freeze (Skirk / Odette) or Electro-Charged (Mitya)",
+        "note": "Pull ranged enemies away from the center Ley Line Monolith immediately."
+      },
+      {
+        "chamber": "11-2",
+        "firstHalf": "Breacher Primuses (Dendro & Geo)",
+        "secondHalf": "Abyss Herald: Wicked Torrents & Frost Operatives",
+        "recFirst": "Shielded Pyro / Xilonen / Zhongli",
+        "recSecond": "Dendro + Cryo (Lauma / Citlali / Skirk)",
+        "note": "Bring shielded characters for Floor 11-2 Breacher Primuses and Dendro/Cryo for Hydro Herald shields."
+      },
+      {
+        "chamber": "11-3",
+        "firstHalf": "Secret Source Automaton: Configuration Device",
+        "secondHalf": "Aeonblight Drake",
+        "recFirst": "Nightsoul (Mavuika / Xilonen / Mualani)",
+        "recSecond": "Bow carry (Chasca / Yelan / Fischl) to shoot wings",
+        "note": "Enter Nightsoul Blessing in First Half to interrupt the Secret Source Automaton charge phase."
+      }
+    ]
+  },
+  {
+    "floor": 12,
+    "title": "Floor 12 — Version 7.2 \"Hour of Ruin\" Endgame Check",
+    "leyLine": "Normal Ley Line Flow (No chamber DMG buffs). Pure DPS, Nightsoul/Lunar shield breaking, and multi-wave check.",
+    "chambers": [
+      {
+        "chamber": "12-1",
+        "firstHalf": "Wilderness Hunters & Frostnight Scions (2 Waves)",
+        "secondHalf": "Tenebrous Papilla: Type II (Void Ward Shield)",
+        "recFirst": "Mitya / Flins + Columbina Lunar-Charged or Neuvillette Furina",
+        "recSecond": "Nightsoul / Fast Elemental Hitters (Mavuika, Kinich, Chasca, Ororon)",
+        "note": "Void Ward fills rapidly from Nightsoul-aligned attacks or fast multi-hit Burning/Hyperbloom reactions."
+      },
+      {
+        "chamber": "12-2",
+        "firstHalf": "Frostmoon Herra (Radiant Aura Phase)",
+        "secondHalf": "Secret Source Automaton: Overseer Device",
+        "recFirst": "Columbina + Nefer / Lauma Lunar-Bloom or Mavuika Melt",
+        "recSecond": "Skirk + Escoffier + Odette + Furina Freeze",
+        "note": "Persistent Cryo application halts Overseer Device spin-up and strips its elevated elemental RES."
+      },
+      {
+        "chamber": "12-3",
+        "firstHalf": "Boreal Wyvern: Sky-Roamer (Electro/Cryo Shield)",
+        "secondHalf": "Hydro Tulpa & Cinder Sentinel Duo",
+        "recFirst": "Mitya + Valeriy + Alyosha or Mavuika + Citlali Melt",
+        "recSecond": "Mavuika Melt / Arlecchino Vape / Lauma Hyperbloom",
+        "note": "Avoid pure Hydro carries in 12-3 Second Half: Hydro Tulpa remains immune to Hydro DMG!"
+      }
+    ]
+  }
+]

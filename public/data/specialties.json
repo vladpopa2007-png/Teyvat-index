@@ -1,0 +1,350 @@
+[
+  {
+    "name": "Windwheel Aster",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Circle Windrise Statue of The Seven and Stormterror’s Lair outer ring (40+ nodes)."
+  },
+  {
+    "name": "Dandelion Seed",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Front gates of Mondstadt City and ridge east of Stone Gate; bring Anemo to harvest."
+  },
+  {
+    "name": "Small Lamp Grass",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Wolvendom woods and Whispering Woods at night for high visual contrast."
+  },
+  {
+    "name": "Silk Flower",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Yujing Terrace in Liyue Harbor and Wangshu Inn courtyard (14 bushes = 28 flowers)."
+  },
+  {
+    "name": "Cor Lapis",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Mt. Hulao cliffsides and The Chasm surface ore veins; bring Claymore or Zhongli."
+  },
+  {
+    "name": "Starconch",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Yaoguang Shoal and Guyun Stone Forest coastlines at low tide."
+  },
+  {
+    "name": "Qingxin",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Karst mountain peaks around Jueyun Karst, Huaguang Stone Forest, and Liyue Herbalist Bubu Pharmacy."
+  },
+  {
+    "name": "Jueyun Chili",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Qingce Village terraces and Stone Gate trail (3 chilies per bush)."
+  },
+  {
+    "name": "Tenkumo Fruit",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Seirai Island perimeter around Amakumo Peak (95+ fruits on one loop)."
+  },
+  {
+    "name": "Sea Ganoderma",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Kannazuka coastlines, Watatsumi shallow reefs, and Golden Apple shorelines."
+  },
+  {
+    "name": "Sakura Bloom",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Grand Narukami Shrine ridge and Chinju Forest; apply Electro to collect."
+  },
+  {
+    "name": "Onikabuto",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Underneath Tenshukaku cavern, Mikage Furnace rim, and Tatarasuna tree trunks."
+  },
+  {
+    "name": "Naku Weed",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Tatarasuna central forge and Seirai Island plains near Electro zones."
+  },
+  {
+    "name": "Sango Pearl",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Sangonomiya Shrine waterfall pools and Suigetsu Pool rim on Watatsumi Island."
+  },
+  {
+    "name": "Kalpalata Lotus",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Cliff ledges around Devantaka Mountain, Apam Woods, and Gandharva Ville; Nahida E speeds harvest."
+  },
+  {
+    "name": "Scarab",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Dune of Elusion and Mausoleum of King Deshret surface dunes + underground ruins."
+  },
+  {
+    "name": "Rukkhashava Mushrooms",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Mawtiyima Forest giant mushroom caps and Apam Woods tree canopies."
+  },
+  {
+    "name": "Nilotpala Lotus",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Rivers around Sumeru City, Yazadaha Pool, and Vanarana waterways."
+  },
+  {
+    "name": "Sand Grease Pupa",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Setekh Wenut underground tunnels in the Desert of Hadramaveth."
+  },
+  {
+    "name": "Lumitoile",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Liffey Region beaches and Fortress of Meropide underwater pipes."
+  },
+  {
+    "name": "Lakelight Lily",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Erinnyes Forest ponds around Weeping Willow of the Lake & Loch Urania."
+  },
+  {
+    "name": "Rainbow Rose",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "West of Court of Fontaine, Fountain of Lucine flowerbeds, and Beryl Region gardens."
+  },
+  {
+    "name": "Spring of the First Dewdrop",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Underwater conches across Morte Region and Tower of Ipsissimus outer ruins."
+  },
+  {
+    "name": "Beryl Conch",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Salacia Plain seabeds, Chemin de L'Espoir reefs, and Elton Trench underwater shelves."
+  },
+  {
+    "name": "Sprayfeather Gill",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Toyac Springs shorelines and People of the Springs thermal islets."
+  },
+  {
+    "name": "Saurian Claw Succulent",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Sulfurous Veins canyon floor and Coatepec Mountain rocky outcrops."
+  },
+  {
+    "name": "Brilliant Chrysanthemum",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Huitztli Hill flowerfields and Stadium of the Sacred Flame outer terraces."
+  },
+  {
+    "name": "Withering Purpurbloom",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Ochkanatlan ruins perimeter and ash-strewn highland ridges."
+  },
+  {
+    "name": "Glowing Hornshroom",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Tezcatepetonco Range cliff caves and Masters of the Night-Wind misty hollows."
+  },
+  {
+    "name": "Quenepa Berry",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Scions of the Canopy ledges and Ancestral Temple overgrown ruins."
+  },
+  {
+    "name": "Skysplit Gembloom",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Atocpan volcanic terraces and Great Volcano of Tollan rim ledges."
+  },
+  {
+    "name": "Frostlamp Flower",
+    "region": "Nod-Krai",
+    "respawn": "48 hours (2 days)",
+    "route": "Frostmoon Enclave watersides and Hiisi Island northern shorelines."
+  },
+  {
+    "name": "Portable Bearing",
+    "region": "Nod-Krai",
+    "respawn": "48 hours (2 days)",
+    "route": "Clink-Clank Krumkake Craftshop scrapyards and Blue Amber Lake ruins."
+  },
+  {
+    "name": "Moonfall Silver",
+    "region": "Nod-Krai",
+    "respawn": "48 hours (2 days)",
+    "route": "Hiisi Island cavern veins and Silvermoon Hall outer cliffside ridges."
+  },
+  {
+    "name": "Winter Icelea",
+    "region": "Nod-Krai",
+    "respawn": "48 hours (2 days)",
+    "route": "Dreadnought cliffs around Amsvartnir and Wavechaser Plain frost ridges."
+  },
+  {
+    "name": "Frostfairy Flower",
+    "region": "Snezhnaya",
+    "respawn": "48 hours (2 days)",
+    "route": "Whitelake shore thickets and Snezhnograd outer conservatory terraces."
+  },
+  {
+    "name": "Flockingweed",
+    "region": "Snezhnaya",
+    "respawn": "48 hours (2 days)",
+    "route": "Kuznetsk Steppe windbreaks and Zapolyarny road watchtower perimeters."
+  },
+  {
+    "name": "Golden Fern",
+    "region": "Snezhnaya",
+    "respawn": "48 hours (2 days)",
+    "route": "Boreal Hollow thermal springs and Sunken Bastion frost-free glades."
+  },
+  {
+    "name": "Calla Lily",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Springvale lake shorelines, Dawn Winery ponds, and Starfell Lake perimeter."
+  },
+  {
+    "name": "Valberry",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Stormbearer Mountains & Stormbearer Point bushes (4 berries per bush)."
+  },
+  {
+    "name": "Philanemo Mushroom",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Rooftops and eaves across Mondstadt City, Springvale cottages, and Dawn Winery."
+  },
+  {
+    "name": "Wolfhook",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Wolvendom forest undergrowth leading up to Boreas’s arena."
+  },
+  {
+    "name": "Cecilia",
+    "region": "Mondstadt",
+    "respawn": "48 hours (2 days)",
+    "route": "Starsnatch Cliff plateau (37 nodes) and Mondstadt flora shop Flora."
+  },
+  {
+    "name": "Noctilucous Jade",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Mingyun Village mine shafts, Sal Terrae caves, and The Chasm tunnels."
+  },
+  {
+    "name": "Glaze Lily",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Yujing Terrace gardens in Liyue Harbor and Qingce Village terraces."
+  },
+  {
+    "name": "Violetgrass",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Cliff faces around Mingyun Village, Wuwang Hill, and The Chasm surface."
+  },
+  {
+    "name": "Clearwater Jade",
+    "region": "Liyue",
+    "respawn": "48 hours (2 days)",
+    "route": "Chenyu Vale Jade Mouth banks, Chizhang Wall, and Mt. Xuanlian watersides."
+  },
+  {
+    "name": "Crystal Marrow",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Yashiori Island Serpent’s Head spine and Tatarasuna gorge ridges."
+  },
+  {
+    "name": "Dendrobium",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Nazuchi Beach battleground shorelines and Kujou Encampment ruins."
+  },
+  {
+    "name": "Fluorescent Fungus",
+    "region": "Inazuma",
+    "respawn": "48 hours (2 days)",
+    "route": "Tsurumi Island foggy trails around Chirai Shrine and Shirikoro Peak."
+  },
+  {
+    "name": "Henna Berry",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Aaru Village dunes, Sobek Oasis canyons, and Khaj-Nisut desert ridges."
+  },
+  {
+    "name": "Padisarah",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Pardis Dhyai greenhouse terraces, Sumeru City outskirts, and Vanarana."
+  },
+  {
+    "name": "Mourning Flower",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Tunigi Hollow marshes and Asipattravana Swamp water edges in Gavireh Lajavard."
+  },
+  {
+    "name": "Trishiraite",
+    "region": "Sumeru",
+    "respawn": "48 hours (2 days)",
+    "route": "Temir Mountains mines and Asipattravana cavern crystal clusters."
+  },
+  {
+    "name": "Lumidouce Bell",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Hills north of Court of Fontaine and Elynas southern ridges (3 bells per plant)."
+  },
+  {
+    "name": "Romaritime Flower",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Salacia Plain underwater plains and Court of Fontaine western coastlines."
+  },
+  {
+    "name": "Subdetection Unit",
+    "region": "Fontaine",
+    "respawn": "48 hours (2 days)",
+    "route": "Fontaine Research Institute ruins and Mont Esus East cliff platforms."
+  },
+  {
+    "name": "Dracolite",
+    "region": "Natlan",
+    "respawn": "48 hours (2 days)",
+    "route": "Atocpan magma fissures and Great Volcano of Tollan underground tunnels."
+  }
+]

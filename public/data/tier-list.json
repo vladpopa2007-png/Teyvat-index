@@ -1,0 +1,607 @@
+[
+  {
+    "charId": "mavuika",
+    "tier": "S",
+    "note": "Premier Nightsoul Pyro Melt hypercarry and effortless zero-ER off-field Pyro Sub-DPS."
+  },
+  {
+    "charId": "columbina",
+    "tier": "S",
+    "note": "Backbone of Nod-Krai Lunar reactions (Lunar-Charged, Bloom, Crystallize) with strong off-field Hydro DMG."
+  },
+  {
+    "charId": "xilonen",
+    "tier": "S",
+    "note": "Universal 36% multi-element RES shred, 40% Cinder City DMG% buff, and rapid active healing."
+  },
+  {
+    "charId": "citlali",
+    "tier": "S",
+    "note": "Best-in-slot Melt and Hydro shielder enabling massive Pyro Melt nukes with 20% RES shred."
+  },
+  {
+    "charId": "furina",
+    "tier": "S",
+    "note": "Massive team-wide DMG% buff, strong off-field Hydro, and universal synergy with healers."
+  },
+  {
+    "charId": "neuvillette",
+    "tier": "S",
+    "note": "Unmatched AoE Hydro beam, self-sustain, and effortless clears across nearly all Abyss lineups."
+  },
+  {
+    "charId": "skirk",
+    "tier": "S",
+    "note": "Explosive Cryo Slash & Burst hypercarry dominating Freeze and boss speedruns with Escoffier and Furina."
+  },
+  {
+    "charId": "escoffier",
+    "tier": "S",
+    "note": "Enables 55% Cryo/Hydro RES shred, Furina-ready team healing, and huge off-field Cryo Skill DPS."
+  },
+  {
+    "charId": "mitya",
+    "tier": "S",
+    "note": "Version 7.2 flagship Electro Catalyst carry shredding Abyss bosses in Lunar-Charged and Aggravate teams."
+  },
+  {
+    "charId": "kazuha",
+    "tier": "S",
+    "note": "Top-tier grouping, 40% VV RES shred, and Elemental DMG% buff in a single kit."
+  },
+  {
+    "charId": "bennett",
+    "tier": "S",
+    "note": "Irreplaceable flat ATK buff, Pyro battery, and fast healing for ATK-scaling carries."
+  },
+  {
+    "charId": "odette",
+    "tier": "A",
+    "note": "High-consistency Snezhnayan Cryo sub-DPS granting CRIT buffs and non-stop off-field aura."
+  },
+  {
+    "charId": "varka",
+    "tier": "A",
+    "note": "Dual-infusion Anemo Claymore powerhouse excelling alongside Durin and Faruzan in Hexerei teams."
+  },
+  {
+    "charId": "lauma",
+    "tier": "A",
+    "note": "Elevates Bloom and Lunar-Bloom into crit-capable endgame threats with Dendro/Hydro shred."
+  },
+  {
+    "charId": "flins",
+    "tier": "A",
+    "note": "Relentless Lunar-Charged Polearm carry with high single-target Burst throughput."
+  },
+  {
+    "charId": "nefer",
+    "tier": "A",
+    "note": "Frontloaded Verdant Dew Lunar-Bloom carry tearing through AoE and multi-wave chambers."
+  },
+  {
+    "charId": "durin",
+    "tier": "A",
+    "note": "Versatile off-field Pyro buffer and Burst DPS supporting both Hexerei and Melt cores."
+  },
+  {
+    "charId": "arlecchino",
+    "tier": "A",
+    "note": "Frontloaded Bond of Life Pyro normal-attack carry with flexible rotations and strong single-target DPS."
+  },
+  {
+    "charId": "varesa",
+    "tier": "A",
+    "note": "Snappy plunging Electro carry thriving in Overload and Chevreuse/Mavuika cores."
+  },
+  {
+    "charId": "mualani",
+    "tier": "A",
+    "note": "Speedrun-grade forward Vaporize nukes with huge single-hit multipliers."
+  },
+  {
+    "charId": "kinich",
+    "tier": "A",
+    "note": "High single-target Burning/Burgeon Dendro DPS with built-in mobility."
+  },
+  {
+    "charId": "chasca",
+    "tier": "A",
+    "note": "Element-agnostic multi-reaction Bow carry bypassing single-element immunities."
+  },
+  {
+    "charId": "nahida",
+    "tier": "A",
+    "note": "Premier Dendro applicator and EM buffer powering Hyperbloom, Aggravate, and Spread."
+  },
+  {
+    "charId": "yelan",
+    "tier": "A",
+    "note": "High off-field Hydro damage, ramping active-character DMG buff, and smooth Favonius synergy."
+  },
+  {
+    "charId": "xingqiu",
+    "tier": "A",
+    "note": "Gold-standard Hydro application with interruption resistance and damage reduction."
+  },
+  {
+    "charId": "zhongli",
+    "tier": "A",
+    "note": "Near-unbreakable shield with universal 20% All-RES shred for comfort and Geo Resonance."
+  },
+  {
+    "charId": "xiangling",
+    "tier": "A",
+    "note": "No-ICD Pyronado AoE Pyro damage remains lethal in Vape, Melt, and Overload teams."
+  },
+  {
+    "charId": "fischl",
+    "tier": "A",
+    "note": "Huge single-target Electro sub-DPS and energy generation, especially in Aggravate."
+  },
+  {
+    "charId": "kuki-shinobu",
+    "tier": "A",
+    "note": "Most comfortable Hyperbloom trigger combining reliable Electro rings with healing."
+  },
+  {
+    "charId": "vesna",
+    "tier": "B",
+    "note": "Fluid Anemo infusion swordsmanship with strong Cryo/Electro Swirl multi-target clears."
+  },
+  {
+    "charId": "vodyanitsa",
+    "tier": "B",
+    "note": "Potent Snezhnayan Hydro healer offering sheer-frost sustain, crowd-slow, and Furina fanfare."
+  },
+  {
+    "charId": "valeriy",
+    "tier": "B",
+    "note": "High-value 4★ Electro Sub-DPS and Skill CRIT buffer built to supercharge Mitya and Aggravate."
+  },
+  {
+    "charId": "alyosha",
+    "tier": "B",
+    "note": "Accessible 4★ Electro team healer easing Furina fanfare and Superconduct/Electro-Charged energy."
+  },
+  {
+    "charId": "zibai",
+    "tier": "B",
+    "note": "DEF-scaling Geo Lunar-Crystallize carry peaking alongside Columbina and Linnea."
+  },
+  {
+    "charId": "linnea",
+    "tier": "B",
+    "note": "Steady off-field Geo shred and sustain anchor for Lunar-Crystallize and Navia teams."
+  },
+  {
+    "charId": "ororon",
+    "tier": "B",
+    "note": "Free 4★ Scroll holder enabling smooth Electro-Charged and Nightsoul triggers."
+  },
+  {
+    "charId": "aino",
+    "tier": "B",
+    "note": "Reliable 4★ Nod-Krai Hydro support boosting Moonsign Lunar reactions on a budget."
+  },
+  {
+    "charId": "hu-tao",
+    "tier": "B",
+    "note": "Classic Vaporize single-target carry; still strong alongside Furina, Yelan, and Xilonen."
+  },
+  {
+    "charId": "raiden-shogun",
+    "tier": "B",
+    "note": "Versatile energy battery for National variants and comfortable off-field Hyperbloom trigger."
+  },
+  {
+    "charId": "alhaitham",
+    "tier": "B",
+    "note": "Consistent Spread & Quickbloom Dendro driver with reliable multi-wave uptime."
+  },
+  {
+    "charId": "navia",
+    "tier": "B",
+    "note": "Explosive Geo skill nukes from Crystallize shards; pairs well with Xilonen and Bennett."
+  },
+  {
+    "charId": "kokomi",
+    "tier": "B",
+    "note": "Comfy on-field/off-field Hydro healing for Freeze, Mono Hydro, and Bloom."
+  },
+  {
+    "charId": "ayaka",
+    "tier": "B",
+    "note": "Rejuvenated alongside Escoffier and Furina against freezable or boss Freeze chambers."
+  },
+  {
+    "charId": "xiao",
+    "tier": "B",
+    "note": "Strong AoE plunging DPS when paired with Faruzan, Xianyun, and Furina."
+  },
+  {
+    "charId": "wanderer",
+    "tier": "B",
+    "note": "Flexible Anemo normal-attacker with fast mobility; peaks alongside C6 Faruzan."
+  },
+  {
+    "charId": "tighnari",
+    "tier": "B",
+    "note": "Fast-swap Spread bow carry with crisp single-target burst windows and low field time."
+  },
+  {
+    "charId": "yoimiya",
+    "tier": "B",
+    "note": "Ranged single-target Pyro comfort; benefits greatly from Citlali or Zhongli shields."
+  },
+  {
+    "charId": "itto",
+    "tier": "B",
+    "note": "Solid Mono Geo AoE carry reliant on Gorou and high Burst uptime."
+  },
+  {
+    "charId": "cyno",
+    "tier": "B",
+    "note": "Strong Quickbloom ceiling over long rotations, though demanding in multi-wave chambers."
+  },
+  {
+    "charId": "jean",
+    "tier": "B",
+    "note": "Instant party-wide heal makes her an accessible Furina partner with VV shred."
+  },
+  {
+    "charId": "sucrose",
+    "tier": "B",
+    "note": "Valuable budget EM buffer, TTDS holder, and forward-Vape/Lunar reaction driver."
+  },
+  {
+    "charId": "ganyu",
+    "tier": "B",
+    "note": "Flexible between Melt shots and Freeze Burst, though slower than modern carries."
+  },
+  {
+    "charId": "eula",
+    "tier": "C",
+    "note": "Backloaded Physical Burst struggles against high Physical RES and mobile Abyss bosses."
+  },
+  {
+    "charId": "chevreuse",
+    "tier": "S",
+    "note": "Core Overload archetype enabler granting 40% Pyro/Electro RES shred, +40% ATK, and healing."
+  },
+  {
+    "charId": "iansan",
+    "tier": "S",
+    "note": "Mobile ATK buffer rivaling Bennett without Circle Impact alongside 4pc Cinder City DMG%."
+  },
+  {
+    "charId": "xianyun",
+    "tier": "A",
+    "note": "Unlocks top-tier Plunge carries (Xiao, Gaming, Diluc) while covering VV shred and Furina team healing."
+  },
+  {
+    "charId": "ineffa",
+    "tier": "A",
+    "note": "Lunar-Charged Electro core bringing Birgitta off-field thunderclouds, shielding, and EM scaling."
+  },
+  {
+    "charId": "emilie",
+    "tier": "A",
+    "note": "Colossal off-field Dendro damage powering Kinich Burning and Wriothesley Burn-Melt."
+  },
+  {
+    "charId": "clorinde",
+    "tier": "A",
+    "note": "Snappy high-tempo Aggravate, Overload, and Quickbloom Electro sword carry."
+  },
+  {
+    "charId": "baizhu",
+    "tier": "A",
+    "note": "Single-tap team healing, Dendro shields, and reaction buffs for Furina & Cyno teams."
+  },
+  {
+    "charId": "shenhe",
+    "tier": "A",
+    "note": "Best-in-slot Cryo flat-DMG buffer elevating Skirk, Ayaka, and Wriothesley bursts."
+  },
+  {
+    "charId": "faruzan",
+    "tier": "A",
+    "note": "Indispensable C6 Anemo support powering Xiao, Wanderer, and Varka hypercarries."
+  },
+  {
+    "charId": "nilou",
+    "tier": "A",
+    "note": "Explosive Bountiful Core AoE clears tearing apart multi-wave Abyss floors on low investment."
+  },
+  {
+    "charId": "chiori",
+    "tier": "A",
+    "note": "Relentless off-field Geo sub-DPS anchoring Zhongli, Xilonen, and Navia cores."
+  },
+  {
+    "charId": "gaming",
+    "tier": "A",
+    "note": "Highest-ceiling 4★ Forward Melt plunge carry with Xianyun, Citlali, and Bennett."
+  },
+  {
+    "charId": "wriothesley",
+    "tier": "A",
+    "note": "Durable Burn-Melt & Freeze Catalyst brawler with effortless Marechaussee synergy."
+  },
+  {
+    "charId": "lyney",
+    "tier": "A",
+    "note": "Frontloaded Mono-Pyro and Overload speedrun carry with towering Burst + Skill nukes."
+  },
+  {
+    "charId": "pantalone",
+    "tier": "A",
+    "note": "High-value Snezhnayan Cryo sub-DPS providing off-field blade pulses and team damage scaling."
+  },
+  {
+    "charId": "sandrone",
+    "tier": "A",
+    "note": "Autonomous Geo Ruin construct carry pairing strong AoE sustain with Xilonen/Linnea."
+  },
+  {
+    "charId": "pulcinella",
+    "tier": "A",
+    "note": "Snezhnayan Cryo tactician delivering consistent RES shred, Energy funneling, and CRIT buffs."
+  },
+  {
+    "charId": "yae-miko",
+    "tier": "B",
+    "note": "Reliable Spread & Aggravate turret DPS with smooth quick-swap Tighnari synergy."
+  },
+  {
+    "charId": "ayato",
+    "tier": "B",
+    "note": "Flexible Hydro Normal Attack driver fitting Hyperbloom, Soup, and Burgeon easily."
+  },
+  {
+    "charId": "keqing",
+    "tier": "B",
+    "note": "Fast-cycling Thundering Fury Aggravate carry alongside Fischl and Nahida."
+  },
+  {
+    "charId": "tartaglia",
+    "tier": "B",
+    "note": "Iconic International Vaporize AoE driver with unmatched multi-target Riptide scaling."
+  },
+  {
+    "charId": "diluc",
+    "tier": "B",
+    "note": "Revitalized as a high-multiplier Xianyun + Furina Plunge Melt/Vape carry."
+  },
+  {
+    "charId": "venti",
+    "tier": "B",
+    "note": "Unrivaled crowd control on light waves, though ineffective against heavy unpullable bosses."
+  },
+  {
+    "charId": "mona",
+    "tier": "B",
+    "note": "Strong Omen DMG% nuke buffer for Freeze and Mualani/Mavuika speedruns."
+  },
+  {
+    "charId": "albedo",
+    "tier": "B",
+    "note": "Low-field-time Geo sub-DPS, though largely outpaced by Chiori in damage."
+  },
+  {
+    "charId": "noelle",
+    "tier": "B",
+    "note": "Comfortable C6 Furina Geo driver merging healing, shielding, and wide AoE slashes."
+  },
+  {
+    "charId": "sigewinne",
+    "tier": "B",
+    "note": "Effortless Skill team healing and off-field Skill DMG buffs for Furina/Escoffier teams."
+  },
+  {
+    "charId": "charlotte",
+    "tier": "B",
+    "note": "Reliable 4★ Cryo team healer and TTDS holder for Neuvillette/Skirk Furina comps."
+  },
+  {
+    "charId": "lan-yan",
+    "tier": "B",
+    "note": "Flexible VV Anemo shielder carrying Thrilling Tales for Pyro & Electro hypercarries."
+  },
+  {
+    "charId": "illuga",
+    "tier": "B",
+    "note": "Dedicated Lunar-Crystallize Geo buffer empowering Zibai and Columbina comps."
+  },
+  {
+    "charId": "traveler",
+    "tier": "B",
+    "note": "Versatile Dendro & Pyro Cinder City budget enabler available free to all players."
+  },
+  {
+    "charId": "yaoyao",
+    "tier": "B",
+    "note": "Compact 4★ Dendro healer holding Deepwood for Aggravate and Nilou Bloom."
+  },
+  {
+    "charId": "kirara",
+    "tier": "B",
+    "note": "Sturdy Dendro shielder excelling in Keqing/Clorinde Aggravate and Nilou Bloom."
+  },
+  {
+    "charId": "layla",
+    "tier": "B",
+    "note": "Thick 100%-uptime Cryo shield with reliable Tenacity ATK buffing."
+  },
+  {
+    "charId": "rosaria",
+    "tier": "B",
+    "note": "High-value Reverse Melt sub-DPS and CRIT Rate buffer."
+  },
+  {
+    "charId": "kaeya",
+    "tier": "B",
+    "note": "Consistent starter Cryo sub-DPS in mobile Reverse Melt and Freeze squads."
+  },
+  {
+    "charId": "beidou",
+    "tier": "B",
+    "note": "Devastating two-target Stormbreaker AoE sub-DPS in Taser and Aggravate."
+  },
+  {
+    "charId": "kujou-sara",
+    "tier": "B",
+    "note": "Top Electro CRIT DMG buffer at C6 for Raiden and Clorinde burst windows."
+  },
+  {
+    "charId": "thoma",
+    "tier": "B",
+    "note": "Accessible Burgeon trigger and Pyro shield support for Wanderer and Kinich."
+  },
+  {
+    "charId": "gorou",
+    "tier": "B",
+    "note": "Dedicated Mono-Geo DEF & Geo CRIT buffer for Itto, Noelle, and Chiori."
+  },
+  {
+    "charId": "sethos",
+    "tier": "B",
+    "note": "High-skill 4★ Spread/Aggravate Bow DPS scaling sharply on Slingshot."
+  },
+  {
+    "charId": "yanfei",
+    "tier": "B",
+    "note": "Comfy ranged Pyro carry and reliable C4 Tankfei shielder."
+  },
+  {
+    "charId": "mizuki",
+    "tier": "B",
+    "note": "Comfy Swirl Taser driver healing while amplifying team Swirl procs."
+  },
+  {
+    "charId": "ifa",
+    "tier": "B",
+    "note": "Mobile Electro-Charged Anemo driver offering healing and reaction bonuses."
+  },
+  {
+    "charId": "dahlia",
+    "tier": "B",
+    "note": "Refreshable Hydro shielder granting Attack Speed to Normal Attack carries."
+  },
+  {
+    "charId": "kachina",
+    "tier": "B",
+    "note": "Free Natlan Scroll of the Hero of Cinder City holder for any team."
+  },
+  {
+    "charId": "collei",
+    "tier": "B",
+    "note": "Compact Dendro applicator shining in Nilou Bloom rotation windows."
+  },
+  {
+    "charId": "dehya",
+    "tier": "B",
+    "note": "Poise & Burning enabler in Kinich, Lyney, and Burn-Melt teams."
+  },
+  {
+    "charId": "candace",
+    "tier": "B",
+    "note": "Hydro infusion & Normal Attack buffer for Mualani and Arlecchino."
+  },
+  {
+    "charId": "mika",
+    "tier": "B",
+    "note": "Team healer granting 25% Attack Speed for Wanderer, Wriothesley, and Eula."
+  },
+  {
+    "charId": "lynette",
+    "tier": "B",
+    "note": "Reliable free Ousia VV Anemo support with taunt decoy utility."
+  },
+  {
+    "charId": "heizou",
+    "tier": "B",
+    "note": "Punchy Quick-swap Anemo driver with satisfying Heartstopper Skill nukes."
+  },
+  {
+    "charId": "yun-jin",
+    "tier": "B",
+    "note": "Dedicated Normal Attack flat DMG buffer for Yoimiya and Ayato."
+  },
+  {
+    "charId": "klee",
+    "tier": "C",
+    "note": "Clunky animation-cancel reliance despite respectable Furina Forward-Vape output."
+  },
+  {
+    "charId": "barbara",
+    "tier": "C",
+    "note": "Self-Hydro freezes teammates against Cryo enemies; serviceable in Nilou Bloom."
+  },
+  {
+    "charId": "lisa",
+    "tier": "C",
+    "note": "High Energy cost limits her DEF-shred Burst outside dedicated Aggravate/Eula batteries."
+  },
+  {
+    "charId": "chongyun",
+    "tier": "C",
+    "note": "Cryo melee infusion disrupts most physical/elemental carries outside Melt niche."
+  },
+  {
+    "charId": "ningguang",
+    "tier": "C",
+    "note": "Single-target Geo projectiles lag behind modern multi-wave Abyss checks."
+  },
+  {
+    "charId": "dori",
+    "tier": "C",
+    "note": "Niche energy/healing battery outside high-constellation C6 Furina Aggravate."
+  },
+  {
+    "charId": "sayu",
+    "tier": "C",
+    "note": "Premier overworld utility roller, but outclassed in combat VV healing by Jean & Xianyun."
+  },
+  {
+    "charId": "diona",
+    "tier": "C",
+    "note": "Serviceable early-game Cryo shield & battery outshone by Citlali and Layla."
+  },
+  {
+    "charId": "razor",
+    "tier": "C",
+    "note": "Physical scaling lags severely; best used in niche C6 Bennett EM Rainbow teams."
+  },
+  {
+    "charId": "freminet",
+    "tier": "C",
+    "note": "Fun Shatter/Physical kit hampered by narrow Physical Abyss matchups."
+  },
+  {
+    "charId": "kaveh",
+    "tier": "C",
+    "note": "Standard Bloom teams struggle compared to Nilou Superbloom or Hyperbloom."
+  },
+  {
+    "charId": "qiqi",
+    "tier": "C",
+    "note": "Zero particle generation and slow Cryo application despite massive healing."
+  },
+  {
+    "charId": "xinyan",
+    "tier": "C",
+    "note": "Split DEF/ATK scaling and weak Pyro shield limit endgame consistency."
+  },
+  {
+    "charId": "amber",
+    "tier": "C",
+    "note": "Useful mainly as an Elegy Pyro shield-breaker in speedrun Hu Tao VV setups."
+  },
+  {
+    "charId": "aloy",
+    "tier": "C",
+    "note": "No constellations and awkward Coil stacks hold back her Reverse Melt Burst."
+  }
+]

@@ -1,0 +1,1814 @@
+[
+  {
+    "id": "mistsplitter-reforged",
+    "name": "Mistsplitter Reforged",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT DMG 44.1%",
+    "passive": "Mistsplitter's Edge: Gain 12% Elemental DMG Bonus for all elements and up to 28% more for your character's Element across 3 Mistsplitter's Emblem stacks.",
+    "bestCharacters": [
+      "Kamisato Ayaka",
+      "Keqing",
+      "Bennett",
+      "Alhaitham"
+    ],
+    "ascensionMaterial": "Coral Branch of a Distant Sea",
+    "domain": "Court of Flowing Sand (Inazuma)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "materialType": "Distant Sea Branch (Coral / Jeweled / Jade / Golden Branch)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Gear / Chaos Axis / Chaos Oculus",
+      "commonDrop": "Old Handguard / Kageuchi Handguard / Famed Handguard"
+    },
+    "region": "Inazuma",
+    "version": "2.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Narukami_Awaken.png"
+  },
+  {
+    "id": "primordial-jade-cutter",
+    "name": "Primordial Jade Cutter",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT Rate 44.1%",
+    "passive": "Protector's Virtue: HP increased by 20%. Additionally, provides an ATK Bonus equal to 1.2% of the wielder's Max HP.",
+    "bestCharacters": [
+      "Xingqiu",
+      "Alhaitham",
+      "Furina",
+      "Keqing"
+    ],
+    "ascensionMaterial": "Luminous Sands from Guyun",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Guyun Pillars (Luminous Sands / Lustrous Stone / Relic / Divine Body)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Hunter's Sacrificial Knife / Agent's / Inspector's",
+      "commonDrop": "Recruit's Insignia / Sergeant's / Lieutenant's"
+    },
+    "region": "Liyue",
+    "version": "1.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Morax_Awaken.png"
+  },
+  {
+    "id": "splendor-of-tranquil-waters",
+    "name": "Splendor of Tranquil Waters",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "passive": "Dawn and Dusk by the Lake: Increases Elemental Skill DMG by up to 24% and Max HP by up to 28% when the wielder or party members gain or lose HP.",
+    "bestCharacters": [
+      "Furina"
+    ],
+    "ascensionMaterial": "Dross of Pure Sacred Dewdrop",
+    "domain": "Echoes of the Deep Tides (Fontaine)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "materialType": "Pure Sacred Dewdrop (Dross / Sublimation / Spring / Essence)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Drop of Tainted Water / Scoop / Newborn Phantasm",
+      "commonDrop": "Transoceanic Pearl / Chunk / Xenochromatic Crystal"
+    },
+    "region": "Fontaine",
+    "version": "4.2",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Regalis_Awaken.png"
+  },
+  {
+    "id": "light-of-foliar-incision",
+    "name": "Light of Foliar Incision",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "passive": "Whitemoon Bristle: CRIT Rate increased by 4%. Dealing Elemental DMG grants Foliar Incision, boosting Normal Attack and Skill DMG by 120% of Elemental Mastery.",
+    "bestCharacters": [
+      "Alhaitham",
+      "Keqing"
+    ],
+    "ascensionMaterial": "Copper Talisman of the Forest Dew",
+    "domain": "Tower of Abject Pride (Sumeru)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "materialType": "Forest Dew Talismans (Copper / Iron / Silver / Golden)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Desiccated Shell / Sturdy Shell / Marked Shell",
+      "commonDrop": "Faded Red Satin / Trimmed Red Silk / Rich Red Brocade"
+    },
+    "region": "Sumeru",
+    "version": "3.4",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Ayus_Awaken.png"
+  },
+  {
+    "id": "favonius-sword",
+    "name": "Favonius Sword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAtk": 454,
+    "secondaryStat": "Energy Recharge 61.3%",
+    "passive": "Windfall: CRIT Hits have a 60%–100% chance to generate 6 Energy for the character via a small Elemental Particle.",
+    "bestCharacters": [
+      "Kaedehara Kazuha",
+      "Furina",
+      "Jean",
+      "Xingqiu"
+    ],
+    "ascensionMaterial": "Tile of Decarabian's Tower",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Decarabian Tiles (Tile / Debris / Fragment / Scattered Piece)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Heavy Horn / Black Bronze Horn / Black Crystal Horn",
+      "commonDrop": "Firm Arrowhead / Sharp Arrowhead / Weathered Arrowhead"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Zephyrus_Awaken.png"
+  },
+  {
+    "id": "sacrificial-sword",
+    "name": "Sacrificial Sword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAtk": 454,
+    "secondaryStat": "Energy Recharge 61.3%",
+    "passive": "Composed: After damaging an opponent with an Elemental Skill, the skill has a 40%–80% chance to end its own cooldown immediately.",
+    "bestCharacters": [
+      "Xingqiu",
+      "Kaedehara Kazuha",
+      "Qiqi"
+    ],
+    "ascensionMaterial": "Fetters of the Dandelion Gladiator",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Dandelion Gladiator (Fetters / Chains / Shackles / Dream)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Device / Chaos Circuit / Chaos Core",
+      "commonDrop": "Divining Scroll / Sealed Scroll / Forbidden Curse Scroll"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Fossil_Awaken.png"
+  },
+  {
+    "id": "redhorn-stonethresher",
+    "name": "Redhorn Stonethresher",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "passive": "Gokadaiou Otogibanashi: DEF is increased by 28%. Normal and Charged Attack DMG is increased by 40% of DEF.",
+    "bestCharacters": [
+      "Arataki Itto",
+      "Noelle",
+      "Xinyan"
+    ],
+    "ascensionMaterial": "Narukami's Wisdom",
+    "domain": "Court of Flowing Sand (Inazuma)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "materialType": "Narukami's Magatama (Wisdom / Joy / Affection / Valor)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Concealed Claw / Concealed Unguis / Concealed Talon",
+      "commonDrop": "Old Handguard / Kageuchi Handguard / Famed Handguard"
+    },
+    "region": "Inazuma",
+    "version": "2.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Itadorimaru_Awaken.png"
+  },
+  {
+    "id": "wolfs-gravestone",
+    "name": "Wolf's Gravestone",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "ATK 49.6%",
+    "passive": "Wolfish Tracker: Increases ATK by 20%. On hit against opponents with less than 30% HP, increases all party members' ATK by 40% for 12s.",
+    "bestCharacters": [
+      "Diluc",
+      "Eula",
+      "Navia",
+      "Beidou"
+    ],
+    "ascensionMaterial": "Fetters of the Dandelion Gladiator",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Dandelion Gladiator (Fetters / Chains / Shackles / Dream)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Device / Chaos Circuit / Chaos Core",
+      "commonDrop": "Divining Scroll / Sealed Scroll / Forbidden Curse Scroll"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Wolfmound_Awaken.png"
+  },
+  {
+    "id": "verdict",
+    "name": "Verdict",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "passive": "Many Oaths of Dawn and Dusk: Increases ATK by 20%. Picking up Crystallize shards grants Seals that boost Elemental Skill DMG by 18% each (up to 2 stacks).",
+    "bestCharacters": [
+      "Navia",
+      "Diluc",
+      "Eula"
+    ],
+    "ascensionMaterial": "Fragment of an Ancient Chord",
+    "domain": "Echoes of the Deep Tides (Fontaine)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "materialType": "Ancient Chord (Fragment / Chapter / Movement / Echo)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rift Core / Foreign Synapse / Alien Life Core",
+      "commonDrop": "Meshing Gear / Mechanical Spur Gear / Artificed Dynamic Gear"
+    },
+    "region": "Fontaine",
+    "version": "4.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_GoldenVerdict_Awaken.png"
+  },
+  {
+    "id": "beacon-of-the-reed-sea",
+    "name": "Beacon of the Reed Sea",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT Rate 33.1%",
+    "passive": "Desert Watch: Increases ATK by 20% after Elemental Skill hits and 20% more after taking DMG. Max HP increases by 32% when not protected by a shield.",
+    "bestCharacters": [
+      "Eula",
+      "Navia",
+      "Dehya",
+      "Diluc"
+    ],
+    "ascensionMaterial": "Echo of Scorching Might",
+    "domain": "Tower of Abject Pride (Sumeru)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "materialType": "Scorching Might (Echo / Remnant Glow / Dream / Olden Days)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Desiccated Shell / Sturdy Shell / Marked Shell",
+      "commonDrop": "Faded Red Satin / Trimmed Red Silk / Rich Red Brocade"
+    },
+    "region": "Sumeru",
+    "version": "3.5",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Deshret_Awaken.png"
+  },
+  {
+    "id": "serpent-spine",
+    "name": "Serpent Spine",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "CRIT Rate 27.6%",
+    "passive": "Wavesplitter: Every 4s a character is on the field, they deal 6%–10% more DMG and take 3%–2% more DMG (max 5 stacks).",
+    "bestCharacters": [
+      "Navia",
+      "Arataki Itto",
+      "Eula",
+      "Beidou"
+    ],
+    "ascensionMaterial": "Grain of Aerosiderite",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Aerosiderite (Grain / Piece / Bit / Chunk of Aerosiderite)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Fragile Bone Shard / Sturdy Bone Shard / Fossilized Bone Shard",
+      "commonDrop": "Whopperflower Nectar / Shimmering Nectar / Energy Nectar"
+    },
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Kione_Awaken.png"
+  },
+  {
+    "id": "favonius-greatsword",
+    "name": "Favonius Greatsword",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAtk": 454,
+    "secondaryStat": "Energy Recharge 61.3%",
+    "passive": "Windfall: CRIT Hits have a 60%–100% chance to generate 6 Energy for the character.",
+    "bestCharacters": [
+      "Noelle",
+      "Beidou",
+      "Sayu",
+      "Freminet"
+    ],
+    "ascensionMaterial": "Fetters of the Dandelion Gladiator",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Dandelion Gladiator (Fetters / Chains / Shackles / Dream)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Device / Chaos Circuit / Chaos Core",
+      "commonDrop": "Recruit's Insignia / Sergeant's / Lieutenant's Insignia"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Zephyrus_Awaken.png"
+  },
+  {
+    "id": "staff-of-homa",
+    "name": "Staff of Homa",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "passive": "Reckless Cinnabar: HP increased by 20%. Provides an ATK Bonus based on 0.8% of Max HP, increasing by an additional 1% of Max HP when below 50% HP.",
+    "bestCharacters": [
+      "Hu Tao",
+      "Xiao",
+      "Zhongli",
+      "Arlecchino"
+    ],
+    "ascensionMaterial": "Grain of Aerosiderite",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Aerosiderite (Grain / Piece / Bit / Chunk of Aerosiderite)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Dead Ley Line Branch / Dead Ley Line Leaves / Ley Line Sprout",
+      "commonDrop": "Slime Condensate / Slime Secretions / Slime Concentrate"
+    },
+    "region": "Liyue",
+    "version": "1.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Homa_Awaken.png"
+  },
+  {
+    "id": "engulfing-lightning",
+    "name": "Engulfing Lightning",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "Energy Recharge 55.1%",
+    "passive": "Timeless Dream: ATK increased by 28% of Energy Recharge over the base 100%, up to 80% ATK, and grants +30% ER for 12s after Elemental Burst.",
+    "bestCharacters": [
+      "Raiden Shogun",
+      "Xiangling",
+      "Shenhe"
+    ],
+    "ascensionMaterial": "Mask of the Wicked Lieutenant",
+    "domain": "Court of Flowing Sand (Inazuma)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "materialType": "Oni Masks (Wicked Lieutenant / Tiger's Bite / One-Horned / Kijin)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Gear / Chaos Axis / Chaos Oculus",
+      "commonDrop": "Old Handguard / Kageuchi Handguard / Famed Handguard"
+    },
+    "region": "Inazuma",
+    "version": "2.1",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Narukami_Awaken.png"
+  },
+  {
+    "id": "primordial-jade-winged-spear",
+    "name": "Primordial Jade Winged-Spear",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "passive": "Eagle Spear of Justice: On hit, increases ATK by 3.2% for 6s (max 7 stacks). At max stacks, increases DMG dealt by 12%.",
+    "bestCharacters": [
+      "Xiao",
+      "Arlecchino",
+      "Cyno",
+      "Raiden Shogun"
+    ],
+    "ascensionMaterial": "Luminous Sands from Guyun",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Guyun Pillars (Luminous Sands / Lustrous Stone / Relic / Divine Body)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Hunter's Sacrificial Knife / Agent's / Inspector's",
+      "commonDrop": "Recruit's Insignia / Sergeant's / Lieutenant's"
+    },
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Morax_Awaken.png"
+  },
+  {
+    "id": "the-catch",
+    "name": "\"The Catch\"",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "Energy Recharge 45.9%",
+    "passive": "Shanty: Increases Elemental Burst DMG by 16%–32% and Elemental Burst CRIT Rate by 6%–12%.",
+    "bestCharacters": [
+      "Raiden Shogun",
+      "Xiangling",
+      "Rosaria"
+    ],
+    "ascensionMaterial": "Mask of the Wicked Lieutenant",
+    "domain": "Court of Flowing Sand (Inazuma)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "materialType": "Oni Masks (Wicked Lieutenant / Tiger's Bite / One-Horned / Kijin)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Gear / Chaos Axis / Chaos Oculus",
+      "commonDrop": "Spectral Husk / Spectral Heart / Spectral Nucleus"
+    },
+    "region": "Inazuma",
+    "version": "2.1",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Mori_Awaken.png"
+  },
+  {
+    "id": "dragons-bane",
+    "name": "Dragon's Bane",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAtk": 454,
+    "secondaryStat": "Elemental Mastery 221",
+    "passive": "Bane of Flame and Water: Increases DMG against opponents affected by Hydro or Pyro by 20%–36%.",
+    "bestCharacters": [
+      "Hu Tao",
+      "Xiangling",
+      "Raiden Shogun (Hyperbloom)"
+    ],
+    "ascensionMaterial": "Mist Veiled Lead Elixir",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Mist Veiled Elixir (Lead / Mercury / Gold / Primo)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Mist Grass Pollen / Mist Grass / Mist Grass Wick",
+      "commonDrop": "Divining Scroll / Sealed Scroll / Forbidden Curse Scroll"
+    },
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Stardust_Awaken.png"
+  },
+  {
+    "id": "aqua-simulacra",
+    "name": "Aqua Simulacra",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "passive": "The Cleansing Form: HP is increased by 16%. When opponents are nearby, DMG dealt by the wielder is increased by 20%, active both on and off-field.",
+    "bestCharacters": [
+      "Yelan",
+      "Ganyu",
+      "Tighnari",
+      "Yoimiya"
+    ],
+    "ascensionMaterial": "Luminous Sands from Guyun",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Guyun Pillars (Luminous Sands / Lustrous Stone / Relic / Divine Body)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Gloomy Statuette / Dark Statuette / Deathly Statuette",
+      "commonDrop": "Spectral Husk / Spectral Heart / Spectral Nucleus"
+    },
+    "region": "Liyue",
+    "version": "2.7",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Kirin_Awaken.png"
+  },
+  {
+    "id": "amos-bow",
+    "name": "Amos' Bow",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "ATK 49.6%",
+    "passive": "Strong-Willed: Increases Normal and Charged Attack DMG by 12%, plus up to 40% additional Charged Attack DMG based on arrow flight time.",
+    "bestCharacters": [
+      "Ganyu",
+      "Lyney",
+      "Amber"
+    ],
+    "ascensionMaterial": "Fetters of the Dandelion Gladiator",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Dandelion Gladiator (Fetters / Chains / Shackles / Dream)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Chaos Device / Chaos Circuit / Chaos Core",
+      "commonDrop": "Slime Condensate / Slime Secretions / Slime Concentrate"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Amos_Awaken.png"
+  },
+  {
+    "id": "thundering-pulse",
+    "name": "Thundering Pulse",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "passive": "Rule by Thunder: Increases ATK by 20% and grants up to 40% Normal Attack DMG via Thunder Emblem stacks.",
+    "bestCharacters": [
+      "Yoimiya",
+      "Tartaglia",
+      "Fischl"
+    ],
+    "ascensionMaterial": "Narukami's Wisdom",
+    "domain": "Court of Flowing Sand (Inazuma)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Court of Flowing Sand",
+      "region": "Inazuma",
+      "materialType": "Narukami's Magatama (Wisdom / Joy / Affection / Valor)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Dismal Prism / Crystal Prism / Polarizing Prism",
+      "commonDrop": "Firm Arrowhead / Sharp Arrowhead / Weathered Arrowhead"
+    },
+    "region": "Inazuma",
+    "version": "2.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Narukami_Awaken.png"
+  },
+  {
+    "id": "hunters-path",
+    "name": "Hunter's Path",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT Rate 44.1%",
+    "passive": "At the End of the Beast-Paths: Gain 12% All Elemental DMG Bonus. Charged Attack hits grant Tireless Hunt, adding 160% of Elemental Mastery as flat Charged Attack DMG.",
+    "bestCharacters": [
+      "Tighnari",
+      "Ganyu (Melt)"
+    ],
+    "ascensionMaterial": "Echo of Scorching Might",
+    "domain": "Tower of Abject Pride (Sumeru)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "materialType": "Scorching Might (Echo / Remnant Glow / Dream / Olden Days)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Inactivated Fungal Nucleus / Dormant / Robust Fungal Nucleus",
+      "commonDrop": "Faded Red Satin / Trimmed Red Silk / Rich Red Brocade"
+    },
+    "region": "Sumeru",
+    "version": "3.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Ayus_Awaken.png"
+  },
+  {
+    "id": "the-stringless",
+    "name": "The Stringless",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "Elemental Mastery 165",
+    "passive": "Arrowless Song: Increases Elemental Skill and Elemental Burst DMG by 24%–48%.",
+    "bestCharacters": [
+      "Fischl",
+      "Venti",
+      "Yelan"
+    ],
+    "ascensionMaterial": "Tile of Decarabian's Tower",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Decarabian Tiles (Tile / Debris / Fragment / Scattered Piece)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Heavy Horn / Black Bronze Horn / Black Crystal Horn",
+      "commonDrop": "Firm Arrowhead / Sharp Arrowhead / Weathered Arrowhead"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Troupe_Awaken.png"
+  },
+  {
+    "id": "tome-of-the-eternal-flow",
+    "name": "Tome of the Eternal Flow",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "passive": "Aeon Wave: HP is increased by 16%. When current HP increases or decreases, Charged Attack DMG increases by 14% (max 3 stacks) and restores 8 Energy.",
+    "bestCharacters": [
+      "Neuvillette",
+      "Wriothesley"
+    ],
+    "ascensionMaterial": "Dross of Pure Sacred Dewdrop",
+    "domain": "Echoes of the Deep Tides (Fontaine)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "materialType": "Pure Sacred Dewdrop (Dross / Sublimation / Spring / Essence)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rift Core / Foreign Synapse / Alien Life Core",
+      "commonDrop": "Meshing Gear / Mechanical Spur Gear / Artificed Dynamic Gear"
+    },
+    "region": "Fontaine",
+    "version": "4.1",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Iudex_Awaken.png"
+  },
+  {
+    "id": "a-thousand-floating-dreams",
+    "name": "A Thousand Floating Dreams",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "Elemental Mastery 265",
+    "passive": "A Thousand Nights' Dawnsong: Grants the wielder EM or Elemental DMG Bonus based on party Elements, and gives nearby teammates +40 Elemental Mastery.",
+    "bestCharacters": [
+      "Nahida",
+      "Sucrose",
+      "Yae Miko"
+    ],
+    "ascensionMaterial": "Oasis Garden's Reminiscence",
+    "domain": "Tower of Abject Pride (Sumeru)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "materialType": "Oasis Garden (Reminiscence / Kindness / Mourning / Truth)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Damaged Prism / Turbid Prism / Radiant Prism",
+      "commonDrop": "Fungal Spores / Luminescent Pollen / Crystalline Cyst Dust"
+    },
+    "region": "Sumeru",
+    "version": "3.2",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Ayus_Awaken.png"
+  },
+  {
+    "id": "tulaytullahs-remembrance",
+    "name": "Tulaytullah's Remembrance",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT DMG 44.1%",
+    "passive": "Bygone Azure Teardrop: Normal Attack SPD increased by 10%. After casting Elemental Skill, Normal Attack DMG rises up to 48% over time and on hits.",
+    "bestCharacters": [
+      "Wanderer",
+      "Wriothesley"
+    ],
+    "ascensionMaterial": "Echo of Scorching Might",
+    "domain": "Tower of Abject Pride (Sumeru)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Tower of Abject Pride",
+      "region": "Sumeru",
+      "materialType": "Scorching Might (Echo / Remnant Glow / Dream / Olden Days)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Inactivated Fungal Nucleus / Dormant / Robust Fungal Nucleus",
+      "commonDrop": "Fungal Spores / Luminescent Pollen / Crystalline Cyst Dust"
+    },
+    "region": "Sumeru",
+    "version": "3.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Alaya_Awaken.png"
+  },
+  {
+    "id": "cashflow-supervision",
+    "name": "Cashflow Supervision",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "passive": "Golden Blood-Tide: ATK increased by 16%. When current HP fluctuates, Normal Attack DMG rises by 16% and Charged Attack DMG by 14% (up to 3 stacks).",
+    "bestCharacters": [
+      "Wriothesley",
+      "Neuvillette",
+      "Wanderer"
+    ],
+    "ascensionMaterial": "Broken Goblet of the Pristine Sea",
+    "domain": "Echoes of the Deep Tides (Fontaine)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "materialType": "Pristine Sea Goblets (Broken / Wine / Silver / Golden Goblet)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Old Operative's Pocket Watch / Standard / Operative's Constancy",
+      "commonDrop": "Transoceanic Pearl / Chunk / Xenochromatic Crystal"
+    },
+    "region": "Fontaine",
+    "version": "4.1",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Wheatley_Awaken.png"
+  },
+  {
+    "id": "the-widsith",
+    "name": "The Widsith",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "CRIT DMG 55.1%",
+    "passive": "Debut: When a character takes the field, gains a random 10s theme song boosting ATK (+60%–120%), Elemental DMG (+48%–96%), or Elemental Mastery (+240–480).",
+    "bestCharacters": [
+      "Wanderer",
+      "Nahida",
+      "Neuvillette",
+      "Yae Miko"
+    ],
+    "ascensionMaterial": "Boreal Wolf's Milk Tooth",
+    "domain": "Cecilia Garden (Mondstadt)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Cecilia Garden",
+      "region": "Mondstadt",
+      "materialType": "Boreal Wolf (Milk Tooth / Cracked Tooth / Broken Fang / Nostalgia)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Dead Ley Line Branch / Dead Ley Line Leaves / Ley Line Sprout",
+      "commonDrop": "Damaged Mask / Stained Mask / Ominous Mask"
+    },
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Troupe_Awaken.png"
+  },
+  {
+    "id": "prototype-amber",
+    "name": "Prototype Amber",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "HP 41.3%",
+    "passive": "Gilding: Using an Elemental Burst regenerates 4–6 Energy every 2s for 6s and heals all party members by 4%–6% HP every 2s.",
+    "bestCharacters": [
+      "Neuvillette",
+      "Sangonomiya Kokomi",
+      "Nahida (with Furina)"
+    ],
+    "ascensionMaterial": "Mist Veiled Lead Elixir",
+    "domain": "Hidden Palace of Lianshan Formula (Liyue)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Hidden Palace of Lianshan Formula",
+      "region": "Liyue",
+      "materialType": "Mist Veiled Elixir (Lead / Mercury / Gold / Primo)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Mist Grass Pollen / Mist Grass / Mist Grass Wick",
+      "commonDrop": "Firm Arrowhead / Sharp Arrowhead / Weathered Arrowhead"
+    },
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Proto_Awaken.png"
+  },
+  {
+    "id": "peak-patrol-song",
+    "name": "Peak Patrol Song",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "DEF 82.7%",
+    "version": "5.1",
+    "passive": "Halcyon Jade: Normal or Plunging hits grant Ode to Flowers (+8% DEF & +10% All Elemental DMG, max 2 stacks); at max stacks grants party All Elemental DMG Bonus scaling up to 25.6% based on DEF.",
+    "bestCharacters": [
+      "Xilonen",
+      "Albedo",
+      "Chiori"
+    ],
+    "ascensionMaterial": "Blazing Sacrificial Heart's Terror",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Blazing Sacrificial Heart (Terror / Hesitance / Resolve / Splendor)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Axis of the Secret Source / Sheath / Heart of the Secret Source",
+      "commonDrop": "Sentry's Wooden Whistle / Warrior's Metal / Saurian-Crowned"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_XochitlsTube_Awaken.png"
+  },
+  {
+    "id": "azurelight",
+    "name": "Azurelight",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "version": "5.7",
+    "passive": "White Light's Reward: Increases ATK by 24% after casting an Elemental Skill; when the wielder has 0 Energy, increases ATK by an additional 24% and CRIT DMG by 40%.",
+    "bestCharacters": [
+      "Skirk",
+      "Odette",
+      "Kamisato Ayaka"
+    ],
+    "ascensionMaterial": "Night-Wind's Mystic Consideration",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Night-Wind's Mystic (Consideration / Premonition / Augury / Revelation)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Refractive Bud / Bewildering Broadleaf / Illusory Leafcoil",
+      "commonDrop": "Meshing Gear / Mechanical Spur Gear / Artificed Dynamic Gear"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_OuterSword_Awaken.png"
+  },
+  {
+    "id": "athame-artis",
+    "name": "Athame Artis",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT Rate 33.1%",
+    "version": "6.2",
+    "passive": "Day of the Sun King: Burst CRIT DMG +16%. After Burst hits, raises wielder ATK by 20% and nearby active allies' ATK by 16%, amplified by 75% in Hexerei parties.",
+    "bestCharacters": [
+      "Durin",
+      "Bennett",
+      "Xingqiu",
+      "Jean"
+    ],
+    "ascensionMaterial": "Long Night Flint",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Long Night Flint (Ember / Afterglow / Flare / Blaze)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostnight Glimmer / Frostnight Glow / Frostnight Glory",
+      "commonDrop": "Tattered Warrant / Immaculate Warrant / Frost-Etched Warrant"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Motsognir_Awaken.png"
+  },
+  {
+    "id": "whitelake-winterfeather",
+    "name": "Whitelake Winterfeather",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT Rate 33.1%",
+    "version": "7.0",
+    "passive": "Swan’s Glacial Pact: Elemental Skill DMG +24%. Triggering Freeze, Superconduct, or Melt grants Frostplume, boosting party Cryo & Hydro DMG by 18% even off-field.",
+    "bestCharacters": [
+      "Odette",
+      "Furina",
+      "Skirk",
+      "Kaeya"
+    ],
+    "ascensionMaterial": "Emblem of the Pale Star Army",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Pale Star Army (Emblem / Insignia / Decree / Crown)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rime-Etched Core / Glacial Actuator / Boreal Matrix",
+      "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_WhitelakeWinterfeather_Awaken.png"
+  },
+  {
+    "id": "beyond-the-chrysalis",
+    "name": "Beyond the Chrysalis",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "version": "7.1",
+    "passive": "Gale Unbound: ATK increased by 20%. Triggering Swirl stacks Windborne Molt (up to 3), granting +14% Normal Attack and Anemo DMG per stack.",
+    "bestCharacters": [
+      "Vesna",
+      "Kaedehara Kazuha",
+      "Alhaitham"
+    ],
+    "ascensionMaterial": "Emblem of the Pale Star Army",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Pale Star Army (Emblem / Insignia / Decree / Crown)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rime-Etched Core / Glacial Actuator / Boreal Matrix",
+      "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Samosvist_Awaken.png"
+  },
+  {
+    "id": "frostsnow-oath",
+    "name": "Frostsnow Oath",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "Energy Recharge 45.9%",
+    "version": "7.0",
+    "passive": "Vanguard Resolve: Elemental Skill CRIT Rate increased by 8%–16%. Using an Elemental Skill restores 6–10 Energy once every 10s.",
+    "bestCharacters": [
+      "Valeriy",
+      "Odette",
+      "Furina",
+      "Kaedehara Kazuha"
+    ],
+    "ascensionMaterial": "Vow of the Boreal Covenant",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Boreal Covenant (Vow / Seal / Pledge / Testament)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostbound Fang / Wyvern Talon / Eternal Icehorn",
+      "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_FrostsnowOath_Awaken.png"
+  },
+  {
+    "id": "fang-of-the-mountain-king",
+    "name": "Fang of the Mountain King",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 741,
+    "secondaryStat": "CRIT Rate 11.0%",
+    "version": "5.0",
+    "passive": "Turquoise Hunt: Skill hits or party Burning/Burgeon triggers grant Canopy's Favor stacks (max 6), increasing Elemental Skill and Burst DMG by 10% per stack.",
+    "bestCharacters": [
+      "Kinich",
+      "Mavuika",
+      "Navia"
+    ],
+    "ascensionMaterial": "Delirious Decadence of the Sacred Lord",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Sacred Lord (Decadence / Desolation / Demeanor / Divinity)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Ignited Stone / Ignited Seed of Life / Ignited Seeing Eye",
+      "commonDrop": "Juvenile Fang / Seasoned Fang / Tyrant's Fang"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_EmeraldSword_Awaken.png"
+  },
+  {
+    "id": "a-thousand-blazing-suns",
+    "name": "A Thousand Blazing Suns",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 741,
+    "secondaryStat": "CRIT Rate 11.0%",
+    "version": "5.3",
+    "passive": "Sunset Brilliance: Using Skill or Burst grants Scorching Brilliance (+20% CRIT DMG & +28% ATK for 6s); Nightsoul Blessing extends duration and boosts effect by 75%.",
+    "bestCharacters": [
+      "Mavuika",
+      "Kinich",
+      "Navia",
+      "Diluc"
+    ],
+    "ascensionMaterial": "Delirious Decadence of the Sacred Lord",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Sacred Lord (Decadence / Desolation / Demeanor / Divinity)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Axis of the Secret Source / Sheath / Heart of the Secret Source",
+      "commonDrop": "Sentry's Wooden Whistle / Warrior's Metal / Saurian-Crowned"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_RadianceSword_Awaken.png"
+  },
+  {
+    "id": "earth-shaker",
+    "name": "Earth Shaker",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAtk": 565,
+    "secondaryStat": "ATK 27.6%",
+    "version": "5.0",
+    "passive": "Oath of Piroclasms: After a party member triggers a Pyro-related reaction, Elemental Skill DMG of the equipping character increases by 16%–32% for 8s (works off-field).",
+    "bestCharacters": [
+      "Mavuika",
+      "Kinich",
+      "Navia",
+      "Dehya"
+    ],
+    "ascensionMaterial": "Blazing Sacrificial Heart's Terror",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Blazing Sacrificial Heart (Terror / Hesitance / Resolve / Splendor)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Shattered Hilt / Still-Smoldering Hilt / Splintered Hilt",
+      "commonDrop": "Sentry's Wooden Whistle / Warrior's Metal / Saurian-Crowned"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_Isikhulu_Awaken.png"
+  },
+  {
+    "id": "gest-of-the-mighty-wolf",
+    "name": "Gest of the Mighty Wolf",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT Rate 33.1%",
+    "version": "6.4",
+    "passive": "Boreas Howl: Attack SPD +10%. Normal Attacks and Elemental Skills grant Four Winds stacks (max 4), raising DMG dealt by 7.5% each plus +7.5% CRIT DMG in Hexerei parties.",
+    "bestCharacters": [
+      "Varka",
+      "Eula",
+      "Navia",
+      "Diluc"
+    ],
+    "ascensionMaterial": "Long Night Flint",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Long Night Flint (Ember / Afterglow / Flare / Blaze)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Mistshroud Manifestation / Mistshroud Plate / Mistshroud Helmet",
+      "commonDrop": "Broken Drive Shaft / Reinforced Drive Shaft / Precision Axle"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_EnsisAquilonis_Awaken.png"
+  },
+  {
+    "id": "winters-heavy-heart",
+    "name": "Winter's Heavy Heart",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT DMG 44.1%",
+    "version": "7.1",
+    "passive": "Iron Frost Vigil: Charged and Normal Attack DMG +28%. Against enemies affected by Cryo or Electro, ignores 16% of target DEF.",
+    "bestCharacters": [
+      "Varka",
+      "Mavuika",
+      "Eula",
+      "Arataki Itto"
+    ],
+    "ascensionMaterial": "Decree of the Frost Emperor",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Frost Emperor (Decree / Edict / Mandate / Crown)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostbound Fang / Wyvern Talon / Eternal Icehorn",
+      "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Claymore_WintersHeavyHeart_Awaken.png"
+  },
+  {
+    "id": "crimson-moons-semblance",
+    "name": "Crimson Moon's Semblance",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "version": "4.6",
+    "passive": "Ashen Sun's Shadow: Charged Attack grants Bond of Life (25% Max HP). While Bond of Life is active, increases DMG dealt by 12%, rising to 36% when Bond >= 30% Max HP.",
+    "bestCharacters": [
+      "Arlecchino",
+      "Hu Tao",
+      "Xiao"
+    ],
+    "ascensionMaterial": "Broken Goblet of the Pristine Sea",
+    "domain": "Echoes of the Deep Tides (Fontaine)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Echoes of the Deep Tides",
+      "region": "Fontaine",
+      "materialType": "Pristine Sea Goblets (Broken / Wine / Silver / Golden Goblet)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Ruined Hilt / Splintered Hilt / Still-Smoldering Hilt",
+      "commonDrop": "Meshing Gear / Mechanical Spur Gear / Artificed Dynamic Gear"
+    },
+    "region": "Fontaine",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_BloodMoon_Awaken.png"
+  },
+  {
+    "id": "symphonist-of-scents",
+    "name": "Symphonist of Scents",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "version": "5.6",
+    "passive": "Seasoned Symphony: ATK +12%, doubled when off-field. Healing party members grants both the wielder and the healed ally +32% ATK for 3s.",
+    "bestCharacters": [
+      "Escoffier",
+      "Xiangling",
+      "Shenhe",
+      "Alyosha"
+    ],
+    "ascensionMaterial": "Night-Wind's Mystic Consideration",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Night-Wind's Mystic (Consideration / Premonition / Augury / Revelation)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Cold-Cracked Shellshard / Warm Back-Shell / Blazing Prismshell",
+      "commonDrop": "Juvenile Fang / Seasoned Fang / Tyrant's Fang"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_Trident_Awaken.png"
+  },
+  {
+    "id": "bloodsoaked-ruins",
+    "name": "Bloodsoaked Ruins",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT Rate 22.1%",
+    "version": "6.0",
+    "passive": "Mournful Tribute: After using Elemental Burst, Lunar-Charged DMG increases by 36%. Triggering Lunar-Charged grants Requiem of Ruin (+28% CRIT DMG and +12 Energy).",
+    "bestCharacters": [
+      "Flins",
+      "Cyno",
+      "Raiden Shogun"
+    ],
+    "ascensionMaterial": "Long Night Flint",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Long Night Flint (Ember / Afterglow / Flare / Blaze)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Mistshroud Manifestation / Mistshroud Plate / Mistshroud Helmet",
+      "commonDrop": "Tattered Warrant / Immaculate Warrant / Frost-Etched Warrant"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_TummaLyhty_Awaken.png"
+  },
+  {
+    "id": "ballad-of-the-sentinel",
+    "name": "Ballad of the Sentinel",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "HP 41.3%",
+    "version": "7.0",
+    "passive": "Watchtower Oath: Healing a teammate regenerates 8–14 Energy for the wielder and increases party Elemental Mastery by 60–120 for 8s.",
+    "bestCharacters": [
+      "Alyosha",
+      "Zhongli",
+      "Yaoyao",
+      "Chevreuse"
+    ],
+    "ascensionMaterial": "Vow of the Boreal Covenant",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Boreal Covenant (Vow / Seal / Pledge / Testament)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rime-Etched Core / Glacial Actuator / Boreal Matrix",
+      "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Pole_SentinelBallad_Awaken.png"
+  },
+  {
+    "id": "astral-vultures-crimson-plumage",
+    "name": "Astral Vulture's Crimson Plumage",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "version": "5.2",
+    "passive": "Moonlit Eye: After triggering Swirl, ATK increases by 24%. Charged Attack and Burst DMG rise by up to 48% and 24% when party contains 2+ different non-Anemo elements.",
+    "bestCharacters": [
+      "Chasca",
+      "Ganyu",
+      "Lyney"
+    ],
+    "ascensionMaterial": "Night-Wind's Mystic Consideration",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Night-Wind's Mystic (Consideration / Premonition / Augury / Revelation)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Refractive Bud / Bewildering Broadleaf / Illusory Leafcoil",
+      "commonDrop": "Sentry's Wooden Whistle / Warrior's Metal / Saurian-Crowned"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Qoyllorsnova_Awaken.png"
+  },
+  {
+    "id": "snare-hook",
+    "name": "Snare Hook",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAtk": 454,
+    "secondaryStat": "Energy Recharge 61.3%",
+    "version": "6.0",
+    "passive": "Phantom String: Triggering an Elemental Reaction increases Elemental Mastery by 60–120 for 12s, doubled during Ascendant Gleam Moonsign.",
+    "bestCharacters": [
+      "Ororon",
+      "Linnea",
+      "Fischl",
+      "Yelan"
+    ],
+    "ascensionMaterial": "Sundered Relic of the Far-North Scions",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Far-North Scions (Sundered / Unyielding / Radiant / Aureate Relic)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostnight Glimmer / Frostnight Glow / Frostnight Glory",
+      "commonDrop": "Broken Drive Shaft / Reinforced Drive Shaft / Precision Axle"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_Ilmarinen_Awaken.png"
+  },
+  {
+    "id": "golden-dawn-harp",
+    "name": "Golden Dawn Harp",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "version": "6.5",
+    "passive": "Resonant Chord: Elemental Skill DMG +28%. When off-field Geo or Lunar-Crystallize DMG hits, reduces enemy Geo RES by 12% for 10s.",
+    "bestCharacters": [
+      "Linnea",
+      "Fischl",
+      "Chasca"
+    ],
+    "ascensionMaterial": "Emblem of the Artful Device",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Artful Device (Emblem / Replica / Heritage / Wish)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Lightless Bone / Glowing Remains / Radiant Exoskeleton",
+      "commonDrop": "Broken Drive Shaft / Reinforced Drive Shaft / Precision Axle"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_GoldenDawnHarp_Awaken.png"
+  },
+  {
+    "id": "silver-light",
+    "name": "Silver Light",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAtk": 510,
+    "secondaryStat": "CRIT Rate 27.6%",
+    "version": "7.1",
+    "passive": "Boreal Arrow: Aimed Shots and Elemental Skills deal 16%–32% bonus DMG against targets affected by Cryo or Electro.",
+    "bestCharacters": [
+      "Chasca",
+      "Yoimiya",
+      "Ororon",
+      "Fischl"
+    ],
+    "ascensionMaterial": "Vow of the Boreal Covenant",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Boreal Covenant (Vow / Seal / Pledge / Testament)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostbound Fang / Wyvern Talon / Eternal Icehorn",
+      "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Bow_SilverLight_Awaken.png"
+  },
+  {
+    "id": "surfs-up",
+    "name": "Surf's Up",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "version": "5.0",
+    "passive": "Aqua Memory: Max HP +20%. Casting Skill grants 4 Scorching Summer stacks, boosting Normal Attack DMG by 12% per stack; Vaporize consumes stacks cleanly across shark bites.",
+    "bestCharacters": [
+      "Mualani",
+      "Neuvillette",
+      "Varesa"
+    ],
+    "ascensionMaterial": "Blazing Sacrificial Heart's Terror",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Blazing Sacrificial Heart (Terror / Hesitance / Resolve / Splendor)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Feathery Fin / Lunar Fin / Chasmlight Fin",
+      "commonDrop": "Sentry's Wooden Whistle / Warrior's Metal / Saurian-Crowned"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_MechaPufferfish_Awaken.png"
+  },
+  {
+    "id": "starcallers-watch",
+    "name": "Starcaller's Watch",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "Elemental Mastery 265",
+    "version": "5.3",
+    "passive": "Mirror of Night: Grants +100 Elemental Mastery; creating a shield grants Mirror of Night for 15s, boosting the active party member's DMG by 28% against nearby enemies.",
+    "bestCharacters": [
+      "Citlali",
+      "Nahida",
+      "Lauma",
+      "Sucrose"
+    ],
+    "ascensionMaterial": "Delirious Decadence of the Sacred Lord",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Sacred Lord (Decadence / Desolation / Demeanor / Divinity)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Ignited Stone / Ignited Seed of Life / Ignited Seeing Eye",
+      "commonDrop": "Juvenile Fang / Seasoned Fang / Tyrant's Fang"
+    },
+    "region": "Natlan",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Figurines_Awaken.png"
+  },
+  {
+    "id": "nightweavers-looking-glass",
+    "name": "Nightweaver's Looking Glass",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "Elemental Mastery 265",
+    "version": "6.0",
+    "passive": "Silvermoon Poem: Grants +60 EM on Hydro/Dendro Skill hits and +60 EM on Lunar-Bloom; when both active, boosts party Bloom DMG by 120% and Lunar-Bloom DMG by 40%.",
+    "bestCharacters": [
+      "Lauma",
+      "Nahida",
+      "Sucrose"
+    ],
+    "ascensionMaterial": "Emblem of the Artful Device",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Artful Device (Emblem / Replica / Heritage / Wish)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostnight Glimmer / Frostnight Glow / Frostnight Glory",
+      "commonDrop": "Tattered Warrant / Immaculate Warrant / Frost-Etched Warrant"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_MenulisRing_Awaken.png"
+  },
+  {
+    "id": "reliquary-of-truth",
+    "name": "Reliquary of Truth",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "version": "6.1",
+    "passive": "Essence of Falsity: CRIT Rate +8%. Skill grants +80 EM (Secret of Lies), Lunar-Bloom grants +24% CRIT DMG (Moon of Truth); combined buffs rise by 50%.",
+    "bestCharacters": [
+      "Nefer",
+      "Nahida",
+      "Wanderer"
+    ],
+    "ascensionMaterial": "Emblem of the Artful Device",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Artful Device (Emblem / Replica / Heritage / Wish)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Lightless Bone / Glowing Remains / Radiant Exoskeleton",
+      "commonDrop": "Tattered Warrant / Immaculate Warrant / Frost-Etched Warrant"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Sistrum_Awaken.png"
+  },
+  {
+    "id": "nocturnes-curtain-call",
+    "name": "Nocturne's Curtain Call",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "version": "6.3",
+    "passive": "Ballad of the Crossroads: Max HP +10%. Triggering or dealing Lunar reaction DMG restores 14 Energy and grants Abundant Sea (+14% Max HP, +60% Lunar CRIT DMG) even off-field.",
+    "bestCharacters": [
+      "Columbina",
+      "Nefer",
+      "Neuvillette",
+      "Mualani"
+    ],
+    "ascensionMaterial": "Emblem of the Artful Device",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Mon / Thu / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Artful Device (Emblem / Replica / Heritage / Wish)",
+      "daysAvailable": [
+        "Monday",
+        "Thursday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostnight Glimmer / Frostnight Glow / Frostnight Glory",
+      "commonDrop": "Slime Condensate / Slime Secretions / Slime Concentrate"
+    },
+    "region": "Nod-Krai",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Brisingamen_Awaken.png"
+  },
+  {
+    "id": "hymn-of-the-maelstrom",
+    "name": "Hymn of the Maelstrom",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "HP 49.6%",
+    "version": "7.1",
+    "passive": "Tidecaller Canticle: Healing Bonus +15%. Casting Burst creates a Tidal Sanctuary that boosts active party ATK by 25% and Elemental Mastery by 100.",
+    "bestCharacters": [
+      "Vodyanitsa",
+      "Sangonomiya Kokomi",
+      "Columbina"
+    ],
+    "ascensionMaterial": "Decree of the Frost Emperor",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Frost Emperor (Decree / Edict / Mandate / Crown)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Rime-Etched Core / Glacial Actuator / Boreal Matrix",
+      "commonDrop": "Tarnished Sigil / Silvered Sigil / Imperial Sigil"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Bludnye_Awaken.png"
+  },
+  {
+    "id": "starsealed-edict",
+    "name": "Starsealed Edict",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 608,
+    "secondaryStat": "CRIT DMG 66.2%",
+    "version": "7.2",
+    "passive": "Arcane Verdict: Elemental Skill and Normal Attack DMG +20%. Triggering Electro-Charged, Lunar-Charged, or Aggravate grants Verdict Seals, adding +14% Electro DMG per stack (max 3).",
+    "bestCharacters": [
+      "Mitya",
+      "Yae Miko",
+      "Wanderer",
+      "Lisa"
+    ],
+    "ascensionMaterial": "Decree of the Frost Emperor",
+    "domain": "Scars of Cursed Obsession (Snezhnaya)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Scars of Cursed Obsession",
+      "region": "Snezhnaya",
+      "materialType": "Frost Emperor (Decree / Edict / Mandate / Crown)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Frostbound Fang / Wyvern Talon / Eternal Icehorn",
+      "commonDrop": "Frayed Pelt / Thick Pelt / Frostmane Pelt"
+    },
+    "region": "Snezhnaya",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Chernaya_Awaken.png"
+  },
+  {
+    "id": "vivid-notions",
+    "name": "Vivid Notions",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAtk": 674,
+    "secondaryStat": "CRIT DMG 44.1%",
+    "region": "Natlan",
+    "version": "5.5",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Catalyst_Varesa_Awaken.png",
+    "passive": "Falling Rainbow's Wish: Increases ATK by 28%. After using a Plunging Attack, Elemental Skill, or Elemental Burst, Plunging Attack CRIT DMG increases by 28% (up to +40% additional after Skill/Burst).",
+    "bestCharacters": [
+      "Varesa",
+      "Wanderer",
+      "Xianyun"
+    ],
+    "ascensionMaterial": "Delirious Decadence of the Sacred Lord",
+    "domain": "Ancient Watchtower (Natlan)",
+    "domainDays": "Tue / Fri / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Ancient Watchtower",
+      "region": "Natlan",
+      "materialType": "Sacred Lord (Decadence / Desolation / Demeanor / Divinity)",
+      "daysAvailable": [
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "eliteDrop": "Refractive Bud / Bewildering Broadleaf / Illusory Leafcoil",
+      "commonDrop": "Juvenile Fang / Seasoned Fang / Tyrant's Fang"
+    }
+  },
+  {
+    "id": "lightbearing-moonshard",
+    "name": "Lightbearing Moonshard",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAtk": 542,
+    "secondaryStat": "CRIT DMG 88.2%",
+    "region": "Nod-Krai",
+    "version": "6.3",
+    "icon": "https://enka.network/ui/UI_EquipIcon_Sword_Zibai_Awaken.png",
+    "passive": "Legacy of Lang-Gan: Increases DEF by 20%. For 5s after the wielding character uses an Elemental Skill, Lunar-Crystallize Reaction DMG dealt is increased by 64%.",
+    "bestCharacters": [
+      "Zibai",
+      "Chiori",
+      "Albedo",
+      "Xilonen"
+    ],
+    "ascensionMaterial": "Sundered Relic of the Far-North Scions",
+    "domain": "Lost Mooncourt (Nod-Krai)",
+    "domainDays": "Wed / Sat / Sun",
+    "ascensionBreakdown": {
+      "domainName": "Lost Mooncourt",
+      "region": "Nod-Krai",
+      "materialType": "Far-North Scions (Artful / Sundered / Oblation / Glory)",
+      "daysAvailable": [
+        "Wednesday",
+        "Saturday",
+        "Sunday"
+      ],
+      "eliteDrop": "Mistshroud Manifestation / Mistshroud Plate / Mistshroud Helmet",
+      "commonDrop": "Tattered Warrant / Immaculate Warrant / Frost-Etched Warrant"
+    }
+  }
+]

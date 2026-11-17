@@ -1,0 +1,3390 @@
+[
+  {
+    "id": "hu-tao",
+    "name": "Hu Tao",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Staff of Homa",
+      "Staff of the Scarlet Sands",
+      "Dragon's Bane"
+    ],
+    "bestArtifacts": [
+      "4pc Crimson Witch of Flames — HP% Sands, Pyro DMG Goblet, CRIT Rate/DMG Circlet",
+      "4pc Marechaussee Hunter (with Furina) — HP% / EM Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Juvenile Jade (Primo Geovishap)",
+      "specialty": "Silk Flower",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Players who enjoy fast-paced Charged Attack cancel combos and high-risk, high-reward Pyro Vaporize gameplay. Pairs best with Xingqiu, Yelan, Zhongli, or Furina.",
+    "region": "Liyue",
+    "version": "1.3",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Hutao.png"
+  },
+  {
+    "id": "raiden-shogun",
+    "name": "Raiden Shogun",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Engulfing Lightning",
+      "Staff of Homa",
+      "\"The Catch\""
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% or ATK% Sands, Electro DMG or ATK% Goblet, CRIT Circlet",
+      "4pc Flower of Paradise Lost (Hyperbloom trigger) — Full Elemental Mastery"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Light",
+    "ascensionMaterials": {
+      "boss": "Storm Beads (Thunder Manifestation)",
+      "specialty": "Tenkumo Fruit",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Travelers seeking an Electro battery and burst carry who refills team Energy while delivering massive Musou Shinsetsu slashes. Excels in Raiden National and Hypercarry teams.",
+    "region": "Inazuma",
+    "version": "2.1",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Shougun.png"
+  },
+  {
+    "id": "kazuha",
+    "name": "Kaedehara Kazuha",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Support",
+    "bestWeapons": [
+      "Freedom-Sworn",
+      "Favonius Sword",
+      "Xiphos' Moonlight"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — Elemental Mastery Sands, EM Goblet, EM Circlet",
+      "4pc Viridescent Venerer (ER build) — ER% Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Marionette Core (Maguu Kenki)",
+      "specialty": "Sea Ganoderma",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Any elemental reaction or mono-element team wanting effortless crowd control, 40% RES shred, and huge Elemental DMG% buffs. Easy to play and top-tier in Spiral Abyss.",
+    "region": "Inazuma",
+    "version": "1.6",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kazuha.png"
+  },
+  {
+    "id": "bennett",
+    "name": "Bennett",
+    "element": "Pyro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Support",
+    "bestWeapons": [
+      "Aquila Favonia",
+      "Mistsplitter Reforged",
+      "Sapwood Blade"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, HP% Goblet, Healing Bonus or HP% Circlet",
+      "4pc Instructor — ER% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Windwheel Aster",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Virtually every ATK-scaling DPS team. Provides massive flat ATK buffs, rapid healing inside Fantastic Voyage, and Pyro resonance with minimal field time.",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Bennett.png"
+  },
+  {
+    "id": "zhongli",
+    "name": "Zhongli",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Support",
+    "bestWeapons": [
+      "Black Tassel",
+      "Favonius Lance",
+      "Staff of Homa"
+    ],
+    "bestArtifacts": [
+      "4pc Tenacity of the Millelith — HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Archaic Petra — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Basalt Pillar (Geo Hypostasis)",
+      "specialty": "Cor Lapis",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Players who value uninterrupted combos and near-invincible shields paired with universal 20% elemental and physical RES shred. Ideal alongside Hu Tao, Xiao, Ganyu, and Yoimiya.",
+    "region": "Liyue",
+    "version": "1.1",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Zhongli.png"
+  },
+  {
+    "id": "ayaka",
+    "name": "Kamisato Ayaka",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Mistsplitter Reforged",
+      "Haran Geppaku Futsu",
+      "Amenoma Kageuchi"
+    ],
+    "bestArtifacts": [
+      "4pc Blizzard Strayer — ATK% Sands, Cryo DMG Goblet, CRIT DMG Circlet",
+      "2pc Blizzard Strayer + 2pc Noblesse Oblige — ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Normal Attack > Skill",
+    "talentBook": "Elegance",
+    "ascensionMaterials": {
+      "boss": "Perpetual Heart (Perpetual Mechanical Array)",
+      "specialty": "Sakura Bloom",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Players who love Freeze teams that lock enemies in place for devastating 5-second Burst windows. Thrives alongside Kazuha, Shenhe, and Kokomi or Furina.",
+    "region": "Inazuma",
+    "version": "2.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ayaka.png"
+  },
+  {
+    "id": "yelan",
+    "name": "Yelan",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "Aqua Simulacra",
+      "Favonius Warbow",
+      "Elegy for the End"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — HP% or ER% Sands, Hydro DMG Goblet, CRIT Circlet",
+      "2pc Tenacity + 2pc Heart of Depth — HP% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Runic Fang (Ruin Serpent)",
+      "specialty": "Starconch",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Players seeking high off-field Hydro damage, ramping active-character DMG% buffs, and effortless overworld sprint mobility. Fits Vaporize, Hyperbloom, and Mono-Hydro.",
+    "region": "Liyue",
+    "version": "2.7",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Yelan.png"
+  },
+  {
+    "id": "neuvillette",
+    "name": "Neuvillette",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Tome of the Eternal Flow",
+      "Sacrificial Jade",
+      "Prototype Amber"
+    ],
+    "bestArtifacts": [
+      "4pc Marechaussee Hunter — HP% Sands, Hydro DMG or HP% Goblet, CRIT Circlet",
+      "4pc Heart of Depth — HP% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst = Skill",
+    "talentBook": "Equity",
+    "ascensionMaterials": {
+      "boss": "Fontemer Unihorn (Millennial Pearl Seahorse)",
+      "specialty": "Lumitoile",
+      "common": "Transoceanic Pearl"
+    },
+    "whoIsThisFor": "Travelers looking for a remarkably self-sufficient, comfortable Hydro hypercarry with sweeping AoE beam damage and built-in sustain. Pairs cleanly with Furina, Kazuha, and Zhongli.",
+    "region": "Fontaine",
+    "version": "4.1",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Neuvillette.png"
+  },
+  {
+    "id": "furina",
+    "name": "Furina",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "Splendor of Tranquil Waters",
+      "Festering Desire",
+      "Favonius Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — HP% or ER% Sands, HP% Goblet, CRIT Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, HP% Goblet, CRIT or HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Justice",
+    "ascensionMaterials": {
+      "boss": "Water That Failed To Transcend (Hydro Tulpa)",
+      "specialty": "Lakelight Lily",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Teams paired with a strong party-wide healer (Jean, Kokomi, Xianyun, Baizhu) to convert HP fluctuations into massive team-wide DMG% buffs and potent off-field Hydro damage.",
+    "region": "Fontaine",
+    "version": "4.2",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Furina.png"
+  },
+  {
+    "id": "nahida",
+    "name": "Nahida",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "A Thousand Floating Dreams",
+      "Kagura's Verity",
+      "Sacrificial Fragments"
+    ],
+    "bestArtifacts": [
+      "4pc Deepwood Memories — EM Sands, EM or Dendro DMG Goblet, EM or CRIT Circlet",
+      "4pc Gilded Dreams — EM Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Ingenuity",
+    "ascensionMaterials": {
+      "boss": "Quelled Creeper (Dendro Hypostasis)",
+      "specialty": "Kalpalata Lotus",
+      "common": "Fungal Spores"
+    },
+    "whoIsThisFor": "The cornerstone of Dendro reactions. Ideal for Hyperbloom, Nilou Bloom, Aggravate, and Spread compositions thanks to effortless 25-second off-field Dendro application and EM sharing.",
+    "region": "Sumeru",
+    "version": "3.2",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Nahida.png"
+  },
+  {
+    "id": "xiao",
+    "name": "Xiao",
+    "element": "Anemo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Primordial Jade Winged-Spear",
+      "Staff of Homa",
+      "Deathmatch"
+    ],
+    "bestArtifacts": [
+      "4pc Vermillion Hereafter — ATK% Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Juvenile Jade (Primo Geovishap)",
+      "specialty": "Qingxin",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Players who enjoy rhythmic aerial plunging attacks and huge AoE Anemo damage. Reaches peak potential in the FFXX team (Furina, Faruzan, Xianyun, Xiao).",
+    "region": "Liyue",
+    "version": "1.3",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Xiao.png"
+  },
+  {
+    "id": "ganyu",
+    "name": "Ganyu",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Amos' Bow",
+      "Aqua Simulacra",
+      "The First Great Magic"
+    ],
+    "bestArtifacts": [
+      "4pc Wanderer's Troupe (Melt) — EM or ATK% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Blizzard Strayer (Freeze) — ATK% Sands, Cryo DMG Goblet, CRIT DMG Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Qingxin",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Sharpshooters who enjoy Charged Aimed Shot sniping in Melt teams (Bennett + Xiangling + Zhongli) or quadratic Cryo Burst damage in classic Morgana Freeze setups.",
+    "region": "Liyue",
+    "version": "1.2",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ganyu.png"
+  },
+  {
+    "id": "eula",
+    "name": "Eula",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Song of Broken Pines",
+      "Beacon of the Reed Sea",
+      "Serpent Spine"
+    ],
+    "bestArtifacts": [
+      "4pc Pale Flame — ATK% Sands, Physical DMG Goblet, CRIT Circlet",
+      "2pc Pale Flame + 2pc Bloodstained Chivalry — ATK% Sands, Physical DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Normal Attack > Skill",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Crystalline Bloom (Cryo Hypostasis)",
+      "specialty": "Dandelion Seed",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Players who want heavyweight Physical Claymore combos culminating in a massive delayed Lightfall Sword nuke. Pairs best with Raiden Shogun, Mika, and Furina or Zhongli.",
+    "region": "Mondstadt",
+    "version": "1.5",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Eula.png"
+  },
+  {
+    "id": "cyno",
+    "name": "Cyno",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Staff of the Scarlet Sands",
+      "Primordial Jade Winged-Spear",
+      "White Tassel"
+    ],
+    "bestArtifacts": [
+      "4pc Thundering Fury — EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — EM Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Admonition",
+    "ascensionMaterials": {
+      "boss": "Thunderclap Fruitcore (Electro Regisvine)",
+      "specialty": "Scarab",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Players who love extended burst-mode melee rotations with timed Endseer prompts in Quickbloom teams alongside Nahida, Furina/Yelan, and Baizhu.",
+    "region": "Sumeru",
+    "version": "3.1",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Cyno.png"
+  },
+  {
+    "id": "wanderer",
+    "name": "Wanderer",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Tulaytullah's Remembrance",
+      "Lost Prayer to the Sacred Winds",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Desert Pavilion Chronicle — ATK% Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Shimenawa's Reminiscence — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Praxis",
+    "ascensionMaterials": {
+      "boss": "Perpetual Caliber (Aeonblight Drake)",
+      "specialty": "Rukkhashava Mushrooms",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Explorers and hypercarry fans seeking mid-air hovering mobility, crisp Normal Attack ranged slashes, and unmatched overworld vertical traversal. Best paired with C6 Faruzan and Bennett.",
+    "region": "Sumeru",
+    "version": "3.3",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Wanderer.png"
+  },
+  {
+    "id": "itto",
+    "name": "Arataki Itto",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Redhorn Stonethresher",
+      "Serpent Spine",
+      "Whiteblind"
+    ],
+    "bestArtifacts": [
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Elegance",
+    "ascensionMaterials": {
+      "boss": "Riftborn Regalia (Golden Wolflord)",
+      "specialty": "Onikabuto",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Fans of unga-bunga Mono-Geo gameplay who enjoy building Superlative Superstrength stacks and unleashing rapid Arataki Kesagiri slashes with Gorou and Zhongli.",
+    "region": "Inazuma",
+    "version": "2.3",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Itto.png"
+  },
+  {
+    "id": "tighnari",
+    "name": "Tighnari",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Hunter's Path",
+      "Aqua Simulacra",
+      "Slingshot"
+    ],
+    "bestArtifacts": [
+      "4pc Wanderer's Troupe — EM Sands, Dendro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — EM Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Admonition",
+    "ascensionMaterials": {
+      "boss": "Majestic Hooked Beak (Jadeplume Terrorshroom)",
+      "specialty": "Nilotpala Lotus",
+      "common": "Fungal Spores"
+    },
+    "whoIsThisFor": "Players who prefer quick-swap Spread rotations: drop Skill, fire three instant Wreath Arrows, cast Burst, and swap out. Thrives with Yae Miko, Fischl, and Nahida.",
+    "region": "Sumeru",
+    "version": "3.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Tighnari.png"
+  },
+  {
+    "id": "yoimiya",
+    "name": "Yoimiya",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Thundering Pulse",
+      "Aqua Simulacra",
+      "Rust"
+    ],
+    "bestArtifacts": [
+      "4pc Shimenawa's Reminiscence — ATK% or EM Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Crimson Witch of Flames — ATK% or EM Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Smoldering Pearl (Pyro Hypostasis)",
+      "specialty": "Naku Weed",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Players looking for effortless, comfy single-target Normal Attack spam against mobile bosses and flying enemies. Pairs naturally with Yelan, Xingqiu, Yun Jin, and Zhongli.",
+    "region": "Inazuma",
+    "version": "2.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Yoimiya.png"
+  },
+  {
+    "id": "fischl",
+    "name": "Fischl",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "Polar Star",
+      "Aqua Simulacra",
+      "The Stringless"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Thundering Fury — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Lightning Prism (Electro Hypostasis)",
+      "specialty": "Small Lamp Grass",
+      "common": "Firm Arrowhead"
+    },
+    "whoIsThisFor": "Almost any Aggravate, Overloaded, or Taser composition. Oz provides relentless single-target Electro application, particle generation, and A4 passive procs with just one tap.",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Fischl.png"
+  },
+  {
+    "id": "xingqiu",
+    "name": "Xingqiu",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "Primordial Jade Cutter",
+      "Sacrificial Sword",
+      "Favonius Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ATK% or ER% Sands, Hydro DMG Goblet, CRIT Circlet",
+      "2pc Heart of Depth + 2pc Noblesse Oblige — ATK% or ER% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Cleansing Heart (Rhodeia of Loch)",
+      "specialty": "Silk Flower",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Every account from early game through endgame Abyss. Delivers unmatched off-field Hydro application, damage reduction, interruption resistance, and steady sub-DPS.",
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Xingqiu.png"
+  },
+  {
+    "id": "kokomi",
+    "name": "Sangonomiya Kokomi",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Healer",
+    "bestWeapons": [
+      "Everlasting Moonglow",
+      "Prototype Amber",
+      "Thrilling Tales of Dragon Slayers"
+    ],
+    "bestArtifacts": [
+      "4pc Tenacity of the Millelith (Freeze/Support) — ER% or HP% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Ocean-Hued Clam (On-field/Bloom) — HP% Sands, Hydro DMG or HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Dew of Repudiation (Hydro Hypostasis)",
+      "specialty": "Sango Pearl",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Teams wanting rock-solid comfort healing alongside wide-area AoE Hydro application. Essential in Ayaka Freeze and Nilou Superbloom teams.",
+    "region": "Inazuma",
+    "version": "2.1",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kokomi.png"
+  },
+  {
+    "id": "xiangling",
+    "name": "Xiangling",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "bestWeapons": [
+      "Engulfing Lightning",
+      "Staff of the Scarlet Sands",
+      "\"The Catch\""
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% or EM Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Crimson Witch of Flames — ER% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Jueyun Chili",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Free-to-play and endgame players alike looking for top-tier AoE off-field Pyro Vaporize or Melt damage. Always pairs best with Bennett to snapshot ATK buffs and battery Pyronado.",
+    "region": "Liyue",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Xiangling.png"
+  },
+  {
+    "id": "alhaitham",
+    "name": "Alhaitham",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Light of Foliar Incision",
+      "Primordial Jade Cutter",
+      "Harbinger of Dawn"
+    ],
+    "bestArtifacts": [
+      "4pc Gilded Dreams — EM Sands, Dendro DMG Goblet, CRIT Circlet",
+      "2pc EM + 2pc Deepwood Memories — EM Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Ingenuity",
+    "ascensionMaterials": {
+      "boss": "Pseudo-Stamens (Setekh Wenut)",
+      "specialty": "Sand Grease Pupa",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "Players who enjoy deliberate 3-mirror uptime management and high-skill ceiling Dendro Spread/Quickbloom carries. Dominates single-target and AoE chambers with Nahida and Kuki Shinobu.",
+    "region": "Sumeru",
+    "version": "3.4",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Alhatham.png"
+  },
+  {
+    "id": "jean",
+    "name": "Jean",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Healer",
+    "bestWeapons": [
+      "Favonius Sword",
+      "Amenoma Kageuchi",
+      "Skyward Blade"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ER% or ATK% Sands, ATK% or Anemo DMG Goblet, Healing Bonus or CRIT Circlet",
+      "2pc Viridescent + 2pc ATK% — ER% Sands, ATK% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Hurricane Seed (Anemo Hypostasis)",
+      "specialty": "Dandelion Seed",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Furina teams needing an instant party-wide team heal combined with 4pc Viridescent Venerer RES shred in a single slot, plus Sunfire Pyro self-swirl combos with Bennett.",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Qin.png"
+  },
+  {
+    "id": "arlecchino",
+    "name": "Arlecchino",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Crimson Moon's Semblance",
+      "Staff of Homa",
+      "White Tassel"
+    ],
+    "bestArtifacts": [
+      "4pc Fragment of Harmonic Whimsy — ATK% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Gladiator's Finale — ATK% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Order",
+    "ascensionMaterials": {
+      "boss": "Fragment of a Golden Melody (Legatus Golem)",
+      "specialty": "Rainbow Rose",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Players seeking ferocious front-loaded Pyro Normal Attack damage via Bond of Life stacking without Burst reliance. Works smoothly in Vaporize, Overload (Chevreuse), and Mono-Pyro.",
+    "region": "Fontaine",
+    "version": "4.6",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Arlecchino.png"
+  },
+  {
+    "id": "navia",
+    "name": "Navia",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "bestWeapons": [
+      "Verdict",
+      "Serpent Spine",
+      "Ultimate Overlord's Mega Magic Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Nighttime Whispers in the Echoing Woods — ATK% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Golden Troupe — ATK% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Equity",
+    "ascensionMaterials": {
+      "boss": "Artificed Spare Clockwork Component — Coppelius",
+      "specialty": "Spring of the First Dewdrop",
+      "common": "Transoceanic Pearl"
+    },
+    "whoIsThisFor": "Players who love explosive shotgun-style Elemental Skill nukes fueled by Crystallize shards. Flexible quick-swap or on-field carry alongside Zhongli, Bennett, and Furina.",
+    "region": "Fontaine",
+    "version": "4.3",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Navia.png"
+  },
+  {
+    "id": "kuki-shinobu",
+    "name": "Kuki Shinobu",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Healer",
+    "bestWeapons": [
+      "Key of Khaj-Nisut",
+      "Iron Sting",
+      "Toukabou Shigure"
+    ],
+    "bestArtifacts": [
+      "4pc Flower of Paradise Lost — EM Sands, EM Goblet, EM Circlet",
+      "4pc Gilded Dreams — EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elegance",
+    "ascensionMaterials": {
+      "boss": "Runic Fang (Ruin Serpent)",
+      "specialty": "Naku Weed",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Budget and endgame Hyperbloom drivers alike. Offers effortless 100% uptime off-field Electro ring triggers and reliable active-character healing at the same time.",
+    "region": "Inazuma",
+    "version": "2.7",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Shinobu.png"
+  },
+  {
+    "id": "sucrose",
+    "name": "Sucrose",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Support",
+    "bestWeapons": [
+      "Sacrificial Fragments",
+      "Thrilling Tales of Dragon Slayers",
+      "Wandering Evenstar"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — EM Sands, EM Goblet, EM Circlet",
+      "4pc Instructor — ER% or EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Hurricane Seed (Anemo Hypostasis)",
+      "specialty": "Windwheel Aster",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Reaction-heavy teams (Taser, Vaporize, Aggravate) that benefit hugely from massive flat Elemental Mastery sharing, 4pc VV shred, and Catalyst TTDS ATK buffs.",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Sucrose.png"
+  },
+  {
+    "id": "mualani",
+    "name": "Mualani",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Natlan",
+    "version": "5.0",
+    "bestWeapons": [
+      "Surf's Up",
+      "Sacrificial Jade",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Obsidian Codex — HP% or EM Sands, Hydro DMG Goblet, CRIT DMG Circlet",
+      "4pc Heart of Depth — HP% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Contention",
+    "ascensionMaterials": {
+      "boss": "Mark of the Binding Blessing (Goldflame Qucusaur Tyrant)",
+      "specialty": "Sprayfeather Gill",
+      "common": "Sentry's Wooden Whistle"
+    },
+    "whoIsThisFor": "Players who love high-multiplier forward Vaporize shark-bite nukes and fast water-surfing Nightsoul traversal. Excels with Xilonen, Xiangling or Mavuika, and Sucrose/Candace.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mualani.png"
+  },
+  {
+    "id": "kinich",
+    "name": "Kinich",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Natlan",
+    "version": "5.0",
+    "bestWeapons": [
+      "Fang of the Mountain King",
+      "A Thousand Blazing Suns",
+      "Earth Shaker"
+    ],
+    "bestArtifacts": [
+      "4pc Obsidian Codex — ATK% Sands, Dendro DMG Goblet, CRIT DMG Circlet",
+      "4pc Unfinished Reverie — ATK% Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Kindling",
+    "ascensionMaterials": {
+      "boss": "Overripe Flamegranate (Gluttonous Yumkasaur Mountain King)",
+      "specialty": "Saurian Claw Succulent",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Players seeking agile grapple-loop Dendro cannon bursts fueled by Burning and Burgeon reactions. Thrives alongside Mavuika, Bennett, Emilie, and Iansan.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kinich.png"
+  },
+  {
+    "id": "xilonen",
+    "name": "Xilonen",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Natlan",
+    "version": "5.1",
+    "bestWeapons": [
+      "Peak Patrol Song",
+      "Favonius Sword",
+      "Flute of Ezpitzal"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City — ER% or DEF% Sands, DEF% Goblet, Healing Bonus or DEF% Circlet",
+      "4pc Archaic Petra — ER% Sands, DEF% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Contention",
+    "ascensionMaterials": {
+      "boss": "Gold-Inscribed Secret Source Core (Secret Source Automaton)",
+      "specialty": "Brilliant Chrysanthemum",
+      "common": "Sentry's Wooden Whistle"
+    },
+    "whoIsThisFor": "Virtually every Pyro, Hydro, Cryo, Electro, or Geo carry team. Combines effortless multi-element 36% RES shred, 40% Elemental DMG% buffs, and strong active healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Xilonen.png"
+  },
+  {
+    "id": "chasca",
+    "name": "Chasca",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Natlan",
+    "version": "5.2",
+    "bestWeapons": [
+      "Astral Vulture's Crimson Plumage",
+      "The First Great Magic",
+      "Aqua Simulacra"
+    ],
+    "bestArtifacts": [
+      "4pc Obsidian Codex — ATK% Sands, ATK% Goblet, CRIT DMG Circlet",
+      "4pc Viridescent Venerer — ATK% Sands, ATK% Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Kindling",
+    "ascensionMaterials": {
+      "boss": "Ensnaring Gaze (Tenebrous Papilla)",
+      "specialty": "Withering Purpurbloom",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Travelers who enjoy aerial revolver-style multi-element Shadowhunt Shells that automatically trigger Vaporize, Melt, and Overloaded based on teammates.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Chasca.png"
+  },
+  {
+    "id": "ororon",
+    "name": "Ororon",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Natlan",
+    "version": "5.2",
+    "bestWeapons": [
+      "Elegy for the End",
+      "Snare Hook",
+      "Favonius Warbow"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City — ATK% or ER% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Golden Troupe — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Kindling",
+    "ascensionMaterials": {
+      "boss": "Mark of the Binding Blessing (Goldflame Qucusaur Tyrant)",
+      "specialty": "Glowing Hornshroom",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Electro-Charged, Lunar-Charged, and Nightsoul teams needing effortless off-field Scroll DMG buffs, taunt utility, and Hypersense lightning procs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Olorun.png"
+  },
+  {
+    "id": "mavuika",
+    "name": "Mavuika",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Natlan",
+    "version": "5.3",
+    "bestWeapons": [
+      "A Thousand Blazing Suns",
+      "Wolf's Gravestone",
+      "Earth Shaker"
+    ],
+    "bestArtifacts": [
+      "4pc Obsidian Codex — EM or ATK% Sands, Pyro DMG Goblet, CRIT DMG Circlet",
+      "4pc Scroll of the Hero of Cinder City (Sub DPS) — ATK% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Conflict",
+    "ascensionMaterials": {
+      "boss": "Gold-Inscribed Secret Source Core (Secret Source Automaton)",
+      "specialty": "Withering Purpurbloom",
+      "common": "Sentry's Wooden Whistle"
+    },
+    "whoIsThisFor": "Players wanting both Teyvat’s highest-ceiling Pyro Melt hypercarry via Flamestrider charged spins and a universal off-field Pyro Sub-DPS with zero Energy recharge needs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mavuika.png"
+  },
+  {
+    "id": "citlali",
+    "name": "Citlali",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Natlan",
+    "version": "5.3",
+    "bestWeapons": [
+      "Starcaller's Watch",
+      "Thrilling Tales of Dragon Slayers",
+      "Sacrificial Fragments"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City — ER% or EM Sands, EM Goblet, EM or CRIT Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Kindling",
+    "ascensionMaterials": {
+      "boss": "Talisman of the Enigmatic Land (Wayward Hermetic Spiritspeaker)",
+      "specialty": "Quenepa Berry",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Pyro Melt and Hydro carry teams (Mavuika, Arlecchino, Hu Tao, Neuvillette). Brings Cryo shields, 20% Pyro/Hydro RES shred, Cinder City DMG%, and steady off-field Cryo aura.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Citlali.png"
+  },
+  {
+    "id": "varesa",
+    "name": "Varesa",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Natlan",
+    "version": "5.5",
+    "bestWeapons": [
+      "Vivid Notions",
+      "The Widsith",
+      "Lost Prayer to the Sacred Winds"
+    ],
+    "bestArtifacts": [
+      "4pc Long Night's Oath — ATK% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Obsidian Codex — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Conflict",
+    "ascensionMaterials": {
+      "boss": "Sparkless Statue Core (Lava Dragon Statue)",
+      "specialty": "Skysplit Gembloom",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Fast-tempo plunging Electro carry fans who enjoy rapid low-cost Burst slams in Overload (Chevreuse + Mavuika/Iansan) or Aggravate compositions.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Varesa.png"
+  },
+  {
+    "id": "escoffier",
+    "name": "Escoffier",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Fontaine",
+    "version": "5.6",
+    "bestWeapons": [
+      "Symphonist of Scents",
+      "Staff of Homa",
+      "Favonius Lance"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — ATK% or ER% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, ATK% Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Justice",
+    "ascensionMaterials": {
+      "boss": "Secret Source Airflow Accumulator (Overseer Device)",
+      "specialty": "Beryl Conch",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Freeze and Hydro/Cryo core builders. Delivers massive off-field Cryo Skill damage, team-wide Furina-ready healing, and up to 55% Cryo/Hydro RES shred in pure Hydro+Cryo teams.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Escoffier.png"
+  },
+  {
+    "id": "skirk",
+    "name": "Skirk",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Outworld",
+    "version": "5.7",
+    "bestWeapons": [
+      "Azurelight",
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter"
+    ],
+    "bestArtifacts": [
+      "4pc Finale of the Deep Galleries — ATK% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elysium",
+    "ascensionMaterials": {
+      "boss": "Ensnaring Gaze (Tenebrous Papilla)",
+      "specialty": "Skysplit Gembloom",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Cryo hypercarry enthusiasts seeking explosive Serpent’s Subtlety Abyssal Slash combos or frontloaded Burst nukes alongside Escoffier, Furina, and Yelan.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_SkirkNew.png"
+  },
+  {
+    "id": "lauma",
+    "name": "Lauma",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Nod-Krai",
+    "version": "6.0",
+    "bestWeapons": [
+      "Nightweaver's Looking Glass",
+      "A Thousand Floating Dreams",
+      "Prototype Amber"
+    ],
+    "bestArtifacts": [
+      "4pc Silken Moon's Serenade — EM Sands, EM Goblet, EM Circlet",
+      "4pc Deepwood Memories — EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Moonlight",
+    "ascensionMaterials": {
+      "boss": "Kuuvahki Kuuhk Core (Lunar Automaton)",
+      "specialty": "Frostlamp Flower",
+      "common": "Tattered Warrant"
+    },
+    "whoIsThisFor": "Lunar-Bloom and Hyperbloom teams wanting Dendro/Hydro RES shred, CRIT-capable Bloom reactions, and effortless Frostgrove Sanctuary aura uptime.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Lauma.png"
+  },
+  {
+    "id": "flins",
+    "name": "Flins",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Nod-Krai",
+    "version": "6.0",
+    "bestWeapons": [
+      "Bloodsoaked Ruins",
+      "Staff of Homa",
+      "Primordial Jade Winged-Spear"
+    ],
+    "bestArtifacts": [
+      "4pc Night of the Sky's Unveiling — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Elysium",
+    "ascensionMaterials": {
+      "boss": "Precision Kuuvahki Stamping Die (Knuckle Duckle)",
+      "specialty": "Frostlamp Flower",
+      "common": "Broken Drive Shaft"
+    },
+    "whoIsThisFor": "Players who enjoy fast Lunar-Charged melee spears backed by dual-mode Elemental Bursts and thundercloud synergy with Columbina, Ineffa, or Ororon.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Flins.png"
+  },
+  {
+    "id": "aino",
+    "name": "Aino",
+    "element": "Hydro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Nod-Krai",
+    "version": "6.0",
+    "bestWeapons": [
+      "Favonius Greatsword",
+      "Earth Shaker",
+      "Flame-Forged Insight"
+    ],
+    "bestArtifacts": [
+      "4pc Silken Moon's Serenade — ER% Sands, HP% Goblet, CRIT Rate Circlet",
+      "4pc Noblesse Oblige — ER% Sands, HP% Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Vagrancy",
+    "ascensionMaterials": {
+      "boss": "Precision Kuuvahki Stamping Die (Knuckle Duckle)",
+      "specialty": "Portable Bearing",
+      "common": "Broken Drive Shaft"
+    },
+    "whoIsThisFor": "Budget Nod-Krai Moonsign teams looking for reliable off-field Hydro application, low-cooldown Bursts, and team EM support alongside Flins, Nefer, or Lauma.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Aino.png"
+  },
+  {
+    "id": "nefer",
+    "name": "Nefer",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Nod-Krai",
+    "version": "6.1",
+    "bestWeapons": [
+      "Reliquary of Truth",
+      "Nocturne's Curtain Call",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Night of the Sky's Unveiling — EM Sands, EM or Dendro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — EM Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elysium",
+    "ascensionMaterials": {
+      "boss": "Radiant Antler (Frostmoon Herra)",
+      "specialty": "Moonfall Silver",
+      "common": "Tattered Warrant"
+    },
+    "whoIsThisFor": "Dendro carry players converting Verdant Dew stacks into rapid Phantasm Performance Lunar-Bloom strikes alongside Lauma, Columbina, and Nahida.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Nefer.png"
+  },
+  {
+    "id": "durin",
+    "name": "Durin",
+    "element": "Pyro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Nod-Krai",
+    "version": "6.2",
+    "bestWeapons": [
+      "Athame Artis",
+      "Mistsplitter Reforged",
+      "Favonius Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ATK% or ER% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Golden Troupe — ATK% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Vagrancy",
+    "ascensionMaterials": {
+      "boss": "Cyclic Military Kuuvahki Core (Super-Heavy Landrover)",
+      "specialty": "Moonfall Silver",
+      "common": "Tattered Warrant"
+    },
+    "whoIsThisFor": "Flexible dual-stance Pyro sub-DPS and buffer who switches seamlessly between AoE Pyro RES shred for Hexerei teams and single-target Melt/Vaporize bursts.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Durin.png"
+  },
+  {
+    "id": "columbina",
+    "name": "Columbina",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Nod-Krai",
+    "version": "6.3",
+    "bestWeapons": [
+      "Nocturne's Curtain Call",
+      "Tome of the Eternal Flow",
+      "Prototype Amber"
+    ],
+    "bestArtifacts": [
+      "4pc Silken Moon's Serenade — HP% or ER% Sands, HP% Goblet, CRIT Circlet",
+      "4pc Golden Troupe — HP% Sands, Hydro DMG or HP% Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Moonlight",
+    "ascensionMaterials": {
+      "boss": "Radiant Antler (Frostmoon Herra)",
+      "specialty": "Winter Icelea",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "The premier enabler for Nod-Krai Lunar reactions (Lunar-Charged, Lunar-Bloom, Lunar-Crystallize) and off-field HP-scaling Hydro DMG across top Abyss teams.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Columbina.png"
+  },
+  {
+    "id": "zibai",
+    "name": "Zibai",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Nod-Krai",
+    "version": "6.3",
+    "bestWeapons": [
+      "Lightbearing Moonshard",
+      "Uraku Misugiri",
+      "Harbinger of Dawn"
+    ],
+    "bestArtifacts": [
+      "4pc Night of the Sky's Unveiling — DEF% Sands, DEF% or Geo DMG Goblet, CRIT Circlet",
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Moonlight",
+    "ascensionMaterials": {
+      "boss": "Remnant of the Dreadwing (Lord of the Hidden Depths)",
+      "specialty": "Moonfall Silver",
+      "common": "Tattered Warrant"
+    },
+    "whoIsThisFor": "Geo carries built around Lunar-Crystallize triggers, pairing DEF-scaling Spirit Steed slashes with Columbina, Xilonen, or Zhongli.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Zibai.png"
+  },
+  {
+    "id": "varka",
+    "name": "Varka",
+    "element": "Anemo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Nod-Krai",
+    "version": "6.4",
+    "bestWeapons": [
+      "Gest of the Mighty Wolf",
+      "Winter's Heavy Heart",
+      "Beacon of the Reed Sea"
+    ],
+    "bestArtifacts": [
+      "4pc Desert Pavilion Chronicle — ATK% Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Vagrancy",
+    "ascensionMaterials": {
+      "boss": "Prismatic Severed Tail (Hexadecatonic Mandragora)",
+      "specialty": "Portable Bearing",
+      "common": "Broken Drive Shaft"
+    },
+    "whoIsThisFor": "Dual-element Anemo-infusion Claymore brawlers who thrive in Hexerei teams alongside Durin, Faruzan, and Bennett for sweeping AoE combos.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Varka.png"
+  },
+  {
+    "id": "linnea",
+    "name": "Linnea",
+    "element": "Geo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Nod-Krai",
+    "version": "6.5",
+    "bestWeapons": [
+      "Golden Dawn Harp",
+      "Snare Hook",
+      "Favonius Warbow"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — DEF% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Silken Moon's Serenade — DEF% Sands, DEF% Goblet, CRIT or Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Vagrancy",
+    "ascensionMaterials": {
+      "boss": "Prismatic Severed Tail (Hexadecatonic Mandragora)",
+      "specialty": "Portable Bearing",
+      "common": "Broken Drive Shaft"
+    },
+    "whoIsThisFor": "Lunar-Crystallize and Navia/Zibai teams seeking off-field Geo RES shred, steady crystallize summons, and emergency team healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Linnea.png"
+  },
+  {
+    "id": "odette",
+    "name": "Odette",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Snezhnaya",
+    "version": "7.0",
+    "bestWeapons": [
+      "Whitelake Winterfeather",
+      "Azurelight",
+      "Frostsnow Oath"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — ATK% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Blizzard Strayer — ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Charity",
+    "ascensionMaterials": {
+      "boss": "Unscorched Blossom Branch (Naiad Queen)",
+      "specialty": "Frostfairy Flower",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Freeze, Superconduct, and Melt builders seeking persistent Snezhnayan Cryo resonance pulses, rapid particle generation, and CRIT buffs during swan-blade bursts.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Odette.png"
+  },
+  {
+    "id": "alyosha",
+    "name": "Alyosha",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Snezhnaya",
+    "version": "7.0",
+    "bestWeapons": [
+      "Ballad of the Sentinel",
+      "Favonius Lance",
+      "Rightful Reward"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Song of Days Past — ER% or HP% Sands, HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Fortitude",
+    "ascensionMaterials": {
+      "boss": "Frost-Tempered Gear (Cryo Colossus)",
+      "specialty": "Flockingweed",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Accessible 4★ Electro sustains for Furina, Lunar-Charged, and Mitya hypercarry comps, combining steady party-wide healing with Superconduct/Electro energy funneling.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Alyosha.png"
+  },
+  {
+    "id": "vesna",
+    "name": "Vesna",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Snezhnaya",
+    "version": "7.1",
+    "bestWeapons": [
+      "Beyond the Chrysalis",
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer (Driver) — ATK% or EM Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Glory",
+    "ascensionMaterials": {
+      "boss": "Unscorched Blossom Branch (Naiad Queen)",
+      "specialty": "Golden Fern",
+      "common": "Frayed Pelt"
+    },
+    "whoIsThisFor": "Players who love rapid multi-target Swirl swordsmanship that absorbs Cryo/Electro infusion petals for fluid hybrid AoE clears.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Vesna.png"
+  },
+  {
+    "id": "vodyanitsa",
+    "name": "Vodyanitsa",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Snezhnaya",
+    "version": "7.1",
+    "bestWeapons": [
+      "Hymn of the Maelstrom",
+      "Prototype Amber",
+      "Thrilling Tales of Dragon Slayers"
+    ],
+    "bestArtifacts": [
+      "4pc Ocean-Hued Clam — HP% or ER% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Fortitude",
+    "ascensionMaterials": {
+      "boss": "Tide-Locked Heart (Boreal Leviathan)",
+      "specialty": "Frostfairy Flower",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Teams tackling Snezhnayan sheer-frost chambers or high-drain Furina/Mitya setups that need burst team-wide Hydro cleanse, healing, and slow-field crowd control.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Vodyanitsa.png"
+  },
+  {
+    "id": "mitya",
+    "name": "Mitya",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Snezhnaya",
+    "version": "7.2",
+    "bestWeapons": [
+      "Starsealed Edict",
+      "Kagura's Verity",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Thundering Fury — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Charity",
+    "ascensionMaterials": {
+      "boss": "Severed Tail of the Sky-Roamer (Boreal Wyvern)",
+      "specialty": "Golden Fern",
+      "common": "Frayed Pelt"
+    },
+    "whoIsThisFor": "The flagship Version 7.2 Electro Catalyst carry designed for chained lightning seals, Lunar-Charged spikes, and responsive Aggravate / Overload burst windows with Valeriy, Columbina, or Nahida.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mitya.png"
+  },
+  {
+    "id": "valeriy",
+    "name": "Valeriy",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Snezhnaya",
+    "version": "7.2",
+    "bestWeapons": [
+      "Frostsnow Oath",
+      "Favonius Sword",
+      "Wolf-Fang"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% or ATK% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Noblesse Oblige — ER% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Charity",
+    "ascensionMaterials": {
+      "boss": "Severed Tail of the Sky-Roamer (Boreal Wyvern)",
+      "specialty": "Flockingweed",
+      "common": "Frayed Pelt"
+    },
+    "whoIsThisFor": "Players pairing Mitya or Aggravate carries with a high-uptime 4★ Electro battery who buffs Elemental Skill CRIT Rate and refreshes coordinated lightning cuts.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Valeriy.png"
+  },
+  {
+    "id": "amber",
+    "name": "Amber",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Elegy for the End",
+      "Favonius Warbow",
+      "The Stringless"
+    ],
+    "bestArtifacts": [
+      "4pc Instructor — ER% Sands, Pyro DMG Goblet, CRIT Rate Circlet",
+      "4pc Noblesse Oblige — ER% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Small Lamp Grass",
+      "common": "Firm Arrowhead"
+    },
+    "whoIsThisFor": "Budget Pyro Resonance & Elegy for the End buffers whose ultra-fast multi-hit Burst strips Cryo Abyss shields instantly in Hu Tao VV Vape setups.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ambor.png"
+  },
+  {
+    "id": "kaeya",
+    "name": "Kaeya",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter",
+      "Favonius Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ATK% or ER% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Blizzard Strayer — ATK% Sands, Cryo DMG Goblet, CRIT DMG Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Calla Lily",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Starter and Reverse-Melt players wanting consistent mobile off-field Cryo icicles with high energy refund and smooth Freeze synergy.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kaeya.png"
+  },
+  {
+    "id": "lisa",
+    "name": "Lisa",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Kagura's Verity",
+      "Thrilling Tales of Dragon Slayers",
+      "Favonius Codex"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Emblem of Severed Fate — ER% or EM Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Lightning Prism (Electro Hypostasis)",
+      "specialty": "Valberry",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Quick-swap Aggravate and Eula/Raiden teams taking advantage of her 15% DEF shred Ascension 4 passive and TTDS Catalyst ATK sharing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Lisa.png"
+  },
+  {
+    "id": "barbara",
+    "name": "Barbara",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Thrilling Tales of Dragon Slayers",
+      "Prototype Amber",
+      "Sacrificial Fragments"
+    ],
+    "bestArtifacts": [
+      "4pc Ocean-Hued Clam — HP% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Flower of Paradise Lost (Nilou Bloom) — EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Cleansing Heart (Rhodeia of Loch)",
+      "specialty": "Philanemo Mushroom",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Newer accounts and Nilou Bloom drivers needing reliable on-demand team-wide healing and close-range Hydro aura.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Barbara.png"
+  },
+  {
+    "id": "razor",
+    "name": "Razor",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Wolf's Gravestone",
+      "Serpent Spine",
+      "Mailed Flower"
+    ],
+    "bestArtifacts": [
+      "4pc Gilded Dreams (Thundering Furry) — EM Sands, EM Goblet, EM Circlet",
+      "4pc Pale Flame — ATK% Sands, Physical DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Lightning Prism (Electro Hypostasis)",
+      "specialty": "Wolfhook",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Physical Claymore fans and Thundering Furry enthusiasts pairing self-Electro Bursts with C6 Bennett, Xingqiu, and Nahida for rainbow Burgeon/Hyperbloom.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Razor.png"
+  },
+  {
+    "id": "diluc",
+    "name": "Diluc",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "A Thousand Blazing Suns",
+      "Beacon of the Reed Sea",
+      "Wolf's Gravestone"
+    ],
+    "bestArtifacts": [
+      "4pc Crimson Witch of Flames — EM or ATK% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — EM Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Small Lamp Grass",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Classic Pyro Claymore carries who shine brightest in Xianyun + Furina + Bennett Plunge Melt/Vaporize teams with massive Dragonstrike-style multipliers.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Diluc.png"
+  },
+  {
+    "id": "venti",
+    "name": "Venti",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Elegy for the End",
+      "The Stringless",
+      "Favonius Warbow"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — EM or ER% Sands, EM Goblet, EM Circlet",
+      "4pc Viridescent Venerer (CRIT) — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Hurricane Seed (Anemo Hypostasis)",
+      "specialty": "Cecilia",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Multi-wave Abyss chambers and Freeze/Aggravate teams where Wind’s Grand Ode black-hole grouping deletes light enemies and refunds 15 Energy.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Venti.png"
+  },
+  {
+    "id": "klee",
+    "name": "Klee",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Lost Prayer to the Sacred Winds",
+      "The Widsith",
+      "Cashflow Supervision"
+    ],
+    "bestArtifacts": [
+      "4pc Lavawalker (Mono Pyro) — ATK% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — ATK% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Philanemo Mushroom",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Mono-Pyro and Forward-Vape Furina lovers who enjoy playful Charged Attack animation cancels and heavy stagger pressure with Bombs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Klee.png"
+  },
+  {
+    "id": "mona",
+    "name": "Mona",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Thrilling Tales of Dragon Slayers",
+      "Favonius Codex",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, Hydro DMG or HP% Goblet, CRIT Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Cleansing Heart (Rhodeia of Loch)",
+      "specialty": "Philanemo Mushroom",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Freeze and damage-per-screenshot nuke teams leveraging her 60% Omen DMG Bonus debuff and TTDS ATK buff.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mona.png"
+  },
+  {
+    "id": "noelle",
+    "name": "Noelle",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Mondstadt",
+    "version": "1.0",
+    "bestWeapons": [
+      "Redhorn Stonethresher",
+      "Serpent Spine",
+      "Whiteblind"
+    ],
+    "bestArtifacts": [
+      "4pc Marechaussee Hunter (with Furina) — DEF% Sands, Geo DMG or DEF% Goblet, CRIT Circlet",
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Resistance",
+    "ascensionMaterials": {
+      "boss": "Basalt Pillar (Geo Hypostasis)",
+      "specialty": "Valberry",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Comfort-first Geo drivers at C6 who pair massive sweeping Geo Claymore arcs with shield + full-party Furina healing in one slot.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Noel.png"
+  },
+  {
+    "id": "diona",
+    "name": "Diona",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Mondstadt",
+    "version": "1.1",
+    "bestWeapons": [
+      "Sacrificial Bow",
+      "Favonius Warbow",
+      "Elegy for the End"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% or HP% Sands, HP% Goblet, HP% or Healing Bonus Circlet",
+      "4pc Instructor — ER% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Calla Lily",
+      "common": "Firm Arrowhead"
+    },
+    "whoIsThisFor": "Cryo batteries and Melt/Freeze flex slots providing reliable Sacrificial shields, healing, and +200 EM at C6.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Diona.png"
+  },
+  {
+    "id": "albedo",
+    "name": "Albedo",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Mondstadt",
+    "version": "1.2",
+    "bestWeapons": [
+      "Uraku Misugiri",
+      "Cinnabar Spindle",
+      "Harbinger of Dawn"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — DEF% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Basalt Pillar (Geo Hypostasis)",
+      "specialty": "Cecilia",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Double-Geo cores (Navia, Itto, Hu Tao) wanting effortless 30-second off-field DEF-scaling Geo blossoms and +125 Elemental Mastery.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Albedo.png"
+  },
+  {
+    "id": "rosaria",
+    "name": "Rosaria",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Mondstadt",
+    "version": "1.4",
+    "bestWeapons": [
+      "Staff of the Scarlet Sands",
+      "Favonius Lance",
+      "\"The Catch\""
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% or EM Sands, Cryo DMG Goblet, CRIT Rate Circlet",
+      "4pc Noblesse Oblige — ER% Sands, Cryo DMG Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Valberry",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Reverse Melt, Freeze, and Physical comps needing quick Cryo particle generation and up to +15% shared CRIT Rate.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Rosaria.png"
+  },
+  {
+    "id": "mika",
+    "name": "Mika",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Mondstadt",
+    "version": "3.5",
+    "bestWeapons": [
+      "Favonius Lance",
+      "Rightful Reward",
+      "Black Tassel"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% or HP% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Song of Days Past — ER% Sands, HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Pseudo-Stamens (Setekh Wenut)",
+      "specialty": "Wolfhook",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Attack-speed Normal Attack carries (Wanderer, Wriothesley, Ayato, Eula) pairing Furina team-wide Burst healing with 25% ATK SPD.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mika.png"
+  },
+  {
+    "id": "dahlia",
+    "name": "Dahlia",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Mondstadt",
+    "version": "5.7",
+    "bestWeapons": [
+      "Favonius Sword",
+      "Key of Khaj-Nisut",
+      "Fleuve Cendre Ferryman"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% or HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Tenacity of the Millelith — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ballad",
+    "ascensionMaterials": {
+      "boss": "Secret Source Airflow Accumulator (Overseer Device)",
+      "specialty": "Calla Lily",
+      "common": "Firm Arrowhead"
+    },
+    "whoIsThisFor": "Normal Attack hypercarries (Skirk, Yoimiya, Wanderer) seeking refreshable Hydro shields and up to 20% Attack Speed buffs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Dahlia.png"
+  },
+  {
+    "id": "aloy",
+    "name": "Aloy",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Outworld",
+    "version": "2.1",
+    "bestWeapons": [
+      "Thundering Pulse",
+      "The Stringless",
+      "Sacrificial Bow"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ATK% or EM Sands, Cryo DMG Goblet, CRIT Circlet",
+      "2pc Blizzard Strayer + 2pc Noblesse Oblige — ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Crystalline Bloom (Cryo Hypostasis)",
+      "specialty": "Crystal Marrow",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Quick-swap Reverse Melt players launching low-cost 40-Energy Prophecies of Dawn Cryo bombs alongside Anemo Coil gathering.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Aloy.png"
+  },
+  {
+    "id": "beidou",
+    "name": "Beidou",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Liyue",
+    "version": "1.0",
+    "bestWeapons": [
+      "Wolf's Gravestone",
+      "Serpent Spine",
+      "Akuoumaru"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% or ATK% Sands, Electro DMG Goblet, CRIT Circlet",
+      "2pc Thundering Fury + 2pc Noblesse Oblige — ER% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Lightning Prism (Electro Hypostasis)",
+      "specialty": "Noctilucous Jade",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Multi-target Abyss floors where Stormbreaker bouncing lightning deals huge AoE Electro damage alongside damage reduction.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Beidou.png"
+  },
+  {
+    "id": "ningguang",
+    "name": "Ningguang",
+    "element": "Geo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Liyue",
+    "version": "1.0",
+    "bestWeapons": [
+      "Kagura's Verity",
+      "Lost Prayer to the Sacred Winds",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Nighttime Whispers in the Echoing Woods — ATK% Sands, Geo DMG Goblet, CRIT Circlet",
+      "2pc Archaic Petra + 2pc ATK% — ATK% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack = Burst > Skill",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Basalt Pillar (Geo Hypostasis)",
+      "specialty": "Glaze Lily",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Geo quick-swap and single-target fans weaving Jade Screen passes with Starshatter gem barrages alongside Zhongli or Navia.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ningguang.png"
+  },
+  {
+    "id": "chongyun",
+    "name": "Chongyun",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Liyue",
+    "version": "1.0",
+    "bestWeapons": [
+      "Wolf's Gravestone",
+      "Beacon of the Reed Sea",
+      "Sacrificial Greatsword"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ATK% or EM Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Emblem of Severed Fate — ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Cor Lapis",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Classic National and Cryo infusion melee teams leveraging his 40-cost triple-blade Burst nuke and 15% cooldown reduction at C2.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Chongyun.png"
+  },
+  {
+    "id": "qiqi",
+    "name": "Qiqi",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Liyue",
+    "version": "1.0",
+    "bestWeapons": [
+      "Sacrificial Sword",
+      "Favonius Sword",
+      "Aquila Favonia"
+    ],
+    "bestArtifacts": [
+      "4pc Ocean-Hued Clam — ATK% or ER% Sands, ATK% Goblet, Healing Bonus Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, ATK% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Hoarfrost Core (Cryo Regisvine)",
+      "specialty": "Violetgrass",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Co-op and comfort-focused teams wanting relentless Fortune-Preserving Talisman healing and 30k Ocean-Hued Clam physical pops.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Qiqi.png"
+  },
+  {
+    "id": "keqing",
+    "name": "Keqing",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Liyue",
+    "version": "1.0",
+    "bestWeapons": [
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter",
+      "Lion's Roar"
+    ],
+    "bestArtifacts": [
+      "4pc Thundering Fury — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "2pc Thundering Fury + 2pc ATK% — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill = Normal Attack",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Lightning Prism (Electro Hypostasis)",
+      "specialty": "Cor Lapis",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Fast-paced Aggravate quick-swap drivers spamming 4pc Thundering Fury Stiletto teleports and low-cost Bursts with Fischl, Nahida, and Kazuha.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Keqing.png"
+  },
+  {
+    "id": "xinyan",
+    "name": "Xinyan",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Liyue",
+    "version": "1.1",
+    "bestWeapons": [
+      "Redhorn Stonethresher",
+      "Beacon of the Reed Sea",
+      "Sacrificial Greatsword"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ATK% Sands, Physical DMG Goblet, CRIT DMG Circlet",
+      "2pc Pale Flame + 2pc Bloodstained Chivalry — ATK% Sands, Physical DMG Goblet, CRIT DMG Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Everflame Seed (Pyro Regisvine)",
+      "specialty": "Violetgrass",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "C2 Physical Burst nuke enthusiasts guaranteed 100% CRIT Rate on Riff Revolution alongside Superconduct or Bennett Pyro Resonance.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Xinyan.png"
+  },
+  {
+    "id": "yanfei",
+    "name": "Yanfei",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Liyue",
+    "version": "1.5",
+    "bestWeapons": [
+      "Lost Prayer to the Sacred Winds",
+      "The Widsith",
+      "Tome of the Eternal Flow"
+    ],
+    "bestArtifacts": [
+      "4pc Crimson Witch of Flames — EM or ATK% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Wanderer's Troupe — EM or ATK% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Juvenile Jade (Primo Geovishap)",
+      "specialty": "Noctilucous Jade",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Smooth ranged Vaporize carries who love tracking Scarlet Seal Charged Attacks (or C4 Tankfei shield support for Hu Tao).",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Feiyan.png"
+  },
+  {
+    "id": "shenhe",
+    "name": "Shenhe",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Liyue",
+    "version": "2.4",
+    "bestWeapons": [
+      "Calamity Queller",
+      "Engulfing Lightning",
+      "Favonius Lance"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ATK% or ER% Sands, ATK% Goblet, ATK% Circlet",
+      "2pc ATK% + 2pc ATK% — ATK% Sands, ATK% Goblet, ATK% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Dragonheir's False Fin (Bathysmal Vishap Herd)",
+      "specialty": "Qingxin",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Cryo hypercarry teams (Ayaka, Wriothesley, Ganyu, Skirk) amplifying every Cryo hit with massive ATK-scaling Icy Quill flat DMG bonuses.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Shenhe.png"
+  },
+  {
+    "id": "yun-jin",
+    "name": "Yun Jin",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Liyue",
+    "version": "2.4",
+    "bestWeapons": [
+      "Favonius Lance",
+      "Engulfing Lightning",
+      "Footprint of the Rainbow"
+    ],
+    "bestArtifacts": [
+      "4pc Husk of Opulent Dreams — ER% or DEF% Sands, DEF% Goblet, DEF% or CRIT Rate Circlet",
+      "4pc Archaic Petra — ER% Sands, DEF% Goblet, DEF% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Riftborn Regalia (Golden Wolflord)",
+      "specialty": "Glaze Lily",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Normal Attack speed carries (Yoimiya, Ayato, Wanderer, Arlecchino) wanting huge flat DEF-scaling Normal Attack buffs and C6 Attack Speed.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Yunjin.png"
+  },
+  {
+    "id": "yaoyao",
+    "name": "Yaoyao",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Liyue",
+    "version": "3.4",
+    "bestWeapons": [
+      "Favonius Lance",
+      "Black Tassel",
+      "Moonpiercer"
+    ],
+    "bestArtifacts": [
+      "4pc Deepwood Memories — ER% or HP% Sands, HP% Goblet, Healing Bonus Circlet",
+      "4pc Tenacity of the Millelith — HP% Sands, HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Quelled Creeper (Dendro Hypostasis)",
+      "specialty": "Jueyun Chili",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "Nilou Bloom, Aggravate, and Furina Dendro teams needing compact off-field Yuegui Dendro application plus burst team healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Yaoyao.png"
+  },
+  {
+    "id": "baizhu",
+    "name": "Baizhu",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Liyue",
+    "version": "3.6",
+    "bestWeapons": [
+      "Jadefall's Splendor",
+      "Prototype Amber",
+      "Favonius Codex"
+    ],
+    "bestArtifacts": [
+      "4pc Deepwood Memories — ER% or HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Song of Days Past — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Evergloom Ring (Iniquitous Baptist)",
+      "specialty": "Violetgrass",
+      "common": "Fungal Spores"
+    },
+    "whoIsThisFor": "Neuvillette + Furina and Cyno Quickbloom teams wanting instant single-tap Skill team healing, poise shields, and Dendro reaction buffs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Baizhuer.png"
+  },
+  {
+    "id": "xianyun",
+    "name": "Xianyun",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Liyue",
+    "version": "4.4",
+    "bestWeapons": [
+      "Crane's Echoing Call",
+      "Oathsworn Eye",
+      "Favonius Codex"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ER% or ATK% Sands, ATK% Goblet, ATK% Circlet",
+      "4pc Song of Days Past — ATK% Sands, ATK% Goblet, ATK% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Gold",
+    "ascensionMaterials": {
+      "boss": "Cloudseam Scale (Solitary Suanni)",
+      "specialty": "Clearwater Jade",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Xiao FFXX hypercarries and Plunge Melt/Vape enablers (Gaming, Diluc, Hu Tao) turning any melee character into an aerial plunge carry.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Liuyun.png"
+  },
+  {
+    "id": "gaming",
+    "name": "Gaming",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Liyue",
+    "version": "4.4",
+    "bestWeapons": [
+      "Fruitful Hook",
+      "Serpent Spine",
+      "Beacon of the Reed Sea"
+    ],
+    "bestArtifacts": [
+      "4pc Crimson Witch of Flames — EM Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter — EM Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Prosperity",
+    "ascensionMaterials": {
+      "boss": "Emperor's Resolution (Emperor of Fire and Iron)",
+      "specialty": "Starconch",
+      "common": "Slime Condensate"
+    },
+    "whoIsThisFor": "4★ DPS enthusiasts rivaling 5★ clears via forward-Melt Charmed Cloudstrider plunges alongside Citlali/Rosaria, Xianyun, and Bennett.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Gaming.png"
+  },
+  {
+    "id": "lan-yan",
+    "name": "Lan Yan",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Liyue",
+    "version": "5.3",
+    "bestWeapons": [
+      "Thrilling Tales of Dragon Slayers",
+      "Starcaller's Watch",
+      "Sacrificial Fragments"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ATK% Sands, ATK% Goblet, ATK% Circlet",
+      "4pc Noblesse Oblige — ATK% Sands, ATK% Goblet, ATK% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Diligence",
+    "ascensionMaterials": {
+      "boss": "Gold-Inscribed Secret Source Core (Secret Source Automaton)",
+      "specialty": "Clearwater Jade",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Pyro/Hydro/Electro/Cryo carries (Arlecchino, Clorinde, Neuvillette) seeking an elemental-absorbing VV shielder who can hold TTDS in one slot.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Lanyan.png"
+  },
+  {
+    "id": "sayu",
+    "name": "Sayu",
+    "element": "Anemo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Inazuma",
+    "version": "2.0",
+    "bestWeapons": [
+      "Favonius Greatsword",
+      "Makhaira Aquamarine",
+      "Forest Regalia"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ER% or EM Sands, EM Goblet, EM or Healing Bonus Circlet",
+      "4pc Instructor — ER% Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Light",
+    "ascensionMaterials": {
+      "boss": "Marionette Core (Maguu Kenki)",
+      "specialty": "Crystal Marrow",
+      "common": "Whopperflower Nectar"
+    },
+    "whoIsThisFor": "Overworld explorers and Furina budget teams enjoying high-speed Fuufuu Windwheel rolling, Crystalfly stealth, and VV healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Sayu.png"
+  },
+  {
+    "id": "kujou-sara",
+    "name": "Kujou Sara",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Inazuma",
+    "version": "2.1",
+    "bestWeapons": [
+      "Skyward Harp",
+      "Elegy for the End",
+      "Sacrificial Bow"
+    ],
+    "bestArtifacts": [
+      "4pc Emblem of Severed Fate — ER% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Noblesse Oblige — ER% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elegance",
+    "ascensionMaterials": {
+      "boss": "Storm Beads (Thunder Manifestation)",
+      "specialty": "Dendrobium",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Raiden Hypercarry and Clorinde/Yae Miko mains unlocking her massive +60% Electro CRIT DMG buff at Constellation 6.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Sara.png"
+  },
+  {
+    "id": "thoma",
+    "name": "Thoma",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Inazuma",
+    "version": "2.2",
+    "bestWeapons": [
+      "Kitain Cross Spear",
+      "Dragon's Bane",
+      "Favonius Lance"
+    ],
+    "bestArtifacts": [
+      "4pc Flower of Paradise Lost (Burgeon) — ER% or EM Sands, EM Goblet, EM Circlet",
+      "4pc Noblesse Oblige (Shielder) — ER% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Smoldering Pearl (Pyro Hypostasis)",
+      "specialty": "Fluorescent Fungus",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Burgeon teams with Nahida + Xingqiu/Neuvillette and Wanderer/Chevreuse Overload comps wanting refreshable Pyro shields and slow AoE triggers.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Tohma.png"
+  },
+  {
+    "id": "gorou",
+    "name": "Gorou",
+    "element": "Geo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Inazuma",
+    "version": "2.3",
+    "bestWeapons": [
+      "Favonius Warbow",
+      "Elegy for the End",
+      "Sacrificial Bow"
+    ],
+    "bestArtifacts": [
+      "4pc The Exile — ER% Sands, Geo DMG or DEF% Goblet, CRIT Rate Circlet",
+      "4pc Noblesse Oblige — ER% Sands, DEF% Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Light",
+    "ascensionMaterials": {
+      "boss": "Perpetual Heart (Perpetual Mechanical Array)",
+      "specialty": "Sango Pearl",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Triple-Geo DEF carries (Arataki Itto, Noelle, Chiori, Zibai) granting flat DEF, Geo DMG Bonus, Interruption Resistance, and +40% Geo CRIT DMG at C6.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Gorou.png"
+  },
+  {
+    "id": "yae-miko",
+    "name": "Yae Miko",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Inazuma",
+    "version": "2.5",
+    "bestWeapons": [
+      "Kagura's Verity",
+      "A Thousand Floating Dreams",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — ATK% or EM Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Light",
+    "ascensionMaterials": {
+      "boss": "Dragonheir's False Fin (Bathysmal Vishap Herd)",
+      "specialty": "Sea Ganoderma",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Tighnari Spread and Aggravate/Overload quick-swap players wanting long-range auto-targeting Electro turrets and explosive Burst finishers.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Yae.png"
+  },
+  {
+    "id": "ayato",
+    "name": "Kamisato Ayato",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Inazuma",
+    "version": "2.6",
+    "bestWeapons": [
+      "Haran Geppaku Futsu",
+      "Primordial Jade Cutter",
+      "Mistsplitter Reforged"
+    ],
+    "bestArtifacts": [
+      "4pc Gladiator's Finale — ATK% Sands, Hydro DMG Goblet, CRIT Circlet",
+      "4pc Echoes of an Offering — ATK% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elegance",
+    "ascensionMaterials": {
+      "boss": "Dew of Repudiation (Hydro Hypostasis)",
+      "specialty": "Sakura Bloom",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Players favoring relaxed hold-to-slash AoE Hydro gameplay across Soup, Hyperbloom, Burgeon, and Freeze flex setups.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ayato.png"
+  },
+  {
+    "id": "heizou",
+    "name": "Shikanoin Heizou",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Inazuma",
+    "version": "2.8",
+    "bestWeapons": [
+      "Tulaytullah's Remembrance",
+      "Lost Prayer to the Sacred Winds",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ATK% or EM Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Golden Troupe (Quick-swap) — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Runic Fang (Ruin Serpent)",
+      "specialty": "Onikabuto",
+      "common": "Treasure Hoarder Insignia"
+    },
+    "whoIsThisFor": "Martial-arts Catalyst fans who love building Declension stacks with Swirls for massive single-hit Heartstopper Strike punches.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Heizo.png"
+  },
+  {
+    "id": "kirara",
+    "name": "Kirara",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Inazuma",
+    "version": "3.7",
+    "bestWeapons": [
+      "Key of Khaj-Nisut",
+      "Sapwood Blade",
+      "Favonius Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Deepwood Memories — HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Instructor — HP% or ER% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Evergloom Ring (Iniquitous Baptist)",
+      "specialty": "Tenkumo Fruit",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Aggravate (Keqing/Clorinde) and Nilou Bloom teams wanting thick Dendro shields, cat-box cliff climbing, and C4 off-field Dendro procs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Momoka.png"
+  },
+  {
+    "id": "chiori",
+    "name": "Chiori",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Inazuma",
+    "version": "4.5",
+    "bestWeapons": [
+      "Uraku Misugiri",
+      "Peak Patrol Song",
+      "Harbinger of Dawn"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — DEF% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Light",
+    "ascensionMaterials": {
+      "boss": "Artificed Spare Clockwork Component — Coppelia",
+      "specialty": "Dendrobium",
+      "common": "Spectral Husk"
+    },
+    "whoIsThisFor": "Zhongli/Itto/Navia/Xilonen wheelchair cores seeking blazingly fast dual-Tamoto Geo off-field DPS with zero Energy dependency.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Chiori.png"
+  },
+  {
+    "id": "mizuki",
+    "name": "Yumemizuki Mizuki",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Inazuma",
+    "version": "5.4",
+    "bestWeapons": [
+      "Sunny Morning Sleep-In",
+      "Sacrificial Fragments",
+      "Wandering Evenstar"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — EM Sands, EM Goblet, EM Circlet",
+      "4pc Instructor — EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Transience",
+    "ascensionMaterials": {
+      "boss": "Talisman of the Enigmatic Land (Wayward Hermetic Spiritspeaker)",
+      "specialty": "Sea Ganoderma",
+      "common": "Old Handguard"
+    },
+    "whoIsThisFor": "Taser and Furina off-field driver comps (Fischl, Ororon, Yae Miko, Furina) where floating Dreamdrifter glides continuously amplify Swirl DMG and heal.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Mizuki.png"
+  },
+  {
+    "id": "collei",
+    "name": "Collei",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Sumeru",
+    "version": "3.0",
+    "bestWeapons": [
+      "Elegy for the End",
+      "Sacrificial Bow",
+      "Favonius Warbow"
+    ],
+    "bestArtifacts": [
+      "4pc Deepwood Memories — ER% or ATK% Sands, Dendro DMG Goblet, CRIT Circlet",
+      "4pc Instructor — ER% Sands, Dendro DMG Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Praxis",
+    "ascensionMaterials": {
+      "boss": "Majestic Hooked Beak (Jadeplume Terrorshroom)",
+      "specialty": "Rukkhashava Mushrooms",
+      "common": "Firm Arrowhead"
+    },
+    "whoIsThisFor": "Nilou Bloom and F2P Hyperbloom rosters needing compact, fast-cooldown Dendro bursts and Elegy EM sharing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Collei.png"
+  },
+  {
+    "id": "dori",
+    "name": "Dori",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Sumeru",
+    "version": "3.0",
+    "bestWeapons": [
+      "Favonius Greatsword",
+      "Sacrificial Greatsword",
+      "Makhaira Aquamarine"
+    ],
+    "bestArtifacts": [
+      "4pc Thundering Fury (C6 Quickbloom) — EM or ER% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Noblesse Oblige — ER% Sands, HP% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ingenuity",
+    "ascensionMaterials": {
+      "boss": "Thunderclap Fruitcore (Electro Regisvine)",
+      "specialty": "Kalpalata Lotus",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "Co-op sustains and C6 Furina Aggravate/Quickbloom drivers pairing team-wide Electro infusion healing with massive flat Energy regeneration.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Dori.png"
+  },
+  {
+    "id": "candace",
+    "name": "Candace",
+    "element": "Hydro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Sumeru",
+    "version": "3.1",
+    "bestWeapons": [
+      "Favonius Lance",
+      "Rightful Reward",
+      "Black Tassel"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% or HP% Sands, HP% Goblet, HP% or CRIT Rate Circlet",
+      "4pc Instructor — ER% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Admonition",
+    "ascensionMaterials": {
+      "boss": "Light Guiding Tetrahedron (ASIMON)",
+      "specialty": "Henna Berry",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "Mualani Forward-Vape, Arlecchino Vape, and Yaoyao/Nilou Bloom teams taking advantage of Normal Attack Elemental DMG% buffs and Hydro infusion.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Candace.png"
+  },
+  {
+    "id": "nilou",
+    "name": "Nilou",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Sumeru",
+    "version": "3.1",
+    "bestWeapons": [
+      "Key of Khaj-Nisut",
+      "Dockhand's Assistant",
+      "Iron Sting"
+    ],
+    "bestArtifacts": [
+      "2pc Tenacity of the Millelith + 2pc Vourukasha's Glow — HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Flower of Paradise Lost (On-field) — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Praxis",
+    "ascensionMaterials": {
+      "boss": "Perpetual Caliber (Aeonblight Drake)",
+      "specialty": "Padisarah",
+      "common": "Fungal Spores"
+    },
+    "whoIsThisFor": "Pure Hydro + Dendro Superbloom specialists transforming Dendro Cores into colossal instant-detonating Bountiful Cores for effortless AoE clears.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Nilou.png"
+  },
+  {
+    "id": "layla",
+    "name": "Layla",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Sumeru",
+    "version": "3.2",
+    "bestWeapons": [
+      "Key of Khaj-Nisut",
+      "Favonius Sword",
+      "Dockhand's Assistant"
+    ],
+    "bestArtifacts": [
+      "4pc Tenacity of the Millelith — HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Noblesse Oblige — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Ingenuity",
+    "ascensionMaterials": {
+      "boss": "Perpetual Caliber (Aeonblight Drake)",
+      "specialty": "Nilotpala Lotus",
+      "common": "Divining Scroll"
+    },
+    "whoIsThisFor": "Wanderer, Hu Tao, and Melt/Freeze teams wanting one of Teyvat’s strongest 100%-uptime Cryo shields alongside Tenacity ATK buffs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Layla.png"
+  },
+  {
+    "id": "faruzan",
+    "name": "Faruzan",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Sumeru",
+    "version": "3.3",
+    "bestWeapons": [
+      "Elegy for the End",
+      "Favonius Warbow",
+      "Sacrificial Bow"
+    ],
+    "bestArtifacts": [
+      "4pc Tenacity of the Millelith (C6) — ER% Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Noblesse Oblige (C0-C5) — ER% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Admonition",
+    "ascensionMaterials": {
+      "boss": "Light Guiding Tetrahedron (ASIMON)",
+      "specialty": "Henna Berry",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "Every Anemo hypercarry (Xiao, Wanderer, Varka, Heizou). Unlocks Anemo RES shred, Anemo DMG%, and massive +40% Anemo CRIT DMG at C6.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Faruzan.png"
+  },
+  {
+    "id": "dehya",
+    "name": "Dehya",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Sumeru",
+    "version": "3.5",
+    "bestWeapons": [
+      "Beacon of the Reed Sea",
+      "Favonius Greatsword",
+      "Sacrificial Greatsword"
+    ],
+    "bestArtifacts": [
+      "4pc Tenacity of the Millelith (Support) — HP% or ER% Sands, HP% Goblet, HP% or CRIT Rate Circlet",
+      "4pc Vourukasha's Glow (Carry) — ER% or HP% Sands, Pyro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Praxis",
+    "ascensionMaterials": {
+      "boss": "Light Guiding Tetrahedron (ASIMON)",
+      "specialty": "Sand Grease Pupa",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "Kinich/Emilie Burning, Neuvillette Vape, and Ganyu Burn-Melt teams needing unbreakable 9-second interruption resistance and coordinated Pyro.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Dehya.png"
+  },
+  {
+    "id": "kaveh",
+    "name": "Kaveh",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Sumeru",
+    "version": "3.6",
+    "bestWeapons": [
+      "Mailed Flower",
+      "Favonius Greatsword",
+      "Forest Regalia"
+    ],
+    "bestArtifacts": [
+      "4pc Flower of Paradise Lost — ER% or EM Sands, EM Goblet, EM Circlet",
+      "4pc Deepwood Memories — ER% Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Ingenuity",
+    "ascensionMaterials": {
+      "boss": "Quelled Creeper (Dendro Hypostasis)",
+      "specialty": "Mourning Flower",
+      "common": "Fungal Spores"
+    },
+    "whoIsThisFor": "On-field Bloom & Nilou Bloom drivers who self-heal off Dendro Core explosions and pop cores instantly with Elemental Skill.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kaveh.png"
+  },
+  {
+    "id": "sethos",
+    "name": "Sethos",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Sumeru",
+    "version": "4.7",
+    "bestWeapons": [
+      "Hunter's Path",
+      "Slingshot",
+      "Astral Vulture's Crimson Plumage"
+    ],
+    "bestArtifacts": [
+      "4pc Wanderer's Troupe — EM Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Gilded Dreams — EM Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Normal Attack > Burst > Skill",
+    "talentBook": "Praxis",
+    "ascensionMaterials": {
+      "boss": "Cloudseam Scale (Solitary Suanni)",
+      "specialty": "Trishiraite",
+      "common": "Faded Red Satin"
+    },
+    "whoIsThisFor": "High-skill Aggravate sharpshooters toggling between piercing EM-scaling Shadowpiercing Shots and rapid Burst Dusk Bolts using Slingshot.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Sethos.png"
+  },
+  {
+    "id": "lyney",
+    "name": "Lyney",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Fontaine",
+    "version": "4.0",
+    "bestWeapons": [
+      "The First Great Magic",
+      "Aqua Simulacra",
+      "Astral Vulture's Crimson Plumage"
+    ],
+    "bestArtifacts": [
+      "4pc Marechaussee Hunter — ATK% Sands, Pyro DMG Goblet, CRIT DMG Circlet",
+      "4pc Lavawalker — ATK% Sands, Pyro DMG Goblet, CRIT DMG Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Equity",
+    "ascensionMaterials": {
+      "boss": "Emperor's Resolution (Emperor of Fire and Iron)",
+      "specialty": "Rainbow Rose",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "Mono-Pyro & Chevreuse Overload archers delivering colossal Prop Arrow + Grin-Malkin Hat frontloaded Skill/Burst speedrun nukes.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Liney.png"
+  },
+  {
+    "id": "lynette",
+    "name": "Lynette",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Fontaine",
+    "version": "4.0",
+    "bestWeapons": [
+      "Favonius Sword",
+      "Fleuve Cendre Ferryman",
+      "Mistsplitter Reforged"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — ER% or ATK% Sands, Anemo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (C6 Carry) — ATK% Sands, Anemo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Order",
+    "ascensionMaterials": {
+      "boss": "Artificed Spare Clockwork Component — Coppelia",
+      "specialty": "Lumidouce Bell",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Accessible Ousia Anemo flex supports offering taunt decoys, team ATK% buffs, 4pc VV shred, and swift overworld dashes.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Linette.png"
+  },
+  {
+    "id": "freminet",
+    "name": "Freminet",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "role": "Main DPS",
+    "region": "Fontaine",
+    "version": "4.0",
+    "bestWeapons": [
+      "Song of Broken Pines",
+      "Serpent Spine",
+      "Skyward Pride"
+    ],
+    "bestArtifacts": [
+      "4pc Pale Flame — ATK% Sands, Physical DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter (with Furina) — ATK% Sands, Physical DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Justice",
+    "ascensionMaterials": {
+      "boss": "Artificed Spare Clockwork Component — Coppelius",
+      "specialty": "Romaritime Flower",
+      "common": "Transoceanic Pearl"
+    },
+    "whoIsThisFor": "Shatter & Physical/Cryo hybrid Claymore mains building Pers Timer pressure ranks alongside Furina, Fischl, and Mika.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Freminet.png"
+  },
+  {
+    "id": "wriothesley",
+    "name": "Wriothesley",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Fontaine",
+    "version": "4.1",
+    "bestWeapons": [
+      "Cashflow Supervision",
+      "Tulaytullah's Remembrance",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Marechaussee Hunter — ATK% or EM Sands, Cryo DMG Goblet, CRIT DMG Circlet",
+      "4pc Blizzard Strayer (Freeze) — ATK% Sands, Cryo DMG Goblet, CRIT DMG Circlet"
+    ],
+    "talentPriority": "Normal Attack > Skill > Burst",
+    "talentBook": "Order",
+    "ascensionMaterials": {
+      "boss": "Tourbillon Device (Experimental Field Generator)",
+      "specialty": "Subdetection Unit",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Melee brawler fans chaining boxing punches into Reverse-Melt Gracious Rebuke Charged Attacks alongside Mavuika/Xiangling, Bennett, and Emilie/Xilonen.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Wriothesley.png"
+  },
+  {
+    "id": "charlotte",
+    "name": "Charlotte",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Fontaine",
+    "version": "4.2",
+    "bestWeapons": [
+      "Thrilling Tales of Dragon Slayers",
+      "Favonius Codex",
+      "Oathsworn Eye"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, ATK% Goblet, Healing Bonus Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, ATK% Goblet, Healing Bonus Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Justice",
+    "ascensionMaterials": {
+      "boss": "Tourbillon Device (Experimental Field Generator)",
+      "specialty": "Beryl Conch",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Neuvillette, Ayaka, and Skirk Furina teams wanting instant party-wide team healing plus TTDS ATK buffing in a 4★ Cryo package.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Charlotte.png"
+  },
+  {
+    "id": "chevreuse",
+    "name": "Chevreuse",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Fontaine",
+    "version": "4.3",
+    "bestWeapons": [
+      "Rightful Reward",
+      "Black Tassel",
+      "Favonius Lance"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — HP% Sands, HP% Goblet, HP% or Healing Bonus Circlet",
+      "4pc Song of Days Past — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Order",
+    "ascensionMaterials": {
+      "boss": "Fontemer Unihorn (Millennial Pearl Seahorse)",
+      "specialty": "Lumidouce Bell",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Pure Pyro + Electro Overload teams (Arlecchino, Varesa, Clorinde, Raiden), granting 40% Pyro/Electro RES shred, +40% ATK, and healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Chevreuse.png"
+  },
+  {
+    "id": "clorinde",
+    "name": "Clorinde",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Fontaine",
+    "version": "4.7",
+    "bestWeapons": [
+      "Absolution",
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter"
+    ],
+    "bestArtifacts": [
+      "4pc Fragment of Harmonic Whimsy — ATK% Sands, Electro DMG Goblet, CRIT Circlet",
+      "4pc Thundering Fury — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Justice",
+    "ascensionMaterials": {
+      "boss": "Fontemer Unihorn (Millennial Pearl Seahorse)",
+      "specialty": "Lumitoile",
+      "common": "Transoceanic Pearl"
+    },
+    "whoIsThisFor": "High-tempo Duelist players chaining 3x pistol shots into Bond-of-Life Impale the Night lunges in Aggravate, Overload, or Taser.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Clorinde.png"
+  },
+  {
+    "id": "sigewinne",
+    "name": "Sigewinne",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Healer",
+    "region": "Fontaine",
+    "version": "4.7",
+    "bestWeapons": [
+      "Silvershower Heartstrings",
+      "Recurve Bow",
+      "Favonius Warbow"
+    ],
+    "bestArtifacts": [
+      "4pc Song of Days Past — HP% Sands, HP% Goblet, HP% Circlet",
+      "4pc Tenacity of the Millelith — HP% Sands, HP% Goblet, HP% Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Equity",
+    "ascensionMaterials": {
+      "boss": "Water That Failed To Transcend (Hydro Tulpa)",
+      "specialty": "Romaritime Flower",
+      "common": "Transoceanic Pearl"
+    },
+    "whoIsThisFor": "Skill-centric off-field cores (Furina, Escoffier, Chiori, Nahida) seeking effortless single-tap Bolstering Bubblebalm team healing and Skill flat DMG buffs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Sigewinne.png"
+  },
+  {
+    "id": "emilie",
+    "name": "Emilie",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Fontaine",
+    "version": "4.8",
+    "bestWeapons": [
+      "Lumidouce Elegy",
+      "Staff of Homa",
+      "Primordial Jade Winged-Spear"
+    ],
+    "bestArtifacts": [
+      "4pc Unfinished Reverie — ATK% Sands, Dendro DMG Goblet, CRIT Circlet",
+      "4pc Deepwood Memories — ATK% Sands, Dendro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Order",
+    "ascensionMaterials": {
+      "boss": "Fragment of a Golden Melody (Legatus Golem)",
+      "specialty": "Lakelight Lily",
+      "common": "Meshing Gear"
+    },
+    "whoIsThisFor": "Kinich, Wriothesley Burn-Melt, and Lyney/Arlecchino Burning comps wanting colossal long-range off-field Dendro turret damage and 85% self-Burn resistance.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Emilie.png"
+  },
+  {
+    "id": "kachina",
+    "name": "Kachina",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Sub DPS",
+    "region": "Natlan",
+    "version": "5.0",
+    "bestWeapons": [
+      "Footprint of the Rainbow",
+      "Favonius Lance",
+      "Deathmatch"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City — DEF% or ER% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Husk of Opulent Dreams — DEF% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Conflict",
+    "ascensionMaterials": {
+      "boss": "Overripe Flamegranate (Gluttonous Yumkasaur Mountain King)",
+      "specialty": "Quenepa Berry",
+      "common": "Sentry's Wooden Whistle"
+    },
+    "whoIsThisFor": "Every F2P player wanting instant access to 4pc Scroll of the Hero of Cinder City 40% Elemental DMG buffs plus Turbo Twirly cliff climbing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Kachina.png"
+  },
+  {
+    "id": "iansan",
+    "name": "Iansan",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Natlan",
+    "version": "5.5",
+    "bestWeapons": [
+      "Symphonist of Scents",
+      "Favonius Lance",
+      "Tamayuratei no Ohanashi"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City — ER% or ATK% Sands, ATK% Goblet, ATK% Circlet",
+      "4pc Noblesse Oblige — ER% Sands, ATK% Goblet, ATK% Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Contention",
+    "ascensionMaterials": {
+      "boss": "Ensnaring Gaze (Tenebrous Papilla)",
+      "specialty": "Dracolite",
+      "common": "Sentry's Wooden Whistle"
+    },
+    "whoIsThisFor": "High-mobility ATK carries (Varesa, Mavuika, Kinich, Chasca, Clorinde) wanting Circle-Impact-free flat ATK buffs, Cinder City DMG%, and healing.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Iansan.png"
+  },
+  {
+    "id": "ifa",
+    "name": "Ifa",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "role": "Healer",
+    "region": "Natlan",
+    "version": "5.6",
+    "bestWeapons": [
+      "Sunny Morning Sleep-In",
+      "Sacrificial Fragments",
+      "Hakushin Ring"
+    ],
+    "bestArtifacts": [
+      "4pc Viridescent Venerer — EM Sands, EM Goblet, EM Circlet",
+      "4pc Scroll of the Hero of Cinder City — EM Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Conflict",
+    "ascensionMaterials": {
+      "boss": "Sparkless Statue Core (Lava Dragon Statue)",
+      "specialty": "Saurian Claw Succulent",
+      "common": "Juvenile Fang"
+    },
+    "whoIsThisFor": "Electro-Charged and Lunar-Charged drivers pairing hovering Cacucu mid-air gunfire with party healing and Swirl/Electro-Charged DMG amplification.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ifa.png"
+  },
+  {
+    "id": "ineffa",
+    "name": "Ineffa",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Nod-Krai",
+    "version": "5.8",
+    "bestWeapons": [
+      "Fractured Halo",
+      "Staff of the Scarlet Sands",
+      "Favonius Lance"
+    ],
+    "bestArtifacts": [
+      "4pc Gilded Dreams — ATK% Sands, ATK% or Electro DMG Goblet, CRIT Circlet",
+      "4pc Tenacity of the Millelith — ATK% Sands, Electro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Elysium",
+    "ascensionMaterials": {
+      "boss": "Secret Source Airflow Accumulator (Overseer Device)",
+      "specialty": "Glowing Hornshroom",
+      "common": "Broken Drive Shaft"
+    },
+    "whoIsThisFor": "The Nod-Krai Lunar-Charged pioneer pairing Birgitta thundercloud strikes, Electro shields, and party EM scaling alongside Flins, Columbina, or Neuvillette.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Ineffa.png"
+  },
+  {
+    "id": "illuga",
+    "name": "Illuga",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "role": "Support",
+    "region": "Nod-Krai",
+    "version": "6.3",
+    "bestWeapons": [
+      "Dragon's Bane",
+      "Favonius Lance",
+      "Kitain Cross Spear"
+    ],
+    "bestArtifacts": [
+      "4pc Silken Moon's Serenade — ER% or EM Sands, EM Goblet, EM Circlet",
+      "4pc Instructor — ER% Sands, EM Goblet, EM Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Moonlight",
+    "ascensionMaterials": {
+      "boss": "Remnant of the Dreadwing (Lord of the Hidden Depths)",
+      "specialty": "Moonfall Silver",
+      "common": "Tattered Warrant"
+    },
+    "whoIsThisFor": "Zibai and Columbina Lunar-Crystallize teams seeking off-field Lightkeeper EM sharing, Geo CRIT Rate/DMG buffs, and Nightingale song stacks.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Illuga.png"
+  },
+  {
+    "id": "tartaglia",
+    "name": "Tartaglia",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Snezhnaya",
+    "version": "1.1",
+    "bestWeapons": [
+      "Polar Star",
+      "Aqua Simulacra",
+      "Thundering Pulse"
+    ],
+    "bestArtifacts": [
+      "4pc Nymph's Dream — ATK% Sands, Hydro DMG Goblet, CRIT Circlet",
+      "2pc Hydro DMG + 2pc ATK% — ATK% Sands, Hydro DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill = Burst > Normal Attack",
+    "talentBook": "Freedom",
+    "ascensionMaterials": {
+      "boss": "Cleansing Heart (Rhodeia of Loch)",
+      "specialty": "Starconch",
+      "common": "Recruit's Insignia"
+    },
+    "whoIsThisFor": "International (Childe + Xiangling + Kazuha + Bennett) fans who love quadratic AoE Riptide cascades and frontloaded Vaporize melee Bursts.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Tartaglia.png"
+  },
+  {
+    "id": "pulcinella",
+    "name": "Pulcinella",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Support",
+    "region": "Snezhnaya",
+    "version": "7.0",
+    "bestWeapons": [
+      "Nocturne's Curtain Call",
+      "Thrilling Tales of Dragon Slayers",
+      "Favonius Codex"
+    ],
+    "bestArtifacts": [
+      "4pc Noblesse Oblige — ER% Sands, Cryo DMG or HP% Goblet, CRIT Circlet",
+      "4pc Tenacity of the Millelith — ER% Sands, HP% Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Fortitude",
+    "ascensionMaterials": {
+      "boss": "Frost-Tempered Gear (Cryo Colossus)",
+      "specialty": "Frostfairy Flower",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Snezhnayan tactical teams and Melt carries harnessing Rooster-crest Cryo RES shred, Energy coordination, and Burst CRIT buffs.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Pulcinella.png"
+  },
+  {
+    "id": "pantalone",
+    "name": "Pantalone",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Snezhnaya",
+    "version": "7.1",
+    "bestWeapons": [
+      "Whitelake Winterfeather",
+      "Mistsplitter Reforged",
+      "Primordial Jade Cutter"
+    ],
+    "bestArtifacts": [
+      "4pc Golden Troupe — ATK% Sands, Cryo DMG Goblet, CRIT Circlet",
+      "4pc Emblem of Severed Fate — ER% or ATK% Sands, Cryo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Burst > Normal Attack",
+    "talentBook": "Glory",
+    "ascensionMaterials": {
+      "boss": "Tide-Locked Heart (Boreal Leviathan)",
+      "specialty": "Flockingweed",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Northland Bank quick-swap players combining Mora-gilded Cryo blades with off-field Bonded Ledger DMG amplification.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_Pantalone.png"
+  },
+  {
+    "id": "sandrone",
+    "name": "Sandrone",
+    "element": "Geo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "role": "Main DPS",
+    "region": "Snezhnaya",
+    "version": "7.2",
+    "bestWeapons": [
+      "Cashflow Supervision",
+      "Tome of the Eternal Flow",
+      "The Widsith"
+    ],
+    "bestArtifacts": [
+      "4pc Husk of Opulent Dreams — DEF% or ATK% Sands, Geo DMG Goblet, CRIT Circlet",
+      "4pc Marechaussee Hunter — ATK% Sands, Geo DMG Goblet, CRIT Circlet"
+    ],
+    "talentPriority": "Skill > Normal Attack > Burst",
+    "talentBook": "Glory",
+    "ascensionMaterials": {
+      "boss": "Cyclic Military Kuuvahki Core (Super-Heavy Landrover)",
+      "specialty": "Portable Bearing",
+      "common": "Tarnished Sigil"
+    },
+    "whoIsThisFor": "Clockwork construct strategists commanding towering Ruin Automaton guardians in tandem with Xilonen, Furina, or Linnea.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_MarionetteNew.png"
+  },
+  {
+    "id": "traveler",
+    "name": "Traveler",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "role": "Sub DPS",
+    "region": "Outworld",
+    "version": "1.0",
+    "bestWeapons": [
+      "Favonius Sword",
+      "Sapwood Blade",
+      "Sacrificial Sword"
+    ],
+    "bestArtifacts": [
+      "4pc Scroll of the Hero of Cinder City (Pyro) — ER% or ATK% Sands, Pyro DMG Goblet, CRIT Circlet",
+      "4pc Deepwood Memories (Dendro) — ER% Sands, Dendro DMG Goblet, CRIT Rate Circlet"
+    ],
+    "talentPriority": "Burst > Skill > Normal Attack",
+    "talentBook": "Contention",
+    "ascensionMaterials": {
+      "boss": "Brilliant Diamond Gemstone (Adventure Rank Rewards)",
+      "specialty": "Windwheel Aster",
+      "common": "Damaged Mask"
+    },
+    "whoIsThisFor": "Every player’s free adaptive flex hero: shines as an off-field Dendro Hyperbloom applicator, a Pyro Cinder City Nightsoul buffer, or a Cryo sub-DPS.",
+    "icon": "https://enka.network/ui/UI_AvatarIcon_PlayerBoy.png"
+  }
+]

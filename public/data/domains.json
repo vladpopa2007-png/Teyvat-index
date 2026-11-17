@@ -1,0 +1,2136 @@
+{
+  "TALENT_DOMAINS": [
+    {
+      "id": "freedom",
+      "book": "Freedom",
+      "region": "Mondstadt",
+      "domain": "Forsaken Rift",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Sucrose",
+          "element": "Anemo",
+          "id": "sucrose"
+        },
+        {
+          "name": "Tartaglia",
+          "element": "Hydro",
+          "id": "tartaglia"
+        },
+        {
+          "name": "Klee",
+          "element": "Pyro",
+          "id": "klee"
+        },
+        {
+          "name": "Barbara",
+          "element": "Hydro",
+          "id": "barbara"
+        },
+        {
+          "name": "Amber",
+          "element": "Pyro",
+          "id": "amber"
+        },
+        {
+          "name": "Diona",
+          "element": "Cryo",
+          "id": "diona"
+        }
+      ]
+    },
+    {
+      "id": "prosperity",
+      "book": "Prosperity",
+      "region": "Liyue",
+      "domain": "Taishan Mansion",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Yelan",
+          "element": "Hydro",
+          "id": "yelan"
+        },
+        {
+          "name": "Xiao",
+          "element": "Anemo",
+          "id": "xiao"
+        },
+        {
+          "name": "Shenhe",
+          "element": "Cryo",
+          "id": "shenhe"
+        },
+        {
+          "name": "Keqing",
+          "element": "Electro",
+          "id": "keqing"
+        },
+        {
+          "name": "Ningguang",
+          "element": "Geo",
+          "id": "ningguang"
+        },
+        {
+          "name": "Gaming",
+          "element": "Pyro",
+          "id": "gaming"
+        }
+      ]
+    },
+    {
+      "id": "transience",
+      "book": "Transience",
+      "region": "Inazuma",
+      "domain": "Violet Court",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Yoimiya",
+          "element": "Pyro",
+          "id": "yoimiya"
+        },
+        {
+          "name": "Sangonomiya Kokomi",
+          "element": "Hydro",
+          "id": "kokomi"
+        },
+        {
+          "name": "Shikanoin Heizou",
+          "element": "Anemo",
+          "id": "heizou"
+        },
+        {
+          "name": "Thoma",
+          "element": "Pyro",
+          "id": "thoma"
+        },
+        {
+          "name": "Kirara",
+          "element": "Dendro",
+          "id": "kirara"
+        },
+        {
+          "name": "Yumemizuki Mizuki",
+          "element": "Anemo",
+          "id": "mizuki"
+        }
+      ]
+    },
+    {
+      "id": "admonition",
+      "book": "Admonition",
+      "region": "Sumeru",
+      "domain": "Steeple of Ignorance",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Cyno",
+          "element": "Electro",
+          "id": "cyno"
+        },
+        {
+          "name": "Tighnari",
+          "element": "Dendro",
+          "id": "tighnari"
+        },
+        {
+          "name": "Faruzan",
+          "element": "Anemo",
+          "id": "faruzan"
+        },
+        {
+          "name": "Candace",
+          "element": "Hydro",
+          "id": "candace"
+        }
+      ]
+    },
+    {
+      "id": "equity",
+      "book": "Equity",
+      "region": "Fontaine",
+      "domain": "Pale Forgotten Glory",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Neuvillette",
+          "element": "Hydro",
+          "id": "neuvillette"
+        },
+        {
+          "name": "Navia",
+          "element": "Geo",
+          "id": "navia"
+        },
+        {
+          "name": "Lyney",
+          "element": "Pyro",
+          "id": "lyney"
+        },
+        {
+          "name": "Sigewinne",
+          "element": "Hydro",
+          "id": "sigewinne"
+        }
+      ]
+    },
+    {
+      "id": "contention",
+      "book": "Contention",
+      "region": "Natlan",
+      "domain": "Blazing Ruins",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Mualani",
+          "element": "Hydro",
+          "id": "mualani"
+        },
+        {
+          "name": "Xilonen",
+          "element": "Geo",
+          "id": "xilonen"
+        },
+        {
+          "name": "Iansan",
+          "element": "Electro",
+          "id": "iansan"
+        },
+        {
+          "name": "Traveler (Pyro)",
+          "element": "Pyro",
+          "id": "traveler"
+        }
+      ]
+    },
+    {
+      "id": "moonlight",
+      "book": "Moonlight",
+      "region": "Nod-Krai",
+      "domain": "Lightless Capital",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Lauma",
+          "element": "Dendro",
+          "id": "lauma"
+        },
+        {
+          "name": "Columbina",
+          "element": "Hydro",
+          "id": "columbina"
+        },
+        {
+          "name": "Zibai",
+          "element": "Geo",
+          "id": "zibai"
+        },
+        {
+          "name": "Illuga",
+          "element": "Geo",
+          "id": "illuga"
+        }
+      ]
+    },
+    {
+      "id": "charity",
+      "book": "Charity",
+      "region": "Snezhnaya",
+      "domain": "Relics of the Fallen Grace",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "characters": [
+        {
+          "name": "Odette",
+          "element": "Cryo",
+          "id": "odette"
+        },
+        {
+          "name": "Mitya",
+          "element": "Electro",
+          "id": "mitya"
+        },
+        {
+          "name": "Valeriy",
+          "element": "Electro",
+          "id": "valeriy"
+        },
+        {
+          "name": "Traveler (Cryo)",
+          "element": "Cryo",
+          "id": "traveler"
+        }
+      ]
+    },
+    {
+      "id": "resistance",
+      "book": "Resistance",
+      "region": "Mondstadt",
+      "domain": "Forsaken Rift",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Bennett",
+          "element": "Pyro",
+          "id": "bennett"
+        },
+        {
+          "name": "Eula",
+          "element": "Cryo",
+          "id": "eula"
+        },
+        {
+          "name": "Jean",
+          "element": "Anemo",
+          "id": "jean"
+        },
+        {
+          "name": "Diluc",
+          "element": "Pyro",
+          "id": "diluc"
+        },
+        {
+          "name": "Mona",
+          "element": "Hydro",
+          "id": "mona"
+        },
+        {
+          "name": "Noelle",
+          "element": "Geo",
+          "id": "noelle"
+        }
+      ]
+    },
+    {
+      "id": "diligence",
+      "book": "Diligence",
+      "region": "Liyue",
+      "domain": "Taishan Mansion",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Hu Tao",
+          "element": "Pyro",
+          "id": "hu-tao"
+        },
+        {
+          "name": "Kaedehara Kazuha",
+          "element": "Anemo",
+          "id": "kazuha"
+        },
+        {
+          "name": "Ganyu",
+          "element": "Cryo",
+          "id": "ganyu"
+        },
+        {
+          "name": "Xiangling",
+          "element": "Pyro",
+          "id": "xiangling"
+        },
+        {
+          "name": "Yaoyao",
+          "element": "Dendro",
+          "id": "yaoyao"
+        },
+        {
+          "name": "Lan Yan",
+          "element": "Anemo",
+          "id": "lan-yan"
+        }
+      ]
+    },
+    {
+      "id": "elegance",
+      "book": "Elegance",
+      "region": "Inazuma",
+      "domain": "Violet Court",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Kamisato Ayaka",
+          "element": "Cryo",
+          "id": "ayaka"
+        },
+        {
+          "name": "Arataki Itto",
+          "element": "Geo",
+          "id": "itto"
+        },
+        {
+          "name": "Kuki Shinobu",
+          "element": "Electro",
+          "id": "kuki-shinobu"
+        },
+        {
+          "name": "Kujou Sara",
+          "element": "Electro",
+          "id": "kujou-sara"
+        },
+        {
+          "name": "Kamisato Ayato",
+          "element": "Hydro",
+          "id": "ayato"
+        }
+      ]
+    },
+    {
+      "id": "ingenuity",
+      "book": "Ingenuity",
+      "region": "Sumeru",
+      "domain": "Steeple of Ignorance",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Nahida",
+          "element": "Dendro",
+          "id": "nahida"
+        },
+        {
+          "name": "Alhaitham",
+          "element": "Dendro",
+          "id": "alhaitham"
+        },
+        {
+          "name": "Layla",
+          "element": "Cryo",
+          "id": "layla"
+        },
+        {
+          "name": "Dori",
+          "element": "Electro",
+          "id": "dori"
+        },
+        {
+          "name": "Kaveh",
+          "element": "Dendro",
+          "id": "kaveh"
+        }
+      ]
+    },
+    {
+      "id": "justice",
+      "book": "Justice",
+      "region": "Fontaine",
+      "domain": "Pale Forgotten Glory",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Furina",
+          "element": "Hydro",
+          "id": "furina"
+        },
+        {
+          "name": "Escoffier",
+          "element": "Cryo",
+          "id": "escoffier"
+        },
+        {
+          "name": "Clorinde",
+          "element": "Electro",
+          "id": "clorinde"
+        },
+        {
+          "name": "Charlotte",
+          "element": "Cryo",
+          "id": "charlotte"
+        },
+        {
+          "name": "Freminet",
+          "element": "Cryo",
+          "id": "freminet"
+        }
+      ]
+    },
+    {
+      "id": "kindling",
+      "book": "Kindling",
+      "region": "Natlan",
+      "domain": "Blazing Ruins",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Kinich",
+          "element": "Dendro",
+          "id": "kinich"
+        },
+        {
+          "name": "Chasca",
+          "element": "Anemo",
+          "id": "chasca"
+        },
+        {
+          "name": "Citlali",
+          "element": "Cryo",
+          "id": "citlali"
+        },
+        {
+          "name": "Ororon",
+          "element": "Electro",
+          "id": "ororon"
+        }
+      ]
+    },
+    {
+      "id": "elysium",
+      "book": "Elysium",
+      "region": "Nod-Krai",
+      "domain": "Lightless Capital",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Skirk",
+          "element": "Cryo",
+          "id": "skirk"
+        },
+        {
+          "name": "Flins",
+          "element": "Electro",
+          "id": "flins"
+        },
+        {
+          "name": "Nefer",
+          "element": "Dendro",
+          "id": "nefer"
+        },
+        {
+          "name": "Ineffa",
+          "element": "Electro",
+          "id": "ineffa"
+        }
+      ]
+    },
+    {
+      "id": "fortitude",
+      "book": "Fortitude",
+      "region": "Snezhnaya",
+      "domain": "Relics of the Fallen Grace",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "characters": [
+        {
+          "name": "Alyosha",
+          "element": "Electro",
+          "id": "alyosha"
+        },
+        {
+          "name": "Vodyanitsa",
+          "element": "Hydro",
+          "id": "vodyanitsa"
+        },
+        {
+          "name": "Pulcinella",
+          "element": "Cryo",
+          "id": "pulcinella"
+        }
+      ]
+    },
+    {
+      "id": "ballad",
+      "book": "Ballad",
+      "region": "Mondstadt",
+      "domain": "Forsaken Rift",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Fischl",
+          "element": "Electro",
+          "id": "fischl"
+        },
+        {
+          "name": "Venti",
+          "element": "Anemo",
+          "id": "venti"
+        },
+        {
+          "name": "Albedo",
+          "element": "Geo",
+          "id": "albedo"
+        },
+        {
+          "name": "Rosaria",
+          "element": "Cryo",
+          "id": "rosaria"
+        },
+        {
+          "name": "Kaeya",
+          "element": "Cryo",
+          "id": "kaeya"
+        },
+        {
+          "name": "Dahlia",
+          "element": "Hydro",
+          "id": "dahlia"
+        }
+      ]
+    },
+    {
+      "id": "gold",
+      "book": "Gold",
+      "region": "Liyue",
+      "domain": "Taishan Mansion",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Zhongli",
+          "element": "Geo",
+          "id": "zhongli"
+        },
+        {
+          "name": "Xingqiu",
+          "element": "Hydro",
+          "id": "xingqiu"
+        },
+        {
+          "name": "Baizhu",
+          "element": "Dendro",
+          "id": "baizhu"
+        },
+        {
+          "name": "Beidou",
+          "element": "Electro",
+          "id": "beidou"
+        },
+        {
+          "name": "Yanfei",
+          "element": "Pyro",
+          "id": "yanfei"
+        },
+        {
+          "name": "Xianyun",
+          "element": "Anemo",
+          "id": "xianyun"
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "book": "Light",
+      "region": "Inazuma",
+      "domain": "Violet Court",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Raiden Shogun",
+          "element": "Electro",
+          "id": "raiden-shogun"
+        },
+        {
+          "name": "Yae Miko",
+          "element": "Electro",
+          "id": "yae-miko"
+        },
+        {
+          "name": "Gorou",
+          "element": "Geo",
+          "id": "gorou"
+        },
+        {
+          "name": "Sayu",
+          "element": "Anemo",
+          "id": "sayu"
+        },
+        {
+          "name": "Chiori",
+          "element": "Geo",
+          "id": "chiori"
+        }
+      ]
+    },
+    {
+      "id": "praxis",
+      "book": "Praxis",
+      "region": "Sumeru",
+      "domain": "Steeple of Ignorance",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Wanderer",
+          "element": "Anemo",
+          "id": "wanderer"
+        },
+        {
+          "name": "Nilou",
+          "element": "Hydro",
+          "id": "nilou"
+        },
+        {
+          "name": "Collei",
+          "element": "Dendro",
+          "id": "collei"
+        },
+        {
+          "name": "Dehya",
+          "element": "Pyro",
+          "id": "dehya"
+        },
+        {
+          "name": "Sethos",
+          "element": "Electro",
+          "id": "sethos"
+        }
+      ]
+    },
+    {
+      "id": "order",
+      "book": "Order",
+      "region": "Fontaine",
+      "domain": "Pale Forgotten Glory",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Arlecchino",
+          "element": "Pyro",
+          "id": "arlecchino"
+        },
+        {
+          "name": "Wriothesley",
+          "element": "Cryo",
+          "id": "wriothesley"
+        },
+        {
+          "name": "Lynette",
+          "element": "Anemo",
+          "id": "lynette"
+        },
+        {
+          "name": "Chevreuse",
+          "element": "Pyro",
+          "id": "chevreuse"
+        },
+        {
+          "name": "Emilie",
+          "element": "Dendro",
+          "id": "emilie"
+        }
+      ]
+    },
+    {
+      "id": "conflict",
+      "book": "Conflict",
+      "region": "Natlan",
+      "domain": "Blazing Ruins",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Mavuika",
+          "element": "Pyro",
+          "id": "mavuika"
+        },
+        {
+          "name": "Varesa",
+          "element": "Electro",
+          "id": "varesa"
+        },
+        {
+          "name": "Kachina",
+          "element": "Geo",
+          "id": "kachina"
+        },
+        {
+          "name": "Ifa",
+          "element": "Anemo",
+          "id": "ifa"
+        }
+      ]
+    },
+    {
+      "id": "vagrancy",
+      "book": "Vagrancy",
+      "region": "Nod-Krai",
+      "domain": "Lightless Capital",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Durin",
+          "element": "Pyro",
+          "id": "durin"
+        },
+        {
+          "name": "Varka",
+          "element": "Anemo",
+          "id": "varka"
+        },
+        {
+          "name": "Linnea",
+          "element": "Geo",
+          "id": "linnea"
+        },
+        {
+          "name": "Aino",
+          "element": "Hydro",
+          "id": "aino"
+        }
+      ]
+    },
+    {
+      "id": "glory",
+      "book": "Glory",
+      "region": "Snezhnaya",
+      "domain": "Relics of the Fallen Grace",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "characters": [
+        {
+          "name": "Vesna",
+          "element": "Anemo",
+          "id": "vesna"
+        },
+        {
+          "name": "Pantalone",
+          "element": "Cryo",
+          "id": "pantalone"
+        },
+        {
+          "name": "Sandrone",
+          "element": "Geo",
+          "id": "sandrone"
+        }
+      ]
+    }
+  ],
+  "WEAPON_DOMAINS": [
+    {
+      "id": "decarabian",
+      "material": "Tile of Decarabian's Tower",
+      "series": "Decarabian",
+      "region": "Mondstadt",
+      "domain": "Cecilia Garden",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Favonius Sword",
+          "id": "favonius-sword",
+          "type": "Sword"
+        },
+        {
+          "name": "The Stringless",
+          "id": "the-stringless",
+          "type": "Bow"
+        },
+        {
+          "name": "Aquila Favonia",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "guyun",
+      "material": "Luminous Sands from Guyun",
+      "series": "Guyun",
+      "region": "Liyue",
+      "domain": "Hidden Palace of Lianshan Formula",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Primordial Jade Cutter",
+          "id": "primordial-jade-cutter",
+          "type": "Sword"
+        },
+        {
+          "name": "Primordial Jade Winged-Spear",
+          "id": "primordial-jade-winged-spear",
+          "type": "Polearm"
+        },
+        {
+          "name": "Aqua Simulacra",
+          "id": "aqua-simulacra",
+          "type": "Bow"
+        }
+      ]
+    },
+    {
+      "id": "distant-sea",
+      "material": "Coral Branch of a Distant Sea",
+      "series": "Distant Sea",
+      "region": "Inazuma",
+      "domain": "Court of Flowing Sand",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Mistsplitter Reforged",
+          "id": "mistsplitter-reforged",
+          "type": "Sword"
+        },
+        {
+          "name": "Everlasting Moonglow",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Amenoma Kageuchi",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "forest-dew",
+      "material": "Copper Talisman of the Forest Dew",
+      "series": "Forest Dew",
+      "region": "Sumeru",
+      "domain": "Tower of Abject Pride",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Light of Foliar Incision",
+          "id": "light-of-foliar-incision",
+          "type": "Sword"
+        },
+        {
+          "name": "Sapwood Blade",
+          "type": "Sword"
+        },
+        {
+          "name": "Xiphos' Moonlight",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "ancient-chord",
+      "material": "Fragment of an Ancient Chord",
+      "series": "Ancient Chord",
+      "region": "Fontaine",
+      "domain": "Echoes of the Deep Tides",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Verdict",
+          "id": "verdict",
+          "type": "Claymore"
+        },
+        {
+          "name": "The First Great Magic",
+          "type": "Bow"
+        },
+        {
+          "name": "Song of Stillness",
+          "type": "Bow"
+        }
+      ]
+    },
+    {
+      "id": "sacrificial-heart",
+      "material": "Blazing Sacrificial Heart's Terror",
+      "series": "Blazing Sacrificial Heart",
+      "region": "Natlan",
+      "domain": "Ancient Watchtower",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Surf's Up",
+          "id": "surfs-up",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Peak Patrol Song",
+          "id": "peak-patrol-song",
+          "type": "Sword"
+        },
+        {
+          "name": "Earth Shaker",
+          "id": "earth-shaker",
+          "type": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "artful-device",
+      "material": "Emblem of the Artful Device",
+      "series": "Artful Device",
+      "region": "Nod-Krai",
+      "domain": "Lost Mooncourt",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Nightweaver's Looking Glass",
+          "id": "nightweavers-looking-glass",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Reliquary of Truth",
+          "id": "reliquary-of-truth",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Nocturne's Curtain Call",
+          "id": "nocturnes-curtain-call",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Golden Dawn Harp",
+          "id": "golden-dawn-harp",
+          "type": "Bow"
+        }
+      ]
+    },
+    {
+      "id": "pale-star-army",
+      "material": "Emblem of the Pale Star Army",
+      "series": "Pale Star Army",
+      "region": "Snezhnaya",
+      "domain": "Scars of Cursed Obsession",
+      "days": [
+        1,
+        4
+      ],
+      "dayLabel": "Mon / Thu",
+      "weapons": [
+        {
+          "name": "Whitelake Winterfeather",
+          "id": "whitelake-winterfeather",
+          "type": "Sword"
+        },
+        {
+          "name": "Beyond the Chrysalis",
+          "id": "beyond-the-chrysalis",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "boreal-wolf",
+      "material": "Boreal Wolf's Milk Tooth",
+      "series": "Boreal Wolf",
+      "region": "Mondstadt",
+      "domain": "Cecilia Garden",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "The Widsith",
+          "id": "the-widsith",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Skyward Harp",
+          "type": "Bow"
+        },
+        {
+          "name": "Sacrificial Fragments",
+          "type": "Catalyst"
+        }
+      ]
+    },
+    {
+      "id": "mist-veiled",
+      "material": "Mist Veiled Lead Elixir",
+      "series": "Mist Veiled Elixir",
+      "region": "Liyue",
+      "domain": "Hidden Palace of Lianshan Formula",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "Dragon's Bane",
+          "id": "dragons-bane",
+          "type": "Polearm"
+        },
+        {
+          "name": "Prototype Amber",
+          "id": "prototype-amber",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Calamity Queller",
+          "type": "Polearm"
+        }
+      ]
+    },
+    {
+      "id": "narukami",
+      "material": "Narukami's Wisdom",
+      "series": "Narukami",
+      "region": "Inazuma",
+      "domain": "Court of Flowing Sand",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "Redhorn Stonethresher",
+          "id": "redhorn-stonethresher",
+          "type": "Claymore"
+        },
+        {
+          "name": "Thundering Pulse",
+          "id": "thundering-pulse",
+          "type": "Bow"
+        },
+        {
+          "name": "Haran Geppaku Futsu",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "oasis-garden",
+      "material": "Oasis Garden's Reminiscence",
+      "series": "Oasis Garden",
+      "region": "Sumeru",
+      "domain": "Tower of Abject Pride",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "A Thousand Floating Dreams",
+          "id": "a-thousand-floating-dreams",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Key of Khaj-Nisut",
+          "type": "Sword"
+        },
+        {
+          "name": "Wandering Evenstar",
+          "type": "Catalyst"
+        }
+      ]
+    },
+    {
+      "id": "sacred-dewdrop",
+      "material": "Dross of Pure Sacred Dewdrop",
+      "series": "Pure Sacred Dewdrop",
+      "region": "Fontaine",
+      "domain": "Echoes of the Deep Tides",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "Splendor of Tranquil Waters",
+          "id": "splendor-of-tranquil-waters",
+          "type": "Sword"
+        },
+        {
+          "name": "Tome of the Eternal Flow",
+          "id": "tome-of-the-eternal-flow",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Sacrificial Jade",
+          "type": "Catalyst"
+        }
+      ]
+    },
+    {
+      "id": "sacred-lord",
+      "material": "Delirious Decadence of the Sacred Lord",
+      "series": "Sacred Lord",
+      "region": "Natlan",
+      "domain": "Ancient Watchtower",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "A Thousand Blazing Suns",
+          "id": "a-thousand-blazing-suns",
+          "type": "Claymore"
+        },
+        {
+          "name": "Fang of the Mountain King",
+          "id": "fang-of-the-mountain-king",
+          "type": "Claymore"
+        },
+        {
+          "name": "Starcaller's Watch",
+          "id": "starcallers-watch",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Vivid Notions",
+          "id": "vivid-notions",
+          "type": "Catalyst"
+        }
+      ]
+    },
+    {
+      "id": "long-night-flint",
+      "material": "Long Night Flint",
+      "series": "Long Night Flint",
+      "region": "Nod-Krai",
+      "domain": "Lost Mooncourt",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "Bloodsoaked Ruins",
+          "id": "bloodsoaked-ruins",
+          "type": "Polearm"
+        },
+        {
+          "name": "Athame Artis",
+          "id": "athame-artis",
+          "type": "Sword"
+        },
+        {
+          "name": "Gest of the Mighty Wolf",
+          "id": "gest-of-the-mighty-wolf",
+          "type": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "frost-emperor",
+      "material": "Decree of the Frost Emperor",
+      "series": "Frost Emperor",
+      "region": "Snezhnaya",
+      "domain": "Scars of Cursed Obsession",
+      "days": [
+        2,
+        5
+      ],
+      "dayLabel": "Tue / Fri",
+      "weapons": [
+        {
+          "name": "Starsealed Edict",
+          "id": "starsealed-edict",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Hymn of the Maelstrom",
+          "id": "hymn-of-the-maelstrom",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Winter's Heavy Heart",
+          "id": "winters-heavy-heart",
+          "type": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "dandelion-gladiator",
+      "material": "Fetters of the Dandelion Gladiator",
+      "series": "Dandelion Gladiator",
+      "region": "Mondstadt",
+      "domain": "Cecilia Garden",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Sacrificial Sword",
+          "id": "sacrificial-sword",
+          "type": "Sword"
+        },
+        {
+          "name": "Wolf's Gravestone",
+          "id": "wolfs-gravestone",
+          "type": "Claymore"
+        },
+        {
+          "name": "Amos' Bow",
+          "id": "amos-bow",
+          "type": "Bow"
+        },
+        {
+          "name": "Favonius Greatsword",
+          "id": "favonius-greatsword",
+          "type": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "aerosiderite",
+      "material": "Grain of Aerosiderite",
+      "series": "Aerosiderite",
+      "region": "Liyue",
+      "domain": "Hidden Palace of Lianshan Formula",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Staff of Homa",
+          "id": "staff-of-homa",
+          "type": "Polearm"
+        },
+        {
+          "name": "Serpent Spine",
+          "id": "serpent-spine",
+          "type": "Claymore"
+        },
+        {
+          "name": "Iron Sting",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "mask",
+      "material": "Mask of the Wicked Lieutenant",
+      "series": "Mask",
+      "region": "Inazuma",
+      "domain": "Court of Flowing Sand",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Engulfing Lightning",
+          "id": "engulfing-lightning",
+          "type": "Polearm"
+        },
+        {
+          "name": "\"The Catch\"",
+          "id": "the-catch",
+          "type": "Polearm"
+        },
+        {
+          "name": "Kagura's Verity",
+          "type": "Catalyst"
+        }
+      ]
+    },
+    {
+      "id": "scorching-might",
+      "material": "Echo of Scorching Might",
+      "series": "Scorching Might",
+      "region": "Sumeru",
+      "domain": "Tower of Abject Pride",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Tulaytullah's Remembrance",
+          "id": "tulaytullahs-remembrance",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Hunter's Path",
+          "id": "hunters-path",
+          "type": "Bow"
+        },
+        {
+          "name": "Beacon of the Reed Sea",
+          "id": "beacon-of-the-reed-sea",
+          "type": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "pristine-sea",
+      "material": "Broken Goblet of the Pristine Sea",
+      "series": "Pristine Sea",
+      "region": "Fontaine",
+      "domain": "Echoes of the Deep Tides",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Cashflow Supervision",
+          "id": "cashflow-supervision",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Crimson Moon's Semblance",
+          "id": "crimson-moons-semblance",
+          "type": "Polearm"
+        },
+        {
+          "name": "Finale of the Deep",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "night-wind",
+      "material": "Night-Wind's Mystic Consideration",
+      "series": "Night-Wind",
+      "region": "Natlan",
+      "domain": "Ancient Watchtower",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Astral Vulture's Crimson Plumage",
+          "id": "astral-vultures-crimson-plumage",
+          "type": "Bow"
+        },
+        {
+          "name": "Symphonist of Scents",
+          "id": "symphonist-of-scents",
+          "type": "Polearm"
+        },
+        {
+          "name": "Azurelight",
+          "id": "azurelight",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "far-north-scions",
+      "material": "Sundered Relic of the Far-North Scions",
+      "series": "Far-North Scions",
+      "region": "Nod-Krai",
+      "domain": "Lost Mooncourt",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Snare Hook",
+          "id": "snare-hook",
+          "type": "Bow"
+        },
+        {
+          "name": "Etherlight Spindlelute",
+          "type": "Catalyst"
+        },
+        {
+          "name": "Heretic's Molten Blade",
+          "type": "Claymore"
+        },
+        {
+          "name": "Lightbearing Moonshard",
+          "id": "lightbearing-moonshard",
+          "type": "Sword"
+        }
+      ]
+    },
+    {
+      "id": "boreal-covenant",
+      "material": "Vow of the Boreal Covenant",
+      "series": "Boreal Covenant",
+      "region": "Snezhnaya",
+      "domain": "Scars of Cursed Obsession",
+      "days": [
+        3,
+        6
+      ],
+      "dayLabel": "Wed / Sat",
+      "weapons": [
+        {
+          "name": "Frostsnow Oath",
+          "id": "frostsnow-oath",
+          "type": "Sword"
+        },
+        {
+          "name": "Ballad of the Sentinel",
+          "id": "ballad-of-the-sentinel",
+          "type": "Polearm"
+        },
+        {
+          "name": "Silver Light",
+          "id": "silver-light",
+          "type": "Bow"
+        }
+      ]
+    }
+  ],
+  "WEEKLY_BOSSES": [
+    {
+      "id": "dvalin",
+      "name": "Stormterror (Dvalin)",
+      "region": "Mondstadt",
+      "domain": "Confront Stormterror"
+    },
+    {
+      "id": "andrius",
+      "name": "Lupus Boreas (Andrius)",
+      "region": "Mondstadt",
+      "domain": "Wolvendom"
+    },
+    {
+      "id": "childe",
+      "name": "Childe (Tartaglia)",
+      "region": "Liyue",
+      "domain": "Enter the Golden House"
+    },
+    {
+      "id": "azhdaha",
+      "name": "Azhdaha",
+      "region": "Liyue",
+      "domain": "Beneath the Dragon-Queller"
+    },
+    {
+      "id": "signora",
+      "name": "La Signora",
+      "region": "Inazuma",
+      "domain": "Narukami Island: Tenshukaku"
+    },
+    {
+      "id": "raiden-boss",
+      "name": "Raiden Shogun (Magatsu)",
+      "region": "Inazuma",
+      "domain": "End of the Oneiric Euthymia"
+    },
+    {
+      "id": "scaramouche",
+      "name": "Shouki no Kami (Scaramouche)",
+      "region": "Sumeru",
+      "domain": "Joururi Workshop"
+    },
+    {
+      "id": "apep",
+      "name": "Guardian of Apep's Oasis",
+      "region": "Sumeru",
+      "domain": "The Realm of Beginnings"
+    },
+    {
+      "id": "narwhal",
+      "name": "All-Devouring Narwhal",
+      "region": "Fontaine",
+      "domain": "Shadow of Another World"
+    },
+    {
+      "id": "knave",
+      "name": "The Knave (Arlecchino)",
+      "region": "Fontaine",
+      "domain": "Scattered Ruins"
+    },
+    {
+      "id": "gosoythoth",
+      "name": "Lord of Eroded Primal Fire (Gosoythoth)",
+      "region": "Natlan",
+      "domain": "Stone Stele Records"
+    },
+    {
+      "id": "chess-game",
+      "name": "The Game Before the Gate",
+      "region": "Mondstadt",
+      "domain": "Unresolved Chess Game"
+    },
+    {
+      "id": "dottore",
+      "name": "The Doctor (Il Dottore)",
+      "region": "Nod-Krai",
+      "domain": "Experimental Design Bureau"
+    },
+    {
+      "id": "tsaritsa-warden",
+      "name": "Harbinger Sentinel: Pulcinella",
+      "region": "Snezhnaya",
+      "domain": "Zapolyarny Vault"
+    },
+    {
+      "id": "fallen-grace",
+      "name": "Cinder of the Pale Star",
+      "region": "Snezhnaya",
+      "domain": "Sanctum of Winter"
+    }
+  ],
+  "ELEMENT_GEMS": {
+    "Pyro": "Agnidus Agate",
+    "Hydro": "Varunada Lazurite",
+    "Electro": "Vajrada Amethyst",
+    "Anemo": "Vayuda Turquoise",
+    "Geo": "Prithiva Topaz",
+    "Cryo": "Shivada Jade",
+    "Dendro": "Nagadus Emerald"
+  },
+  "REACTIONS_META": [
+    {
+      "name": "Vaporize",
+      "req": [
+        "Pyro",
+        "Hydro"
+      ],
+      "effect": "Amplifies triggering Pyro (1.5×) or Hydro (2.0×) DMG; scales with EM."
+    },
+    {
+      "name": "Melt",
+      "req": [
+        "Pyro",
+        "Cryo"
+      ],
+      "effect": "Amplifies triggering Cryo (1.5×) or Pyro (2.0×) DMG; scales with EM."
+    },
+    {
+      "name": "Overloaded",
+      "req": [
+        "Pyro",
+        "Electro"
+      ],
+      "effect": "AoE Pyro explosion that shatters Geo shields and knocks light enemies back."
+    },
+    {
+      "name": "Superconduct",
+      "req": [
+        "Cryo",
+        "Electro"
+      ],
+      "effect": "AoE Cryo hit that reduces target Physical RES by 40% for 12s."
+    },
+    {
+      "name": "Electro-Charged",
+      "req": [
+        "Hydro",
+        "Electro"
+      ],
+      "effect": "Deals ticking Electro DoT while keeping both Hydro and Electro auras active."
+    },
+    {
+      "name": "Frozen",
+      "req": [
+        "Hydro",
+        "Cryo"
+      ],
+      "effect": "Immobilizes enemies; enables 4pc Blizzard Strayer and Shatter."
+    },
+    {
+      "name": "Swirl",
+      "req": [
+        "Anemo"
+      ],
+      "anyOf": [
+        "Pyro",
+        "Hydro",
+        "Electro",
+        "Cryo"
+      ],
+      "effect": "Spreads element in AoE and triggers 4pc Viridescent Venerer (-40% RES)."
+    },
+    {
+      "name": "Crystallize",
+      "req": [
+        "Geo"
+      ],
+      "anyOf": [
+        "Pyro",
+        "Hydro",
+        "Electro",
+        "Cryo"
+      ],
+      "effect": "Creates an elemental shield shard; triggers Geo Resonance and Petra/Navia stacks."
+    },
+    {
+      "name": "Burning",
+      "req": [
+        "Pyro",
+        "Dendro"
+      ],
+      "effect": "Sustained Pyro DoT aura; useful for Reverse Melt setups and Kinich/Emilie."
+    },
+    {
+      "name": "Quicken / Aggravate / Spread",
+      "req": [
+        "Dendro",
+        "Electro"
+      ],
+      "effect": "Quicken aura adds flat base DMG bonus to Electro (Aggravate) and Dendro (Spread) hits."
+    },
+    {
+      "name": "Bloom",
+      "req": [
+        "Hydro",
+        "Dendro"
+      ],
+      "effect": "Spawns Dendro Cores that explode in AoE Dendro DMG after 6s (max 5 cores)."
+    },
+    {
+      "name": "Hyperbloom",
+      "req": [
+        "Hydro",
+        "Dendro",
+        "Electro"
+      ],
+      "effect": "Electro converts Dendro Cores into high-damage homing Dendro missiles (EM scaling)."
+    },
+    {
+      "name": "Burgeon",
+      "req": [
+        "Hydro",
+        "Dendro",
+        "Pyro"
+      ],
+      "effect": "Pyro detonates Dendro Cores for heavy AoE Dendro DMG (EM scaling)."
+    }
+  ],
+  "EXTRA_WEAPON_META": {
+    "staff of the scarlet sands": {
+      "key": "Pole_Deshret",
+      "rarity": 5,
+      "substat": "CRIT Rate 44.1%"
+    },
+    "freedom-sworn": {
+      "key": "Sword_Widsith",
+      "rarity": 5,
+      "substat": "Elemental Mastery 198"
+    },
+    "xiphos' moonlight": {
+      "key": "Sword_Pleroma",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "aquila favonia": {
+      "key": "Sword_Falcon",
+      "rarity": 5,
+      "substat": "Physical DMG 41.3%"
+    },
+    "sapwood blade": {
+      "key": "Sword_Arakalari",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "black tassel": {
+      "key": "Pole_Noire",
+      "rarity": 3,
+      "substat": "HP 46.9%"
+    },
+    "favonius lance": {
+      "key": "Pole_Zephyrus",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "haran geppaku futsu": {
+      "key": "Sword_Amenoma",
+      "rarity": 5,
+      "substat": "CRIT Rate 33.1%"
+    },
+    "amenoma kageuchi": {
+      "key": "Sword_Bakufu",
+      "rarity": 4,
+      "substat": "ATK 55.1%"
+    },
+    "favonius warbow": {
+      "key": "Bow_Zephyrus",
+      "rarity": 4,
+      "substat": "Energy Recharge 61.3%"
+    },
+    "elegy for the end": {
+      "key": "Bow_Widsith",
+      "rarity": 5,
+      "substat": "Energy Recharge 55.1%"
+    },
+    "sacrificial jade": {
+      "key": "Catalyst_Yue",
+      "rarity": 4,
+      "substat": "CRIT Rate 36.8%"
+    },
+    "festering desire": {
+      "key": "Sword_Magnum",
+      "rarity": 4,
+      "substat": "Energy Recharge 45.9%"
+    },
+    "kagura's verity": {
+      "key": "Catalyst_Narukami",
+      "rarity": 5,
+      "substat": "CRIT DMG 66.2%"
+    },
+    "sacrificial fragments": {
+      "key": "Catalyst_Fossil",
+      "rarity": 4,
+      "substat": "Elemental Mastery 221"
+    },
+    "deathmatch": {
+      "key": "Pole_Gladiator",
+      "rarity": 4,
+      "substat": "CRIT Rate 36.8%"
+    },
+    "the first great magic": {
+      "key": "Bow_Pledge",
+      "rarity": 5,
+      "substat": "CRIT DMG 66.2%"
+    },
+    "song of broken pines": {
+      "key": "Claymore_Widsith",
+      "rarity": 5,
+      "substat": "Physical DMG 20.7%"
+    },
+    "white tassel": {
+      "key": "Pole_Ruby",
+      "rarity": 3,
+      "substat": "CRIT Rate 23.4%"
+    },
+    "lost prayer to the sacred winds": {
+      "key": "Catalyst_Fourwinds",
+      "rarity": 5,
+      "substat": "CRIT Rate 33.1%"
+    },
+    "whiteblind": {
+      "key": "Claymore_Exotic",
+      "rarity": 4,
+      "substat": "DEF 51.7%"
+    },
+    "slingshot": {
+      "key": "Bow_Sling",
+      "rarity": 3,
+      "substat": "CRIT Rate 31.2%"
+    },
+    "rust": {
+      "key": "Bow_Recluse",
+      "rarity": 4,
+      "substat": "ATK 41.3%"
+    },
+    "polar star": {
+      "key": "Bow_Worldbane",
+      "rarity": 5,
+      "substat": "CRIT Rate 33.1%"
+    },
+    "everlasting moonglow": {
+      "key": "Catalyst_Kaleido",
+      "rarity": 5,
+      "substat": "HP 49.6%"
+    },
+    "thrilling tales of dragon slayers": {
+      "key": "Catalyst_Pulpfic",
+      "rarity": 3,
+      "substat": "HP 35.2%"
+    },
+    "harbinger of dawn": {
+      "key": "Sword_Dawn",
+      "rarity": 3,
+      "substat": "CRIT DMG 46.9%"
+    },
+    "skyward blade": {
+      "key": "Sword_Dvalin",
+      "rarity": 5,
+      "substat": "Energy Recharge 55.1%"
+    },
+    "ultimate overlord's mega magic sword": {
+      "key": "Claymore_Champion",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "key of khaj-nisut": {
+      "key": "Sword_Deshret",
+      "rarity": 5,
+      "substat": "HP 66.2%"
+    },
+    "iron sting": {
+      "key": "Sword_Exotic",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "toukabou shigure": {
+      "key": "Sword_Kasabouzu",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "wandering evenstar": {
+      "key": "Catalyst_Pleroma",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "flute of ezpitzal": {
+      "key": "Sword_Isikhulu",
+      "rarity": 4,
+      "substat": "DEF 69.0%"
+    },
+    "flame-forged insight": {
+      "key": "Claymore_Polilith",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "uraku misugiri": {
+      "key": "Sword_Needle",
+      "rarity": 5,
+      "substat": "CRIT DMG 88.2%"
+    },
+    "rightful reward": {
+      "key": "Pole_Vorpal",
+      "rarity": 4,
+      "substat": "HP 27.6%"
+    },
+    "wolf-fang": {
+      "key": "Sword_Boreas",
+      "rarity": 4,
+      "substat": "CRIT Rate 27.6%"
+    },
+    "favonius codex": {
+      "key": "Catalyst_Zephyrus",
+      "rarity": 4,
+      "substat": "Energy Recharge 45.9%"
+    },
+    "mailed flower": {
+      "key": "Claymore_Fleurfair",
+      "rarity": 4,
+      "substat": "Elemental Mastery 110"
+    },
+    "sacrificial bow": {
+      "key": "Bow_Fossil",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "cinnabar spindle": {
+      "key": "Sword_Opus",
+      "rarity": 4,
+      "substat": "DEF 69.0%"
+    },
+    "fleuve cendre ferryman": {
+      "key": "Sword_Machination",
+      "rarity": 4,
+      "substat": "Energy Recharge 45.9%"
+    },
+    "akuoumaru": {
+      "key": "Claymore_Maria",
+      "rarity": 4,
+      "substat": "ATK 41.3%"
+    },
+    "lion's roar": {
+      "key": "Sword_Rockkiller",
+      "rarity": 4,
+      "substat": "ATK 41.3%"
+    },
+    "calamity queller": {
+      "key": "Pole_Santika",
+      "rarity": 5,
+      "substat": "ATK 16.5%"
+    },
+    "footprint of the rainbow": {
+      "key": "Pole_Isikhulu",
+      "rarity": 4,
+      "substat": "DEF 51.7%"
+    },
+    "moonpiercer": {
+      "key": "Pole_Arakalari",
+      "rarity": 4,
+      "substat": "Elemental Mastery 110"
+    },
+    "jadefall's splendor": {
+      "key": "Catalyst_Morax",
+      "rarity": 5,
+      "substat": "HP 49.6%"
+    },
+    "crane's echoing call": {
+      "key": "Catalyst_MountainGale",
+      "rarity": 5,
+      "substat": "ATK 16.5%"
+    },
+    "oathsworn eye": {
+      "key": "Catalyst_Jyanome",
+      "rarity": 4,
+      "substat": "ATK 27.6%"
+    },
+    "fruitful hook": {
+      "key": "Claymore_Umpakati",
+      "rarity": 4,
+      "substat": "ATK 27.6%"
+    },
+    "makhaira aquamarine": {
+      "key": "Claymore_Pleroma",
+      "rarity": 4,
+      "substat": "Elemental Mastery 165"
+    },
+    "forest regalia": {
+      "key": "Claymore_Arakalari",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "skyward harp": {
+      "key": "Bow_Dvalin",
+      "rarity": 5,
+      "substat": "CRIT Rate 22.1%"
+    },
+    "kitain cross spear": {
+      "key": "Pole_Bakufu",
+      "rarity": 4,
+      "substat": "Elemental Mastery 110"
+    },
+    "sunny morning sleep-in": {
+      "key": "Catalyst_SakuraFan",
+      "rarity": 5,
+      "substat": "Elemental Mastery 265"
+    },
+    "dockhand's assistant": {
+      "key": "Sword_Mechanic",
+      "rarity": 4,
+      "substat": "HP 41.3%"
+    },
+    "skyward pride": {
+      "key": "Claymore_Dvalin",
+      "rarity": 5,
+      "substat": "Energy Recharge 36.8%"
+    },
+    "absolution": {
+      "key": "Sword_Estoc",
+      "rarity": 5,
+      "substat": "CRIT DMG 44.1%"
+    },
+    "silvershower heartstrings": {
+      "key": "Bow_Arcdange",
+      "rarity": 5,
+      "substat": "HP 66.2%"
+    },
+    "recurve bow": {
+      "key": "Bow_Curve",
+      "rarity": 3,
+      "substat": "HP 46.9%"
+    },
+    "lumidouce elegy": {
+      "key": "Pole_Muguet",
+      "rarity": 5,
+      "substat": "CRIT Rate 33.1%"
+    },
+    "tamayuratei no ohanashi": {
+      "key": "Pole_Aoandon",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "hakushin ring": {
+      "key": "Catalyst_Bakufu",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    },
+    "fractured halo": {
+      "key": "Pole_Perdix",
+      "rarity": 5,
+      "substat": "CRIT DMG 66.2%"
+    },
+    "sacrificial greatsword": {
+      "key": "Claymore_Fossil",
+      "rarity": 4,
+      "substat": "Energy Recharge 30.6%"
+    }
+  }
+}
